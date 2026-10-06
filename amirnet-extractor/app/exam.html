@@ -90,6 +90,18 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
   background:var(--surface-2);border:1px solid var(--line);color:var(--muted)}
 .pill.done{background:var(--good-soft);border-color:transparent;color:var(--good)}
 
+.adaptive-cta{display:flex;flex-direction:column;gap:6px;width:100%;text-align:start;
+  padding:19px 20px;border-color:var(--accent);background:var(--accent-soft);transition:filter .15s}
+.adaptive-cta:hover{filter:brightness(1.04)}
+.adaptive-cta .t{font-family:var(--font-display);font-weight:900;font-size:24px;color:var(--accent);line-height:1.2}
+.adaptive-cta .m{font-size:14px;color:var(--muted);max-width:52ch;line-height:1.55}
+.adaptive-cta .go{font-weight:700;color:var(--accent);margin-top:6px;font-size:14.5px}
+.trail{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.trail-step{flex:1;min-width:84px;padding:9px 8px;border:1px solid var(--line);border-radius:8px;
+  background:var(--surface-2);text-align:center}
+.trail-step b{display:block;font-size:13.5px;color:var(--accent)}
+.trail-step span{font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+
 /* ---------- settings ---------- */
 .set{padding:16px;margin-bottom:12px}
 .set-row{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
@@ -194,6 +206,13 @@ table.t td b{color:var(--accent);font-variant-numeric:tabular-nums}
     </div>
 
     <div id="pane-sims">
+      <button class="card adaptive-cta" id="adaptiveBtn">
+        <span class="eyebrow">כמו הבחינה האמיתית</span>
+        <span class="t">מבחן אדפטיבי</span>
+        <span class="m">שישה פרקים מתוך כל 580 השאלות. מתחיל ברמה בינונית, ואחרי כל פרק הרמה עולה או יורדת לפי הביצועים שלך — בדיוק כמו באמירנט.</span>
+        <span class="go">התחל ←</span>
+      </button>
+      <div class="eyebrow" style="margin:24px 0 10px">או סימולציה ברמה קבועה</div>
       <div class="grid" id="simGrid"></div>
     </div>
 
@@ -313,6 +332,117 @@ function renderSettings(){
   }
 }
 
+
+/* =================== ADAPTIVE ENGINE =================== */
+/*
+ * AMIRNET adapts at the SECTION level: it opens with a moderately difficult
+ * section, then judges the examinee at the end of each section and picks the
+ * next section's difficulty from that.
+ *
+ * This cannot be done inside one of the 20 fixed simulations, because their
+ * difficulty varies BETWEEN simulations, not within: simulation 1 is almost
+ * entirely "easy". So adaptive mode draws from the whole 580-question bank,
+ * which is also how a real adaptive test works — it pulls from an item bank.
+ */
+
+var LEVELS=["easy","medium","hard","expert"];
+var LEVEL_HE={easy:"קל",medium:"בינוני",hard:"קשה",expert:"מתקדם"};
+var ADAPTIVE_PLAN=["sentence_completion","sentence_completion","reading_comprehension",
+                   "restatement","restatement","sentence_completion"];
+var UP=0.75, DOWN=0.40;   /* section score at or above UP moves a level up; at or below DOWN, down */
+var BANK=null, SPEC=null;
+
+function keyOf(item){
+  return item.passage ? ("P:"+item.passage.title)
+                      : ("Q:"+item.q.p+"|"+(item.q.o[0]||""));
+}
+function shuffled(arr){
+  var a=arr.slice();
+  for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}
+  return a;
+}
+/* A reading section's level is the difficulty most of its questions carry. */
+function modalLevel(qs){
+  var c={};
+  qs.forEach(function(q){ if(q.d) c[q.d]=(c[q.d]||0)+1 });
+  var best="medium", n=-1;
+  LEVELS.forEach(function(L){ if((c[L]||0)>n){n=c[L]||0;best=L} });
+  return best;
+}
+
+function buildBank(){
+  if(BANK) return BANK;
+  BANK={}; SPEC={};
+  ADAPTIVE_PLAN.forEach(function(t){ if(!BANK[t]){BANK[t]={}; LEVELS.forEach(function(L){BANK[t][L]=[]})} });
+
+  DATA.forEach(function(sim){
+    sim.sections.forEach(function(sec){
+      if(!BANK[sec.type]) return;
+      /* Section shape (serve count, time, titles) is the same across simulations;
+         take it from the first one seen rather than hardcoding exam numbers. */
+      if(!SPEC[sec.type]) SPEC[sec.type]={serve:sec.serve,time:sec.time,titleHe:sec.titleHe,descHe:sec.descHe};
+
+      if(sec.type==="reading_comprehension"){
+        if(!sec.passages||!sec.passages.length) return;
+        /* Kept whole: the five questions only make sense with their passage. */
+        BANK[sec.type][modalLevel(sec.questions)].push(
+          {passage:sec.passages[0], questions:sec.questions, meta:sec});
+      }else{
+        sec.questions.forEach(function(q){
+          var L=LEVELS.indexOf(q.d)>=0?q.d:"medium";
+          BANK[sec.type][L].push({q:q, meta:sec});
+        });
+      }
+    });
+  });
+  return BANK;
+}
+
+/* Draw `count` unused items at `levelIdx`, widening to neighbouring levels
+   rather than silently returning a short section. */
+function draw(type,levelIdx,count,used){
+  var order=[levelIdx];
+  for(var d=1;d<LEVELS.length;d++){
+    if(levelIdx-d>=0) order.push(levelIdx-d);
+    if(levelIdx+d<LEVELS.length) order.push(levelIdx+d);
+  }
+  var out=[];
+  for(var i=0;i<order.length&&out.length<count;i++){
+    var pool=shuffled(BANK[type][LEVELS[order[i]]]).filter(function(x){return !used[keyOf(x)]});
+    while(pool.length&&out.length<count){
+      var x=pool.shift(); used[keyOf(x)]=1; out.push(x);
+    }
+  }
+  return out;
+}
+
+function buildAdaptiveSection(slotIndex,levelIdx){
+  var type=ADAPTIVE_PLAN[slotIndex], spec=SPEC[type];
+
+  if(type==="reading_comprehension"){
+    var unit=draw(type,levelIdx,1,S.used)[0];
+    var m={slot:slotIndex+1,type:type,titleHe:unit.meta.titleHe,descHe:unit.meta.descHe,
+           passages:[unit.passage],serve:unit.questions.length,time:unit.meta.time};
+    return {meta:m,qs:unit.questions.slice(),dur:sectionTime(m),level:LEVELS[levelIdx]};
+  }
+
+  var items=draw(type,levelIdx,spec.serve,S.used);
+  var m2={slot:slotIndex+1,type:type,titleHe:spec.titleHe,descHe:spec.descHe,
+          passages:[],serve:spec.serve,time:spec.time};
+  return {meta:m2,qs:items.map(function(x){return x.q}),dur:sectionTime(m2),level:LEVELS[levelIdx]};
+}
+
+function startAdaptive(){
+  buildBank();
+  S={sim:{id:"adaptive",title:"מבחן אדפטיבי"},adaptive:true,
+     level:1,                       /* start moderate, as the real test does */
+     trail:[],used:{},total:ADAPTIVE_PLAN.length,
+     sections:[],si:0,qi:0,answers:[],flags:[],left:0,tick:null,phase:"intro"};
+  $("home").hidden=true; $("results").hidden=true; $("exam").hidden=false; $("bar").hidden=false;
+  window.scrollTo(0,0);
+  renderIntro();
+}
+
 /* =================== EXAM =================== */
 function startExam(sim){
   var sections=sim.sections.map(function(sec){
@@ -353,19 +483,42 @@ function confirmInline(){
 
 function renderIntro(){
   stopTick(); S.phase="intro";
+  /* Adaptive sections are built on entry, because which questions they contain
+     depends on how the previous section went. */
+  if(S.adaptive&&!S.sections[S.si]){
+    S.sections[S.si]=buildAdaptiveSection(S.si,S.level);
+    S.answers[S.si]=new Array(S.sections[S.si].qs.length).fill(null);
+    S.flags[S.si]={};
+  }
+  var total=S.total||S.sections.length;
   var s=S.sections[S.si], sec=s.meta;
   $("barTitle").textContent=S.sim.title;
   $("timer").textContent=mmss(s.dur); $("timer").className="timer";
-  $("prog").style.width=(S.si/S.sections.length*100)+"%";
+  $("prog").style.width=(S.si/total*100)+"%";
 
   var root=$("exam"); root.textContent="";
   var c=el("div","card sect-intro");
-  c.appendChild(el("div","eyebrow","פרק "+sec.slot+" מתוך "+S.sections.length));
+  c.appendChild(el("div","eyebrow","פרק "+sec.slot+" מתוך "+total));
   c.appendChild(el("h2",null,sec.titleHe||TYPE_HE[sec.type]));
   var d=el("p","muted",sec.descHe||""); d.style.cssText="max-width:46ch;margin:10px auto 0;font-size:14.5px";
   c.appendChild(d);
   c.appendChild(el("div","big",mmss(s.dur)));
   c.appendChild(el("div","muted",s.qs.length+" שאלות · הזמן לא נצבר לפרק הבא"));
+  if(S.adaptive){
+    var lv=el("div","pill","רמה: "+(LEVEL_HE[s.level]||s.level));
+    lv.style.marginTop="10px";
+    c.appendChild(lv);
+    if(S.si>0&&S.trail.length){
+      var prev=S.trail[S.trail.length-1];
+      var moved=LEVELS.indexOf(s.level)-LEVELS.indexOf(prev.level);
+      var msg=moved>0?"ענית נכון על "+prev.pct+"% בפרק הקודם — הרמה עלתה."
+             :moved<0?"ענית נכון על "+prev.pct+"% בפרק הקודם — הרמה ירדה."
+             :"ענית נכון על "+prev.pct+"% בפרק הקודם — הרמה נשארה.";
+      var note=el("p","muted",msg);
+      note.style.cssText="font-size:13.5px;margin:10px auto 0;max-width:40ch";
+      c.appendChild(note);
+    }
+  }
   var go=el("button","btn","התחל את הפרק ←"); go.style.marginTop="20px";
   go.onclick=startSection; c.appendChild(go);
   root.appendChild(c);
@@ -454,7 +607,15 @@ function renderQuestion(){
 
 function endSection(timedOut){
   stopTick();
-  if(S.si<S.sections.length-1){
+  if(S.adaptive){
+    var s=S.sections[S.si], right=0;
+    s.qs.forEach(function(q,i){ if(S.answers[S.si][i]===q.a) right++ });
+    var frac=s.qs.length?right/s.qs.length:0;
+    S.trail.push({slot:S.si+1,type:s.meta.type,level:s.level,pct:Math.round(frac*100)});
+    if(frac>=UP) S.level=Math.min(LEVELS.length-1,S.level+1);
+    else if(frac<=DOWN) S.level=Math.max(0,S.level-1);
+  }
+  if(S.si<(S.total||S.sections.length)-1){
     S.si++;
     if(timedOut){
       var root=$("exam"); root.textContent="";
@@ -500,9 +661,34 @@ function finish(){
   sc.appendChild(el("div","muted",correct+" תשובות נכונות מתוך "+total));
   var again=el("div","row"); again.style.cssText="justify-content:center;margin-top:18px";
   var b1=el("button","btn","חזרה לרשימה"); b1.onclick=quitExam;
-  var b2=el("button","btn ghost","לעשות שוב"); b2.onclick=function(){var s=S.sim;quitExam();startExam(s)};
+  var wasAdaptive=S.adaptive;
+  var b2=el("button","btn ghost","לעשות שוב");
+  b2.onclick=function(){var s=S.sim;quitExam(); if(wasAdaptive)startAdaptive(); else startExam(s)};
   again.appendChild(b1); again.appendChild(b2); sc.appendChild(again);
   root.appendChild(sc);
+
+  if(S.adaptive&&S.trail.length){
+    var tc=el("div","card bars");
+    tc.appendChild(el("div","eyebrow","מסלול הרמות"));
+    var tr=el("div","trail");
+    S.trail.forEach(function(step){
+      var d=el("div","trail-step");
+      d.appendChild(el("b",null,LEVEL_HE[step.level]||step.level));
+      d.appendChild(el("span",null,"פרק "+step.slot+" · "+step.pct+"%"));
+      tr.appendChild(d);
+    });
+    tc.appendChild(tr);
+    var reached=LEVEL_HE[LEVELS[S.level]]||LEVELS[S.level];
+    var r1=el("p",null,"הרמה שהגעת אליה: ");
+    r1.style.cssText="margin:14px 0 0;font-size:15px";
+    var strong=el("b",null,reached); strong.style.color="var(--accent)";
+    r1.appendChild(strong);
+    tc.appendChild(r1);
+    var r2=el("p","muted","אמירנט מדווח ציון על סולם 50–150. הנוסחה של מאל״ו אינה פומבית, ולכן זו רמת הקושי שאליה הגעת — לא המרה לציון.");
+    r2.style.cssText="margin:6px 0 0;font-size:13px;max-width:52ch";
+    tc.appendChild(r2);
+    root.appendChild(tc);
+  }
 
   var bars=el("div","card bars");
   bars.appendChild(el("div","eyebrow","לפי סוג שאלה"));
@@ -711,9 +897,9 @@ function renderVocab(){
   p.dataset.ready="1";
 
   var head=el("div");
-  var h=el("h2",null,"294 מילות התשובה"); h.style.cssText="font-size:23px;margin-bottom:8px";
+  var h=el("h2",null,"אוצר המילים של הקורפוס"); h.style.cssText="font-size:23px;margin-bottom:8px";
   head.appendChild(h);
-  var sub=el("p","muted","כל מילה שהיא התשובה הנכונה באחת מ-360 שאלות השלמת המשפטים, עם המשפט שבו הופיעה. זו הרשימה שמחליפה ניחוש בידיעה.");
+  var sub=el("p","muted","כל מילה שהקורפוס מסמן כנדרשת לפתרון — 294 מהן היו התשובה הנכונה, והשאר מילים שמכריעות שאלה גם כשאינן התשובה. מסומנות בכוכבית אלה שהיו תשובה.");
   sub.style.cssText="margin:0 0 14px;font-size:14.5px";
   head.appendChild(sub);
   p.appendChild(head);
@@ -729,7 +915,7 @@ function renderVocab(){
 
   var status=el("div","muted","טוען…"); list.appendChild(status);
 
-  fetch("answer-words.json").then(function(r){return r.json()}).then(function(j){
+  fetch("vocabulary.json").then(function(r){return r.json()}).then(function(j){
     VOCAB=j; paintVocab("");
     search.oninput=function(){paintVocab(search.value.trim().toLowerCase())};
   }).catch(function(){ status.textContent="לא ניתן לטעון את רשימת המילים." });
@@ -747,6 +933,7 @@ function paintVocab(filter){
     var word=el("span","en",w.word);
     word.style.cssText="font-weight:700;font-size:16.5px;color:var(--accent)";
     top.appendChild(word);
+    if(w.answer) top.appendChild(el("span","pill done","★ תשובה נכונה"));
     if(w.times>1) top.appendChild(el("span","pill",w.times+" פעמים"));
     c.appendChild(top);
     var ex=el("div","en",w.example.replace(/_{2,}/," ___ "));
@@ -774,6 +961,8 @@ $("tab-guide").onclick=function(){tab("guide")};
 $("tab-vocab").onclick=function(){tab("vocab")};
 
 /* =================== BOOT =================== */
+$("adaptiveBtn").onclick=function(){ if(DATA) startAdaptive() };
+
 fetch("simulations.json").then(function(r){return r.json()}).then(function(j){
   DATA=j; renderHome();
 }).catch(function(e){
