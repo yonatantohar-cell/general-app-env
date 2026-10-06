@@ -159,6 +159,11 @@ input[type=number]{width:74px;padding:7px 9px;border:1px solid var(--line);borde
 .expl{margin-top:12px;padding:12px 14px;background:var(--surface-2);border-radius:8px;font-size:14.5px}
 .expl b{color:var(--accent)}
 
+.note-field{width:100%;margin-top:12px;padding:9px 11px;border:1px solid var(--line);
+  border-radius:8px;background:var(--surface-2);color:var(--ink);font:inherit;font-size:14px;
+  resize:vertical;line-height:1.5}
+.note-field:focus{outline:2px solid var(--accent);outline-offset:1px}
+
 /* ---------- guide ---------- */
 .guide h2{font-size:23px;margin:30px 0 10px;padding-top:18px;border-top:1px solid var(--line)}
 .guide h2:first-of-type{border-top:0;padding-top:0;margin-top:6px}
@@ -248,6 +253,15 @@ function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
 
 var settings=load("amirnet.settings",null)||{useCustom:false,times:{},examMode:true,shuffle:true};
 var history=load("amirnet.history",{})||{};
+/* Questions served in PREVIOUS adaptive sittings, so each new one is fresh.
+   The bank is finite (5 reading passages per level), so this degrades
+   gracefully rather than failing once a level is used up. */
+var seenBank=load("amirnet.seen",{})||{};
+function markSeen(keys){
+  keys.forEach(function(k){ seenBank[k]=1 });
+  save("amirnet.seen",seenBank);
+}
+function seenCount(){ var n=0; for(var k in seenBank) if(seenBank.hasOwnProperty(k)) n++; return n }
 
 function mmss(s){s=Math.max(0,Math.round(s));var m=Math.floor(s/60);
   return (m<10?"0":"")+m+":"+((s%60)<10?"0":"")+(s%60)}
@@ -271,7 +285,7 @@ function renderHome(){
     var total=sim.sections.reduce(function(n,s){return n+s.questions.length},0);
     b.appendChild(el("span","m",(settings.examMode?sim.served:total)+" שאלות · "+Math.round(sim.totalTimeSeconds/60)+" דקות"));
     var h=history[sim.id];
-    var p=el("span","pill"+(h?" done":""),h?("הציון שלך: "+h.pct+"%"):(DIFF_HE[sim.difficulty]||sim.difficulty));
+    var p=el("span","pill"+(h?" done":""),h?("ציון "+(h.score||h.pct)):(DIFF_HE[sim.difficulty]||sim.difficulty));
     p.style.alignSelf="flex-start"; b.appendChild(p);
     b.onclick=function(){startExam(sim)};
     g.appendChild(b);
@@ -322,16 +336,86 @@ function renderSettings(){
   });
   p.appendChild(c);
 
-  if(Object.keys(history).length){
+  /* Bank coverage — how fresh the next adaptive test can still be. */
+  var cb=el("div","card set");
+  cb.appendChild(el("div","eyebrow","מצב המאגר"));
+  /* Count in QUESTIONS, not bank items: a reading section is one item in the
+     seen-set but five questions on screen, so counting items would understate it. */
+  var totalQ=0, seenQ=0;
+  if(DATA) DATA.forEach(function(s){ s.sections.forEach(function(sec){
+    totalQ += sec.questions.length;
+    if(sec.type==="reading_comprehension"){
+      if(sec.passages[0] && seenBank["P:"+sec.passages[0].title]) seenQ += sec.questions.length;
+    }else{
+      sec.questions.forEach(function(q){ if(seenBank["Q:"+q.p+"|"+(q.o[0]||"")]) seenQ++ });
+    }
+  })});
+  var cbp=el("p",null,"ראית "+seenQ+" שאלות מתוך "+totalQ+".");
+  cbp.style.cssText="margin:6px 0 2px;font-size:14.5px"; cb.appendChild(cbp);
+  var cbn=el("p","muted","כל מבחן אדפטיבי נשלף קודם כול משאלות שלא ראית. צוואר הבקבוק הוא קטעי הקריאה — חמישה בכל רמה — ולכן מבחן נשאר חדש לגמרי לכ-5 הרצות ברמה נתונה, ועד 25 כשהרמות מתערבבות. אחרי זה שאלות חוזרות, והאפליקציה לא תיתקע.");
+  cbn.style.cssText="margin:0 0 10px;font-size:13px"; cb.appendChild(cbn);
+  var reset=el("button","btn ghost","אפס — תן לי הכול כחדש");
+  reset.onclick=function(){seenBank={};save("amirnet.seen",seenBank);renderSettings()};
+  cb.appendChild(reset);
+  p.appendChild(cb);
+
+  if(Object.keys(history).length||Object.keys(notes).length){
     var cr=el("div","card set");
-    cr.appendChild(el("div","eyebrow","התוצאות שלי"));
-    var wipe=el("button","btn ghost","מחיקת כל התוצאות");
-    wipe.style.marginTop="10px";
+    cr.appendChild(el("div","eyebrow","התוצאות וההערות שלי"));
+    var wipe=el("button","btn ghost","מחיקת תוצאות");
+    wipe.style.cssText="margin-top:10px;margin-inline-end:8px";
     wipe.onclick=function(){history={};save("amirnet.history",history);renderSettings();renderHome()};
-    cr.appendChild(wipe); p.appendChild(cr);
+    cr.appendChild(wipe);
+    var wipeN=el("button","btn ghost","מחיקת הערות ("+Object.keys(notes).length+")");
+    wipeN.style.marginTop="10px";
+    wipeN.onclick=function(){notes={};save("amirnet.notes",notes);renderSettings()};
+    cr.appendChild(wipeN);
+    p.appendChild(cr);
   }
 }
 
+
+
+/* =================== SCORE ESTIMATE =================== */
+/*
+ * NITE reports AMIRNET on a 50-150 scale and publishes the level bands below,
+ * but not the raw-to-scale conversion (it is an IRT model over the item bank).
+ * So the bands here are official; the number is an estimate, and the app says so.
+ *
+ * The formula weights each question by its difficulty and measures the result
+ * against a perfect run at the hardest level — which is what an adaptive test
+ * is actually measuring: not just how many you got right, but how hard they were.
+ *
+ *      earned = sum over answered questions of (correct ? weight : 0)
+ *      ceiling = questions x weight(expert)
+ *      score  = 50 + 100 x earned / ceiling
+ *
+ * Sanity: everything right at easy -> 75; at medium -> 100; at hard -> 125;
+ * at expert -> 150. Acing easy questions cannot produce an exemption score.
+ */
+var WEIGHT={easy:1,medium:2,hard:3,expert:4};
+var BANDS=[
+  {min:134,name:"פטור",            note:"פטור מלימודי אנגלית"},
+  {min:120,name:"מתקדמים ב׳",      note:"קורס אחרון לפני פטור"},
+  {min:100,name:"מתקדמים א׳",      note:"נדרש קורס נוסף"},
+  {min:85, name:"בסיסי",           note:"נדרש קורס אחד נוסף"},
+  {min:70, name:"טרום בסיסי ב׳",   note:"נדרשים קורסי השלמה"},
+  {min:50, name:"טרום בסיסי א׳",   note:"נדרשים קורסי השלמה"}
+];
+function bandOf(score){
+  for(var i=0;i<BANDS.length;i++) if(score>=BANDS[i].min) return BANDS[i];
+  return BANDS[BANDS.length-1];
+}
+/* @param rows [{ok:boolean, q:{d:difficulty}}] */
+function estimateScore(rows){
+  var earned=0, ceiling=0;
+  rows.forEach(function(r){
+    ceiling += WEIGHT.expert;
+    if(r.ok) earned += WEIGHT[r.q.d] || WEIGHT.medium;
+  });
+  if(!ceiling) return 50;
+  return Math.max(50, Math.min(150, Math.round(50 + 100*(earned/ceiling))));
+}
 
 /* =================== ADAPTIVE ENGINE =================== */
 /*
@@ -406,13 +490,24 @@ function draw(type,levelIdx,count,used){
     if(levelIdx-d>=0) order.push(levelIdx-d);
     if(levelIdx+d<LEVELS.length) order.push(levelIdx+d);
   }
-  var out=[];
-  for(var i=0;i<order.length&&out.length<count;i++){
-    var pool=shuffled(BANK[type][LEVELS[order[i]]]).filter(function(x){return !used[keyOf(x)]});
-    while(pool.length&&out.length<count){
-      var x=pool.shift(); used[keyOf(x)]=1; out.push(x);
+  var out=[], recycled=0;
+  /* Pass 0 takes only questions never served in any previous sitting, so a new
+     adaptive test is genuinely new. Pass 1 reopens the ones already seen, which
+     is what keeps the test working once the bank is exhausted. */
+  for(var pass=0;pass<2&&out.length<count;pass++){
+    for(var i=0;i<order.length&&out.length<count;i++){
+      var pool=shuffled(BANK[type][LEVELS[order[i]]]).filter(function(x){
+        var k=keyOf(x);
+        return !used[k] && (pass===1 || !seenBank[k]);
+      });
+      while(pool.length&&out.length<count){
+        var x=pool.shift(); used[keyOf(x)]=1; out.push(x);
+        if(pass===1) recycled++;
+      }
     }
   }
+  if(recycled&&S) S.recycled=(S.recycled||0)+recycled;
+  markSeen(out.map(keyOf));
   return out;
 }
 
@@ -648,17 +743,43 @@ function finish(){
     });
   });
   var pct=total?Math.round(correct/total*100):0;
-  history[S.sim.id]={pct:pct,correct:correct,total:total,at:Date.now()};
+  history[S.sim.id]={pct:pct,correct:correct,total:total,at:Date.now(),score:estimateScore(review)};
   save("amirnet.history",history);
 
   $("exam").hidden=true; $("bar").hidden=true; $("results").hidden=false;
   window.scrollTo(0,0);
   var root=$("results"); root.textContent="";
 
+  var score=estimateScore(review), band=bandOf(score);
+  lastRun={title:S.sim.title,adaptive:!!S.adaptive,score:score,band:band,pct:pct,
+           correct:correct,total:total,trail:S.trail?S.trail.slice():[],review:review,at:new Date()};
+
   var sc=el("div","card score");
   sc.appendChild(el("div","eyebrow",S.sim.title));
-  sc.appendChild(el("div","pct",pct+"%"));
-  sc.appendChild(el("div","muted",correct+" תשובות נכונות מתוך "+total));
+  sc.appendChild(el("div","pct",String(score)));
+  var bandLine=el("div"); bandLine.style.cssText="font-family:var(--font-display);font-weight:700;font-size:21px;margin-top:2px";
+  bandLine.textContent=band.name; sc.appendChild(bandLine);
+  sc.appendChild(el("div","muted",band.note));
+  var sub=el("div","muted",correct+" מתוך "+total+" ("+pct+"%)");
+  sub.style.cssText="margin-top:10px;font-size:14px"; sc.appendChild(sub);
+
+  var how=el("button","btn ghost","איך חושב הציון?");
+  how.style.cssText="margin-top:12px;padding:7px 14px;font-size:13px";
+  var howBox=el("div","expl"); howBox.hidden=true;
+  howBox.style.cssText="margin-top:10px;text-align:start";
+  howBox.appendChild(el("p",null,"מאל״ו מפרסמים את סולם 50–150 ואת הרמות, אבל לא את נוסחת ההמרה מניקוד גולמי לציון. הרמות בטבלה רשמיות; המספר עצמו הוא אומדן, ואלה הכללים שלו:"));
+  var f=el("p"); f.className="en"; f.style.cssText="font-family:ui-monospace,monospace;font-size:13px;background:var(--surface);padding:10px;border-radius:7px";
+  f.textContent="score = 50 + 100 x (earned / ceiling)\nearned  = sum of difficulty weight for each correct answer\nceiling = questions x 4   (weight of an expert question)\nweights: easy 1 , medium 2 , hard 3 , expert 4";
+  f.style.whiteSpace="pre"; howBox.appendChild(f);
+  howBox.appendChild(el("p",null,"כלומר: הכול נכון ברמה קלה → 75, בינונית → 100, קשה → 125, מתקדמת → 150. אי אפשר להגיע לפטור על שאלות קלות בלבד — וזה בדיוק מה שמבחן אדפטיבי מודד."));
+  howBox.appendChild(el("p","muted","זה אומדן תרגול, לא ציון אמירנט. אל תסתמך עליו לקבלה או פטור."));
+  how.onclick=function(){howBox.hidden=!howBox.hidden};
+  sc.appendChild(how); sc.appendChild(howBox);
+  var exportBtn=el("button","btn ghost","שמירת המבחן");
+  exportBtn.style.cssText="margin-top:12px";
+  exportBtn.onclick=function(){ showExport() };
+  sc.appendChild(exportBtn);
+
   var again=el("div","row"); again.style.cssText="justify-content:center;margin-top:18px";
   var b1=el("button","btn","חזרה לרשימה"); b1.onclick=quitExam;
   var wasAdaptive=S.adaptive;
@@ -738,6 +859,16 @@ function finish(){
       ex.appendChild(document.createTextNode(r.q.e));
       c.appendChild(ex);
     }
+    var nk=noteKey(r.q);
+    var ta=document.createElement("textarea");
+    ta.className="note-field"; ta.rows=2; ta.id="note-"+i;
+    ta.placeholder="ההערה שלי על השאלה הזו…";
+    ta.value=notes[nk]||"";
+    ta.oninput=function(){
+      if(ta.value.trim()) notes[nk]=ta.value; else delete notes[nk];
+      save("amirnet.notes",notes);
+    };
+    c.appendChild(ta);
     root.appendChild(c);
   });
 }
@@ -889,8 +1020,148 @@ var GUIDE_HTML=[
 ].join("");
 
 
+
+/* =================== EXPORT =================== */
+/*
+ * Saving the run as a real file goes through the viewer's `downloads`
+ * capability — the page cannot write a file itself, and a plain link or a
+ * blob: save is inert here. `claude.use()` resolves later and may resolve
+ * null, so the file button only appears once it has, and the clipboard and
+ * the selectable box are always present as the path that needs no capability.
+ */
+var downloadsApi=null;
+try{
+  if(window.claude&&typeof window.claude.use==="function"){
+    window.claude.use("downloads").then(function(d){ downloadsApi=d||null })
+      .catch(function(){ downloadsApi=null });
+  }
+}catch(e){ downloadsApi=null }
+
+function exportFilename(){
+  var d=lastRun?lastRun.at:new Date();
+  return "amirnet-"+d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+
+         String(d.getDate()).padStart(2,"0")+"-"+String(d.getHours()).padStart(2,"0")+
+         String(d.getMinutes()).padStart(2,"0")+".md";
+}
+function buildExport(){
+  if(!lastRun) return "";
+  var L=[];
+  var d=lastRun.at;
+  var stamp=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")+
+            " "+String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0");
+
+  L.push("# "+lastRun.title);
+  L.push("");
+  L.push(stamp);
+  L.push("");
+  L.push("**ציון מוערך:** "+lastRun.score+"  ·  **רמה:** "+lastRun.band.name+" ("+lastRun.band.note+")");
+  L.push("**נכונות:** "+lastRun.correct+" מתוך "+lastRun.total+" ("+lastRun.pct+"%)");
+  L.push("");
+  L.push("> הציון הוא אומדן תרגול. מאל״ו אינם מפרסמים את נוסחת ההמרה; הרמות בטבלה רשמיות, המספר אינו ציון אמירנט.");
+  L.push("");
+
+  if(lastRun.trail.length){
+    L.push("## מסלול הרמות");
+    L.push("");
+    L.push("| פרק | רמה | אחוז |");
+    L.push("|---|---|---|");
+    lastRun.trail.forEach(function(t){
+      L.push("| "+t.slot+" | "+(LEVEL_HE[t.level]||t.level)+" | "+t.pct+"% |");
+    });
+    L.push("");
+  }
+
+  L.push("## השאלות");
+  L.push("");
+  var lastPassage=null;
+  lastRun.review.forEach(function(r,i){
+    if(r.passage&&r.passage!==lastPassage){
+      lastPassage=r.passage;
+      L.push("### קטע הקריאה: "+r.passage.title);
+      L.push("");
+      L.push("> "+r.passage.text);
+      L.push("");
+    }
+    L.push("**"+(i+1)+".** ("+(TYPE_HE[r.type]||r.type)+(r.q.d?" · "+(DIFF_HE[r.q.d]||r.q.d):"")+")  "+(r.ok?"✓ נכון":(r.given==null?"— לא נענתה":"✗ שגוי")));
+    L.push("");
+    L.push(r.q.p);
+    L.push("");
+    r.q.o.forEach(function(opt,oi){
+      var mark = oi===r.q.a ? " ← התשובה הנכונה" : (oi===r.given ? " ← מה שסימנת" : "");
+      L.push("- **"+LETTERS[oi]+".** "+opt+mark);
+    });
+    L.push("");
+    if(r.q.e){ L.push("*למה:* "+r.q.e); L.push("") }
+    var n=notes[noteKey(r.q)];
+    if(n){ L.push("*ההערה שלי:* "+n); L.push("") }
+  });
+
+  return L.join("\n");
+}
+
+function showExport(){
+  var text=buildExport();
+  if(!text) return;
+  var root=$("results");
+
+  var old=$("exportPanel"); if(old) old.parentNode.removeChild(old);
+  var box=el("div","card set"); box.id="exportPanel";
+  box.style.cssText="margin:14px 0";
+  box.appendChild(el("div","eyebrow","שמירת המבחן"));
+
+  var msg=el("p","muted","הורד כקובץ Markdown, או העתק והדבק ל-Word, Notion או הערות.");
+  msg.style.cssText="font-size:13.5px;margin:6px 0 10px"; box.appendChild(msg);
+
+  var row=el("div","row");
+
+  if(downloadsApi){
+    var dl=el("button","btn","הורד קובץ");
+    dl.onclick=function(){
+      status.textContent="…";
+      downloadsApi.save({filename:exportFilename(),data:text}).then(function(res){
+        status.textContent = res && res.status==="delivered" ? "נשלח ✓" : "נשמר ✓";
+      }).catch(function(err){
+        var code=err&&err.code;
+        if(code==="declined"){ status.textContent=""; return; }           /* never re-ask */
+        if(code==="rate_limited"){ status.textContent="יש כבר בקשה פתוחה — נסה שוב בעוד רגע."; return; }
+        status.textContent="שמירת הקובץ לא זמינה כאן — העתק את הטקסט למטה.";
+        ta.focus(); ta.select();
+      });
+    };
+    row.appendChild(dl);
+  }
+
+  var copy=el("button","btn ghost","העתק הכל");
+  var status=el("span","muted"); status.style.fontSize="13.5px";
+  copy.onclick=function(){
+    try{
+      navigator.clipboard.writeText(text).then(function(){
+        status.textContent="הועתק ✓";
+      }).catch(function(){
+        status.textContent="הדפדפן חסם העתקה — סמן את הטקסט למטה והעתק ידנית.";
+        ta.focus(); ta.select();
+      });
+    }catch(e){
+      status.textContent="הדפדפן חסם העתקה — סמן את הטקסט למטה והעתק ידנית.";
+      ta.focus(); ta.select();
+    }
+  };
+  row.appendChild(copy); row.appendChild(status); box.appendChild(row);
+
+  var ta=document.createElement("textarea");
+  ta.className="note-field"; ta.rows=14; ta.readOnly=true; ta.value=text; ta.id="exportText";
+  ta.style.cssText="margin-top:12px;font-family:ui-monospace,monospace;font-size:12.5px;direction:ltr;text-align:left";
+  box.appendChild(ta);
+
+  root.insertBefore(box, root.children[1]||null);
+  box.scrollIntoView({behavior:"smooth",block:"center"});
+}
+
 /* =================== VOCABULARY =================== */
 var VOCAB=null;
+var lastRun=null;                              /* kept so the export survives leaving the results screen */
+var notes=load("amirnet.notes",{})||{};        /* per-question notes, keyed by question text */
+function noteKey(q){ return (q.p||"").slice(0,120) }
 function renderVocab(){
   var p=$("pane-vocab");
   if(p.dataset.ready)return;
