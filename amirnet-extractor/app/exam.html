@@ -1,0 +1,673 @@
+<title>חדר מבחן אמירנט</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@400;600;700&display=swap">
+<style>
+/* Layout: a single focused column under a sticky exam bar; the timer is the
+   emotional centre, so it owns the only warm colour on the page. */
+:root{
+  --bg:#eef1f6; --surface:#ffffff; --surface-2:#f7f9fc;
+  --ink:#121923; --muted:#5a6578; --line:#d9e0ea;
+  --accent:#0d5464; --accent-soft:#e2eef1; --on-accent:#ffffff;
+  --warn:#b4691a; --good:#1a7049; --bad:#a82f22;
+  --good-soft:#e4f2ea; --bad-soft:#fae9e6;
+  --font-display:"Frank Ruhl Libre",Georgia,"Times New Roman",serif;
+  --font-ui:"Assistant","Segoe UI",system-ui,-apple-system,sans-serif;
+  --r:10px; --shadow:0 1px 2px rgba(18,25,35,.06),0 8px 24px -16px rgba(18,25,35,.25);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f141b; --surface:#171e27; --surface-2:#1d2630;
+  --ink:#e7edf5; --muted:#95a1b3; --line:#2a3542;
+  --accent:#58b3c6; --accent-soft:#16323a; --on-accent:#0b1116;
+  --warn:#e0943f; --good:#4cb183; --bad:#e2705f;
+  --good-soft:#15291f; --bad-soft:#2b1917;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.8);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0f141b; --surface:#171e27; --surface-2:#1d2630;
+  --ink:#e7edf5; --muted:#95a1b3; --line:#2a3542;
+  --accent:#58b3c6; --accent-soft:#16323a; --on-accent:#0b1116;
+  --warn:#e0943f; --good:#4cb183; --bad:#e2705f;
+  --good-soft:#15291f; --bad-soft:#2b1917;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.8);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-ui);
+  font-size:16px;line-height:1.65;direction:rtl;-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:1.25}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:28px 64px}
+.en{direction:ltr;text-align:left;unicode-bidi:isolate}
+
+/* ---------- top bar ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);
+  border-bottom:1px solid var(--line)}
+.bar-in{max-width:760px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.bar-title{font-family:var(--font-display);font-weight:700;font-size:15px;min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+.timer{font-variant-numeric:tabular-nums;font-weight:700;font-size:20px;letter-spacing:.02em;
+  padding:3px 11px;border-radius:999px;background:var(--accent-soft);color:var(--accent);min-width:84px;text-align:center}
+.timer.warn{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
+.timer.crit{background:color-mix(in srgb,var(--bad) 16%,transparent);color:var(--bad);animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.55}}
+@media (prefers-reduced-motion:reduce){.timer.crit{animation:none}}
+.prog{height:3px;background:var(--line)}
+.prog>i{display:block;height:100%;background:var(--accent);transition:width .3s}
+
+/* ---------- generic ---------- */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  padding:11px 20px;border-radius:var(--r);background:var(--accent);
+  color:var(--on-accent);font-weight:700;transition:filter .15s}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);font-weight:600}
+.btn.ghost:hover{background:var(--surface-2)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.muted{color:var(--muted)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- home ---------- */
+.hero{margin-bottom:26px}
+.hero h1{font-size:clamp(27px,6.4vw,40px);font-weight:900;letter-spacing:-.01em}
+.hero p{color:var(--muted);margin:10px 0 0;max-width:56ch}
+.tabs{display:flex;gap:4px;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:var(--r);padding:4px;margin:22px 0 20px}
+.tabs button{flex:1;padding:9px 8px;border-radius:7px;font-weight:700;font-size:14.5px;color:var(--muted)}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.sim{padding:15px 16px;text-align:start;display:flex;flex-direction:column;gap:7px;transition:border-color .15s}
+.sim:hover{border-color:var(--accent)}
+.sim .n{font-family:var(--font-display);font-weight:900;font-size:25px;line-height:1;color:var(--accent)}
+.sim .t{font-weight:700;font-size:14.5px}
+.sim .m{font-size:12.5px;color:var(--muted)}
+.pill{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:999px;
+  background:var(--surface-2);border:1px solid var(--line);color:var(--muted)}
+.pill.done{background:var(--good-soft);border-color:transparent;color:var(--good)}
+
+/* ---------- settings ---------- */
+.set{padding:16px;margin-bottom:12px}
+.set-row{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.set-row:last-child{border-bottom:0}
+.set-row .lbl{flex:1;min-width:150px}
+.set-row .lbl b{display:block;font-size:14.5px}
+.set-row .lbl span{font-size:12.5px;color:var(--muted)}
+input[type=number]{width:74px;padding:7px 9px;border:1px solid var(--line);border-radius:7px;
+  background:var(--surface-2);color:var(--ink);font:inherit;font-variant-numeric:tabular-nums;text-align:center}
+.switch{display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;font-weight:600}
+.switch input{width:17px;height:17px;accent-color:var(--accent);cursor:pointer}
+
+/* ---------- exam ---------- */
+.sect-intro{padding:26px 22px;text-align:center}
+.sect-intro h2{font-size:25px;margin-bottom:6px}
+.sect-intro .big{font-family:var(--font-display);font-size:42px;font-weight:900;color:var(--accent);line-height:1;margin:16px 0 4px}
+.passage{padding:17px 18px;margin-bottom:16px;background:var(--surface-2)}
+.passage h3{font-size:15px;margin-bottom:9px;font-family:var(--font-ui);font-weight:700}
+.passage .body{font-size:15.5px;line-height:1.8}
+.qbox{padding:20px 20px 16px}
+.qnum{font-family:var(--font-display);font-weight:700;color:var(--muted);font-size:13px;margin-bottom:7px}
+.qtext{font-size:17.5px;line-height:1.6;margin-bottom:17px}
+.opts{display:flex;flex-direction:column;gap:9px}
+.opt{display:flex;gap:11px;align-items:flex-start;width:100%;text-align:start;
+  padding:12px 14px;border:1.5px solid var(--line);border-radius:var(--r);background:var(--surface);
+  transition:border-color .12s,background .12s}
+.opt:hover{border-color:var(--accent)}
+.opt[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.opt .k{flex:0 0 25px;height:25px;border-radius:50%;border:1.5px solid var(--line);
+  display:grid;place-items:center;font-weight:700;font-size:12.5px;font-family:var(--font-ui)}
+.opt[aria-pressed="true"] .k{background:var(--accent);color:var(--surface);border-color:var(--accent)}
+.opt .v{flex:1;min-width:0;font-size:15.5px;line-height:1.5}
+.opt.ok{border-color:var(--good);background:var(--good-soft)}
+.opt.ok .k{background:var(--good);color:#fff;border-color:var(--good)}
+.opt.no{border-color:var(--bad);background:var(--bad-soft)}
+.opt.no .k{background:var(--bad);color:#fff;border-color:var(--bad)}
+.nav{display:flex;gap:9px;align-items:center;justify-content:space-between;margin-top:18px;flex-wrap:wrap}
+.dots{display:flex;gap:5px;flex-wrap:wrap;margin:16px 0 0}
+.dot{width:31px;height:31px;border-radius:7px;border:1.5px solid var(--line);background:var(--surface);
+  font-size:12.5px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--muted)}
+.dot.ans{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.dot.cur{outline:2px solid var(--accent);outline-offset:1px}
+.dot.flag{border-color:var(--warn);color:var(--warn)}
+
+/* ---------- results ---------- */
+.score{padding:26px 22px;text-align:center;margin-bottom:14px}
+.score .pct{font-family:var(--font-display);font-size:58px;font-weight:900;line-height:1;color:var(--accent)}
+.bars{display:flex;flex-direction:column;gap:11px;padding:16px}
+.barline .top{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:5px;gap:10px}
+.barline .track{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.barline .fill{height:100%;background:var(--accent);border-radius:99px}
+.rev{padding:16px 18px;margin-bottom:10px}
+.rev.wrong{border-inline-start:3px solid var(--bad)}
+.rev.right{border-inline-start:3px solid var(--good)}
+.expl{margin-top:12px;padding:12px 14px;background:var(--surface-2);border-radius:8px;font-size:14.5px}
+.expl b{color:var(--accent)}
+
+/* ---------- guide ---------- */
+.guide h2{font-size:23px;margin:30px 0 10px;padding-top:18px;border-top:1px solid var(--line)}
+.guide h2:first-of-type{border-top:0;padding-top:0;margin-top:6px}
+.guide h3{font-size:16.5px;margin:18px 0 6px;font-family:var(--font-ui);font-weight:700}
+.guide p{margin:9px 0}
+.guide ul{margin:9px 0;padding-inline-start:20px}
+.guide li{margin:5px 0}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:10px;margin:14px 0}
+.stat div{padding:13px 14px;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);text-align:center}
+.stat b{display:block;font-family:var(--font-display);font-size:28px;font-weight:900;color:var(--accent);line-height:1.1}
+.stat span{font-size:12.5px;color:var(--muted);display:block;margin-top:4px}
+.note{padding:14px 16px;background:var(--accent-soft);border-radius:var(--r);margin:16px 0;font-size:14.5px}
+.warnbox{padding:14px 16px;background:color-mix(in srgb,var(--warn) 12%,transparent);
+  border-inline-start:3px solid var(--warn);border-radius:var(--r);margin:16px 0;font-size:14.5px}
+table.t{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+table.t th,table.t td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:start}
+table.t th{font-weight:700;font-size:12.5px;color:var(--muted)}
+table.t td b{color:var(--accent);font-variant-numeric:tabular-nums}
+.scroll{overflow-x:auto}
+</style>
+
+<div id="bar" class="bar" hidden>
+  <div class="bar-in">
+    <button class="btn ghost" id="quit" style="padding:7px 13px;font-size:13.5px">יציאה</button>
+    <span class="bar-title" id="barTitle"></span>
+    <span class="timer" id="timer">--:--</span>
+  </div>
+  <div class="prog"><i id="prog" style="width:0%"></i></div>
+</div>
+
+<div class="wrap">
+  <!-- ============ HOME ============ -->
+  <section id="home">
+    <div class="hero">
+      <div class="eyebrow">20 סימולציות · 580 שאלות</div>
+      <h1>חדר מבחן אמירנט</h1>
+      <p>סימולציה מלאה בשישה פרקים, עם שעון נפרד לכל פרק בדיוק כמו בבחינה. בסוף — ניקוד, פילוח לפי פרק, וההסבר לכל שאלה.</p>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-sims" aria-selected="true">סימולציות</button>
+      <button role="tab" id="tab-set" aria-selected="false">הגדרות זמן</button>
+      <button role="tab" id="tab-guide" aria-selected="false">איך פותרים</button>
+    </div>
+
+    <div id="pane-sims">
+      <div class="grid" id="simGrid"></div>
+    </div>
+
+    <div id="pane-set" hidden></div>
+
+    <div id="pane-guide" hidden class="guide"></div>
+  </section>
+
+  <!-- ============ EXAM ============ -->
+  <section id="exam" hidden></section>
+
+  <!-- ============ RESULTS ============ -->
+  <section id="results" hidden></section>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+var DATA=null, S=null;
+var $=function(id){return document.getElementById(id)};
+var el=function(t,c,x){var e=document.createElement(t); if(c)e.className=c; if(x!=null)e.textContent=x; return e};
+var LETTERS=["A","B","C","D","E","F"];
+var TYPE_HE={sentence_completion:"השלמת משפטים",reading_comprehension:"הבנת הנקרא",restatement:"ניסוח מחדש"};
+var DIFF_HE={easy:"קל",medium:"בינוני",hard:"קשה",advanced:"מתקדם"};
+
+/* localStorage can throw (private window, blocked site data) and can come back
+   empty. Every read and write is guarded and the app works without it. */
+function load(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+
+var settings=load("amirnet.settings",null)||{useCustom:false,times:{},examMode:true,shuffle:true};
+var history=load("amirnet.history",{})||{};
+
+function mmss(s){s=Math.max(0,Math.round(s));var m=Math.floor(s/60);
+  return (m<10?"0":"")+m+":"+((s%60)<10?"0":"")+(s%60)}
+
+/* ---------- section time: the user's override, else the exam's own ---------- */
+function sectionTime(sec){
+  if(settings.useCustom){
+    var v=settings.times[sec.type];
+    if(typeof v==="number"&&v>0) return v*60;
+  }
+  return sec.time;
+}
+
+/* =================== HOME =================== */
+function renderHome(){
+  var g=$("simGrid"); g.textContent="";
+  DATA.forEach(function(sim){
+    var b=el("button","card sim");
+    b.appendChild(el("span","n",String(sim.id)));
+    b.appendChild(el("span","t",sim.title.replace(/^סימולציה \d+\s*—\s*/,"")));
+    var total=sim.sections.reduce(function(n,s){return n+s.questions.length},0);
+    b.appendChild(el("span","m",(settings.examMode?sim.served:total)+" שאלות · "+Math.round(sim.totalTimeSeconds/60)+" דקות"));
+    var h=history[sim.id];
+    var p=el("span","pill"+(h?" done":""),h?("הציון שלך: "+h.pct+"%"):(DIFF_HE[sim.difficulty]||sim.difficulty));
+    p.style.alignSelf="flex-start"; b.appendChild(p);
+    b.onclick=function(){startExam(sim)};
+    g.appendChild(b);
+  });
+}
+
+function renderSettings(){
+  var p=$("pane-set"); p.textContent="";
+
+  var c1=el("div","card set");
+  c1.appendChild(el("div","eyebrow","מצב תרגול"));
+  var r1=el("div","set-row");
+  var l1=el("div","lbl"); l1.appendChild(el("b","מצב בחינה"));
+  l1.appendChild(el("span","מגיש את מספר השאלות של הבחינה האמיתית (23), נבחרות אקראית מהמאגר. כבוי — כל 29 השאלות."));
+  r1.appendChild(l1);
+  var sw=el("label","switch"); var cb=el("input"); cb.type="checkbox"; cb.checked=settings.examMode; cb.id="setExam";
+  cb.onchange=function(){settings.examMode=cb.checked;save("amirnet.settings",settings);renderHome()};
+  sw.appendChild(cb); sw.appendChild(el("span",null,"פעיל")); r1.appendChild(sw); c1.appendChild(r1);
+  p.appendChild(c1);
+
+  var c=el("div","card set");
+  c.appendChild(el("div","eyebrow","זמן לכל פרק"));
+  var intro=el("p","muted","ברירת המחדל היא הזמן הרשמי של הבחינה. אפשר להגדיר זמן משלך לכל סוג פרק — בדקות.");
+  intro.style.cssText="font-size:13.5px;margin:6px 0 10px"; c.appendChild(intro);
+
+  var row0=el("div","set-row");
+  var l0=el("div","lbl"); l0.appendChild(el("b","השתמש בזמנים שלי"));
+  l0.appendChild(el("span","כשכבוי — הזמנים הרשמיים של הבחינה."));
+  row0.appendChild(l0);
+  var sw0=el("label","switch"); var cb0=el("input"); cb0.type="checkbox"; cb0.checked=settings.useCustom; cb0.id="setCustom";
+  cb0.onchange=function(){settings.useCustom=cb0.checked;save("amirnet.settings",settings);renderSettings()};
+  sw0.appendChild(cb0); sw0.appendChild(el("span",null,"פעיל")); row0.appendChild(sw0); c.appendChild(row0);
+
+  var defaults={sentence_completion:4,reading_comprehension:15,restatement:6};
+  var counts={sentence_completion:"4 שאלות · 3 פרקים",reading_comprehension:"5 שאלות · פרק 3",restatement:"3 שאלות · 2 פרקים"};
+  Object.keys(defaults).forEach(function(type){
+    var r=el("div","set-row");
+    var l=el("div","lbl"); l.appendChild(el("b",TYPE_HE[type]));
+    l.appendChild(el("span",counts[type]+" · רשמי: "+defaults[type]+" דק׳"));
+    r.appendChild(l);
+    var inp=el("input"); inp.type="number"; inp.min="1"; inp.max="90"; inp.id="time-"+type;
+    inp.value=settings.times[type]||defaults[type];
+    inp.disabled=!settings.useCustom;
+    inp.onchange=function(){var v=parseInt(inp.value,10);
+      if(v>0){settings.times[type]=v;save("amirnet.settings",settings)}};
+    r.appendChild(inp); r.appendChild(el("span","muted","דקות"));
+    c.appendChild(r);
+  });
+  p.appendChild(c);
+
+  if(Object.keys(history).length){
+    var cr=el("div","card set");
+    cr.appendChild(el("div","eyebrow","התוצאות שלי"));
+    var wipe=el("button","btn ghost","מחיקת כל התוצאות");
+    wipe.style.marginTop="10px";
+    wipe.onclick=function(){history={};save("amirnet.history",history);renderSettings();renderHome()};
+    cr.appendChild(wipe); p.appendChild(cr);
+  }
+}
+
+/* =================== EXAM =================== */
+function startExam(sim){
+  var sections=sim.sections.map(function(sec){
+    var qs=sec.questions.slice();
+    if(settings.examMode){
+      if(settings.shuffle){for(var i=qs.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=qs[i];qs[i]=qs[j];qs[j]=t}}
+      qs=qs.slice(0,sec.serve||qs.length);
+    }
+    return {meta:sec,qs:qs,dur:sectionTime(sec)};
+  });
+  S={sim:sim,sections:sections,si:0,qi:0,answers:[],flags:[],left:0,tick:null,phase:"intro"};
+  sections.forEach(function(s){S.answers.push(new Array(s.qs.length).fill(null));S.flags.push({})});
+  $("home").hidden=true; $("results").hidden=true; $("exam").hidden=false; $("bar").hidden=false;
+  window.scrollTo(0,0);
+  renderIntro();
+}
+
+function stopTick(){if(S&&S.tick){clearInterval(S.tick);S.tick=null}}
+
+function quitExam(){
+  stopTick(); S=null;
+  $("exam").hidden=true; $("results").hidden=true; $("home").hidden=false; $("bar").hidden=true;
+  window.scrollTo(0,0);
+}
+$("quit").onclick=function(){
+  if(S&&S.phase==="quiz"){ if(!confirmInline()) return; }
+  quitExam();
+};
+/* The viewer never shows confirm(), so the confirmation is a two-step button. */
+var quitArmed=false, quitTimer=null;
+function confirmInline(){
+  var b=$("quit");
+  if(quitArmed){clearTimeout(quitTimer);quitArmed=false;b.textContent="יציאה";return true}
+  quitArmed=true; b.textContent="לצאת? לחץ שוב";
+  quitTimer=setTimeout(function(){quitArmed=false;b.textContent="יציאה"},3000);
+  return false;
+}
+
+function renderIntro(){
+  stopTick(); S.phase="intro";
+  var s=S.sections[S.si], sec=s.meta;
+  $("barTitle").textContent=S.sim.title;
+  $("timer").textContent=mmss(s.dur); $("timer").className="timer";
+  $("prog").style.width=(S.si/S.sections.length*100)+"%";
+
+  var root=$("exam"); root.textContent="";
+  var c=el("div","card sect-intro");
+  c.appendChild(el("div","eyebrow","פרק "+sec.slot+" מתוך "+S.sections.length));
+  c.appendChild(el("h2",null,sec.titleHe||TYPE_HE[sec.type]));
+  var d=el("p","muted",sec.descHe||""); d.style.cssText="max-width:46ch;margin:10px auto 0;font-size:14.5px";
+  c.appendChild(d);
+  c.appendChild(el("div","big",mmss(s.dur)));
+  c.appendChild(el("div","muted",s.qs.length+" שאלות · הזמן לא נצבר לפרק הבא"));
+  var go=el("button","btn","התחל את הפרק ←"); go.style.marginTop="20px";
+  go.onclick=startSection; c.appendChild(go);
+  root.appendChild(c);
+}
+
+function startSection(){
+  S.phase="quiz"; S.qi=0; S.left=S.sections[S.si].dur;
+  stopTick();
+  S.tick=setInterval(function(){
+    S.left--;
+    paintTimer();
+    if(S.left<=0){stopTick(); endSection(true)}
+  },1000);
+  paintTimer(); renderQuestion();
+}
+
+function paintTimer(){
+  var t=$("timer"); t.textContent=mmss(S.left);
+  var frac=S.left/Math.max(1,S.sections[S.si].dur);
+  t.className="timer"+(frac<=0.1?" crit":frac<=0.25?" warn":"");
+}
+
+function renderQuestion(){
+  var s=S.sections[S.si], q=s.qs[S.qi], sec=s.meta;
+  $("barTitle").textContent="פרק "+sec.slot+" · "+(sec.titleHe||TYPE_HE[sec.type]);
+  var done=S.sections.slice(0,S.si).reduce(function(n,x){return n+x.qs.length},0)+S.qi;
+  var all=S.sections.reduce(function(n,x){return n+x.qs.length},0);
+  $("prog").style.width=(done/all*100)+"%";
+
+  var root=$("exam"); root.textContent="";
+
+  if(sec.type==="reading_comprehension"&&sec.passages&&sec.passages.length){
+    var p=el("div","card passage");
+    p.appendChild(el("h3",null,sec.passages[0].title));
+    var body=el("div","body en",sec.passages[0].text);
+    p.appendChild(body); root.appendChild(p);
+  }
+
+  var box=el("div","card qbox");
+  box.appendChild(el("div","qnum","שאלה "+(S.qi+1)+" מתוך "+s.qs.length));
+  var qt=el("div","qtext en",q.p); box.appendChild(qt);
+
+  var opts=el("div","opts");
+  q.o.forEach(function(text,i){
+    var b=el("button","opt"); b.type="button";
+    b.setAttribute("aria-pressed", S.answers[S.si][S.qi]===i?"true":"false");
+    b.appendChild(el("span","k",LETTERS[i]));
+    var v=el("span","v en",text); b.appendChild(v);
+    b.onclick=function(){
+      S.answers[S.si][S.qi]=(S.answers[S.si][S.qi]===i?null:i);
+      renderQuestion();
+    };
+    opts.appendChild(b);
+  });
+  box.appendChild(opts);
+
+  var nav=el("div","nav");
+  var left=el("div","row");
+  var prev=el("button","btn ghost","→ הקודמת"); prev.disabled=S.qi===0;
+  prev.onclick=function(){if(S.qi>0){S.qi--;renderQuestion()}};
+  var flag=el("button","btn ghost",S.flags[S.si][S.qi]?"★ מסומנת":"☆ סמן לחזרה");
+  flag.onclick=function(){S.flags[S.si][S.qi]=!S.flags[S.si][S.qi];renderQuestion()};
+  left.appendChild(prev); left.appendChild(flag);
+  nav.appendChild(left);
+
+  if(S.qi<s.qs.length-1){
+    var next=el("button","btn","הבאה ←");
+    next.onclick=function(){S.qi++;renderQuestion()};
+    nav.appendChild(next);
+  }else{
+    var fin=el("button","btn",S.si===S.sections.length-1?"סיים את הסימולציה":"סיים פרק ←");
+    fin.onclick=function(){endSection(false)};
+    nav.appendChild(fin);
+  }
+  box.appendChild(nav);
+
+  var dots=el("div","dots");
+  s.qs.forEach(function(_,i){
+    var d=el("button","dot"+(S.answers[S.si][i]!=null?" ans":"")+(i===S.qi?" cur":"")+(S.flags[S.si][i]?" flag":""),String(i+1));
+    d.onclick=function(){S.qi=i;renderQuestion()};
+    dots.appendChild(d);
+  });
+  box.appendChild(dots);
+  root.appendChild(box);
+}
+
+function endSection(timedOut){
+  stopTick();
+  if(S.si<S.sections.length-1){
+    S.si++;
+    if(timedOut){
+      var root=$("exam"); root.textContent="";
+      var c=el("div","card sect-intro");
+      c.appendChild(el("h2",null,"הזמן לפרק נגמר"));
+      var p=el("p","muted","התשובות שסימנת נשמרו. בבחינה האמיתית הזמן אינו נצבר — הפרק הבא מתחיל עם השעון שלו.");
+      p.style.cssText="max-width:40ch;margin:10px auto 0";
+      c.appendChild(p);
+      var go=el("button","btn","המשך לפרק הבא ←"); go.style.marginTop="18px";
+      go.onclick=renderIntro; c.appendChild(go);
+      root.appendChild(c);
+      $("timer").textContent="00:00"; $("timer").className="timer crit";
+    }else renderIntro();
+  }else finish();
+}
+
+/* =================== RESULTS =================== */
+function finish(){
+  stopTick(); S.phase="done";
+  var total=0, correct=0, byType={}, review=[];
+  S.sections.forEach(function(s,si){
+    s.qs.forEach(function(q,qi){
+      var given=S.answers[si][qi], ok=given===q.a;
+      total++; if(ok)correct++;
+      var t=s.meta.type;
+      if(!byType[t])byType[t]={n:0,ok:0};
+      byType[t].n++; if(ok)byType[t].ok++;
+      review.push({q:q,given:given,ok:ok,slot:s.meta.slot,type:t,
+        passage:(t==="reading_comprehension"&&s.meta.passages[0])?s.meta.passages[0]:null});
+    });
+  });
+  var pct=total?Math.round(correct/total*100):0;
+  history[S.sim.id]={pct:pct,correct:correct,total:total,at:Date.now()};
+  save("amirnet.history",history);
+
+  $("exam").hidden=true; $("bar").hidden=true; $("results").hidden=false;
+  window.scrollTo(0,0);
+  var root=$("results"); root.textContent="";
+
+  var sc=el("div","card score");
+  sc.appendChild(el("div","eyebrow",S.sim.title));
+  sc.appendChild(el("div","pct",pct+"%"));
+  sc.appendChild(el("div","muted",correct+" תשובות נכונות מתוך "+total));
+  var again=el("div","row"); again.style.cssText="justify-content:center;margin-top:18px";
+  var b1=el("button","btn","חזרה לרשימה"); b1.onclick=quitExam;
+  var b2=el("button","btn ghost","לעשות שוב"); b2.onclick=function(){var s=S.sim;quitExam();startExam(s)};
+  again.appendChild(b1); again.appendChild(b2); sc.appendChild(again);
+  root.appendChild(sc);
+
+  var bars=el("div","card bars");
+  bars.appendChild(el("div","eyebrow","לפי סוג שאלה"));
+  Object.keys(byType).forEach(function(t){
+    var o=byType[t], p=Math.round(o.ok/o.n*100);
+    var line=el("div","barline");
+    var top=el("div","top");
+    top.appendChild(el("span",null,TYPE_HE[t]||t));
+    top.appendChild(el("span","muted",o.ok+"/"+o.n+" · "+p+"%"));
+    line.appendChild(top);
+    var tr=el("div","track"); var f=el("div","fill"); f.style.width=p+"%";
+    if(p<50)f.style.background="var(--bad)"; else if(p<75)f.style.background="var(--warn)";
+    tr.appendChild(f); line.appendChild(tr); bars.appendChild(line);
+  });
+  root.appendChild(bars);
+
+  var h=el("h2",null,"סקירת שאלות"); h.style.cssText="margin:26px 0 12px;font-size:21px";
+  root.appendChild(h);
+
+  var lastPassage=null;
+  review.forEach(function(r,i){
+    if(r.passage&&r.passage!==lastPassage){
+      lastPassage=r.passage;
+      var p=el("div","card passage");
+      p.appendChild(el("h3",null,r.passage.title));
+      p.appendChild(el("div","body en",r.passage.text));
+      root.appendChild(p);
+    }
+    var c=el("div","card rev "+(r.ok?"right":"wrong"));
+    var head=el("div","row"); head.style.marginBottom="8px";
+    head.appendChild(el("span","eyebrow","שאלה "+(i+1)+" · "+(TYPE_HE[r.type]||r.type)));
+    head.appendChild(el("span","pill"+(r.ok?" done":""),r.ok?"נכון":(r.given==null?"לא נענתה":"שגוי")));
+    c.appendChild(head);
+    c.appendChild(el("div","qtext en",r.q.p));
+    var opts=el("div","opts");
+    r.q.o.forEach(function(text,oi){
+      var cls="opt"+(oi===r.q.a?" ok":(oi===r.given?" no":""));
+      var d=el("div",cls);
+      d.appendChild(el("span","k",LETTERS[oi]));
+      d.appendChild(el("span","v en",text));
+      opts.appendChild(d);
+    });
+    c.appendChild(opts);
+    if(r.q.e){
+      var ex=el("div","expl");
+      var lb=el("b",null,"למה: "); ex.appendChild(lb);
+      ex.appendChild(document.createTextNode(r.q.e));
+      c.appendChild(ex);
+    }
+    root.appendChild(c);
+  });
+}
+
+/* =================== GUIDE =================== */
+function renderGuide(){
+  var p=$("pane-guide");
+  if(p.dataset.ready)return;
+  p.dataset.ready="1";
+  p.innerHTML=GUIDE_HTML;
+}
+
+var GUIDE_HTML=[
+'<h2>מבנה הבחינה</h2>',
+'<p>שישה פרקי ליבה מנוקדים, 23 שאלות, 39 דקות. לכל פרק שעון נפרד — <b>זמן שנשאר מפרק אחד לא עובר לפרק הבא</b>, אז אין טעם למהר כדי "לחסוך" זמן.</p>',
+'<div class="scroll"><table class="t"><tr><th>פרק</th><th>סוג</th><th>שאלות</th><th>זמן</th><th>לשאלה</th></tr>',
+'<tr><td>1, 2, 6</td><td>השלמת משפטים</td><td>4 בכל אחד</td><td>4 דק׳</td><td><b>60 שנ׳</b></td></tr>',
+'<tr><td>3</td><td>הבנת הנקרא</td><td>5</td><td>15 דק׳</td><td><b>180 שנ׳</b></td></tr>',
+'<tr><td>4, 5</td><td>ניסוח מחדש</td><td>3 בכל אחד</td><td>6 דק׳</td><td><b>120 שנ׳</b></td></tr>',
+'</table></div>',
+
+'<h2>הטקטיקה כשאתה לא מבין כלום</h2>',
+'<p>הרצתי את כל 580 השאלות שבאפליקציה הזו דרך בדיקה סטטיסטית וחיפשתי דפוסים שאפשר לנצל בלי להבין את התוכן. שלושה דפוסים יצאו חזקים מאוד.</p>',
+
+'<h3>1. התשובה הארוכה ביותר — החוק החזק ביותר</h3>',
+'<p>בהבנת הנקרא ובניסוח מחדש, האפשרות הארוכה ביותר היא הנכונה ברוב המוחלט של המקרים:</p>',
+'<div class="stat">',
+'<div><b>82%</b><span>הבנת הנקרא — הארוכה ביותר נכונה</span></div>',
+'<div><b>81%</b><span>ניסוח מחדש — הארוכה ביותר נכונה</span></div>',
+'<div><b>25%</b><span>מה שהיה צפוי מניחוש</span></div>',
+'</div>',
+'<p>והצד השני של אותו מטבע: <b>האפשרות הקצרה ביותר כמעט לעולם אינה נכונה</b> — 5% בהבנת הנקרא, 2.5% בניסוח מחדש. אם נגמר הזמן ואתה חייב לסמן משהו, סמן את הארוכה ופסול את הקצרה.</p>',
+'<p class="muted">ההיגיון מאחורי זה: תשובה נכונה צריכה להיות מדויקת, ודיוק דורש סייגים — "even though it cost a lot" לעומת "it was cheap". מסיח שגוי יכול להרשות לעצמו להיות קצר, כי הוא פשוט לא נכון.</p>',
+
+'<h3>2. מילים מוחלטות = דגל אדום</h3>',
+'<p>אפשרות שמכילה <span class="en">all, always, never, only, every, none, completely, impossible</span> כמעט תמיד שגויה:</p>',
+'<div class="stat">',
+'<div><b>38%</b><span>מהמסיחים השגויים בהבנת הנקרא מכילים מילה מוחלטת</span></div>',
+'<div><b>6%</b><span>מהתשובות הנכונות מכילות אחת</span></div>',
+'</div>',
+'<p>פי שישה. זה כלי פסילה מצוין: עובר על ארבע האפשרויות, מוחק כל אחת עם מילה מוחלטת, ולרוב נשארות שתיים.</p>',
+
+'<h3>3. שילוב שני הכללים</h3>',
+'<p>בדקתי מה קורה כשמפעילים את שניהם יחד — קודם פוסלים מילים מוחלטות, ואז בוחרים את הארוכה ביותר מבין מה שנשאר:</p>',
+'<div class="stat">',
+'<div><b>82%</b><span>הבנת הנקרא</span></div>',
+'<div><b>77%</b><span>ניסוח מחדש</span></div>',
+'<div><b>30%</b><span>השלמת משפטים</span></div>',
+'</div>',
+'<p>בשני הפרקים הראשונים זה מחליף ניחוש עיוור בכלי אמיתי. <b>בהשלמת משפטים זה לא עובד</b> — שם כל האפשרויות הן מילה בודדת, אז אין "ארוכה יותר" משמעותית. הפרק הזה דורש אוצר מילים, ואין בו קיצור דרך.</p>',
+
+'<h2>תכנית עבודה לפי סוג שאלה</h2>',
+
+'<h3>השלמת משפטים — 60 שניות לשאלה</h3>',
+'<ol>',
+'<li><b>קרא את המשפט המלא עד הסוף</b> לפני שאתה מסתכל באפשרויות. המוח ישלים לבד את המילה החסרה.</li>',
+'<li><b>חפש את מילת הקישור.</b> היא קובעת את הכיוון: <span class="en">despite, although, however, but</span> = ניגוד. <span class="en">because, therefore, so, since</span> = סיבה ותוצאה. זו לרוב כל השאלה.</li>',
+'<li><b>היזהר ממסיחים שנראים דומים.</b> ב-30% מהשאלות יש מסיח שמתחיל באותן שתי אותיות כמו התשובה הנכונה — <span class="en">created / collected / compared / cancelled</span>. הדמיון הגרפי הוא מלכודת מכוונת, לא צירוף מקרים.</li>',
+'<li><b>הצב את הבחירה שלך בחזרה במשפט</b> וקרא אותו שלם. אם זה צורם — זה שגוי.</li>',
+'</ol>',
+'<div class="note">אם אחרי 60 שניות אתה תקוע: סמן, עבור הלאה, וחזור בסוף. שאלה אחת שגוזלת שלוש דקות עולה לך בשתי שאלות אחרות.</div>',
+
+'<h3>הבנת הנקרא — 3 דקות לשאלה</h3>',
+'<ol>',
+'<li><b>קרא קודם את השאלות, לא את הקטע.</b> ככה אתה יודע מה לחפש וקורא עם מטרה.</li>',
+'<li><b>אחר כך סרוק את הקטע</b> — משפט ראשון של כל פסקה ומשפט אחרון. שם יושב הרעיון המרכזי.</li>',
+'<li><b>כל תשובה חייבת להיות מעוגנת בטקסט.</b> אם אתה צריך להניח משהו שלא כתוב — זו התשובה השגויה.</li>',
+'<li><b>פסול לפי הכללים למעלה:</b> מילים מוחלטות החוצה, ומבין מה שנשאר — הארוכה והמסויגת יותר.</li>',
+'</ol>',
+'<p>שאלת "<span class="en">What is the main idea?</span>" מופיעה כמעט בכל קטע. התשובה הנכונה תכסה את <i>כל</i> הקטע; מסיח טיפוסי יהיה נכון אבל יתאר רק פסקה אחת.</p>',
+
+'<h3>ניסוח מחדש — 2 דקות לשאלה</h3>',
+'<ol>',
+'<li><b>זהה את המבנה הלוגי של המשפט המקורי</b> לפני האפשרויות: ניגוד? סיבה? תנאי? זמן?</li>',
+'<li><b>המבנה חייב להישמר.</b> הניסוח משתנה, הלוגיקה לא.</li>',
+'<li><b>פסול היפוכים.</b> המסיח הנפוץ ביותר הופך את המשמעות: "הם קנו למרות המחיר" מול "הם לא קנו כי זה היה יקר". קרא עד הסוף — ההיפוך מסתתר במילה אחת.</li>',
+'<li><b>פסול שינוי ודאות.</b> אם במקור כתוב שמשהו <i>קרה</i>, ובאפשרות כתוב שהם <i>עדיין מתלבטים</i> — זו לא אותה משמעות.</li>',
+'</ol>',
+
+'<h2>ניהול זמן</h2>',
+'<ul>',
+'<li><b>לעולם אל תשאיר שאלה ריקה.</b> אין נקודות שליליות. גם ניחוש עיוור הוא 25%, וניחוש לפי הכללים למעלה הוא 80% בשני פרקים.</li>',
+'<li><b>בדקה האחרונה של כל פרק</b> — מלא כל מה שריק, לפי הכלל של "הארוכה ביותר".</li>',
+'<li><b>זמן לא נצבר.</b> אם סיימת פרק מוקדם, חזור ובדוק את המסומנות — זה הזמן היחיד שבו הוא שווה משהו.</li>',
+'<li><b>אל תשנה תשובה</b> בלי סיבה קונקרטית שאתה יכול לנסח. התחושה הראשונה בדרך כלל טובה יותר.</li>',
+'</ul>',
+
+'<h2>סדר תרגול מומלץ</h2>',
+'<ul>',
+'<li><b>סימולציות 1–5</b> (קל): בנה ביטחון וזהה את סוגי השאלות. בלי לחץ זמן בהתחלה — הגדר זמן כפול בהגדרות.</li>',
+'<li><b>6–10</b> (בינוני): עבור לזמן הרשמי. כאן מתחילים למדוד.</li>',
+'<li><b>11–15</b> (בינוני עד קשה): התמקד בפרק שבו אתה הכי חלש לפי הפילוח בסוף כל מבחן.</li>',
+'<li><b>16–20</b> (קשה): תנאי בחינה מלאים, רצף, בלי הפסקות.</li>',
+'</ul>',
+'<p>אחרי כל סימולציה קרא את ההסבר של <i>כל</i> שאלה שטעית בה. ההסברים בעברית ומסבירים את הלוגיקה, לא רק את התשובה.</p>',
+
+'<div class="warnbox"><b>חשוב לדעת:</b> כל המספרים בעמוד הזה חושבו מ-580 השאלות של הסימולציות האלה — לא מהבחינה הרשמית של מאל״ו. הדפוסים אמיתיים ושימושיים לתרגול כאן, אבל אל תסמוך עליהם כתחליף לידע בבחינה האמיתית. טקטיקת ניחוש היא רשת ביטחון לשאלות שאתה לא יודע, לא אסטרטגיה למבחן שלם.</div>'
+].join("");
+
+/* =================== TABS =================== */
+function tab(which){
+  var map={sims:["tab-sims","pane-sims"],set:["tab-set","pane-set"],guide:["tab-guide","pane-guide"]};
+  Object.keys(map).forEach(function(k){
+    var on=k===which;
+    $(map[k][0]).setAttribute("aria-selected",on?"true":"false");
+    $(map[k][1]).hidden=!on;
+  });
+  if(which==="set")renderSettings();
+  if(which==="guide")renderGuide();
+}
+$("tab-sims").onclick=function(){tab("sims")};
+$("tab-set").onclick=function(){tab("set")};
+$("tab-guide").onclick=function(){tab("guide")};
+
+/* =================== BOOT =================== */
+fetch("simulations.json").then(function(r){return r.json()}).then(function(j){
+  DATA=j; renderHome();
+}).catch(function(e){
+  $("simGrid").appendChild(el("div","card set","לא ניתן לטעון את השאלות. נסה לרענן את העמוד."));
+});
+})();
+</script>
