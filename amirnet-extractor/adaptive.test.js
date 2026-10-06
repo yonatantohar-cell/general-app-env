@@ -15,10 +15,17 @@ let S=null;
 // `S` is a module-level variable the engine reads. Declare it INSIDE the
 // compiled scope and hand the harness accessors, so both sides see one binding.
 const run=new Function('DATA','settings',
-  'var S;\n'+sectionTime+'\n'+engine+
+  /* The engine now reads a cross-sitting `seenBank` and persists through
+     save/load; stub those so the harness exercises the real draw logic. */
+  'var S;var seenBank={};'+
+  'function save(){};function load(k,d){return d};'+
+  'function markSeen(keys){keys.forEach(function(k){seenBank[k]=1})};'+
+  'function seenCount(){var n=0;for(var k in seenBank)n++;return n};'+
+  '\n'+sectionTime+'\n'+engine+
   '\nreturn {buildBank:buildBank,draw:draw,buildAdaptiveSection:buildAdaptiveSection,'+
   'LEVELS:LEVELS,ADAPTIVE_PLAN:ADAPTIVE_PLAN,UP:UP,DOWN:DOWN,keyOf:keyOf,'+
-  'setS:function(v){S=v},getS:function(){return S}};');
+  'setS:function(v){S=v},getS:function(){return S},'+
+  'resetSeen:function(){for(var k in seenBank)delete seenBank[k]}};');
 
 const api=run(DATA, settings);
 
@@ -45,6 +52,7 @@ for(const t of Object.keys(need)){
 
 /* ---- 2. simulated examinees ---- */
 function simulate(ability){
+  api.resetSeen();
   api.setS({sim:{},adaptive:true,level:1,trail:[],used:{},total:ADAPTIVE_PLAN.length,
      sections:[],si:0,answers:[],flags:[]});
   const S=api.getS();

@@ -41,6 +41,31 @@ h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:
 button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
 .wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:28px 64px}
+.wrap.wide{max-width:1060px}
+
+/* Reading sections: text and questions side by side, each scrolling on its own.
+   `min-width:0` on the children is what stops long English lines from widening
+   the flex row and pushing the page into a horizontal scroll. */
+.rc-split{display:flex;flex-direction:row-reverse;gap:14px;align-items:flex-start}
+/* row-reverse because the page is RTL: it puts the passage (first in the DOM)
+   on the LEFT and the questions on the right, matching the real test. */
+.rc-split>*{flex:1 1 0;min-width:0}
+.rc-passage,.rc-questions{max-height:calc(100vh - 200px);overflow-y:auto;overscroll-behavior:contain}
+.rc-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:9px}
+.rc-head h3{margin:0}
+.rc-toggle{padding:5px 11px;font-size:12.5px;white-space:nowrap;flex:0 0 auto}
+.rc-split.collapsed .rc-questions{display:none}
+.rc-split.collapsed .rc-passage{flex:1 1 100%}
+
+@media (max-width:760px){
+  .wrap.wide{max-width:760px}
+  .rc-split{flex-direction:column}   /* stacked: passage first, then questions */
+  /* Stacked, the passage gets a capped scroller so the question stays reachable
+     without scrolling past the whole text every time. */
+  .rc-passage{max-height:40vh;width:100%}
+  .rc-questions{max-height:none;overflow:visible;width:100%}
+  .rc-split.collapsed .rc-passage{max-height:none}
+}
 .en{direction:ltr;text-align:left;unicode-bidi:isolate}
 
 /* ---------- top bar ---------- */
@@ -194,7 +219,7 @@ table.t td b{color:var(--accent);font-variant-numeric:tabular-nums}
   <div class="prog"><i id="prog" style="width:0%"></i></div>
 </div>
 
-<div class="wrap">
+<div class="wrap" id="wrap">
   <!-- ============ HOME ============ -->
   <section id="home">
     <div class="hero">
@@ -559,6 +584,7 @@ function stopTick(){if(S&&S.tick){clearInterval(S.tick);S.tick=null}}
 
 function quitExam(){
   stopTick(); S=null;
+  $("wrap").className="wrap"; readingCollapsed=false;
   $("exam").hidden=true; $("results").hidden=true; $("home").hidden=false; $("bar").hidden=true;
   window.scrollTo(0,0);
 }
@@ -578,6 +604,7 @@ function confirmInline(){
 
 function renderIntro(){
   stopTick(); S.phase="intro";
+  $("wrap").className="wrap"; readingCollapsed=false;
   /* Adaptive sections are built on entry, because which questions they contain
      depends on how the previous section went. */
   if(S.adaptive&&!S.sections[S.si]){
@@ -645,14 +672,34 @@ function renderQuestion(){
 
   var root=$("exam"); root.textContent="";
 
-  if(sec.type==="reading_comprehension"&&sec.passages&&sec.passages.length){
-    var p=el("div","card passage");
-    p.appendChild(el("h3",null,sec.passages[0].title));
-    var body=el("div","body en",sec.passages[0].text);
-    p.appendChild(body); root.appendChild(p);
+  /* Reading sections run the passage and the questions side by side with their
+     own scrollbars, as the real test does. Moving between the text and the
+     question is part of what the section measures; stacking them in one column
+     makes practice easier than the exam. */
+  var isReading = sec.type==="reading_comprehension" && sec.passages && sec.passages.length;
+  var mount=root, split=null, passageCard=null;
+
+  $("wrap").className = isReading ? "wrap wide" : "wrap";
+
+  if(isReading){
+    split=el("div","rc-split"); 
+    passageCard=el("div","card passage rc-passage");
+
+    var head=el("div","rc-head");
+    head.appendChild(el("h3",null,sec.passages[0].title));
+    var toggle=el("button","btn ghost rc-toggle", readingCollapsed?"הצג שאלות":"הסתר שאלות");
+    toggle.onclick=function(){ readingCollapsed=!readingCollapsed; renderQuestion() };
+    head.appendChild(toggle);
+    passageCard.appendChild(head);
+
+    passageCard.appendChild(el("div","body en",sec.passages[0].text));
+    split.appendChild(passageCard);
+    root.appendChild(split);
+    mount=split;
+    if(readingCollapsed) split.classList.add("collapsed");
   }
 
-  var box=el("div","card qbox");
+  var box=el("div","card qbox"+(isReading?" rc-questions":""));
   box.appendChild(el("div","qnum","שאלה "+(S.qi+1)+" מתוך "+s.qs.length));
   var qt=el("div","qtext en",q.p); box.appendChild(qt);
 
@@ -697,7 +744,7 @@ function renderQuestion(){
     dots.appendChild(d);
   });
   box.appendChild(dots);
-  root.appendChild(box);
+  mount.appendChild(box);
 }
 
 function endSection(timedOut){
@@ -730,6 +777,7 @@ function endSection(timedOut){
 /* =================== RESULTS =================== */
 function finish(){
   stopTick(); S.phase="done";
+  $("wrap").className="wrap"; readingCollapsed=false;
   var total=0, correct=0, byType={}, review=[];
   S.sections.forEach(function(s,si){
     s.qs.forEach(function(q,qi){
@@ -884,6 +932,7 @@ function renderGuide(){
 var GUIDE_HTML=[
 '<h2>מבנה הבחינה</h2>',
 '<p>שישה פרקי ליבה מנוקדים, 23 שאלות, 39 דקות. לכל פרק שעון נפרד — <b>זמן שנשאר מפרק אחד לא עובר לפרק הבא</b>, אז אין טעם למהר כדי "לחסוך" זמן.</p>',
+'<div class="note"><b>במבחן האמיתי יש שמונה פרקים, לא שישה.</b> אחרי ששת פרקי הליבה מגיעים שני פרקים ניסיוניים — <span class="en">Continuity of Meaning</span> (כולל קטעי האזנה) ו-<span class="en">Word Formation</span> (נתונה מילת בסיס, כותבים את הצורה הנכונה — תשובה פתוחה, לא רב-ברירה). הם כמעט ואינם משפיעים על הציון: טעות בהם לא מורידה, ותשובה נכונה יכולה להעלות בנקודה או שתיים. האפליקציה הזו מתרגלת את ששת המנוקדים בלבד — אין לי שאלות מהסוגים החדשים, ולא אמציא כאלה. שווה שתכיר אותם מראש כדי שלא יפתיעו אותך.</div>',
 '<div class="scroll"><table class="t"><tr><th>פרק</th><th>סוג</th><th>שאלות</th><th>זמן</th><th>לשאלה</th></tr>',
 '<tr><td>1, 2, 6</td><td>השלמת משפטים</td><td>4 בכל אחד</td><td>4 דק׳</td><td><b>60 שנ׳</b></td></tr>',
 '<tr><td>3</td><td>הבנת הנקרא</td><td>5</td><td>15 דק׳</td><td><b>180 שנ׳</b></td></tr>',
@@ -932,8 +981,21 @@ var GUIDE_HTML=[
 '</table></div>',
 '<p>במכון נועם ארבע האפשרויות באותו אורך כמעט בדיוק. גם בשתי השאלות שבהן "הארוכה ביותר" במקרה הייתה נכונה, היא ניצחה בתו אחד ובשני תווים — הפרש שאי אפשר לראות בעין תחת לחץ זמן, ושאינו שונה מניחוש.</p>',
 '<div class="warnbox"><b>המסקנה:</b> הפער של 15 התווים הוא מאפיין של איך ש-amirnetwords מייצרים שאלות, לא של סוג השאלה. כותב מקצועי משווה את אורכי האפשרויות בכוונה, וזה מנטרל את הכלל לחלוטין. <b>82% תקף כאן בלבד.</b></div>',
+
+'<h3>ראיה שלישית — הפעם מחומר של מאל״ו</h3>',
+'<p>מצגת רשמית של מאל״ו על אמירנט מכילה צילומי מסך של שאלות אמיתיות מהממשק. הן אומרות את אותו דבר, ובצורה חדה יותר:</p>',
+'<div class="scroll"><table class="t"><tr><th>השאלה</th><th>אורכי ארבע האפשרויות</th><th>הארוכה ביותר נכונה?</th></tr>',
+'<tr><td>Restatement</td><td>105 · 122 · 122 · 106</td><td>כולן דומות — אין אות בכלל</td></tr>',
+'<tr><td>בחירת כותרת לקטע</td><td>28 · <b>33</b> · 49 · 38</td><td><b>לא.</b> הנכונה היא 33; הארוכה (49) שגויה</td></tr>',
+'</table></div>',
+'<p>בשאלת הכותרת הכלל לא סתם מפסיק לעבוד — הוא מוביל ישר לתשובה השגויה. זו הראיה החזקה ביותר שיש לי, והיא מגיעה מהגוף שכותב את הבחינה.</p>',
+
+'<h3>ומה כן שרד את המעבר</h3>',
+'<p>מלכודת הדמיון הגרפי מתאשרת, ובעוצמה גדולה יותר ממה שמדדתי. שאלת השלמת משפטים מהמצגת של מאל״ו:</p>',
+'<p class="en" style="font-weight:700;font-size:16px">sliced · sipped · stored · switched</p>',
+'<p><b>כל ארבע האפשרויות מתחילות באותה אות.</b> אצל amirnetwords מצאתי שב-30% מהשאלות יש מסיח אחד שמתחיל כמו התשובה; כאן כולן. כלומר הכלל הזה — לקרוא כל אפשרות עד הסוף ולא לזהות מילה לפי תחילתה — הוא לא טריק של אתר מסוים אלא מאפיין אמיתי של הבחינה.</p>',
 '<p>מה שכן נשאר תקף בכל מקום: לקרוא את כל ארבע האפשרויות עד הסוף, לפסול מה שסותר את הטקסט, ולא להשאיר שאלה ריקה. אלה לא טריקים — זו קריאה נכונה.</p>',
-'<p class="muted">ניסיתי לבדוק גם מול מאל״ו, הגוף שכותב את הבחינה עצמה. האתר שלהם חוסם גישה אוטומטית בחומת אש, ולא עקפתי אותה. אם תוריד משם מבחן לדוגמה ותעלה לי אותו, אריץ עליו את אותה בדיקה בדיוק.</p>',
+'<p class="muted">האתר של מאל״ו חוסם גישה אוטומטית, ומבחן הדוגמה שלהם מוגן מפני חילוץ תוכן — לא עקפתי אף אחד מהשניים. הראיות שלמעלה מגיעות ממצגת הסברה שלהם, שפורסמה פתוחה לקריאה.</p>',
 
 '<h2>השלמת משפטים: מה באמת עובד</h2>',
 '<p>זה הפרק הגדול ביותר — 12 מתוך 23 השאלות — וגם היחיד שבו לא מצאתי כלל ניחוש חזק. חיפשתי ברצינות. הנה מה שיצא, כולל מה שנכשל.</p>',
@@ -1160,6 +1222,7 @@ function showExport(){
 /* =================== VOCABULARY =================== */
 var VOCAB=null;
 var lastRun=null;                              /* kept so the export survives leaving the results screen */
+var readingCollapsed=false;                    /* the test's own "Hide Questions" */
 var notes=load("amirnet.notes",{})||{};        /* per-question notes, keyed by question text */
 function noteKey(q){ return (q.p||"").slice(0,120) }
 function renderVocab(){
