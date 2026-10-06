@@ -190,6 +190,7 @@ table.t td b{color:var(--accent);font-variant-numeric:tabular-nums}
       <button role="tab" id="tab-sims" aria-selected="true">סימולציות</button>
       <button role="tab" id="tab-set" aria-selected="false">הגדרות זמן</button>
       <button role="tab" id="tab-guide" aria-selected="false">איך פותרים</button>
+      <button role="tab" id="tab-vocab" aria-selected="false">אוצר מילים</button>
     </div>
 
     <div id="pane-sims">
@@ -199,6 +200,8 @@ table.t td b{color:var(--accent);font-variant-numeric:tabular-nums}
     <div id="pane-set" hidden></div>
 
     <div id="pane-guide" hidden class="guide"></div>
+
+    <div id="pane-vocab" hidden></div>
   </section>
 
   <!-- ============ EXAM ============ -->
@@ -598,7 +601,43 @@ var GUIDE_HTML=[
 '<div><b>77%</b><span>ניסוח מחדש</span></div>',
 '<div><b>30%</b><span>השלמת משפטים</span></div>',
 '</div>',
-'<p>בשני הפרקים הראשונים זה מחליף ניחוש עיוור בכלי אמיתי. <b>בהשלמת משפטים זה לא עובד</b> — שם כל האפשרויות הן מילה בודדת, אז אין "ארוכה יותר" משמעותית. הפרק הזה דורש אוצר מילים, ואין בו קיצור דרך.</p>',
+'<p>בשני הפרקים הראשונים זה מחליף ניחוש עיוור בכלי אמיתי. <b>בהשלמת משפטים זה לא עובד</b> — שם כל האפשרויות הן מילה בודדת, אז אין "ארוכה יותר" משמעותית.</p>',
+
+'<h2>השלמת משפטים: מה באמת עובד</h2>',
+'<p>זה הפרק הגדול ביותר — 12 מתוך 23 השאלות — וגם היחיד שבו לא מצאתי כלל ניחוש חזק. חיפשתי ברצינות. הנה מה שיצא, כולל מה שנכשל.</p>',
+
+'<h3>מה שבדקתי ונכשל</h3>',
+'<p>חילקתי את 360 השאלות לשניים: פיתחתי כללים על סימולציות 1–10, ובדקתי אותם על 11–20 שלא השתתפו בפיתוח. זה חשוב — כלל שנבנה ונבדק על אותם נתונים תמיד ייראה מצוין ויתרסק במציאות.</p>',
+'<div class="scroll"><table class="t"><tr><th>כלל</th><th>על מה שפיתחתי</th><th>על מה שלא ראיתי</th></tr>',
+'<tr><td>רשימת "מילים מלכודת"</td><td>31.9%</td><td><b>25.3%</b></td></tr>',
+'<tr><td>התשובה הארוכה ביותר</td><td>30.0%</td><td><b>30.0%</b></td></tr>',
+'<tr><td>תמיד A</td><td>29.4%</td><td><b>31.7%</b></td></tr>',
+'<tr><td>המילה המוכרת/נפוצה ביותר</td><td>31.7%</td><td><b>34.4%</b></td></tr>',
+'<tr><td>התאמה דקדוקית + מילה נפוצה</td><td>31.1%</td><td><b>35.6%</b></td></tr>',
+'</table></div>',
+'<p>רשימת המילים-מלכודת נראתה מבטיחה — <span class="en">unless</span> הופיעה 12 פעמים ואף פעם לא הייתה נכונה, <span class="en">in spite of</span> 10 פעמים ואף פעם. אבל על שאלות שלא ראיתי היא נתנה 25.3%, כלומר <b>בדיוק כמו ניחוש עיוור</b>. היא פשוט שיננה את הסימולציות הראשונות. פסלתי אותה.</p>',
+'<div class="warnbox"><b>המסקנה הישרה:</b> אין בהשלמת משפטים כלל ניחוש חזק. התקרה היא בערך <b>35%</b> במקום 25% — שיפור אמיתי אבל צנוע. מי שמבטיח לך יותר מזה מוכר לך התאמת-יתר.</div>',
+
+'<h3>הכלל היחיד ששרד: בחר את המילה שאתה הכי מכיר</h3>',
+'<p>מבין ארבע האפשרויות, סמן את המילה שראית הכי הרבה פעמים בחיים. זה נתן 34–36% על שאלות שלא השתתפו בפיתוח הכלל. ההיגיון: מסיחים נבנים לעיתים קרובות ממילים נדירות או מומצאות-למחצה שנראות דומה לתשובה.</p>',
+
+'<h3>19% מהפרק לא דורשים אוצר מילים בכלל</h3>',
+'<p>68 מתוך 360 השאלות הן <b>שאלות מילות קישור</b> — כל ארבע האפשרויות הן מילות חיבור. כאן אתה לא צריך להכיר שום מילה אקדמית, רק לזהות את היחס הלוגי בין שני חלקי המשפט. זה החלק הכי משתלם בפרק.</p>',
+'<p>עץ ההחלטה, לפי מה שבפועל היה נכון ב-68 השאלות האלה:</p>',
+'<div class="scroll"><table class="t"><tr><th>היחס בין שני חלקי המשפט</th><th>התשובה</th><th>כמה פעמים</th></tr>',
+'<tr><td>החלק השני הוא <b>תוצאה</b> של הראשון</td><td class="en">so, so that, therefore</td><td><b>19</b></td></tr>',
+'<tr><td>החלק השני הוא <b>הסיבה</b> לראשון</td><td class="en">because, since, owing to</td><td><b>15</b></td></tr>',
+'<tr><td>שני החלקים <b>סותרים</b> זה את זה</td><td class="en">but, although, yet, though, whereas</td><td><b>17</b></td></tr>',
+'<tr><td>שני החלקים <b>קורים יחד</b> בזמן</td><td class="en">while, when</td><td><b>6</b></td></tr>',
+'<tr><td>החלק השני הוא <b>המטרה</b></td><td class="en">to, in order to</td><td><b>8</b></td></tr>',
+'</table></div>',
+'<p>שים לב ש<span class="en">so</span> ו-<span class="en">because</span> לבדן הן 34 מתוך 68. אם זיהית שיש כאן קשר של סיבה ותוצאה אבל לא בטוח לאיזה כיוון — שאל את עצמך מה קרה קודם. הסיבה תמיד קודמת לתוצאה.</p>',
+
+'<h3>המלכודת הגרפית</h3>',
+'<p>ב-30% משאלות השלמת המשפטים יש מסיח שמתחיל באותן שתי אותיות כמו התשובה הנכונה: <span class="en">created / collected / compared / cancelled</span>. הדמיון מכוון — הוא נועד לתפוס מי שמזהה את המילה חלקית. אם שתי אפשרויות נראות דומות מאוד, <b>קרא את שתיהן עד הסוף</b> לפני שאתה בוחר.</p>',
+
+'<h3>מה שבאמת פותר את הפרק</h3>',
+'<p>294 מילים. זה כל אוצר המילים שמהווה את התשובות הנכונות בכל 360 השאלות שבאפליקציה הזו, והוא נמצא בלשונית <b>אוצר מילים</b> עם המשפט של כל מילה. רק 23 מהן חוזרות יותר מפעם אחת — כלומר אין כאן קיצור דרך של "20 המילים החשובות", אבל יש רשימה סופית וסגורה. היא עדיפה על כל טריק ניחוש.</p>',
 
 '<h2>תכנית עבודה לפי סוג שאלה</h2>',
 
@@ -648,9 +687,63 @@ var GUIDE_HTML=[
 '<div class="warnbox"><b>חשוב לדעת:</b> כל המספרים בעמוד הזה חושבו מ-580 השאלות של הסימולציות האלה — לא מהבחינה הרשמית של מאל״ו. הדפוסים אמיתיים ושימושיים לתרגול כאן, אבל אל תסמוך עליהם כתחליף לידע בבחינה האמיתית. טקטיקת ניחוש היא רשת ביטחון לשאלות שאתה לא יודע, לא אסטרטגיה למבחן שלם.</div>'
 ].join("");
 
+
+/* =================== VOCABULARY =================== */
+var VOCAB=null;
+function renderVocab(){
+  var p=$("pane-vocab");
+  if(p.dataset.ready)return;
+  p.dataset.ready="1";
+
+  var head=el("div");
+  var h=el("h2",null,"294 מילות התשובה"); h.style.cssText="font-size:23px;margin-bottom:8px";
+  head.appendChild(h);
+  var sub=el("p","muted","כל מילה שהיא התשובה הנכונה באחת מ-360 שאלות השלמת המשפטים, עם המשפט שבו הופיעה. זו הרשימה שמחליפה ניחוש בידיעה.");
+  sub.style.cssText="margin:0 0 14px;font-size:14.5px";
+  head.appendChild(sub);
+  p.appendChild(head);
+
+  var search=el("input"); search.type="search"; search.id="vocabSearch";
+  search.placeholder="חיפוש מילה…";
+  search.style.cssText="width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--ink);font:inherit;margin-bottom:14px";
+  p.appendChild(search);
+
+  var list=el("div"); list.id="vocabList";
+  list.style.cssText="display:flex;flex-direction:column;gap:7px";
+  p.appendChild(list);
+
+  var status=el("div","muted","טוען…"); list.appendChild(status);
+
+  fetch("answer-words.json").then(function(r){return r.json()}).then(function(j){
+    VOCAB=j; paintVocab("");
+    search.oninput=function(){paintVocab(search.value.trim().toLowerCase())};
+  }).catch(function(){ status.textContent="לא ניתן לטעון את רשימת המילים." });
+}
+
+function paintVocab(filter){
+  var list=$("vocabList"); list.textContent="";
+  var rows=VOCAB.filter(function(w){return !filter||w.word.indexOf(filter)===0||w.word.indexOf(filter)>-1});
+  if(!rows.length){list.appendChild(el("div","muted","לא נמצאה מילה כזו."));return}
+  var count=el("div","muted",rows.length+" מילים");
+  count.style.cssText="font-size:12.5px;margin-bottom:4px"; list.appendChild(count);
+  rows.forEach(function(w){
+    var c=el("div","card"); c.style.cssText="padding:12px 14px";
+    var top=el("div","row"); top.style.cssText="justify-content:space-between;align-items:baseline;gap:10px";
+    var word=el("span","en",w.word);
+    word.style.cssText="font-weight:700;font-size:16.5px;color:var(--accent)";
+    top.appendChild(word);
+    if(w.times>1) top.appendChild(el("span","pill",w.times+" פעמים"));
+    c.appendChild(top);
+    var ex=el("div","en",w.example.replace(/_{2,}/," ___ "));
+    ex.style.cssText="font-size:13.5px;color:var(--muted);margin-top:5px;line-height:1.5";
+    c.appendChild(ex);
+    list.appendChild(c);
+  });
+}
+
 /* =================== TABS =================== */
 function tab(which){
-  var map={sims:["tab-sims","pane-sims"],set:["tab-set","pane-set"],guide:["tab-guide","pane-guide"]};
+  var map={sims:["tab-sims","pane-sims"],set:["tab-set","pane-set"],guide:["tab-guide","pane-guide"],vocab:["tab-vocab","pane-vocab"]};
   Object.keys(map).forEach(function(k){
     var on=k===which;
     $(map[k][0]).setAttribute("aria-selected",on?"true":"false");
@@ -658,10 +751,12 @@ function tab(which){
   });
   if(which==="set")renderSettings();
   if(which==="guide")renderGuide();
+  if(which==="vocab")renderVocab();
 }
 $("tab-sims").onclick=function(){tab("sims")};
 $("tab-set").onclick=function(){tab("set")};
 $("tab-guide").onclick=function(){tab("guide")};
+$("tab-vocab").onclick=function(){tab("vocab")};
 
 /* =================== BOOT =================== */
 fetch("simulations.json").then(function(r){return r.json()}).then(function(j){
