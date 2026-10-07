@@ -242,7 +242,7 @@ table.t td b{color:var(--accent);font-variant-numeric:tabular-nums}
   <!-- ============ HOME ============ -->
   <section id="home">
     <div class="hero">
-      <div class="eyebrow">20 סימולציות · 580 שאלות</div>
+      <div class="eyebrow" id="whoami">20 סימולציות · 580 שאלות</div>
       <h1>חדר מבחן אמירנט</h1>
       <p>סימולציה מלאה בשישה פרקים, עם שעון נפרד לכל פרק בדיוק כמו בבחינה. בסוף — ניקוד, פילוח לפי פרק, וההסבר לכל שאלה.</p>
     </div>
@@ -1324,22 +1324,66 @@ var GUIDE_HTML=[
  */
 
 var TRAINER=null;            /* the word pool */
-var sampleApi=null, dbApi=null;
+var sampleApi=null, dbApi=null, userApi=null;
 var capsReady=false;
-var cards={};                /* word -> scheduling + hook, mirrored from db */
+var cards={};                /* word -> scheduling + hook, kept per viewer */
 var T={word:null, phase:"idle", judged:null, queue:[], session:{seen:0, right:0}};
+
+/*
+ * WHOSE DATA IS THIS.
+ *
+ * Everything a person builds here — their hooks, their meanings, their review
+ * schedule — is private to them. It lives under `data/users/<their id>`, a
+ * path the platform keeps private per viewer: nobody else reads it, the
+ * artifact's owner included. Share this page with someone and they get the
+ * whole app and their own, separate progress; neither of you ever sees the
+ * other's.
+ *
+ * `uid` is the awaited `user.id()`, and the store accepts exactly that value
+ * as this viewer — no substitute works. A null id means no private subtree at
+ * all, which is the case for someone admitted read-only; the app then keeps
+ * their work in this browser and says so, rather than moving it anywhere
+ * shared.
+ */
+var uid=null, isOwner=false, dbWritable=true;
 
 try{
   if(window.claude&&typeof window.claude.use==="function"){
     Promise.all([
       window.claude.use("sample").then(function(a){sampleApi=a||null}).catch(function(){}),
-      window.claude.use("db").then(function(a){dbApi=a||null}).catch(function(){})
+      window.claude.use("db").then(function(a){dbApi=a||null}).catch(function(){}),
+      window.claude.use("user").then(function(a){userApi=a||null}).catch(function(){})
     ]).then(function(){
+      if(!userApi) return null;
+      return Promise.all([
+        Promise.resolve().then(function(){ return userApi.id() }).catch(function(){ return null }),
+        Promise.resolve().then(function(){ return userApi.isOwner() }).catch(function(){ return false })
+      ]).then(function(r){ uid=r[0]||null; isOwner=Boolean(r[1]) });
+    }).catch(function(){}).then(function(){
       capsReady=true;
+      paintWhoAmI();
       if($("pane-trainer") && !$("pane-trainer").hidden) renderTrainer();
     });
   } else { capsReady=true; }
 }catch(e){ capsReady=true; }
+
+/* The owner sees that this is their own copy; a guest sees nothing extra. */
+function paintWhoAmI(){
+  var e=$("whoami"); if(!e) return;
+  var base="20 סימולציות · 580 שאלות";
+  e.textContent = isOwner ? (base+" · מצב מנהל") : base;
+}
+
+/* Document ids accept letters, digits and `_ - . ~ : @ +` only. */
+function docId(word){
+  return String(word||"").toLowerCase().replace(/[^a-z0-9_.~:@+-]/g,"-").slice(0,120) || "-";
+}
+
+/** This viewer's own card collection, or null when they have no private one. */
+function myCards(){
+  if(!dbApi||!uid) return null;
+  try{ return dbApi.collection("data/users/"+uid) }catch(e){ return null }
+}
 
 /* ---------- scheduling: SM-2, trimmed to what this needs ---------- */
 var DAY=86400000;
@@ -1505,8 +1549,8 @@ function renderTrainer(){
      sit above the `sampleApi` check that the practice flow depends on. */
   var pool=quizPool();
   if(pool.length) p.appendChild(modeSwitch(pool.length));
-  if(MODE==="quiz"){ renderQuizInto(p, pool); return }
-  if(MODE==="library"){ renderLibrary(p); return }
+  if(MODE==="quiz"){ renderQuizInto(p, pool); p.appendChild(storageNote()); return }
+  if(MODE==="library"){ renderLibrary(p); p.appendChild(storageNote()); return }
 
   if(!sampleApi){
     var warn=el("div","card set");
@@ -1521,6 +1565,7 @@ function renderTrainer(){
     };
     warn.appendChild(openPerms);
     p.appendChild(warn);
+    p.appendChild(storageNote());
     return;
   }
 
@@ -1638,10 +1683,7 @@ function renderTrainer(){
   }
 
   p.appendChild(card);
-  if(!dbApi){
-    var nodb=el("p","muted","הסימנים לא נשמרים בתצוגה הזו — אין הרשאת אחסון.");
-    nodb.style.cssText="margin:10px 2px 0;font-size:13px"; p.appendChild(nodb);
-  }
+  p.appendChild(storageNote());
 }
 
 /* ---------- actions ---------- */
@@ -1692,28 +1734,61 @@ function saveAndAdvance(mnemonic, source){
 }
 
 /* ---------- storage ---------- */
+function readInto(snap){
+  var out={};
+  snap.docs.forEach(function(d){
+    var v=d.data();
+    /* Copied on the way in: the body handed back here is frozen. */
+    if(v&&v.word) out[v.word]=cloneCard(v);
+  });
+  return out;
+}
+
 function loadCards(){
-  if(!dbApi) { cards=load("amirnet.cards",{})||{}; return Promise.resolve() }
-  return dbApi.collection("mnemonics").get().then(function(snap){
-    var out={};
-    snap.docs.forEach(function(d){
-      var v=d.data();
-      /* Copied on the way in: the body handed back here is frozen. */
-      if(v&&v.word) out[v.word]=cloneCard(v);
-    });
-    cards=out;
+  var mine=myCards();
+  if(!mine) { cards=load("amirnet.cards",{})||{}; return Promise.resolve() }
+  return mine.get().then(function(snap){
+    cards=readInto(snap);
+    /* Before this version everything went into one shared `mnemonics`
+       collection, which every viewer of the page could read. Anything still
+       there belongs to whoever first opens this version — move it into their
+       own private subtree, then clear it so it is shared with nobody. */
+    if(Object.keys(cards).length) return;
+    return migrateLegacy(mine);
   }).catch(function(){ cards=load("amirnet.cards",{})||{} });
+}
+
+function migrateLegacy(mine){
+  return dbApi.collection("mnemonics").get().then(function(snap){
+    var old=readInto(snap);
+    var words=Object.keys(old);
+    if(!words.length) return;
+    cards=old;
+    save("amirnet.cards", cards);
+    /* One write at a time, and only clear the old copy once the new one is
+       safely written: a half-finished move must never lose a hook. */
+    return words.reduce(function(chain,w){
+      return chain.then(function(){
+        return mine.doc(docId(w)).set(cloneCard(old[w]))
+          .then(function(){ return dbApi.collection("mnemonics").doc(w).delete().catch(function(){}) })
+          .catch(function(){});
+      });
+    }, Promise.resolve());
+  }).catch(function(){});
 }
 
 function persistCard(card){
   save("amirnet.cards", cards);          /* always keep a local copy */
-  if(!dbApi) return;
+  var mine=myCards();
+  if(!mine) return;
   /* Snapshot bodies are frozen and must not be sent back as-is; send a clone.
-     A failed write must not interrupt the drill — the local copy still holds. */
+     A failed write must not interrupt the drill — the local copy still holds.
+     A rejection also means this viewer may not write their own subtree (a
+     read-only guest), which the trainer reports rather than hiding. */
   try{
-    dbApi.collection("mnemonics").doc(card.word).set(JSON.parse(JSON.stringify(card)))
-      .catch(function(){});
-  }catch(e){}
+    mine.doc(docId(card.word)).set(JSON.parse(JSON.stringify(card)))
+      .catch(function(){ noteRefusal() });
+  }catch(e){ noteRefusal() }
 }
 
 /* =================== VOCABULARY QUIZ =================== */
@@ -1875,6 +1950,31 @@ function modeSwitch(poolLen){
     row.appendChild(b);
   });
   return row;
+}
+
+/* A refusal lands after the screen has already been redrawn, so the note has
+   to be corrected when it arrives rather than only at the next render. */
+function noteRefusal(){
+  if(!dbWritable) return;
+  dbWritable=false;
+  var p=$("pane-trainer");
+  if(p && !p.hidden) renderTrainer();
+}
+
+/*
+ * Where this person's work is being kept, said plainly. There are three real
+ * cases and they behave differently, so none of them is left to be guessed:
+ * a private account store, this browser only, or nothing at all.
+ */
+function storageNote(){
+  var n=el("p","muted"); n.style.cssText="margin:14px 2px 0;font-size:12.5px;line-height:1.55";
+  if(myCards()&&dbWritable)
+    n.textContent="ההתקדמות שלך נשמרת בחשבון שלך בלבד, ועוברת איתך בין מכשירים. מי שמשתמש בדף הזה חוץ ממך לא רואה אותה, ואתה לא רואה את שלו.";
+  else if(dbApi&&!dbWritable)
+    n.textContent="ההרשאות שלך בדף הזה הן לקריאה בלבד, ולכן ההתקדמות נשמרת רק בדפדפן הזה. מי ששיתף אותך צריך לתת הרשאת עריכה כדי שהיא תישמר בחשבון שלך.";
+  else
+    n.textContent="ההתקדמות נשמרת בדפדפן הזה בלבד. אם תנקה את נתוני האתר או תעבור מכשיר, היא לא תעבור איתך.";
+  return n;
 }
 
 /* =================== THE MNEMONIC LIBRARY =================== */
