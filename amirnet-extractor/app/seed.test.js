@@ -18,7 +18,12 @@ let fail=0;
 const check=(c,m)=>{ if(!c){fail++;console.log('  FAIL: '+m)} else console.log('  ok  : '+m) };
 
 const seeded=TRAINER.filter(w=>w.seed).map(w=>w.word);
-check(seeded.length===5,'five words carry a course hook ('+seeded.join(', ')+')');
+/* The five sheet titles were the first seeds; the worked-solution guides then
+   added a hook for every word they stop to teach, so the count is now in the
+   hundreds. What must still hold is that the original five survived. */
+check(seeded.length>600, seeded.length+' words carry a course hook');
+['satellite','docile','abandon','advocate','appropriate'].forEach(w=>
+  check(seeded.indexOf(w)>=0,'the original sheet-title hook for "'+w+'" survived'));
 
 for(const w of seeded){
   const s=api.seedFor(w);

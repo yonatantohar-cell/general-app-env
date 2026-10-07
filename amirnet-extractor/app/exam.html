@@ -611,13 +611,19 @@ function buildBank(){
   BANK={}; SPEC={};
   ADAPTIVE_PLAN.forEach(function(t){ if(!BANK[t]){BANK[t]={}; LEVELS.forEach(function(L){BANK[t][L]=[]})} });
 
-  /* Course sheets are sentence-completion items with no section of their own;
-     they join that type's shelves so drills and adaptive tests can serve them. */
+  /* Course questions have no section of their own; each joins the shelves of
+     the type it belongs to, so drills and adaptive tests can serve them. The
+     drill sheets are all completions, but the worked-solution guides also carry
+     restatement, so the type is read off the question rather than assumed. */
   if(COURSE&&COURSE.length){
-    if(!SPEC.sentence_completion) SPEC.sentence_completion={serve:4,time:240,titleHe:"השלמת משפטים",descHe:""};
+    var FALLBACK={sentence_completion:{serve:4,time:240,titleHe:"השלמת משפטים",descHe:""},
+                  restatement:{serve:3,time:360,titleHe:"ניסוח מחדש",descHe:""}};
     COURSE.forEach(function(q){
+      var t=(q.t==="restatement")?"restatement":"sentence_completion";
+      if(!BANK[t]) return;
+      if(!SPEC[t]) SPEC[t]=FALLBACK[t];
       var L=LEVELS.indexOf(q.d)>=0?q.d:"medium";
-      BANK.sentence_completion[L].push({q:q, meta:{type:"sentence_completion", passages:[]}});
+      BANK[t][L].push({q:q, meta:{type:t, passages:[]}});
     });
   }
 

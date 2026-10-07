@@ -1,0 +1,751 @@
+{
+  "_README": "The drill sheets ship no answer key, so every answer here was determined by reading the question; `by` records that, exactly as in answers.json for the first five sheets. Each sheet is titled with a Hebrew phonetic hook for one of its answer words, and `titleCorroborates` marks the question that hook points at — an independent check on that one answer per sheet. Indices are 0-based.",
+  "אקסית-אגרה-תה:1": {
+    "answer": 2,
+    "by": "claude",
+    "titleCorroborates": "אקסית אגרה תה",
+    "note": "the sheet's own title \"אקסית אגרה תה\" encodes \"exaggerate\""
+  },
+  "אקסית-אגרה-תה:2": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "אקסית-אגרה-תה:3": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "אקסית-אגרה-תה:4": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "אקסית-אגרה-תה:5": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "אקסית-אגרה-תה:6": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "אקסית-אגרה-תה:7": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "אקסית-אגרה-תה:8": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "דודה-שלי-אינגריד:1": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "דודה-שלי-אינגריד:2": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "דודה-שלי-אינגריד:3": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "דודה-שלי-אינגריד:4": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "דודה-שלי-אינגריד:5": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "דודה-שלי-אינגריד:6": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "דודה-שלי-אינגריד:7": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "דודה-שלי-אינגריד:8": {
+    "answer": 3,
+    "by": "claude",
+    "titleCorroborates": "דודה שלי אינגריד",
+    "note": "the sheet's own title \"דודה שלי אינגריד\" encodes \"ingredient\""
+  },
+  "דרוש-קואלה:1": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "דרוש-קואלה:2": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "דרוש-קואלה:3": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "דרוש-קואלה:4": {
+    "answer": 2,
+    "by": "claude",
+    "titleCorroborates": "דרוש קואלה",
+    "note": "the sheet's own title \"דרוש קואלה\" encodes \"disqualify\""
+  },
+  "דרוש-קואלה:5": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "דרוש-קואלה:6": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "דרוש-קואלה:7": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "דרוש-קואלה:8": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "היי-אטוס:1": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "היי-אטוס:2": {
+    "answer": 1,
+    "by": "claude",
+    "titleCorroborates": "היי אטוס",
+    "note": "the sheet's own title \"היי אטוס\" encodes \"hiatus\""
+  },
+  "היי-אטוס:3": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "היי-אטוס:4": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "היי-אטוס:5": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "היי-אטוס:6": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "היי-אטוס:7": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "היי-אטוס:8": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "הריח-של-הודור:1": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "הריח-של-הודור:2": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "הריח-של-הודור:3": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "הריח-של-הודור:4": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "הריח-של-הודור:5": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "הריח-של-הודור:6": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "הריח-של-הודור:7": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "הריח-של-הודור:8": {
+    "answer": 2,
+    "by": "claude",
+    "titleCorroborates": "הריח של הודור",
+    "note": "the sheet's own title \"הריח של הודור\" encodes \"odor\""
+  },
+  "ומית-בונה-סוכה:1": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "ומית-בונה-סוכה:2": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "ומית-בונה-סוכה:3": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "ומית-בונה-סוכה:4": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "ומית-בונה-סוכה:5": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "ומית-בונה-סוכה:6": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "ומית-בונה-סוכה:7": {
+    "answer": 1,
+    "by": "claude",
+    "titleCorroborates": "ומית בונה סוכה",
+    "note": "the sheet's own title \"ומית בונה סוכה\" encodes \"omitted\""
+  },
+  "ומית-בונה-סוכה:8": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "כונפה-תביאי-את-הסקייטים:1": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "כונפה-תביאי-את-הסקייטים:2": {
+    "answer": 2,
+    "by": "claude",
+    "titleCorroborates": "כונפה תביאי את הסקייטים",
+    "note": "the sheet's own title \"כונפה תביאי את הסקייטים\" encodes \"confiscate\""
+  },
+  "כונפה-תביאי-את-הסקייטים:3": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "כונפה-תביאי-את-הסקייטים:4": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "כונפה-תביאי-את-הסקייטים:5": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "כונפה-תביאי-את-הסקייטים:6": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "כונפה-תביאי-את-הסקייטים:7": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "כונפה-תביאי-את-הסקייטים:8": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "לא-אוהב-רגאיי-רק:1": {
+    "answer": 1,
+    "by": "claude",
+    "titleCorroborates": "לא אוהב רגאיי רק",
+    "note": "the sheet's own title \"לא אוהב רגאיי רק\" encodes \"merely\""
+  },
+  "לא-אוהב-רגאיי-רק:2": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "לא-אוהב-רגאיי-רק:3": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "לא-אוהב-רגאיי-רק:4": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "לא-אוהב-רגאיי-רק:5": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "לא-אוהב-רגאיי-רק:6": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "לא-אוהב-רגאיי-רק:7": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "לא-אוהב-רגאיי-רק:8": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "לא-טיפוס-של-בוקר:1": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "לא-טיפוס-של-בוקר:2": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "לא-טיפוס-של-בוקר:3": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "לא-טיפוס-של-בוקר:4": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "לא-טיפוס-של-בוקר:5": {
+    "answer": 0,
+    "by": "claude",
+    "titleCorroborates": "לא טיפוס של בוקר",
+    "note": "the sheet's own title \"לא טיפוס של בוקר\" encodes \"mourning\""
+  },
+  "לא-טיפוס-של-בוקר:6": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "לא-טיפוס-של-בוקר:7": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "לא-טיפוס-של-בוקר:8": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "לא-כל-כך-נעים-לראות-גן-הרוס:1": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "לא-כל-כך-נעים-לראות-גן-הרוס:2": {
+    "answer": 1,
+    "by": "claude",
+    "titleCorroborates": "לא כל כך נעים לראות גן הרוס",
+    "note": "the sheet's own title \"לא כל כך נעים לראות גן הרוס\" encodes \"generous\""
+  },
+  "לא-כל-כך-נעים-לראות-גן-הרוס:3": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "לא-כל-כך-נעים-לראות-גן-הרוס:4": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "לא-כל-כך-נעים-לראות-גן-הרוס:5": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "לא-כל-כך-נעים-לראות-גן-הרוס:6": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "לא-כל-כך-נעים-לראות-גן-הרוס:7": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "לא-כל-כך-נעים-לראות-גן-הרוס:8": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "לא-קל-להיות-מקומי:1": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "לא-קל-להיות-מקומי:2": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "לא-קל-להיות-מקומי:3": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "לא-קל-להיות-מקומי:4": {
+    "answer": 1,
+    "by": "claude",
+    "titleCorroborates": "לא קל להיות מקומי",
+    "note": "the sheet's own title \"לא קל להיות מקומי\" encodes \"location\""
+  },
+  "לא-קל-להיות-מקומי:5": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "לא-קל-להיות-מקומי:6": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "לא-קל-להיות-מקומי:7": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "לא-קל-להיות-מקומי:8": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "לך-תחאווד:1": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "לך-תחאווד:2": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "לך-תחאווד:3": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "לך-תחאווד:4": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "לך-תחאווד:5": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "לך-תחאווד:6": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "לך-תחאווד:7": {
+    "answer": 2,
+    "by": "claude",
+    "titleCorroborates": "לך תחאווד",
+    "note": "the sheet's own title \"לך תחאווד\" encodes \"thawed\""
+  },
+  "לך-תחאווד:8": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "מה-לובשים-ערסים:1": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "מה-לובשים-ערסים:2": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "מה-לובשים-ערסים:3": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "מה-לובשים-ערסים:4": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "מה-לובשים-ערסים:5": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "מה-לובשים-ערסים:6": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "מה-לובשים-ערסים:7": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "מה-לובשים-ערסים:8": {
+    "answer": 3,
+    "by": "claude",
+    "titleCorroborates": "מה לובשים ערסים",
+    "note": "the sheet's own title \"מה לובשים ערסים\" encodes \"garment\""
+  },
+  "מכות-בהוסטל:1": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "מכות-בהוסטל:2": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "מכות-בהוסטל:3": {
+    "answer": 3,
+    "by": "claude",
+    "titleCorroborates": "מכות בהוסטל",
+    "note": "the sheet's own title \"מכות בהוסטל\" encodes \"hostile\""
+  },
+  "מכות-בהוסטל:4": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "מכות-בהוסטל:5": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "מכות-בהוסטל:6": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "מכות-בהוסטל:7": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "מכות-בהוסטל:8": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "מלח-תוקפני:1": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "מלח-תוקפני:2": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "מלח-תוקפני:3": {
+    "answer": 3,
+    "by": "claude",
+    "titleCorroborates": "מלח תוקפני",
+    "note": "the sheet's own title \"מלח תוקפני\" encodes \"assault\""
+  },
+  "מלח-תוקפני:4": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "מלח-תוקפני:5": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "מלח-תוקפני:6": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "מלח-תוקפני:7": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "מלח-תוקפני:8": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "משטרת-עכו-מחפשת:1": {
+    "answer": 3,
+    "by": "claude",
+    "titleCorroborates": "משטרת עכו מחפשת",
+    "note": "the sheet's own title \"משטרת עכו מחפשת\" encodes \"accomplice\""
+  },
+  "משטרת-עכו-מחפשת:2": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "משטרת-עכו-מחפשת:3": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "משטרת-עכו-מחפשת:4": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "משטרת-עכו-מחפשת:5": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "משטרת-עכו-מחפשת:6": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "משטרת-עכו-מחפשת:7": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "משטרת-עכו-מחפשת:8": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "סופר-את-השניות:1": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "סופר-את-השניות:2": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "סופר-את-השניות:3": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "סופר-את-השניות:4": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "סופר-את-השניות:5": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "סופר-את-השניות:6": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "סופר-את-השניות:7": {
+    "answer": 0,
+    "by": "claude",
+    "titleCorroborates": "סופר את השניות",
+    "note": "the sheet's own title \"סופר את השניות\" encodes \"suffers\""
+  },
+  "סופר-את-השניות:8": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "סופרמן-חמסה-חמסה:1": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "סופרמן-חמסה-חמסה:2": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "סופרמן-חמסה-חמסה:3": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "סופרמן-חמסה-חמסה:4": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "סופרמן-חמסה-חמסה:5": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "סופרמן-חמסה-חמסה:6": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "סופרמן-חמסה-חמסה:7": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "סופרמן-חמסה-חמסה:8": {
+    "answer": 3,
+    "by": "claude",
+    "titleCorroborates": "סופרמן חמסה חמסה",
+    "note": "the sheet's own title \"סופרמן חמסה חמסה\" encodes \"superstition\""
+  },
+  "פחחח-לא-את:1": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "פחחח-לא-את:2": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "פחחח-לא-את:3": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "פחחח-לא-את:4": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "פחחח-לא-את:5": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "פחחח-לא-את:6": {
+    "answer": 3,
+    "by": "claude",
+    "titleCorroborates": "פחחח לא את",
+    "note": "the sheet's own title \"פחחח לא את\" encodes \"loath\""
+  },
+  "פחחח-לא-את:7": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "פחחח-לא-את:8": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "פרה-לאל:1": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "פרה-לאל:2": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "פרה-לאל:3": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "פרה-לאל:4": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "פרה-לאל:5": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "פרה-לאל:6": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "פרה-לאל:7": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "פרה-לאל:8": {
+    "answer": 2,
+    "by": "claude",
+    "titleCorroborates": "פרה לאל",
+    "note": "the sheet's own title \"פרה לאל\" encodes \"parallel\""
+  },
+  "רוטט-ומסתובב:1": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "רוטט-ומסתובב:2": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "רוטט-ומסתובב:3": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "רוטט-ומסתובב:4": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "רוטט-ומסתובב:5": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "רוטט-ומסתובב:6": {
+    "answer": 1,
+    "by": "claude",
+    "titleCorroborates": "רוטט ומסתובב",
+    "note": "the sheet's own title \"רוטט ומסתובב\" encodes \"rotates\""
+  },
+  "רוטט-ומסתובב:7": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "רוטט-ומסתובב:8": {
+    "answer": 3,
+    "by": "claude"
+  },
+  "שב-בשקט-בלול:1": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "שב-בשקט-בלול:2": {
+    "answer": 2,
+    "by": "claude"
+  },
+  "שב-בשקט-בלול:3": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "שב-בשקט-בלול:4": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "שב-בשקט-בלול:5": {
+    "answer": 0,
+    "by": "claude"
+  },
+  "שב-בשקט-בלול:6": {
+    "answer": 3,
+    "by": "claude",
+    "titleCorroborates": "שב בשקט בלול",
+    "note": "the sheet's own title \"שב בשקט בלול\" encodes \"lull\""
+  },
+  "שב-בשקט-בלול:7": {
+    "answer": 1,
+    "by": "claude"
+  },
+  "שב-בשקט-בלול:8": {
+    "answer": 0,
+    "by": "claude"
+  }
+}

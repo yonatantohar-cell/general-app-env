@@ -17,9 +17,13 @@
 const fs = require('fs');
 const path = require('path');
 
-const RAW = path.join(__dirname, 'text');
+/* Two batches of sheets arrived, months apart, each with its own answer file;
+   both are read so the output is the whole set rather than the latest batch. */
+const BATCHES = [
+  { raw: path.join(__dirname, 'text'), answers: path.join(__dirname, 'answers.json') },
+  { raw: path.join(__dirname, 'sheets', 'text'), answers: path.join(__dirname, 'answers-sheets.json') },
+];
 const OUT = path.join(__dirname, 'course-questions.json');
-const ANSWERS = path.join(__dirname, 'answers.json');
 
 const clean = (s) =>
   String(s || '')
@@ -75,21 +79,36 @@ function parseSheet(text, file) {
   return { file, title, items };
 }
 
+/** A stem, reduced to the letters that identify it across batches. */
+const fingerprint = (s) => String(s).toLowerCase().replace(/[^a-z]/g, '').slice(0, 60);
+
 function main() {
-  const sheets = fs
-    .readdirSync(RAW)
-    .filter((f) => f.endsWith('.txt'))
-    .sort()
-    .map((f) => parseSheet(fs.readFileSync(path.join(RAW, f), 'utf8'), f.replace(/\.txt$/, '')));
-
-  const answers = fs.existsSync(ANSWERS) ? JSON.parse(fs.readFileSync(ANSWERS, 'utf8')) : {};
-
   let total = 0;
   let answered = 0;
+  let duplicates = 0;
   const questions = [];
+  const seen = new Set();
+  const report = [];
 
-  for (const sheet of sheets) {
-    for (const item of sheet.items) {
+  for (const batch of BATCHES) {
+    if (!fs.existsSync(batch.raw)) continue;
+    const sheets = fs
+      .readdirSync(batch.raw)
+      .filter((f) => f.endsWith('.txt'))
+      .sort()
+      .map((f) => parseSheet(fs.readFileSync(path.join(batch.raw, f), 'utf8'), f.replace(/\.txt$/, '')));
+
+    const answers = fs.existsSync(batch.answers)
+      ? JSON.parse(fs.readFileSync(batch.answers, 'utf8'))
+      : {};
+
+    for (const sheet of sheets) {
+      report.push(sheet);
+      for (const item of sheet.items) {
+      /* The same sheet was uploaded more than once; keep the first copy. */
+      const fp = fingerprint(item.stem);
+      if (seen.has(fp)) { duplicates += 1; continue; }
+      seen.add(fp);
       total += 1;
       const key = `${sheet.file}:${item.number}`;
       const rec = answers[key];
@@ -109,15 +128,16 @@ function main() {
         answered += 1;
       }
       questions.push(q);
+      }
     }
   }
 
   fs.writeFileSync(OUT, JSON.stringify(questions, null, 2), 'utf8');
   console.log(
-    `Parsed ${sheets.length} sheets, ${total} questions, ${answered} with an answer ` +
+    `Parsed ${report.length} sheets, ${total} distinct questions ` +
+      `(${duplicates} dropped as re-uploads), ${answered} with an answer ` +
       `(${total - answered} still unanswered)`
   );
-  for (const s of sheets) console.log(`  ${s.file}: ${s.items.length} questions · "${s.title}"`);
 }
 
 if (require.main === module) main();

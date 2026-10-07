@@ -140,7 +140,9 @@ console.log(
  * enough to list. Everything else is a content word and earns its place.
  */
 const COURSE_SRC = path.join(__dirname, 'course', 'course-questions.json');
+const GUIDE_SRC = path.join(__dirname, 'course', 'guide-questions.json');
 const MNEMONIC_SRC = path.join(__dirname, 'course', 'mnemonics.json');
+const HOOKS_SRC = path.join(__dirname, 'course', 'guide-hooks.json');
 const COURSE_TARGET = path.join(__dirname, 'app', 'course-bank.json');
 const TRAINER_TARGET = path.join(__dirname, 'app', 'trainer-words.json');
 const ACADEMIC_SRC = path.join(__dirname, 'vocab', 'academic-words.json');
@@ -218,6 +220,26 @@ function buildTrainerPool() {
     }
   }
 
+  // Source 4: the words the guides stop to teach. Each worked question ends with
+  // a "מנה יומית" block giving the hook for the words it turned on, so these
+  // arrive already carrying the course's own mnemonic. A word taught here but
+  // absent from the corpus is still worth learning — the course chose it.
+  if (fs.existsSync(HOOKS_SRC)) {
+    for (const h of JSON.parse(fs.readFileSync(HOOKS_SRC, 'utf8'))) {
+      if (isFunctional(h.word) || h.word.length < 4) continue;
+      const entry = pool.get(h.word);
+      if (entry) {
+        entry.src = entry.src === 'corpus' || entry.src === 'academic' ? 'both' : entry.src;
+      } else {
+        pool.set(h.word, { word: h.word, times: 1, answer: false, example: '', src: 'course' });
+      }
+      /* The sheet titles below are the richer seed where both exist, so a guide
+         hook never overwrites one that is already there. */
+      const e = pool.get(h.word);
+      if (!e.seed) e.seed = { hook: h.hook, hookBy: 'course', sitting: h.sitting };
+    }
+  }
+
   // Each drill sheet is titled with a Hebrew phonetic hook for one of its answer
   // words — the course teaches vocabulary the same way the trainer does. Carrying
   // those titles through means a seeded word opens with a real, course-authored
@@ -242,15 +264,24 @@ function buildTrainerPool() {
   }
 
   // Most-repeated first: a word the corpus leans on is worth learning first.
+  // Among words that recur equally often — and 1,333 of them occur just once —
+  // the tiebreak is whether the course stops to teach the word, because a
+  // teacher choosing to give it a hook is a stronger signal than alphabet.
   const list = [...pool.values()].sort(
-    (a, b) => b.times - a.times || Number(b.answer) - Number(a.answer) || a.word.localeCompare(b.word)
+    (a, b) =>
+      b.times - a.times ||
+      Number(Boolean(b.seed)) - Number(Boolean(a.seed)) ||
+      Number(b.answer) - Number(a.answer) ||
+      a.word.localeCompare(b.word)
   );
 
   fs.writeFileSync(TRAINER_TARGET, JSON.stringify(list), 'utf8');
   const bySrc = list.reduce((m, w) => ((m[w.src] = (m[w.src] || 0) + 1), m), {});
+  const seeded = list.filter((w) => w.seed).length;
   console.log(
     `Wrote ${path.relative(process.cwd(), TRAINER_TARGET)} — ${list.length} words ` +
-      `(${JSON.stringify(bySrc)}), ${(fs.statSync(TRAINER_TARGET).size / 1024).toFixed(0)}KB`
+      `(${JSON.stringify(bySrc)}), ${seeded} carrying a course hook, ` +
+      `${(fs.statSync(TRAINER_TARGET).size / 1024).toFixed(0)}KB`
   );
 }
 
@@ -262,13 +293,20 @@ buildTrainerPool();
 // ---------------------------------------------------------------------------
 
 /**
- * The "מנה יומית" sheets from the course the user bought, converted into the
- * app's question shape so the bank and the drills can serve them.
+ * The course material, converted into the app's question shape so the bank and
+ * the drills can serve it. Two sources, and they differ in one way that matters:
  *
- * Difficulty is not guessed: each question is graded by the SCOWL frequency
- * tier of its own answer word, so a question turning on `satellite` lands
- * easier than one turning on `pejorative`. Questions whose answer the sheets
- * did not supply are dropped rather than scored against a guess.
+ *   - the "מנה יומית" drill sheets ship NO answer key, so their answers were
+ *     determined here and each carries answerBy "claude";
+ *   - the worked-solution guides stamp the key into every question's own
+ *     heading ("1( .3 )"), so those carry answerBy "course" — the course says
+ *     what the answer is, not me.
+ *
+ * Difficulty is not guessed either. A completion question is graded by the
+ * SCOWL frequency tier of its own answer word, so one turning on `satellite`
+ * lands easier than one turning on `pejorative`. Restatement questions turn on
+ * reading a whole sentence rather than on one word, so they are graded by the
+ * length of the sentence they restate instead.
  */
 
 function tierToDifficulty(tiers, word) {
@@ -277,6 +315,17 @@ function tierToDifficulty(tiers, word) {
   if (inTier('10') || inTier('20')) return 'easy';
   if (inTier('35')) return 'medium';
   if (inTier('40') || inTier('50')) return 'hard';
+  return 'expert';
+}
+
+/* Restatement has no single answer word to look up, so its difficulty comes
+   from the load the stem puts on the reader: the thresholds are the quartiles
+   of the 80 stems actually present, not invented numbers. */
+function restatementDifficulty(prompt) {
+  const words = String(prompt || '').trim().split(/\s+/).length;
+  if (words <= 18) return 'easy';
+  if (words <= 24) return 'medium';
+  if (words <= 30) return 'hard';
   return 'expert';
 }
 
@@ -291,30 +340,44 @@ function buildCourseBank() {
   }
 
   const source = JSON.parse(fs.readFileSync(COURSE_SRC, 'utf8'));
+  const guides = fs.existsSync(GUIDE_SRC) ? JSON.parse(fs.readFileSync(GUIDE_SRC, 'utf8')) : [];
   const out = [];
   let skipped = 0;
+  const seen = new Set();
+  const fingerprint = (t) => String(t).toLowerCase().replace(/[^a-z]/g, '').slice(0, 60);
 
-  for (const q of source) {
+  for (const q of source.concat(guides)) {
     if (typeof q.correctAnswerIndex !== 'number') { skipped += 1; continue; }
+    const fp = fingerprint(q.prompt);
+    if (seen.has(fp)) { skipped += 1; continue; }
+    seen.add(fp);
+
     const answer = q.options[q.correctAnswerIndex];
+    const type = q.type === 'restatement' ? 'restatement' : 'sentence_completion';
     out.push({
       p: q.prompt,
       o: q.options,
       a: q.correctAnswerIndex,
       e: q.note || '',
-      d: tierToDifficulty(tiers, answer),
-      v: [String(answer).toLowerCase()],
-      src: 'course',
-      sheet: q.sheet,
+      d: type === 'restatement'
+        ? restatementDifficulty(q.prompt)
+        : tierToDifficulty(tiers, answer),
+      t: type,
+      v: type === 'restatement' ? [] : [String(answer).toLowerCase()],
+      src: q.source === 'course-guide' ? 'course-guide' : 'course',
+      sheet: q.sheet || q.sitting || '',
       answerBy: q.answerBy || 'claude',
     });
   }
 
   fs.writeFileSync(COURSE_TARGET, JSON.stringify(out), 'utf8');
   const byDiff = out.reduce((m, q) => ((m[q.d] = (m[q.d] || 0) + 1), m), {});
+  const byType = out.reduce((m, q) => ((m[q.t] = (m[q.t] || 0) + 1), m), {});
+  const byWho = out.reduce((m, q) => ((m[q.answerBy] = (m[q.answerBy] || 0) + 1), m), {});
   console.log(
     `Wrote ${path.relative(process.cwd(), COURSE_TARGET)} — ${out.length} questions ` +
-      `${JSON.stringify(byDiff)}` + (skipped ? `, ${skipped} skipped for having no answer` : '')
+      `${JSON.stringify(byDiff)} ${JSON.stringify(byType)} answers ${JSON.stringify(byWho)}` +
+      (skipped ? `, ${skipped} skipped (no answer or a repeat)` : '')
   );
 }
 
