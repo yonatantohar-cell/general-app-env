@@ -216,6 +216,10 @@ async function withFakeDb(browser, width, height, opts) {
     /* The sister: same page, same store, a different id. */
     const guest = await withFakeDb(browser, 390, 844, {
       seedPrivate: { u_owner: seed }, viewer: 'u_sister', owner: false,
+      /* The fake store lets her READ the legacy collection, which the real
+         access rules would not — so the check below tests the code, not the
+         rules that currently happen to cover for it. */
+      legacy: seed,
     });
     const guestErrors = [];
     guest.on('pageerror', (e) => guestErrors.push(e.message));
@@ -232,6 +236,16 @@ async function withFakeDb(browser, width, height, opts) {
     const guestPane = await guest.textContent('#pane-trainer');
     check(!/סימן ישן עבור/.test(guestPane), "none of the owner's hooks appear for the guest");
     check(!/הסימנים שלי \(/.test(guestPane), 'the guest starts with no saved hooks of their own');
+
+    /* A guest's subtree is empty on her first visit, exactly like the owner's
+       was. The migration out of the old shared collection must not run for
+       her: it would move the owner's work into her account. */
+    const migrated = await guest.evaluate(() =>
+      (window.__writes || []).filter((w) => w.path === 'data/users/u_sister'));
+    check(migrated.length === 0, "the legacy collection is not migrated into a guest's subtree");
+    const legacyIntact = await guest.evaluate(() => Object.keys(window.__store().mnemonics || {}).length);
+    check(legacyIntact === seed.length,
+      'and her visit deleted none of it either (' + legacyIntact + ' of ' + seed.length + ' still there)');
 
     /* She can still work, and what she saves lands in HER subtree. */
     await guest.click('#tab-vocab');

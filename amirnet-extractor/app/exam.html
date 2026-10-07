@@ -1807,10 +1807,15 @@ function loadCards(){
   return mine.get().then(function(snap){
     cards=readInto(snap);
     /* Before this version everything went into one shared `mnemonics`
-       collection, which every viewer of the page could read. Anything still
-       there belongs to whoever first opens this version — move it into their
-       own private subtree, then clear it so it is shared with nobody. */
+       collection, which every viewer of the page could read. That data is the
+       OWNER's, so only the owner moves it into their own private subtree and
+       clears it.
+       The access rules already hide that collection from everyone else, but
+       this does not lean on them: a guest opening the page for the first time
+       also has an empty subtree, and without this check the migration would be
+       exactly the code that hands her someone else's work. */
     if(Object.keys(cards).length) return;
+    if(!isOwner) return;
     return migrateLegacy(mine);
   }).catch(function(){ cards=load("amirnet.cards",{})||{} });
 }
