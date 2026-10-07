@@ -55,15 +55,20 @@ function main() {
     '})();\n' +
     '</script>\n';
 
-  /* hints.js is a plain script tag; inline its source in place. */
-  const hints = fs.readFileSync(path.join(APP, 'hints.js'), 'utf8');
-  if (!html.includes('<script src="hints.js"></script>')) {
-    throw new Error('exam.html no longer loads hints.js the way this build expects');
+  /* The sibling scripts are plain tags; inline each source in place. */
+  const SCRIPTS = ['hints.js', 'judge.js'];
+  const inlined = {};
+  for (const f of SCRIPTS) {
+    const tag = '<script src="' + f + '"></script>';
+    if (!html.includes(tag)) {
+      throw new Error('exam.html no longer loads ' + f + ' the way this build expects');
+    }
+    inlined[f] = fs.readFileSync(path.join(APP, f), 'utf8');
+    html = html.replace(tag, '<script>\n' + inlined[f] + '\n</script>');
   }
-  html = html.replace('<script src="hints.js"></script>', '<script>\n' + hints + '\n</script>');
 
-  /* The shim must run before the page's own script, and before hints.js so the
-     document order matches the served page. */
+  /* The shim must run before the page's own script, and before the inlined
+     siblings, so the document order matches the served page. */
   const anchor = '<script>\n';
   const at = html.indexOf(anchor);
   if (at < 0) throw new Error('could not find where to install the shim');
@@ -76,14 +81,15 @@ function main() {
     '  נבנה מ-app/exam.html בתוספת מאגרי השאלות והמילים, שמוטמעים כאן.\n' +
     '  אפשר לפתוח אותו מכל דפדפן, גם בלי אינטרנט ובלי חשבון.\n' +
     '  ההתקדמות נשמרת בדפדפן של מי שפתח אותו, ולא נשלחת לשום מקום.\n' +
-    '  מה שלא עובד כאן: שיפוט הניחוש במאמן המילים, שדורש חיבור ל-Claude.\n' +
+    '  גם מאמן המילים עובד: הניחוש נבדק מול הפירושים השמורים מהקורס.\n' +
     '-->\n<title>');
 
   fs.writeFileSync(OUT, html, 'utf8');
 
   const parts = DATA.map((f) => f + ' ' + kb(fs.statSync(path.join(APP, f)).size)).join(' · ');
   console.log('Wrote ' + path.relative(process.cwd(), OUT) + ' — ' + kb(fs.statSync(OUT).size));
-  console.log('  inlined: ' + parts + ' · hints.js ' + kb(hints.length));
+  console.log('  inlined: ' + parts + ' · ' +
+    SCRIPTS.map((f) => f + ' ' + kb(inlined[f].length)).join(' · '));
 }
 
 if (require.main === module) main();

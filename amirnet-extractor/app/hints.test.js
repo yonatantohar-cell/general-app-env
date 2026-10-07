@@ -138,6 +138,17 @@ console.log(`  a recognisable prefix among the options: ${withPrefix}/${bank.len
 check(withConn > bank.length * 0.1,
   `connectives appear on ${pct(withConn, bank.length)} of questions — common enough to be worth teaching`);
 
+/* ================================================ the blank is a word ==== */
+console.log('\n=== the blank must not glue words together ===');
+check(H.connective('The instructions were so ____ that nobody understood them.') === null,
+  '"so ____ that" is not read as the connective "so that"');
+check(H.connective('He left so that nobody would see him.') !== null,
+  '"so that" is still found when it really is there');
+check(H.connective('She stayed in ______ spite of the warning.') === null,
+  '"in ______ spite of" is not read as "in spite of"');
+const realDespite = H.connective('Despite the warning, she stayed.');
+check(realDespite && realDespite.dir === 'reverse', '"despite" is still found and reverses');
+
 /* ================================================== the prefix exceptions */
 console.log('\n=== the prefix trap the learner was warned about ===');
 ['understand', 'important', 'delight', 'present', 'process', 'continue', 'company']

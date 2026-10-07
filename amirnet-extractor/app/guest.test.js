@@ -79,12 +79,66 @@ const CHROME = '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
     }, { timeout: 15000 });
     const pane = await page.textContent('#pane-trainer');
     check(/בדפדפן הזה בלבד/.test(pane), 'the page says the work is kept in this browser');
-    check(/הרשאה/.test(pane), 'it says the judging feature needs a permission, rather than looking broken');
+    /* The judging no longer needs a permission: it runs against the stored
+       meanings. What must be true is that the loop is actually offered. */
+    check(/מה הפירוש/.test(pane), 'the trainer offers the full loop, not a permission notice');
 
     // the quiz and the library are reachable with no account
     const modeGroup = (await page.$$('#pane-trainer .pick'))[0];
     const modes = await modeGroup.$$eval('button', (b) => b.map((x) => x.textContent.trim()));
     check(modes.length === 3, 'all three trainer modes are offered (' + JSON.stringify(modes) + ')');
+
+    // ---------- the FULL training loop, with no account ----------
+    check(await page.evaluate(() => typeof Judge !== 'undefined'), 'the offline judge is loaded');
+    await page.waitForSelector('#guessField', { timeout: 15000 });
+    const shown = await page.textContent('#pane-trainer .card .en');
+    const expected = await page.evaluate(async (w) => {
+      const t = await fetch('trainer-words.json').then((r) => r.json());
+      const e = t.filter((x) => x.word === w)[0];
+      return e ? { he: e.he, hook: e.seed ? e.seed.hook : '' } : null;
+    }, shown.trim());
+    check(expected && expected.he, 'the word served has a stored meaning to judge against (' + shown.trim() + ')');
+
+    /* Type the right answer. */
+    await page.fill('#guessField', expected.he.split(',')[0].trim());
+    await page.click('#pane-trainer .card .row .btn');
+    await page.waitForFunction(() => /נכון|כמעט|לא נכון/.test(
+      document.querySelector('#pane-trainer .card').textContent), { timeout: 10000 });
+    const right = await page.evaluate(() => {
+      const c = document.querySelector('#pane-trainer .card');
+      return { badge: (c.querySelector('.verdict') || {}).textContent || '', text: c.textContent };
+    });
+    check(right.badge.trim() === 'נכון', 'a correct guess is marked correct, with no account (' + right.badge + ')');
+    check(/בלי חיבור ל-Claude/.test(right.text), 'the page says how the check was made');
+    check(right.text.indexOf(expected.he) >= 0, 'the real meaning is shown');
+    if (expected.hook) check(right.text.indexOf(expected.hook.slice(0, 20)) >= 0,
+      "the course's own hook is offered as the memory aid");
+
+    /* Save it and confirm the card was written. */
+    const saveBtns = await page.$$('#pane-trainer .card .row .btn');
+    await saveBtns[0].click();
+    await page.waitForTimeout(300);
+    const saved = await page.evaluate((w) => {
+      try { return JSON.parse(localStorage.getItem('amirnet.cards'))[w] } catch (e) { return null }
+    }, shown.trim());
+    check(saved && saved.meaning === expected.he, 'the judged word is saved with its meaning');
+    check(saved && saved.due > 0, 'and scheduled for review');
+
+    /* A wrong guess, then the correction the local judge needs to be honest. */
+    await page.waitForSelector('#guessField', { timeout: 10000 });
+    await page.fill('#guessField', 'משהו שאינו קשור בכלל');
+    await page.click('#pane-trainer .card .row .btn');
+    await page.waitForFunction(() => /בעצם צדקתי/.test(
+      document.querySelector('#pane-trainer').textContent), { timeout: 10000 });
+    check(true, 'a wrong guess offers the "I was actually right" correction');
+    await page.evaluate(() => {
+      const b = Array.from(document.querySelectorAll('#pane-trainer button'))
+        .find((x) => x.textContent.trim() === 'בעצם צדקתי');
+      b.click();
+    });
+    await page.waitForFunction(() => /סימנת שצדקת/.test(
+      document.querySelector('#pane-trainer').textContent), { timeout: 10000 });
+    check(true, 'the correction is accepted and changes the verdict');
 
     // ---------- CLOSE THE PAGE AND COME BACK ----------
     await page.close();

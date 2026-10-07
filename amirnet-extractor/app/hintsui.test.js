@@ -54,10 +54,16 @@ async function finishSection(page) {
     check(revs > 0, 'the review rendered');
     check(withHints > 0, 'at least one question shows how it could have been solved');
 
-    /* Open one and read it. */
-    const opened = await page.evaluate(() => {
+    /* Open one and read it. The card is marked first, because clicking the
+       toggle changes the very text a second search would look for — which had
+       the two reads landing on different questions. */
+    await page.evaluate(() => {
       const card = Array.from(document.querySelectorAll('.rev'))
         .find((c) => /איך אפשר היה לפתור/.test(c.textContent));
+      if (card) card.setAttribute('data-under-test', '1');
+    });
+    const opened = await page.evaluate(() => {
+      const card = document.querySelector('.rev[data-under-test]');
       if (!card) return null;
       card.querySelector('.expl .btn').click();
       const body = card.querySelector('.expl > div');
@@ -76,8 +82,7 @@ async function finishSection(page) {
 
     /* A hint must quote something that is really in the question. */
     const grounded = await page.evaluate(() => {
-      const card = Array.from(document.querySelectorAll('.rev'))
-        .find((c) => /איך אפשר היה לפתור/.test(c.textContent));
+      const card = document.querySelector('.rev[data-under-test]');
       const stem = card.querySelector('.qtext').textContent.toLowerCase();
       const opts = Array.from(card.querySelectorAll('.opt .v')).map((v) => v.textContent.trim().toLowerCase());
       const body = card.querySelector('.expl > div').textContent;

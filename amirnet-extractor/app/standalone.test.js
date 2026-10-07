@@ -91,6 +91,21 @@ const FILE = 'file://' + path.join(__dirname, 'amirnet-standalone.html');
     const pane = await page.textContent('#pane-trainer');
     check(/בדפדפן הזה בלבד/.test(pane), 'it says where the progress is kept');
 
+    /* The whole training loop, offline, from inside the one file. */
+    check(await page.evaluate(() => typeof Judge !== 'undefined'), 'the offline judge is inlined');
+    await page.waitForSelector('#guessField', { timeout: 15000 });
+    const w = (await page.textContent('#pane-trainer .card .en')).trim();
+    const he = await page.evaluate((x) => {
+      const e = (window.__BUNDLE['trainer-words.json'] || []).filter((t) => t.word === x)[0];
+      return e ? e.he : '';
+    }, w);
+    check(!!he, 'the served word has a stored meaning (' + w + ' = ' + he + ')');
+    await page.fill('#guessField', he.split(',')[0].trim());
+    await page.click('#pane-trainer .card .row .btn');
+    await page.waitForSelector('#pane-trainer .verdict', { timeout: 10000 });
+    const verdict = (await page.textContent('#pane-trainer .verdict')).trim();
+    check(verdict === 'נכון', 'a guess is judged offline, inside the file (' + verdict + ')');
+
     check(errors.length === 0, 'no errors' + (errors[0] ? ': ' + errors[0] : ''));
     await page.screenshot({ path: '/tmp/standalone-' + label + '.png' });
     await ctx.close();

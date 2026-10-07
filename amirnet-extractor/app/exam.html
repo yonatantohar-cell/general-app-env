@@ -228,6 +228,7 @@ table.t td b{color:var(--accent);font-variant-numeric:tabular-nums}
 </style>
 
 <script src="hints.js"></script>
+<script src="judge.js"></script>
 
 <div id="bar" class="bar" hidden>
   <div class="bar-in">
@@ -1429,7 +1430,11 @@ function nextWord(){
     .filter(function(c){return c.due && c.due<=now})
     .sort(function(a,b){return a.due-b.due});
   if(due.length) return due[0].word;
-  var fresh=TRAINER.filter(function(w){return !cards[w.word]});
+  /* When there is no live judge, a word with no stored meaning cannot be
+     marked right or wrong — so it is not served at all, rather than shown and
+     then refused. */
+  var pool = sampleApi ? TRAINER : localJudgePool();
+  var fresh=pool.filter(function(w){return !cards[w.word]});
   if(fresh.length) return fresh[0].word;              /* pool is ranked by frequency */
   var all=Object.keys(cards).map(function(k){return cards[k]}).sort(function(a,b){return a.due-b.due});
   return all.length?all[0].word:null;
@@ -1552,13 +1557,14 @@ function renderTrainer(){
   if(MODE==="quiz"){ renderQuizInto(p, pool); p.appendChild(storageNote()); return }
   if(MODE==="library"){ renderLibrary(p); p.appendChild(storageNote()); return }
 
-  if(!sampleApi){
+  /* Without `sample` the guess is judged locally instead, against the Hebrew
+     meaning the course wrote for that word — so the whole loop runs with no
+     account at all. Only a pool with no stored meanings leaves nothing to do. */
+  if(!sampleApi && !localJudgePool().length){
     var warn=el("div","card set");
-    warn.appendChild(el("div","eyebrow","המאמן צריך הרשאה"));
-    var w1=el("p",null,"כדי לשפוט את הפירוש שלך ולבנות איתך סימן, הדף צריך לשאול אותי בזמן אמת — וההרשאה לכך לא ניתנה בתצוגה הזו.");
+    warn.appendChild(el("div","eyebrow","אין מה לשפוט מולו"));
+    var w1=el("p",null,"אין כאן פירושים שמורים, והרשאת השאלה בזמן אמת לא ניתנה בתצוגה הזו.");
     w1.style.cssText="margin:8px 0;font-size:14.5px"; warn.appendChild(w1);
-    var w2=el("p","muted","אפשר לאשר דרך תפריט ההרשאות של הדף. בלי זה אני לא יכול לדעת אם צדקת — ולא אנחש.");
-    w2.style.cssText="margin:0;font-size:13.5px"; warn.appendChild(w2);
     var openPerms=el("button","btn ghost","פתח הרשאות"); openPerms.style.marginTop="12px";
     openPerms.onclick=function(){
       try{ window.claude.use("permissions").then(function(pm){ pm&&pm.manage&&pm.manage() }) }catch(e){}
@@ -1613,7 +1619,7 @@ function renderTrainer(){
                  partial:["כמעט","var(--warn)","color-mix(in srgb,var(--warn) 14%,transparent)"],
                  wrong:["לא נכון","var(--bad)","var(--bad-soft)"]};
     var v=VERDICT[j.verdict]||VERDICT.wrong;
-    var badge=el("div",null,v[0]);
+    var badge=el("div","verdict",v[0]);
     badge.style.cssText="display:inline-block;font-weight:700;padding:5px 14px;border-radius:999px;margin:14px 0 10px;color:"+v[1]+";background:"+v[2];
     card.appendChild(badge);
 
@@ -1623,6 +1629,26 @@ function renderTrainer(){
     card.appendChild(mean);
     if(j.english){ var en=el("p","muted en",j.english); en.style.cssText="margin:0 0 10px;font-size:14px"; card.appendChild(en) }
     if(j.note){ var nt=el("p","muted",j.note); nt.style.cssText="margin:0 0 14px;font-size:14px"; card.appendChild(nt) }
+
+    /* A local judgement compares Hebrew text; it does not understand it. A
+       correct synonym the course never listed WILL be marked wrong, so the
+       learner is told how the check was made and can overturn it — and the
+       review schedule honours the correction, not the guess. */
+    if(j.by==="local"){
+      var how=el("p","muted","הבדיקה נעשתה מול הפירוש ששמור מהקורס, בלי חיבור ל-Claude.");
+      how.style.cssText="margin:-8px 0 12px;font-size:12.5px"; card.appendChild(how);
+      if(j.verdict!=="correct"){
+        var iWas=el("button","btn ghost","בעצם צדקתי");
+        iWas.style.cssText="margin:0 0 12px;padding:6px 13px;font-size:13px";
+        iWas.onclick=function(){
+          T.judged.verdict="correct"; T.judged.note="סימנת שצדקת, והמילה תתוזמן בהתאם.";
+          T.session.right++;
+          T.queue=T.queue.filter(function(w){return w!==T.word});
+          renderTrainer();
+        };
+        card.appendChild(iWas);
+      }
+    }
 
     var hook=el("div","expl"); hook.style.marginTop="4px";
     hook.appendChild(el("div","eyebrow","הסימן שאני מציע"));
@@ -1687,10 +1713,38 @@ function renderTrainer(){
 }
 
 /* ---------- actions ---------- */
+/* The words this page can judge on its own: those carrying a stored meaning. */
+function localJudgePool(){
+  if(!TRAINER || typeof Judge==="undefined") return [];
+  if(localJudgePool._c) return localJudgePool._c;
+  localJudgePool._c=TRAINER.filter(function(w){ return Judge.judgeable(w) });
+  return localJudgePool._c;
+}
+
+/* Accept a judgement and move the screen on. Shared by both judges. */
+function acceptJudgement(j){
+  T.judged=j; T.phase="result"; T.writingOwn=false; T.ownDraft="";
+  T.session.seen++; if(j.verdict==="correct") T.session.right++;
+  /* Missed words come back inside this session, not only tomorrow. */
+  if(j.verdict!=="correct"){
+    var q=T.queue; q.splice(Math.min(3,q.length),0,T.word);
+  }
+  renderTrainer();
+}
+
 function submitGuess(){
   var guess=(T.guessDraft||"").trim();
   if(!guess){ T.error="כתוב משהו קודם, גם ניחוש."; renderTrainer(); return }
-  if(!sampleApi) return;
+
+  if(!sampleApi){
+    var entry=(TRAINER||[]).filter(function(w){return w.word===T.word})[0];
+    var local=(typeof Judge!=="undefined") ? Judge.judge(T.word, guess, entry) : null;
+    if(local) acceptJudgement(local);
+    else T.error="אין פירוש שמור למילה הזו, ואי אפשר לשאול כרגע.";
+    if(!local) renderTrainer();
+    return;
+  }
+
   T.phase="judging"; T.error=null; renderTrainer();
 
   /* sample.json resolves the parsed object directly; nothing is validated for
@@ -1698,13 +1752,7 @@ function submitGuess(){
   var seed=seedFor(T.word);
   sampleApi.json(judgePrompt(T.word, guess, seed), {modelTier:"default"}).then(function(j){
     if(!j||!j.verdict) throw {code:"invalid_json"};
-    T.judged=j; T.phase="result"; T.writingOwn=false; T.ownDraft="";
-    T.session.seen++; if(j.verdict==="correct") T.session.right++;
-    /* Missed words come back inside this session, not only tomorrow. */
-    if(j.verdict!=="correct"){
-      var q=T.queue; q.splice(Math.min(3,q.length),0,T.word);
-    }
-    renderTrainer();
+    acceptJudgement(j);
   }).catch(function(err){
     var code=err&&err.code;
     T.phase="idle";

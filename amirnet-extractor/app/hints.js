@@ -113,7 +113,10 @@
     }
     if (BE.indexOf(before) >= 0)
       return { need: 'adjective', cue: before, where: 'before',
-               why: 'אחרי פועל "to be" בא שם תואר, או צורת הסביל של פועל' };
+               /* No double quotes around a grammar term: inside a hint, quotes
+                  mean "this is taken from your question", and the UI test holds
+                  the text to that. */
+               why: 'אחרי פועל הוויה (is/are/was/were) בא שם תואר, או צורת הסביל של פועל' };
     return null;
   }
 
@@ -137,7 +140,12 @@
   ];
 
   function findIn(stem, table) {
-    var low = ' ' + String(stem || '').toLowerCase().replace(/[^a-z ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
+    /* The blank becomes a WORD, not whitespace. Collapsing it away glues the
+       words on either side together: "so ____ that" reads as "so that" and the
+       sentence is reported as having a connective it does not have. */
+    var low = ' ' + String(stem || '').toLowerCase()
+      .replace(/_{2,}/g, ' qqblankqq ')
+      .replace(/[^a-z ]+/g, ' ').replace(/\s+/g, ' ') + ' ';
     var hits = [];
     for (var k = 0; k < table.length; k++) {
       if (low.indexOf(' ' + table[k][0] + ' ') >= 0) hits.push(table[k]);
