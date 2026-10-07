@@ -1302,6 +1302,42 @@ function nextWord(){
   return all.length?all[0].word:null;
 }
 
+/* Loads the trainer pool and the saved cards once, whichever tab asks first. */
+var trainerDataReady=null;
+function ensureTrainerData(){
+  if(trainerDataReady) return trainerDataReady;
+  trainerDataReady = (TRAINER ? Promise.resolve(TRAINER)
+                              : fetch("trainer-words.json").then(function(r){return r.json()})
+                                  .then(function(j){ TRAINER=j; return j })
+                                  .catch(function(){ return null }))
+    .then(function(){ return loadCards() })
+    .catch(function(){});
+  return trainerDataReady;
+}
+
+/* The trainer-pool entry for a word: what the course teaches about it, meaning
+   and hook alike. The vocabulary tab reads from here too, because this is the
+   only file that carries the Hebrew glosses. */
+function courseEntry(word){
+  if(!TRAINER) return null;
+  return TRAINER.filter(function(w){return w.word===word})[0]||null;
+}
+
+/* Take the course's hook for a word as your own, from wherever it is shown.
+   A word with no card yet gets one, so the schedule starts from this moment. */
+function adoptCourseHook(word, entry, btn){
+  var c=cards[word]||newCard(word);
+  c.word=word;
+  if(!c.meaning && entry && entry.he) c.meaning=entry.he;
+  c.mnemonic=entry.seed.hook;
+  c.source="course";
+  c.savedAt=Date.now();
+  if(!c.due) c.due=Date.now();       /* due now: it enters the review queue */
+  cards[word]=c;
+  persistCard(c);
+  if(btn){ btn.textContent="נשמר ✓"; btn.disabled=true }
+}
+
 /* The course-authored hook for a word, when the sheets supplied one. */
 function seedFor(word){
   if(!TRAINER) return null;
@@ -1356,9 +1392,10 @@ function renderTrainer(){
 
   if(!TRAINER){
     p.appendChild(el("div","muted","טוען מילים…"));
-    fetch("trainer-words.json").then(function(r){return r.json()}).then(function(j){
-      TRAINER=j; loadCards().then(renderTrainer);
-    }).catch(function(){ p.textContent=""; p.appendChild(el("div","card set","לא ניתן לטעון את רשימת המילים.")) });
+    ensureTrainerData().then(function(){
+      if(TRAINER) renderTrainer();
+      else { p.textContent=""; p.appendChild(el("div","card set","לא ניתן לטעון את רשימת המילים.")) }
+    });
     return;
   }
 
@@ -1379,7 +1416,8 @@ function renderTrainer(){
      sit above the `sampleApi` check that the practice flow depends on. */
   var pool=quizPool();
   if(pool.length) p.appendChild(modeSwitch(pool.length));
-  if(Q.on){ renderQuizInto(p, pool); return }
+  if(MODE==="quiz"){ renderQuizInto(p, pool); return }
+  if(MODE==="library"){ renderLibrary(p); return }
 
   if(!sampleApi){
     var warn=el("div","card set");
@@ -1394,7 +1432,6 @@ function renderTrainer(){
     };
     warn.appendChild(openPerms);
     p.appendChild(warn);
-    p.appendChild(trainerListPreview());
     return;
   }
 
@@ -1516,26 +1553,6 @@ function renderTrainer(){
     var nodb=el("p","muted","הסימנים לא נשמרים בתצוגה הזו — אין הרשאת אחסון.");
     nodb.style.cssText="margin:10px 2px 0;font-size:13px"; p.appendChild(nodb);
   }
-  p.appendChild(trainerListPreview());
-}
-
-/* A short look at what is already saved, so the tab is useful before grading. */
-function trainerListPreview(){
-  var wrap=el("div"); wrap.style.marginTop="22px";
-  var saved=Object.keys(cards).map(function(k){return cards[k]})
-    .filter(function(c){return c.mnemonic}).sort(function(a,b){return (b.savedAt||0)-(a.savedAt||0)});
-  if(!saved.length) return wrap;
-  wrap.appendChild(el("div","eyebrow","הסימנים שבנית ("+saved.length+")"));
-  saved.slice(0,12).forEach(function(c){
-    var d=el("div","card"); d.style.cssText="padding:11px 14px;margin-top:7px";
-    var w=el("span","en",c.word); w.style.cssText="font-weight:700;color:var(--accent);font-size:15.5px";
-    d.appendChild(w);
-    if(c.meaning){ var m=el("span",null," — "+c.meaning); m.style.fontSize="14px"; d.appendChild(m) }
-    if(c.source==="course"){ var tag=el("span","pill","מהקורס"); tag.style.marginInlineStart="8px"; d.appendChild(tag) }
-    var h=el("div","muted",c.mnemonic); h.style.cssText="font-size:13.5px;margin-top:3px"; d.appendChild(h);
-    wrap.appendChild(d);
-  });
-  return wrap;
 }
 
 /* ---------- actions ---------- */
@@ -1629,7 +1646,35 @@ function persistCard(card){
  * The right answer there is still clearly the better one, and catching it would
  * take a Hebrew morphology pass that would reject far more than it should.
  */
-var Q={on:false, items:[], i:0, answers:[], revealed:{}, done:false, size:10};
+var Q={items:[], i:0, answers:[], revealed:{}, done:false, size:10, fmt:"meaning"};
+
+/*
+ * The second format: real sentence-completion questions from the course bank,
+ * kept only where the answer is a word already studied. Recognising a meaning
+ * among four is one thing; using the word in a sentence is the thing the exam
+ * actually asks for, so the words learnt here come back as exam questions.
+ *
+ * A question qualifies on its `v` tag, which build-app-data sets to the lower-
+ * cased answer word — matching on the stem text would catch the word appearing
+ * anywhere in the sentence, which is not what is being tested.
+ */
+function completionFor(words){
+  if(!COURSE||!COURSE.length) return [];
+  var want={}; words.forEach(function(w){ want[String(w).toLowerCase()]=1 });
+  return COURSE.filter(function(q){
+    return q.t!=="restatement" && q.v && q.v.length===1 && want[q.v[0]];
+  });
+}
+
+function buildCompletionQuiz(pool, size){
+  var picked=shuffled(completionFor(pool.map(function(c){return c.word})));
+  if(size>0) picked=picked.slice(0,size);
+  return picked.map(function(q){
+    return { word:(q.v&&q.v[0])||"", dir:"completion", a:q.a,
+             prompt:q.p, options:q.o.slice(),
+             hook:(cards[(q.v&&q.v[0])||""]||{}).mnemonic||"" };
+  });
+}
 
 /* Exactly the words the learner has made a definition for. `meaning` is written
    on every judged word, including one saved without a hook, so this is the
@@ -1718,20 +1763,153 @@ function quizSizes(poolLen){
 function sizeLabel(n, poolLen){ return n ? String(n) : ("הכול ("+poolLen+")") }
 
 /* ---------- screens ---------- */
+/* practice = learn a new word · quiz = be tested · library = edit what I built */
+var MODE = 'practice';
+
 function modeSwitch(poolLen){
   var row=el("div","pick"); row.style.margin="0 0 18px";
-  [[false,"תרגול"],[true,"מבחן על מה שלמדתי ("+poolLen+")"]].forEach(function(pair){
+  var built=Object.keys(cards).filter(function(k){return cards[k]&&cards[k].mnemonic}).length;
+  [["practice","תרגול"],
+   ["quiz","מבחן ("+poolLen+")"],
+   ["library","הסימנים שלי"+(built?" ("+built+")":"")]].forEach(function(pair){
     var b=el("button",null,pair[1]);
-    b.setAttribute("aria-pressed", Q.on===pair[0]?"true":"false");
+    b.setAttribute("aria-pressed", MODE===pair[0]?"true":"false");
     b.onclick=function(){
-      if(Q.on===pair[0]) return;
-      Q.on=pair[0];
-      if(!Q.on) resetQuiz();
+      if(MODE===pair[0]) return;
+      MODE=pair[0];
+      if(MODE!=="quiz") resetQuiz();
+      if(MODE!=="library") LIB.editing=null;
       renderTrainer();
     };
     row.appendChild(b);
   });
   return row;
+}
+
+/* =================== THE MNEMONIC LIBRARY =================== */
+/*
+ * Everything already built, open for rewriting. A hook is a personal thing and
+ * the first version is rarely the one that sticks, so each entry can be edited
+ * in place, swapped for the course's own hook where the course teaches one, or
+ * cleared to be built again from scratch.
+ *
+ * Clearing removes the HOOK, not the card: the meaning and the review schedule
+ * are earned separately and survive, so rewriting a hook never costs progress.
+ */
+var LIB={ q:'', editing:null, draft:'' };
+
+function savedCards(){
+  return Object.keys(cards).map(function(k){return cards[k]})
+    .filter(function(c){ return c&&c.word&&c.mnemonic })
+    .sort(function(a,b){ return (b.savedAt||0)-(a.savedAt||0) });
+}
+
+function saveHook(word, text, source){
+  var c=cards[word]; if(!c) return;
+  var t=String(text||'').trim();
+  if(t){ c.mnemonic=t; c.source=source||'mine'; c.savedAt=Date.now() }
+  else { delete c.mnemonic; delete c.source; delete c.savedAt }
+  cards[word]=c;
+  persistCard(c);
+  LIB.editing=null; LIB.draft='';
+  renderTrainer();
+}
+
+function renderLibrary(p){
+  var all=savedCards();
+  if(!all.length){
+    var none=el("div","card set");
+    none.appendChild(el("div","eyebrow","עוד לא בנית סימנים"));
+    var t=el("p",null,"כל סימן שתשמור בתרגול יופיע כאן, ותוכל לשנות אותו מתי שתרצה.");
+    t.style.cssText="margin:8px 0 0;font-size:14.5px"; none.appendChild(t);
+    p.appendChild(none); return;
+  }
+
+  var needle=LIB.q.trim().toLowerCase();
+  var shown=needle ? all.filter(function(c){
+    return (c.word+' '+(c.meaning||'')+' '+(c.mnemonic||'')).toLowerCase().indexOf(needle)>=0;
+  }) : all;
+
+  var search=document.createElement("input");
+  search.type="search"; search.className="note-field"; search.id="libSearch";
+  search.placeholder="חיפוש לפי מילה, פירוש או סימן…";
+  search.value=LIB.q; search.style.marginTop="0";
+  search.oninput=function(){ LIB.q=search.value; renderLibrary2() };
+  p.appendChild(search);
+
+  var count=el("p","muted", shown.length===all.length
+    ? (all.length+" סימנים")
+    : (shown.length+" מתוך "+all.length));
+  count.style.cssText="margin:8px 2px 12px;font-size:13.5px"; p.appendChild(count);
+
+  shown.forEach(function(c){
+    var d=el("div","card"); d.style.cssText="padding:13px 15px;margin-bottom:9px";
+
+    var top=el("div","row"); top.style.cssText="justify-content:space-between;align-items:baseline";
+    var left=el("div");
+    var w=el("span","en",c.word);
+    w.style.cssText="font-weight:700;color:var(--accent);font-size:16px";
+    left.appendChild(w);
+    if(c.meaning){ var m=el("span",null," — "+c.meaning); m.style.fontSize="14px"; left.appendChild(m) }
+    if(c.source==="course"){ var tag=el("span","pill","מהקורס"); tag.style.marginInlineStart="8px"; left.appendChild(tag) }
+    top.appendChild(left);
+    if(c.lapses) top.appendChild(el("span","muted","טעית "+c.lapses));
+    d.appendChild(top);
+
+    if(LIB.editing===c.word){
+      var ta=document.createElement("textarea");
+      ta.className="note-field"; ta.rows=3; ta.id="libEdit";
+      ta.value=LIB.draft; ta.placeholder="הסימן שלך למילה הזו…";
+      ta.oninput=function(){ LIB.draft=ta.value };
+      ta.onkeydown=function(e){ if(e.key==="Enter"&&(e.metaKey||e.ctrlKey)) saveHook(c.word,LIB.draft,"mine") };
+      d.appendChild(ta);
+
+      var seed=seedFor(c.word);
+      if(seed&&seed.hook){
+        var alt=el("div","expl"); alt.style.marginTop="10px";
+        alt.appendChild(el("div","eyebrow","הסימן שהקורס מלמד"));
+        var ah=el("p",null,seed.hook); ah.style.cssText="margin:7px 0 0;font-size:14.5px";
+        alt.appendChild(ah);
+        var take=el("button","btn ghost","קח את זה"); take.style.cssText="margin-top:10px;padding:7px 14px;font-size:13px";
+        take.onclick=function(){ LIB.draft=seed.hook; renderTrainer() };
+        alt.appendChild(take);
+        d.appendChild(alt);
+      }
+
+      var acts=el("div","row"); acts.style.marginTop="12px";
+      var ok=el("button","btn","שמור"); ok.onclick=function(){ saveHook(c.word,LIB.draft,"mine") };
+      acts.appendChild(ok);
+      var cancel=el("button","btn ghost","ביטול");
+      cancel.onclick=function(){ LIB.editing=null; LIB.draft=""; renderTrainer() };
+      acts.appendChild(cancel);
+      var wipe=el("button","btn ghost","מחק את הסימן");
+      wipe.style.color="var(--bad)";
+      wipe.onclick=function(){ saveHook(c.word,"",null) };
+      acts.appendChild(wipe);
+      d.appendChild(acts);
+
+      var keep=el("p","muted","המחיקה מוחקת את הסימן בלבד — הפירוש וההתקדמות בחזרות נשארים.");
+      keep.style.cssText="margin:9px 0 0;font-size:12.5px"; d.appendChild(keep);
+    }else{
+      var h=el("div",null,c.mnemonic);
+      h.style.cssText="font-size:14px;margin-top:5px;line-height:1.55"; d.appendChild(h);
+      var edit=el("button","btn ghost","ערוך");
+      edit.style.cssText="margin-top:10px;padding:6px 14px;font-size:13px";
+      edit.onclick=function(){ LIB.editing=c.word; LIB.draft=c.mnemonic||""; renderTrainer() };
+      d.appendChild(edit);
+    }
+    p.appendChild(d);
+  });
+}
+
+/* Re-render only the library, so typing in the search box keeps focus. */
+function renderLibrary2(){
+  var p=$("pane-trainer");
+  var old=p.querySelector("#libSearch");
+  var at=old?old.selectionStart:null;
+  renderTrainer();
+  var next=$("pane-trainer").querySelector("#libSearch");
+  if(next){ next.focus(); if(at!=null) try{ next.setSelectionRange(at,at) }catch(e){} }
 }
 
 function renderQuizInto(p, pool){
@@ -1749,28 +1927,47 @@ function renderQuizInto(p, pool){
 }
 
 function renderQuizSetup(p, pool){
-  var sizes=quizSizes(pool.length);
-  if(sizes.indexOf(Q.size)<0) Q.size=sizes[0];
+  var avail=completionFor(pool.map(function(x){return x.word})).length;
+  if(Q.fmt==="completion"&&!avail) Q.fmt="meaning";
 
   var c=el("div","card set"); c.style.padding="20px";
-  c.appendChild(el("div","eyebrow","כמה מילים"));
+
+  c.appendChild(el("div","eyebrow","סוג המבחן"));
+  var fmts=el("div","pick");
+  [["meaning","פירושים"],["completion","השלמת משפטים ("+avail+")"]].forEach(function(pair){
+    var b=el("button",null,pair[1]);
+    b.setAttribute("aria-pressed", Q.fmt===pair[0]?"true":"false");
+    b.disabled = pair[0]==="completion" && !avail;
+    b.onclick=function(){ Q.fmt=pair[0]; renderTrainer() };
+    fmts.appendChild(b);
+  });
+  c.appendChild(fmts);
+
+  var cap = Q.fmt==="completion" ? avail : pool.length;
+  var sizes=quizSizes(cap);
+  if(sizes.indexOf(Q.size)<0) Q.size=sizes[0];
+
+  var sizeHead=el("div","eyebrow","כמה שאלות"); sizeHead.style.marginTop="18px";
+  c.appendChild(sizeHead);
   var row=el("div","pick");
   sizes.forEach(function(n){
-    var b=el("button",null,sizeLabel(n,pool.length));
+    var b=el("button",null,sizeLabel(n,cap));
     b.setAttribute("aria-pressed", Q.size===n?"true":"false");
     b.onclick=function(){ Q.size=n; renderTrainer() };
     row.appendChild(b);
   });
   c.appendChild(row);
 
-  var how=el("p","muted","מוצגת מילה ואתה בוחר את הפירוש מתוך ארבע אפשרויות. חלק מהשאלות בכיוון ההפוך — פירוש, ואתה בוחר את המילה. אין משוב עד הסוף.");
+  var how=el("p","muted", Q.fmt==="completion"
+    ? "שאלות השלמת משפטים אמיתיות מהקורס, רק כאלה שהתשובה שלהן היא מילה שכבר למדת. אין משוב עד הסוף."
+    : "מוצגת מילה ואתה בוחר את הפירוש מתוך ארבע אפשרויות. חלק מהשאלות בכיוון ההפוך — פירוש, ואתה בוחר את המילה. אין משוב עד הסוף.");
   how.style.cssText="margin:16px 0 0;font-size:14px"; c.appendChild(how);
   var sched=el("p","muted","מילה שתטעה בה תחזור לתרגול מחר. אם נעזרת בסימן כדי לענות — היא תחזור גם כן, גם אם ענית נכון.");
   sched.style.cssText="margin:6px 0 0;font-size:13.5px"; c.appendChild(sched);
 
   var go=el("button","btn","התחל את המבחן ←"); go.style.marginTop="16px"; go.id="quizStart";
   go.onclick=function(){
-    Q.items=buildQuiz(pool, Q.size);
+    Q.items = Q.fmt==="completion" ? buildCompletionQuiz(pool, Q.size) : buildQuiz(pool, Q.size);
     Q.answers=new Array(Q.items.length).fill(null);
     Q.i=0; Q.revealed={}; Q.done=false;
     renderTrainer();
@@ -1784,11 +1981,13 @@ function renderQuizQuestion(p){
   var c=el("div","card qbox");
 
   c.appendChild(el("div","qnum","שאלה "+(Q.i+1)+" מתוך "+Q.items.length));
-  var qt=el("div","qtext"+(it.dir==="en2he"?" en":""), it.prompt);
+  var latinPrompt = it.dir!=="he2en";          /* completion and en2he are English */
+  var qt=el("div","qtext"+(latinPrompt?" en":""), it.prompt);
   if(it.dir==="en2he")
     qt.style.cssText="font-family:var(--font-display);font-weight:900;font-size:31px;color:var(--accent);margin-bottom:6px";
   c.appendChild(qt);
-  var ask=el("p","muted", it.dir==="en2he" ? "מה הפירוש?" : "איזו מילה זאת?");
+  var ask=el("p","muted", it.dir==="completion" ? "איזו מילה משלימה את המשפט?"
+                        : it.dir==="en2he" ? "מה הפירוש?" : "איזו מילה זאת?");
   ask.style.cssText="margin:0 0 15px;font-size:14px"; c.appendChild(ask);
 
   var opts=el("div","opts");
@@ -1796,7 +1995,8 @@ function renderQuizQuestion(p){
     var b=el("button","opt"); b.type="button";
     b.setAttribute("aria-pressed", Q.answers[Q.i]===i?"true":"false");
     b.appendChild(el("span","k",LETTERS[i]));
-    /* Only the Latin side gets `en`; the Hebrew side must stay RTL. */
+    /* Only the Latin side gets `en`; the Hebrew side must stay RTL. A
+       completion question is English on both sides. */
     b.appendChild(el("span","v"+(it.dir==="en2he"?"":" en"), text));
     b.onclick=function(){
       Q.answers[Q.i]=(Q.answers[Q.i]===i?null:i);
@@ -1891,7 +2091,7 @@ function renderQuizResults(p){
   again.onclick=function(){ resetQuiz(); renderTrainer() };
   acts.appendChild(again);
   var back=el("button","btn ghost","חזרה לתרגול");
-  back.onclick=function(){ Q.on=false; resetQuiz(); renderTrainer() };
+  back.onclick=function(){ MODE="practice"; resetQuiz(); renderTrainer() };
   acts.appendChild(back);
   sc.appendChild(acts);
   p.appendChild(sc);
@@ -1918,9 +2118,9 @@ function renderQuizResults(p){
     top.appendChild(el("span","pill", ok?"נכון":"לא נכון"));
     r.appendChild(top);
 
-    var correct=el("p",null,"הפירוש: "+it.options[it.a]);
+    var correct=el("p",null,(it.dir==="completion"?"המילה הנכונה: ":"הפירוש: ")+it.options[it.a]);
     correct.style.cssText="margin:8px 0 0;font-size:14.5px";
-    if(it.dir==="he2en") correct.className="en";
+    if(it.dir!=="en2he") correct.className="en";
     r.appendChild(correct);
 
     if(!ok){
@@ -2099,6 +2299,24 @@ function renderVocab(){
   search.style.cssText="width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--ink);font:inherit;margin-bottom:14px";
   p.appendChild(search);
 
+  /* The corpus list is ordered by frequency, which puts so/because/but at the
+     top — exactly the words with nothing to teach. The list stays complete,
+     but this narrows it to the words the course actually glosses. */
+  var filt=el("div","pick"); filt.style.margin="0 0 14px";
+  [["all","כל המילים"],["taught","רק מה שהקורס מלמד"]].forEach(function(pair){
+    var b=el("button",null,pair[1]);
+    b.setAttribute("aria-pressed", VOCAB_SCOPE===pair[0]?"true":"false");
+    b.onclick=function(){
+      VOCAB_SCOPE=pair[0];
+      Array.prototype.forEach.call(filt.querySelectorAll("button"),function(x,i){
+        x.setAttribute("aria-pressed", VOCAB_SCOPE===(i?"taught":"all")?"true":"false");
+      });
+      paintVocab((($("vocabSearch")||{}).value||"").trim().toLowerCase());
+    };
+    filt.appendChild(b);
+  });
+  p.appendChild(filt);
+
   var list=el("div"); list.id="vocabList";
   list.style.cssText="display:flex;flex-direction:column;gap:7px";
   p.appendChild(list);
@@ -2109,11 +2327,38 @@ function renderVocab(){
     VOCAB=j; paintVocab("");
     search.oninput=function(){paintVocab(search.value.trim().toLowerCase())};
   }).catch(function(){ status.textContent="לא ניתן לטעון את רשימת המילים." });
+
+  /* The glosses and hooks live in the trainer pool, and the saved cards decide
+     which hooks are already adopted. Either can still be unloaded when this tab
+     is opened first, so both are fetched here and the rows repainted after. */
+  ensureTrainerData().then(function(){
+    if(VOCAB) paintVocab(($("vocabSearch").value||"").trim().toLowerCase());
+  });
 }
+
+var VOCAB_SCOPE="all";
 
 function paintVocab(filter){
   var list=$("vocabList"); list.textContent="";
-  var rows=VOCAB.filter(function(w){return !filter||w.word.indexOf(filter)===0||w.word.indexOf(filter)>-1});
+
+  /* Two different lists. "all" is the corpus vocabulary, ordered by how often a
+     word decides a question. "taught" is everything the course glosses — far
+     larger, and mostly words the corpus list never had — so it is built from
+     the trainer pool and only borrows the corpus example where one exists. */
+  var rows;
+  if(VOCAB_SCOPE==="taught"){
+    var byWord={};
+    VOCAB.forEach(function(w){ byWord[w.word]=w });
+    rows=(TRAINER||[]).filter(function(t){ return t.he||(t.seed&&t.seed.hook) })
+      .map(function(t){
+        var c=byWord[t.word];
+        return { word:t.word, times:t.times||1, answer:c?c.answer:t.answer,
+                 example:(c&&c.example)||t.example||"" };
+      });
+  }else{
+    rows=VOCAB.slice();
+  }
+  rows=rows.filter(function(w){ return !filter || w.word.indexOf(filter)>=0 });
   if(!rows.length){list.appendChild(el("div","muted","לא נמצאה מילה כזו."));return}
   var count=el("div","muted",rows.length+" מילים");
   count.style.cssText="font-size:12.5px;margin-bottom:4px"; list.appendChild(count);
@@ -2126,9 +2371,42 @@ function paintVocab(filter){
     if(w.answer) top.appendChild(el("span","pill done","★ תשובה נכונה"));
     if(w.times>1) top.appendChild(el("span","pill",w.times+" פעמים"));
     c.appendChild(top);
-    var ex=el("div","en",w.example.replace(/_{2,}/," ___ "));
-    ex.style.cssText="font-size:13.5px;color:var(--muted);margin-top:5px;line-height:1.5";
-    c.appendChild(ex);
+    /* What the course says this word means, where the guides glossed it. */
+    var taught=courseEntry(w.word);
+    if(taught&&taught.he){
+      var he=el("div",null,taught.he);
+      he.style.cssText="font-size:14.5px;margin-top:4px;font-weight:600";
+      c.appendChild(he);
+    }
+
+    if(w.example){
+      var ex=el("div","en",w.example.replace(/_{2,}/," ___ "));
+      ex.style.cssText="font-size:13.5px;color:var(--muted);margin-top:5px;line-height:1.5";
+      c.appendChild(ex);
+    }
+
+    /* The hook the course teaches, offered as a ready-made option: adopting it
+       creates the card outright, so a word can be learnt straight from here
+       without going through the judging flow first. */
+    if(taught&&taught.seed&&taught.seed.hook){
+      var box=el("div","expl"); box.style.marginTop="9px";
+      box.appendChild(el("div","eyebrow","הסימן שהקורס מלמד"));
+      var hk=el("p",null,taught.seed.hook);
+      hk.style.cssText="margin:7px 0 0;font-size:14px;line-height:1.55";
+      box.appendChild(hk);
+
+      var have=cards[w.word];
+      if(have&&have.mnemonic===taught.seed.hook){
+        var done=el("div","muted","כבר שמור אצלך.");
+        done.style.cssText="margin-top:9px;font-size:12.5px"; box.appendChild(done);
+      }else{
+        var add=el("button","btn ghost", have&&have.mnemonic?"החלף בסימן הזה":"שמור כסימן שלי");
+        add.style.cssText="margin-top:10px;padding:7px 14px;font-size:13px";
+        add.onclick=function(){ adoptCourseHook(w.word, taught, add) };
+        box.appendChild(add);
+      }
+      c.appendChild(box);
+    }
     list.appendChild(c);
   });
 }

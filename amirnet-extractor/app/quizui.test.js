@@ -40,14 +40,17 @@ const FIXTURE = require('./fixtures/cards.json');
     await page.waitForSelector('#pane-trainer .pick', { timeout: 15000 });
 
     /* The mode switch must be there even though this page has no `sample`. */
-    const modes = await page.$$eval('#pane-trainer .pick button', (b) => b.map((x) => x.textContent.trim()));
-    check(modes.length === 2, 'the trainer offers two modes (' + JSON.stringify(modes) + ')');
+    /* first-of-type counts divs, not .pick groups, so take the group by handle. */
+    const modeGroup = (await page.$$('#pane-trainer .pick'))[0];
+    const modes = await modeGroup.$$eval('button', (b) => b.map((x) => x.textContent.trim()));
+    check(modes.length === 3, 'the trainer offers three modes (' + JSON.stringify(modes) + ')');
     check(modes[1].indexOf('38') >= 0, 'the quiz button counts the studied words');
 
     await page.click('#pane-trainer .pick button:nth-child(2)');
     await page.waitForSelector('#quizStart');
+    /* Groups are now: 0 the mode switch, 1 the format choice, 2 the lengths. */
     const sizes = await page.$$eval('#pane-trainer .pick', (gs) =>
-      Array.from(gs[1].querySelectorAll('button')).map((b) => b.textContent.trim()));
+      Array.from(gs[2].querySelectorAll('button')).map((b) => b.textContent.trim()));
     check(sizes.join(',') === '10,25,הכול (38)', 'the lengths offered fit the pool (' + sizes.join(' · ') + ')');
 
     await page.click('#quizStart');

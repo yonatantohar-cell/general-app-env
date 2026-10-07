@@ -234,7 +234,39 @@ function parseBlock(num, answer, lines) {
   const idx = answer - 1;
   if (idx < 0 || idx > 3) return null;
 
-  return { number: num, type, prompt: stem, options, correctAnswerIndex: idx };
+  const q = { number: num, type, prompt: stem, options, correctAnswerIndex: idx };
+  return usable(q) ? q : null;
+}
+
+/**
+ * Is this a question the app can actually serve?
+ *
+ * The guides come in three layouts across the years. The newest give the
+ * question in full. The oldest give no English question at all — only a Hebrew
+ * summary and the four options — and one middle run gives nothing but a
+ * fragment of the sentence ("be _____ by lightning-", "as an outstanding
+ * example (דוגמה יוצאת דופן) of water sharing"). A fragment cannot be answered
+ * fairly, so it is rejected here rather than scored against later. What those
+ * files are good for is vocabulary, and parse-vocab.js takes that instead.
+ */
+function usable(q) {
+  const p = q.prompt;
+  if (HEB.test(p)) return false;                      // Hebrew leaked into the stem
+  if (q.options.some((o) => HEB.test(o))) return false;
+  if (q.options.some((o) => /[()]/.test(o))) return false;  // "swept (sweep)" glosses
+  if (/[-–—]\s*$/.test(p)) return false;              // trails off mid-sentence
+
+  if (q.type === 'sentence_completion') {
+    if (!/_{3,}/.test(p)) return false;               // no blank: not a completion
+    if (p.trim().split(/\s+/).length < 6) return false;
+    /* A real stem is a sentence: it has words on both sides of the blank, or
+       opens with it. A bare phrase like "greatest _____ to the field" does not
+       reach the length a sitting's sentence does. */
+    if (p.length < 40) return false;
+    return true;
+  }
+  if (/_{3,}/.test(p)) return false;                  // a restatement has no blank
+  return p.trim().split(/\s+/).length >= 8 && p.length >= 40;
 }
 
 function parseGuide(text, name) {

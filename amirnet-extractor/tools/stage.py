@@ -41,11 +41,17 @@ def main(outroot, paths):
         text, pages = page1(p)
         t = title_of(text, pages)
         kind = "sheet" if pages <= 3 else "guide"
-        name = slug(t) or os.path.basename(p)[:8]
-        seen[name] = seen.get(name, 0) + 1
-        if seen[name] > 1:
-            name = "%s-%d" % (name, seen[name])
-        out = os.path.join(outroot, kind + "s", "text", name + ".txt")
+        base = slug(t) or os.path.basename(p)[:8]
+        # Two sittings can be titled the same, and a later run must not land on
+        # a file an earlier one already wrote: check BOTH this run and the disk.
+        name, n = base, 1
+        while True:
+            out = os.path.join(outroot, kind + "s", "text", name + ".txt")
+            if name not in seen and not os.path.exists(out):
+                break
+            n += 1
+            name = "%s-%d" % (base, n)
+        seen[name] = 1
         r = PdfReader(p)
         with open(out, "w", encoding="utf-8") as fh:
             for i, page in enumerate(r.pages, 1):

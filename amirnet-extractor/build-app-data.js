@@ -143,6 +143,7 @@ const COURSE_SRC = path.join(__dirname, 'course', 'course-questions.json');
 const GUIDE_SRC = path.join(__dirname, 'course', 'guide-questions.json');
 const MNEMONIC_SRC = path.join(__dirname, 'course', 'mnemonics.json');
 const HOOKS_SRC = path.join(__dirname, 'course', 'guide-hooks.json');
+const GVOCAB_SRC = path.join(__dirname, 'course', 'guide-vocab.json');
 const COURSE_TARGET = path.join(__dirname, 'app', 'course-bank.json');
 const TRAINER_TARGET = path.join(__dirname, 'app', 'trainer-words.json');
 const ACADEMIC_SRC = path.join(__dirname, 'vocab', 'academic-words.json');
@@ -220,7 +221,26 @@ function buildTrainerPool() {
     }
   }
 
-  // Source 4: the words the guides stop to teach. Each worked question ends with
+  // Source 4: the glossed options. The guides spell out what every option of a
+  // completion question means in Hebrew, and nothing else in the whole corpus
+  // does — so this is where the app's meanings come from. Some lines carry the
+  // hook as well, and those seed the trainer like the sheet titles do.
+  if (fs.existsSync(GVOCAB_SRC)) {
+    for (const v of JSON.parse(fs.readFileSync(GVOCAB_SRC, 'utf8'))) {
+      if (isFunctional(v.word) || v.word.length < 4) continue;
+      let entry = pool.get(v.word);
+      if (!entry) {
+        entry = { word: v.word, times: 1, answer: false, example: '', src: 'course' };
+        pool.set(v.word, entry);
+      } else if (entry.src === 'corpus' || entry.src === 'academic') {
+        entry.src = 'both';
+      }
+      if (!entry.he) entry.he = v.meaning;
+      if (v.hook && !entry.seed) entry.seed = { hook: v.hook, hookBy: 'course', sitting: v.sitting };
+    }
+  }
+
+  // Source 5: the words the guides stop to teach. Each worked question ends with
   // a "מנה יומית" block giving the hook for the words it turned on, so these
   // arrive already carrying the course's own mnemonic. A word taught here but
   // absent from the corpus is still worth learning — the course chose it.
@@ -278,9 +298,11 @@ function buildTrainerPool() {
   fs.writeFileSync(TRAINER_TARGET, JSON.stringify(list), 'utf8');
   const bySrc = list.reduce((m, w) => ((m[w.src] = (m[w.src] || 0) + 1), m), {});
   const seeded = list.filter((w) => w.seed).length;
+  const glossed = list.filter((w) => w.he).length;
   console.log(
     `Wrote ${path.relative(process.cwd(), TRAINER_TARGET)} — ${list.length} words ` +
       `(${JSON.stringify(bySrc)}), ${seeded} carrying a course hook, ` +
+      `${glossed} carrying a Hebrew meaning, ` +
       `${(fs.statSync(TRAINER_TARGET).size / 1024).toFixed(0)}KB`
   );
 }

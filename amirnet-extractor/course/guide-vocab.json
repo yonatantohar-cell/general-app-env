@@ -1,0 +1,8138 @@
+[
+ {
+  "word": "abbreviate",
+  "meaning": "לקצר, לעשות בריף",
+  "hook": "כמו שמקצרים מילה לראשי תיבות",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "abbreviated",
+  "meaning": "מקוצר",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "ablaze",
+  "meaning": "בוער",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "aboard",
+  "meaning": "לעלות ל",
+  "hook": "(רכב או רכבת למשל",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "abolition",
+  "meaning": "ביטול, ביטול עבדות",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "abrasive",
+  "meaning": "שוחק, מלטש, גס בהתנהגות",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "abrupt",
+  "meaning": "פתאומי",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "absorbed",
+  "meaning": "שקוע, מרוכז, קלט, ספוג",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "absorbing",
+  "meaning": "לספוג",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "abstained",
+  "meaning": "נמנע",
+  "hook": "(מהצבעה, פעולה)",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "abstention",
+  "meaning": "הימנעות, פרישההתנזרות",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "abstinence",
+  "meaning": "התנזרות, הימנעות",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "abundance",
+  "meaning": "שפע",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "abundant",
+  "meaning": "שופע",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "accelerated",
+  "meaning": "מאיץ",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "accelerates",
+  "meaning": "מאיץ",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "acceleration",
+  "meaning": "האצה",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "accent",
+  "meaning": "מבטא",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "access",
+  "meaning": "גישה כשמשהו נגיש",
+  "hook": "",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "accommodated",
+  "meaning": "התאכסן",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "accorded",
+  "meaning": "העניק / תאם",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "accounts",
+  "meaning": "חשבון, דו\"ח, סיבה, נימוק למשהו",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "accumulated",
+  "meaning": "צבר, אסף",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "accurate",
+  "meaning": "מדויק",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "acknowledging",
+  "meaning": "הכרה",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "acquaintance",
+  "meaning": "היכרות",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "across",
+  "meaning": "מעבר לעבר, מצד לצד, ברחבי",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "additional",
+  "meaning": "נוסף",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "address",
+  "meaning": "כתובת",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "adept",
+  "meaning": "מיומן",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "adhesive",
+  "meaning": "דביק, מדבק",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "adjourns",
+  "meaning": "דוחה",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "adjust",
+  "meaning": "להסתגל, להתאיםלמשהו",
+  "hook": "(כמו שהעין מסתגלת לחושך או לאור, או ילד חדש לבית",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "adjusted",
+  "meaning": "מותאם",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "admonish",
+  "meaning": "לנזוף",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "admonished",
+  "meaning": "הוזה",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "adopted",
+  "meaning": "אימץ",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "adored",
+  "meaning": "העריץ",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "advent",
+  "meaning": "הופעה, הגעה",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "adversaries",
+  "meaning": "יריבים, מתנגדים",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "adverse",
+  "meaning": "שלילי, מזיק",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "advertise",
+  "meaning": "לפרסם",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "affectionate",
+  "meaning": "חיבה",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "affirm",
+  "meaning": "לאשר, לאשש",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "afflicted",
+  "meaning": "הוכו, פגעו, גרמו סבל",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "afflictions",
+  "meaning": "ייסורים/מחלות",
+  "hook": "(מהפועלafflict - להכאיב/לייסר",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "affluence",
+  "meaning": "שפע, עושר",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "afford",
+  "meaning": "להרשות",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "after",
+  "meaning": "אחרי",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "aftermath",
+  "meaning": "תוצאה, השלכה",
+  "hook": "(בעיקר של אסון או אירוע קשה",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "again",
+  "meaning": "שוב, עוד פעם",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "against",
+  "meaning": "נגד",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "ailments",
+  "meaning": "מחלות",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "air",
+  "meaning": "אוויר",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "ajar",
+  "meaning": "פתוח",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "alert",
+  "meaning": "דרוך, ערני",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "alike",
+  "meaning": "אותו דבר, כמו, גם וגם",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "allegiance",
+  "meaning": "נאמנות, מסירות לשלטון",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "allocate",
+  "meaning": "להקצות",
+  "hook": "(משאבים נניח",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "allow",
+  "meaning": "הירשו/ אפשרו להם לממן?",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "almost",
+  "meaning": "כמעט",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "alone",
+  "meaning": "לבד",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "already",
+  "meaning": "כבר",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "alternated",
+  "meaning": "המיר",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "amateur",
+  "meaning": "חובבן",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "ambitious",
+  "meaning": "שאפתני, יש לו אמביציה",
+  "hook": "(שאיפות)",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "amicable",
+  "meaning": "ידידותי",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "amorous",
+  "meaning": "מאוהב",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "amount",
+  "meaning": "כמות",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "ancestral",
+  "meaning": "של אבות קדמוניםancestor - אב קדמון",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "annexed",
+  "meaning": "סופח",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "annual",
+  "meaning": "שנתי",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "anthem",
+  "meaning": "המנון",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "anticipated",
+  "meaning": "לצפות ל",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "anxiety",
+  "meaning": "חרדה",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "apart",
+  "meaning": "לחוד, בנפרד",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "apparatus",
+  "meaning": "מתקן, מכשיר",
+  "hook": "",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "appeal",
+  "meaning": "ערעור / משיכה / בקשה",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "appearance",
+  "meaning": "מראה, הופעה",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "applause",
+  "meaning": "מחיאותכפיים",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "appointed",
+  "meaning": "למנות",
+  "hook": "(לתפקיד)",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "aptitude",
+  "meaning": "כישרון, נטייה טבעית",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "arbitrary",
+  "meaning": "שרירותי",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "arch",
+  "meaning": "קשת",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "around",
+  "meaning": "מסביב",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "arrange",
+  "meaning": "לארגן, לסדר",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "arranged",
+  "meaning": "מסודר",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "arrangement",
+  "meaning": "ארגוןסדר, סידור",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "articulated",
+  "meaning": "ניסח",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "artists",
+  "meaning": "אומנים",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "ascend",
+  "meaning": "עולה, מתנשא, מתרומם",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "ashore",
+  "meaning": "חוף",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "aspired",
+  "meaning": "שאפה, רצתה מאוד",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "aspirin",
+  "meaning": "אספירין",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "assault",
+  "meaning": "תקיפה",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "assemble",
+  "meaning": "להרכיב, לאסוףכמו אנסמבל, או כמו אספת האום)",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "assert",
+  "meaning": "לקבוע , להיות נחרץ , כמו אסרטיבי",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "assessed",
+  "meaning": "להעריך, לתת אומדן",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "assimilated",
+  "meaning": "נטמע",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "assisting",
+  "meaning": "סיוע",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "assumed",
+  "meaning": "משוער, מדומה, בדוי, נלקח על עצמו",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "attached",
+  "meaning": "צירף",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "attentively",
+  "meaning": "בתשומת לב",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "attest",
+  "meaning": "מעיד על",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "attire",
+  "meaning": "לבוש, לרוב לא סתם טישירט, אלא קישוט",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "audience",
+  "meaning": "קהל",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "authentic",
+  "meaning": "אותנטי, מקורי,",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "authority",
+  "meaning": "סמכות",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "aviators",
+  "meaning": "טייסים",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "avoid",
+  "meaning": "להימנע",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "away",
+  "meaning": "רחוק מ",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "awkwardly",
+  "meaning": "בצורה מביכה",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "backdrop",
+  "meaning": "רקע",
+  "hook": "לרוב משתמשים במשהו דומה - background",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "background",
+  "meaning": "רקע",
+  "hook": "(מורכב מ-Back מאחורGround קרקע/בסיס",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "bacteria",
+  "meaning": "בקטריה",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "bait",
+  "meaning": "לפתות",
+  "hook": "(פיתיון כמו בדיג",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "balance",
+  "meaning": "לאזן",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "bark",
+  "meaning": "גזע עץ? נביחה של כלב? כלב שנובח על גזע של עץ",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "barred",
+  "meaning": "לאסור, לגרש",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "barren",
+  "meaning": "שומם, חסר פוריות",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "barrier",
+  "meaning": "מחסום",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "basically",
+  "meaning": "בעיקרון, יעני בבסיס, בצורה בסיסית",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "basking",
+  "meaning": "מתחמםBask - להתחמם בשמש/תהילה",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "beam",
+  "meaning": "קרן",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "behaved",
+  "meaning": "התנהגו",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "behind",
+  "meaning": "מאחורי",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "behold",
+  "meaning": "לחזות, להביט",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "bend",
+  "meaning": "לעקם",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "bestowed",
+  "meaning": "הוענק",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "betrayed",
+  "meaning": "בגד, הסגיר",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "blamed",
+  "meaning": "האשימו",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "blast",
+  "meaning": "פיצוץ",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "blatant",
+  "meaning": "בוטה, גלוי לעין",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "blend",
+  "meaning": "תערובת",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "blinked",
+  "meaning": "למצמץ",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "blunder",
+  "meaning": "טעות",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "blunders",
+  "meaning": "מפשל עושה וואחד פדיחה",
+  "hook": "",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "blunt",
+  "meaning": "קהה",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "boost",
+  "meaning": "להגביר",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "boosted",
+  "meaning": "מוגברת",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "bored",
+  "meaning": "משועמם",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "bounced",
+  "meaning": "קפץ",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "bound",
+  "meaning": "קשור",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "branches",
+  "meaning": "ענפים",
+  "hook": "(גם של עץ, אבל גם בכלל",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "breed",
+  "meaning": "גזע",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "brush",
+  "meaning": "מברשת",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "bundles",
+  "meaning": "חבילות, צרורות",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "burst",
+  "meaning": "התפרץ",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "busy",
+  "meaning": "עסוק",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "cackles",
+  "meaning": "קרקורים",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "calculate",
+  "meaning": "לחשב, כמו כלכלה- לכלכל",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "camera",
+  "meaning": "מצלמה",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "candidate",
+  "meaning": "מועמד",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "capable",
+  "meaning": "מסוגל",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "capacity",
+  "meaning": "תכולה, קיבולת",
+  "hook": "(אתם צריכים לעשות פיפי בכוס, היא מכילה את זה עשיתי כוס,",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "caption",
+  "meaning": "כיתוב, כותרת לתמונה",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "captivating",
+  "meaning": "שובה לב",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "captivity",
+  "meaning": "שבי",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "captors",
+  "meaning": "שובים / חוטפים",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "captured",
+  "meaning": "נלכד",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "cargo",
+  "meaning": "מטען, משא",
+  "hook": "זה קטע שאם מובילים מטע ן באונייה זה car-go, ואם מובילים אותו",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "carved",
+  "meaning": "גולף/חרוט",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "catalogue",
+  "meaning": "קטלוג, כמו של בגדים/ איקאה",
+  "hook": "גם למיין , לקטלג",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "categories",
+  "meaning": "קטגוריות",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "causes",
+  "meaning": "מטרות, מאבקים חברתיים",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "caution",
+  "meaning": "זהירות",
+  "hook": "(כמו שנוגעים בסודה כאוטית)",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "cautioned",
+  "meaning": "הזהיר",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "cautiously",
+  "meaning": "בזהירות",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "celebration",
+  "meaning": "חגיגות",
+  "hook": "",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "ceremonies",
+  "meaning": "טקס",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "certified",
+  "meaning": "מאושר",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "certify",
+  "meaning": "לאשר",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "chant",
+  "meaning": "מזמור, קריאת שירה כמו ששרים במגרש כדורגל או בהפגנה",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "chanted",
+  "meaning": "לזמר",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "chapter",
+  "meaning": "פרק",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "charity",
+  "meaning": "צדקה",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "check",
+  "meaning": "לבדוק",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "cheerful",
+  "meaning": "עליז, שמח",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "childhood",
+  "meaning": "ילדות",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "circulation",
+  "meaning": "מחזור",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "circumstances",
+  "meaning": "נסיבות",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "claimed",
+  "meaning": "טען, תבע",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "clan",
+  "meaning": "שבט",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "clans",
+  "meaning": "שבטים",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "clasp",
+  "meaning": "אבזם, תפס, חיבוק",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "classified",
+  "meaning": "לסווג",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "clenched",
+  "meaning": "קפוץ, מהודק",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "clip",
+  "meaning": "קליפ",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "close",
+  "meaning": "קרוב, לסגור",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "clutch",
+  "meaning": "מלחציים, מצמד, משהו שאוחז או לופת",
+  "hook": "כמו הקלאצ' באוטו- מצמד, הוא מחבר את",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "clutter",
+  "meaning": "בלגן, אי-סדר",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "coast",
+  "meaning": "חוף",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "codeine",
+  "meaning": "קודאין",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "coherence",
+  "meaning": "קוהרנטיות",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "coincidence",
+  "meaning": "צירוף מקרים",
+  "hook": "(קו-יחד, אינצידנט-תקרית, מקרה)",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "collaborates",
+  "meaning": "משתף פעולה",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "collaboration",
+  "meaning": "שיתוף פעולה, עבודה משותפת",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "collaborators",
+  "meaning": "משתפים, משתפי פעולה",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "collapse",
+  "meaning": "התמוטטות",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "collided",
+  "meaning": "התנגשות",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "colony",
+  "meaning": "מושבה",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "comeback",
+  "meaning": "קאמבק, חזרה",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "command",
+  "meaning": "פקודה",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "commanded",
+  "meaning": "לצוות, כמו קומנדר- מפקד",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "commemorate",
+  "meaning": "להזכיר, לציין, כמו יום זיכרון למשהו",
+  "hook": "",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "commemorates",
+  "meaning": "מנציח",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "commend",
+  "meaning": "לשבח, להמליץ על",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "commendable",
+  "meaning": "ראוי לשבח",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "commitment",
+  "meaning": "מחויבות",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "committed",
+  "meaning": "מחויב, מסור",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "commuters",
+  "meaning": "יוממים",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "companion",
+  "meaning": "מלווים",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "compelling",
+  "meaning": "משכנע",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "compensated",
+  "meaning": "מתוגמל/מפוצה",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "competence",
+  "meaning": "יכולת, כשירות",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "complacent",
+  "meaning": "שאנן",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "compliant",
+  "meaning": "צייתני, נוטה להיענות לאחרים",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "complies",
+  "meaning": "מציית",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "compliment",
+  "meaning": "להחמיא",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "composed",
+  "meaning": "להלחין",
+  "hook": "(קומפוזיטור זה מלחין), להרכיב",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "compressed",
+  "meaning": "דחס",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "compromise",
+  "meaning": "פשרה",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "conceal",
+  "meaning": "הסתיר, העלים, החביא",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "concealed",
+  "meaning": "להסתיר, לכסות",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "conceded",
+  "meaning": "הודו, ויתרו, הכירו ב־",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "concern",
+  "meaning": "דאגה",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "concerns",
+  "meaning": "דאגות",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "condemned",
+  "meaning": "נידון",
+  "hook": "(למוות/עונש",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "condition",
+  "meaning": "מצב, או בתנאי",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "conduct",
+  "meaning": "התנהגות",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "conducted",
+  "meaning": "נערך",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "confided",
+  "meaning": "התוודתה, סיפרה בסוד",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "confidentially",
+  "meaning": "בסודיות, בדיסקרטיות",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "configure",
+  "meaning": "לעצב, לקבוע תצורה",
+  "hook": "(כמו שקובעים איך הדברים מוצגים במחשב- תצורה,",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "confines",
+  "meaning": "גבולות, תחומים",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "confirm",
+  "meaning": "לאשר, לאמת",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "confront",
+  "meaning": "עימת, עמד מול, התמודד עם",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "congestion",
+  "meaning": "צפיפות, פקק, עומס",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "congregates",
+  "meaning": "מתכנס",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "connecting",
+  "meaning": "חיבור",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "conquest",
+  "meaning": "כיבוש",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "conscience",
+  "meaning": "מצפון",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "consecutive",
+  "meaning": "ברצף",
+  "hook": "תמיד אומרים את זה על תקופות כהונה של נשיאים",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "consent",
+  "meaning": "הסכמה",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "consequently",
+  "meaning": "כתוצאה מכך",
+  "hook": "",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "conserve",
+  "meaning": "שימר, חסך; שמר על",
+  "hook": "(אנרגיה, משאבים",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "considerably",
+  "meaning": "משמעותית",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "consoled",
+  "meaning": "ניחם",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "consonants",
+  "meaning": "עיצורים",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "conspicuous",
+  "meaning": "בולט",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "constituents",
+  "meaning": "ציבור המצביעים",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "consultation",
+  "meaning": "ייעוץ, מממקיי",
+  "hook": "(נו, כמו היועץ של סאות'פארק)",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "consulted",
+  "meaning": "להתייעץ",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "contacts",
+  "meaning": "אנשי קשר",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "contained",
+  "meaning": "להכיל, כמו קונטיינר",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "contaminates",
+  "meaning": "מזהם",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "contemplates",
+  "meaning": "שוקל",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "contemplation",
+  "meaning": "הרהור לתהות על משהו",
+  "hook": "(לחשוב עליו לעומק)",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "contemplative",
+  "meaning": "להרהר",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "contend",
+  "meaning": "נאבק, התמודד",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "contest",
+  "meaning": "תחרות, מאבק",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "contested",
+  "meaning": "התמודד",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "contributed",
+  "meaning": "לתרום",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "contribution",
+  "meaning": "תרומה",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "convened",
+  "meaning": "התקבץ, התאסף",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "convenience",
+  "meaning": "נוחות",
+  "hook": "",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "conveniently",
+  "meaning": "בנוחות",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "convention",
+  "meaning": "ועידה/מוסכמהconvene - להתכנס",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "conversion",
+  "meaning": "המרה",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "convey",
+  "meaning": "להעביר מסר, להביע",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "convict",
+  "meaning": "הרשיע, קבע את אשמתו",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "convicted",
+  "meaning": "הרשיעו",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "convinced",
+  "meaning": "משוכנע, שוכנע",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "convincing",
+  "meaning": "משכנע",
+  "hook": "",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "cornerstone",
+  "meaning": "אבן פינה, העיקר",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "corporations",
+  "meaning": "תאגידים",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "correspondence",
+  "meaning": "תכתובת, חליפת מכתבים, התאמה",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "correspondents",
+  "meaning": "כתבי חדשות",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "corrupted",
+  "meaning": "מושחת, מקולקל",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "crack",
+  "meaning": "סדק",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "craft",
+  "meaning": "מלאכה, מיומנות, כלי טיס/שיט",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "crane",
+  "meaning": "עגורן, מנוף",
+  "hook": "גם הציפור מקונג -פו פנדה",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "crease",
+  "meaning": "לקפל ,קפל בבגד",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "creed",
+  "meaning": "אמונה, השקפת עולם, דת",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "critique",
+  "meaning": "ביקורת",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "crude",
+  "meaning": "גס, גלמי, לא מעובד",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "culprit",
+  "meaning": "אשם",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "curled",
+  "meaning": "סלסלו/קיפלוCurl - תלתל/לסלסל, כמו בשיער, אבל גם כמו",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "currents",
+  "meaning": "זרמים",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "damp",
+  "meaning": "לח, רטוב במקצת",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "dark",
+  "meaning": "כהה",
+  "hook": "זה מסיח בגלל שאין זיהום של אור",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "deal",
+  "meaning": "עסקה, כמות, להתמודד",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "death",
+  "meaning": "מוות",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "debris",
+  "meaning": "שאריות פסולת/ הריסות",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "debuted",
+  "meaning": "הופיעה לראשונה",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "decadence",
+  "meaning": "התנוונות, שקיעה מוסרית",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "decadent",
+  "meaning": "מנוון",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "deceived",
+  "meaning": "לרמות",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "decent",
+  "meaning": "הגון",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "deceptive",
+  "meaning": "מטעה, כמו השקרניקים",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "decipher",
+  "meaning": "לפענח",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "declared",
+  "meaning": "הכריז",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "decorate",
+  "meaning": "לקשט, לעטר, לעשות דקורציה",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "defective",
+  "meaning": "דפקטי, פגום",
+  "hook": "",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "defender",
+  "meaning": "מגן",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "defiance",
+  "meaning": "התנגדות, מרדנות, התרסה",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "deficiencies",
+  "meaning": "ליקויים, חסרונות, כמו ש''דפיציט'' זה חוסר, גרעון",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "dejected",
+  "meaning": "מדוכא מיואש",
+  "hook": "",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "delegation",
+  "meaning": "משלחת",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "delicacy",
+  "meaning": "מעדן, עדינות, רגישות",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "delicate",
+  "meaning": "עדין, כמו פרח שברירי",
+  "hook": "בגלל זה יש דליקטס- מעדנים (עדנים, עדין).. למי שיש לו חך",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "delineated",
+  "meaning": "לתחום, לשרטט בקווים",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "deluge",
+  "meaning": "מבול, הצפה",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "demolished",
+  "meaning": "נהרס",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "denied",
+  "meaning": "להכחיש",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "depicted",
+  "meaning": "תוארו, צוירו, הוצגו",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "deposit",
+  "meaning": "להפקיד",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "deprive",
+  "meaning": "לשלול, למנוע מ־",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "derived",
+  "meaning": "מופקת",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "derives",
+  "meaning": "מופק מ",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "design",
+  "meaning": "עיצוב",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "designate",
+  "meaning": "מיועד ל",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "designated",
+  "meaning": "לייעד, לסמן רשמית",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "desire",
+  "meaning": "תשוקה, רצון, כמיהה",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "despite",
+  "meaning": "למרות",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "detect",
+  "meaning": "לזהות",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "detected",
+  "meaning": "לזהות",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "detects",
+  "meaning": "מזהה",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "deteriorate",
+  "meaning": "להתדרדר",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "deterioration",
+  "meaning": "התדרדרות",
+  "hook": "(מצבי מדרדריורט)",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "determined",
+  "meaning": "נחוש/נקבע",
+  "hook": "determined זה גםלהחליט וגם להיות החלטי, נחוש, עם רצון חזק לעשות",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "detour",
+  "meaning": "מעקף, כמו דרך עקיפה",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "devastated",
+  "meaning": "הרוס",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "devious",
+  "meaning": "ערמומי",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "devised",
+  "meaning": "תכנן",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "devoted",
+  "meaning": "להקדיש",
+  "hook": "(זמן למשהו, את עצמך למען מטרה...), להיות מסור/ נאמן",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "devour",
+  "meaning": "לטרוף, לזלול",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "devouring",
+  "meaning": "זוללים, טורפים, מכלים",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "diagonal",
+  "meaning": "אלכסוני",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "diction",
+  "meaning": "דיקציה",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "dig",
+  "meaning": "לחפור",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "digest",
+  "meaning": "לעכל",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "diminished",
+  "meaning": "הצטמצם",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "dims",
+  "meaning": "מעמעם",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "discerned",
+  "meaning": "הובחן/זוהה",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "disclosed",
+  "meaning": "חשף",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "discomfort",
+  "meaning": "אי-נוחות, אי-נעימות",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "discounting",
+  "meaning": "מקטין נותן הנחה",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "discouraged",
+  "meaning": "דיכא, הניא",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "discreet",
+  "meaning": "דיסקרטי, חשאי, כמו שאתם הולכים לרופא וזה נשאר בינכם",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "discretion",
+  "meaning": "שיקול דעת, זהירות, דיסקרטיות",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "discriminatory",
+  "meaning": "מפלה",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "diseased",
+  "meaning": "חולה",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "disgraced",
+  "meaning": "לעשות בושות",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "disinterest",
+  "meaning": "חוסר עניין, אין לי אינטרס, לא מעניין אותי",
+  "hook": "(נוט אינרסטינג",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "dismantled",
+  "meaning": "לפרק לחלקים",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "dismayed",
+  "meaning": "הכניס לחרדה, בהלה, תחושת נאחס",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "dismiss",
+  "meaning": "לפטור, לשחרר",
+  "hook": "כמו שמפקד משחרר חייל, או שמישהו פוטר דבר מה שאמרו לו",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "dismissed",
+  "meaning": "לדחות, לשלול, לפטור",
+  "hook": "(זה גם מה שאומרים לחייל – אתה משוחרר! לפטור אותו)",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "dispatch",
+  "meaning": "לשלוח / לשגר",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "dispenses",
+  "meaning": "מחלק",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "dispersing",
+  "meaning": "פיזור",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "disproportionately",
+  "meaning": "באופן בלתי־יחסי, בצורה לא פרופורציונלית",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "dispute",
+  "meaning": "ויכוח, מחלוקת",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "disrepair",
+  "meaning": "מוזנח, חסר לו תיקון",
+  "hook": "(ריפר- לתקן)",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "disruption",
+  "meaning": "שיבוש, הפרעה",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "dissolve",
+  "meaning": "להמיס כמו מלח במים, לפרק",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "distaste",
+  "meaning": "להיגעל ממשהו, למצוא אותו בטעם רע",
+  "hook": "(טייסט זה טעם)",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "distilled",
+  "meaning": "זיקק",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "distinct",
+  "meaning": "ייחודי",
+  "hook": "",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "distinguishing",
+  "meaning": "ייחודי, אופייני, להבחין במשהו",
+  "hook": "(כי יש בו הבדל)",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "distort",
+  "meaning": "לעוות, לשנות צורה",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "distorted",
+  "meaning": "מעוות מסולף",
+  "hook": "בגיטרה חשמלית, הסאונד של הרוק נקרא \"דיסטורשן\", כי זה מעוות את צליל",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "distracted",
+  "meaning": "הסיחו את הדעת שלו, הסיטו את תשומת הלב שלו",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "distraction",
+  "meaning": "הסחת דעת",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "district",
+  "meaning": "מחוז",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "disturbance",
+  "meaning": "הפרעהDisturb - להפריע",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "diverse",
+  "meaning": "מגוון",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "diversions",
+  "meaning": "הסחות דעת",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "diverted",
+  "meaning": "הוסטו, הועברו, הסיטו",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "diverting",
+  "meaning": "הסבה",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "doctrine",
+  "meaning": "תורה, כמו התפיסה של נשיא ארה\"ב מונרו לגבי המלחמה בקומוניסטים",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "domestic",
+  "meaning": "ביתי פנימי",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "don",
+  "meaning": "ללבוש",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "donor",
+  "meaning": "תורם",
+  "hook": "",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "dormant",
+  "meaning": "רדום",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "doses",
+  "meaning": "מנותכמו המנה היומית!)",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "dotted",
+  "meaning": "מנוקד",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "doubted",
+  "meaning": "פקפק",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "doubtful",
+  "meaning": "מלא ספקות",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "drab",
+  "meaning": "מטומטם",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "drape",
+  "meaning": "וילון, מסך",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "drawn",
+  "meaning": "נמשך, משורטט, מצויר",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "drenching",
+  "meaning": "מרטיב/משקהDrench - להרטיב לגמרי",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "drifts",
+  "meaning": "סחיפה",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "drought",
+  "meaning": "בצורת, יובש",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "dull",
+  "meaning": "קהה, משעמם",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "dump",
+  "meaning": "מזבלהגם לזרוק את החבר/ה, סלנג ללעשות מספר 2 בשירותים",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "durable",
+  "meaning": "עמיד",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "dwell",
+  "meaning": "לשכון",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "earned",
+  "meaning": "הרוויח",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "easily",
+  "meaning": "בקלות",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "eating",
+  "meaning": "לאכול",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "edges",
+  "meaning": "קצוות",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "edict",
+  "meaning": "צו, הוראה, פקודה",
+  "hook": "",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "editor",
+  "meaning": "עורך",
+  "hook": "(כמו של עיתון",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "efficiently",
+  "meaning": "ביעילותEfficient - יעיל",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "either",
+  "meaning": "גם",
+  "hook": "(בהקשר של הביטוי או א' או ב",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "elaborate",
+  "meaning": "לפרט",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "elaborated",
+  "meaning": "פורטה",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "elevation",
+  "meaning": "גובה",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "embellished",
+  "meaning": "מקושט, מעוטר, משופר",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "emblematic",
+  "meaning": "סמליכמו ל קשור סרט לכבוד איזו מטרה",
+  "hook": "",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "embodiment",
+  "meaning": "התגלמות/האנשהBody - גוף, משהו שקיבל גוף",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "embroiled",
+  "meaning": "הסתבךב, שקוע ב",
+  "hook": "",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "eminence",
+  "meaning": "הוד",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "empathy",
+  "meaning": "אמפתיה, תחושת הזדהות והבנה",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "emphasis",
+  "meaning": "הדגשה",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "empty",
+  "meaning": "לרוקן, לשפוך, ריק",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "emulate",
+  "meaning": "לחקות",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "enchanted",
+  "meaning": "להקסים, לכשף",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "encompassing",
+  "meaning": "כוללים, מקיפים",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "encounter",
+  "meaning": "מפגש",
+  "hook": "(יש קונטרה, נפגשים עם מישהו)",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "encountered",
+  "meaning": "נפגש עם",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "endurance",
+  "meaning": "סיבולת, עמידות, כוח סבל, התמדה",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "endure",
+  "meaning": "סובלים",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "endured",
+  "meaning": "נסבלו",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "enduring",
+  "meaning": "מתמשך",
+  "hook": "",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "engagement",
+  "meaning": "אירוסין/התחייבותEngage - לעסוק/להתחייב",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "engraved",
+  "meaning": "חקוק, חרוט",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "engulfed",
+  "meaning": "לבלוע משהו",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "enhanced",
+  "meaning": "לשפר, להגביר",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "enlightened",
+  "meaning": "מואר",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "enrollment",
+  "meaning": "הרשמהEnroll - להירשם",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "ensured",
+  "meaning": "הובטח",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "enthusiastic",
+  "meaning": "התלהבו לממן",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "entitle",
+  "meaning": "זכאיל , זכותו, הוא ראוי ל",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "enumerates",
+  "meaning": "מונה",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "enviously",
+  "meaning": "בקנאה",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "epidemics",
+  "meaning": "מגפות",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "epoch",
+  "meaning": "עידן",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "equations",
+  "meaning": "משוואות",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "equivalent",
+  "meaning": "המקבילשקול, שווה ערך",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "erode",
+  "meaning": "לשחוק, לכרסם",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "escalated",
+  "meaning": "הסלימה",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "escalations",
+  "meaning": "הסלמות",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "escorting",
+  "meaning": "ליווי",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "essence",
+  "meaning": "תמצית, המהות של הדברים",
+  "hook": "כמו הרבל-אסנס- התמצית של הצמחים",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "esteem",
+  "meaning": "הערכה",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "estimated",
+  "meaning": "העריך",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "eternal",
+  "meaning": "נצחי",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "etiquette",
+  "meaning": "נימוסים",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "evacuate",
+  "meaning": "לפנות, כמו שמפנים תושבים ממקום שנפגע",
+  "hook": "קשור ל-ואקום, שהופך הכל לריק.",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "even",
+  "meaning": "אפילו",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "evenly",
+  "meaning": "באופן שווה / אחיד",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "evictions",
+  "meaning": "פינויי דיירים",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "exaggerate",
+  "meaning": "להגזים",
+  "hook": "(כמו האקסית שאגרה תה",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "exaggerated",
+  "meaning": "הגזים",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "exaggeration",
+  "meaning": "הגזמה",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "excavation",
+  "meaning": "חפירה/ארכאולוגיהExcavate - לחפור",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "exceed",
+  "meaning": "לחרוג, לעלות על, לעבור",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "exceptionally",
+  "meaning": "במיוחד, בצורה יוצאת דופן",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "excitement",
+  "meaning": "התלהבות",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "exclusive",
+  "meaning": "בלעדי",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "excused",
+  "meaning": "מתרץ",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "exercising",
+  "meaning": "להתאמן לתרגל",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "exertion",
+  "meaning": "מאמץExert - להפעיל מאמץ",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "exhales",
+  "meaning": "נושפת",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "exhibit",
+  "meaning": "תערוכה",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "expand",
+  "meaning": "להרחיב",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "expansion",
+  "meaning": "התרחבות, התפשטות",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "expedition",
+  "meaning": "משלחת",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "expenses",
+  "meaning": "הוצאה, מחיר שמשלמים",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "experienced",
+  "meaning": "מנוסה",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "experiment",
+  "meaning": "ניסוי",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "expired",
+  "meaning": "פג תוקף, גם נפטר",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "explicit",
+  "meaning": "מפורש, ברור מאוד",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "exploit",
+  "meaning": "מנצלים",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "exploited",
+  "meaning": "נוצל, ניצלו אותו, הפיקו ממנו תועלת",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "exposed",
+  "meaning": "לחשוף",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "extended",
+  "meaning": "הוארך",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "extensive",
+  "meaning": "נרחב",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "extensively",
+  "meaning": "בהרחבה, באופן יסודי, לעומק",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "extort",
+  "meaning": "לסחוט",
+  "hook": "(כמו סחיטה של מידע על ידי המאפיה!) , להוציא בכוח",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "extracted",
+  "meaning": "להפיק, לחלץ",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "facade",
+  "meaning": "חזית, מראית עין",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "faced",
+  "meaning": "מתמודד",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "factors",
+  "meaning": "גורמים, דברים שמשפיעים על משהו",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "fade",
+  "meaning": "לדהות, לדעוך",
+  "hook": "כמו סיום של שיר, שהכל נמוג",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "fads",
+  "meaning": "אופנות",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "fairly",
+  "meaning": "בהגינות / במידה מסוימת",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "faith",
+  "meaning": "אמונה",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "faithful",
+  "meaning": "נאמן, מסור, כמו סאם לפרודו",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "faithfully",
+  "meaning": "בנאמנות",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "fallout",
+  "meaning": "נשורת",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "false",
+  "meaning": "שקר",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "fanciful",
+  "meaning": "דמיוני",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "fantasizing",
+  "meaning": "לפנטז",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "fatigue",
+  "meaning": "עייפות",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "fearless",
+  "meaning": "חסר פחד",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "feat",
+  "meaning": "הישג יוצא דופן, מעשה גבורה",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "feigned",
+  "meaning": "להעמיד פנים",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "fertilizer",
+  "meaning": "דשן",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "fiber",
+  "meaning": "סיב",
+  "hook": "(כמו סיב אופטי או של בד, או תזונתיים..)",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "fictitious",
+  "meaning": "פיקטיבי, שקרי",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "fields",
+  "meaning": "שדות",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "filtered",
+  "meaning": "סונןFilter - מסנן כמו להעביר משהו בפילטר",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "finally",
+  "meaning": "לבסוף",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "finds",
+  "meaning": "מוצא",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "firm",
+  "meaning": "מוצק, נחוש, חברה",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "fitted",
+  "meaning": "ציידו/התאימו",
+  "hook": "(מהמילהFit - מתאים/להתאים",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "flapping",
+  "meaning": "נפנוף",
+  "hook": "(של כנפיים או בד",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "flaunted",
+  "meaning": "התהדר",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "flaw",
+  "meaning": "פגם, דפקט",
+  "hook": "כשמנצחים במשחק מחשב בלי שהיריב ייתן לכם אפילו כאפה אחת, זה-",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "fled",
+  "meaning": "ברחו",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "flee",
+  "meaning": "לברוח",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "fleet",
+  "meaning": "צי",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "flipped",
+  "meaning": "להפוך",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "flock",
+  "meaning": "עדר, קהל, להתאסף",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "fluid",
+  "meaning": "נוזל, זורם",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "flung",
+  "meaning": "נזרק, הושלך, הוטח",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "flying",
+  "meaning": "לעוף",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "folded",
+  "meaning": "לקפל",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "following",
+  "meaning": "בעקבות",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "food",
+  "meaning": "אוכל",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "forbid",
+  "meaning": "לאסור",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "force",
+  "meaning": "לאלץ, בכוח",
+  "hook": "אילצו אותם לממן? (בטח הסובייטים שבכם רוצים לאלץ אותם, נכון? אין כמו",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "forces",
+  "meaning": "כוחות",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "forecast",
+  "meaning": "תחזית",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "forecaster",
+  "meaning": "חזאי",
+  "hook": "(כמו של מזג אוויר",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "foreign",
+  "meaning": "זר",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "forged",
+  "meaning": "נוצרו, זויפו",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "fork",
+  "meaning": "מזלג",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "formats",
+  "meaning": "פורמטים",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "formulations",
+  "meaning": "נוסחה",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "fortunately",
+  "meaning": "למרבה המזל",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "fortune",
+  "meaning": "או הון, בוכטה של כסף",
+  "hook": "(הוא עשה הון בקזינו), או מזל. יש הרבה מזל שהשם המקורי",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "fortunes",
+  "meaning": "הון",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "fossil",
+  "meaning": "מאובן",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "fossils",
+  "meaning": "מאובנים",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "foster",
+  "meaning": "לעודד, לטפח, כמו משפחה אומנת של ילד שמגדלת ומטפחת אותו",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "fostering",
+  "meaning": "לטפח",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "founded",
+  "meaning": "לייסד",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "fraction",
+  "meaning": "שבר",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "fracture",
+  "meaning": "לשבור, לסדוק; שבר",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "fragment",
+  "meaning": "שבר, חתיכה",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "fragrance",
+  "meaning": "ניחוח",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "frayed",
+  "meaning": "רב",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "friction",
+  "meaning": "חיכוך",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "friends",
+  "meaning": "חברים",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "frivolous",
+  "meaning": "קל דעת, בלי לחשוב",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "fugitives",
+  "meaning": "נמלטים",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "funded",
+  "meaning": "ממומן",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "furnished",
+  "meaning": "מרוהט",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "furthermore",
+  "meaning": "בנוסף",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "futile",
+  "meaning": "חסר תועלת",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "garment",
+  "meaning": "בגד, לבוש",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "gauged",
+  "meaning": "לאמוד",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "genius",
+  "meaning": "גאון",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "genuine",
+  "meaning": "אמיתי",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "gesture",
+  "meaning": "מחווה, תנועת יד, סימן",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "glazed",
+  "meaning": "מזוגג",
+  "hook": "(כמו ציפוי שקוף על עוגה), חסר הבעה (כמו ציפוי שקוף במבט)",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "glimmered",
+  "meaning": "נצנץ, ריצד",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "glory",
+  "meaning": "תהילה, הדר, כבוד, תפארת",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "gnarled",
+  "meaning": "מעוות, מגולגל",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "gossiping",
+  "meaning": "לרכל",
+  "hook": "(לא משנה אם לא הכרתם, זה ממש כתוב ככה)",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "grab",
+  "meaning": "לתפוס",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "graceful",
+  "meaning": "חינני",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "gradually",
+  "meaning": "בהדרגה",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "graduate",
+  "meaning": "בוגרים",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "grains",
+  "meaning": "גרגירים",
+  "hook": "(כמו דגנים או חול",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "granting",
+  "meaning": "מתן",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "grasp",
+  "meaning": "לתפוס, לאחוז",
+  "hook": "גם בקטע של להחזיק, וגם תפיסה טובה, כמו יש לי ראש טוב למספרים",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "grateful",
+  "meaning": "אסיר תודה",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "graze",
+  "meaning": "לרעות",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "grief",
+  "meaning": "צער",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "grimace",
+  "meaning": "עווית פנים, תנועת פנים של סבל או גועל",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "grimaced",
+  "meaning": "עיוות פה",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "grimacing",
+  "meaning": "מעוותפרצוף",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "grinds",
+  "meaning": "טוחן",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "growls",
+  "meaning": "נהמות",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "growth",
+  "meaning": "צמיחהGrow - לצמוח",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "grudge",
+  "meaning": "טינה",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "guarantee",
+  "meaning": "להבטיח, לערוב ל",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "guarded",
+  "meaning": "שמר",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "habit",
+  "meaning": "הרגל",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "habitat",
+  "meaning": "בית גידול, סביבת מגורים טבעית של חיה",
+  "hook": "כמו- הבית שלה.",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "haggard",
+  "meaning": "תשוש, כחוש",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "half",
+  "meaning": "חצי",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "hallmark",
+  "meaning": "סימן היכר",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "hallmarks",
+  "meaning": "סימנים מזהים",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "hauls",
+  "meaning": "סוחב גורר",
+  "hook": "",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "haze",
+  "meaning": "אובך/ערפל",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "healed",
+  "meaning": "ריפאו",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "health",
+  "meaning": "בריאות",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "heightened",
+  "meaning": "מוגברות",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "heir",
+  "meaning": "יורש",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "heresy",
+  "meaning": "כפירה",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "hesitant",
+  "meaning": "מהסס",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "hiatus",
+  "meaning": "הפסקה, פסק זמן, פרצה",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "highlighted",
+  "meaning": "הודגש",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "highway",
+  "meaning": "כביש מהיר",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "hilarious",
+  "meaning": "מצחיק",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "hindered",
+  "meaning": "להפריע, לעכב",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "hint",
+  "meaning": "לרמוז",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "hinted",
+  "meaning": "רמז",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "hiring",
+  "meaning": "העסקה",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "hoard",
+  "meaning": "מצבור, מאגר",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "hollow",
+  "meaning": "חלול",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "homeland",
+  "meaning": "מולדת",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "honestly",
+  "meaning": "בכנות",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "hospitable",
+  "meaning": "מכניס אורחים",
+  "hook": "(מהמילהhospital - גםבית חולים)",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "hostile",
+  "meaning": "עוין",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "hub",
+  "meaning": "מרכז",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "hue",
+  "meaning": "גוון",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "humanity",
+  "meaning": "אנושיות",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "humble",
+  "meaning": "צנוע, עניו, פשוט",
+  "hook": "",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "hurdle",
+  "meaning": "מכשול, משוכה",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "hut",
+  "meaning": "בקתה",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "hybrid",
+  "meaning": "היבריד, כלאיים, תערובת",
+  "hook": "(כמו חיה עם הורים שונים)",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "hypothesis",
+  "meaning": "היפותזה",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "hypothesized",
+  "meaning": "הנחשה, השערה",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "idealized",
+  "meaning": "להפוך לאידיאל",
+  "hook": "יעני, להפוך מישהו למשהו הרבה מעבר למה שהוא, להתייחס",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "ignite",
+  "meaning": "להצית, להדליק",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "ignorant",
+  "meaning": "בור",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "ignore",
+  "meaning": "להתעלם",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "illusions",
+  "meaning": "הזיות",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "illustrated",
+  "meaning": "אילוסטרציה, המחשה, איור",
+  "hook": "(כמו צילום אילוסטרציה)",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "imitate",
+  "meaning": "לחקות, לדמות",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "imitation",
+  "meaning": "חיקוי",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "immeasurable",
+  "meaning": "לא ניתן לכימות, המון, בוכטה",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "immense",
+  "meaning": "עצום / כביר",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "imminent",
+  "meaning": "קרוב להתרחש, ממשמש ובא",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "immortal",
+  "meaning": "בן אלמוות, לא יכול למות",
+  "hook": "Im+mortal (כמו שמורטל קומבט זה קרב עד המוות)",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "immunity",
+  "meaning": "חסינות",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "impact",
+  "meaning": "השפעה, גם התנגשותפגיעה",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "implements",
+  "meaning": "כלים/עזריםimplement - ליישם/לבצע",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "implication",
+  "meaning": "משמעות",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "implicit",
+  "meaning": "משתמע מרומז, מובן מאליו, סמוי",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "imposed",
+  "meaning": "הטיל",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "imprecise",
+  "meaning": "לא מדויק",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "impressing",
+  "meaning": "מרשים",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "impulse",
+  "meaning": "דחף",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "inactive",
+  "meaning": "לא פעיל",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "inaugurated",
+  "meaning": "נחנך",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "incentive",
+  "meaning": "תמריץ",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "incessant",
+  "meaning": "תמידי, לא פוסק",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "incidental",
+  "meaning": "מקריבמקרה",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "incline",
+  "meaning": "שיפוע, עלייה, נטייה",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "inconspicuous",
+  "meaning": "לא מורגש, לא בולט",
+  "hook": "",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "incorporate",
+  "meaning": "לשלב / לאגד",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "incorporated",
+  "meaning": "משולב",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "incorporates",
+  "meaning": "משלב",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "index",
+  "meaning": "מדד",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "indexed",
+  "meaning": "באינדקס",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "indisposed",
+  "meaning": "מסויג לא רוצה",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "indulged",
+  "meaning": "התענגות",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "indulging",
+  "meaning": "מתפנקעל משהו, נהנה ממשהו",
+  "hook": "",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "infidelity",
+  "meaning": "בגידה, אי-נאמנות",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "inflamed",
+  "meaning": "להצית",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "inflicted",
+  "meaning": "גרם",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "influences",
+  "meaning": "השפעות",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "informed",
+  "meaning": "מיודעים",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "inhabitant",
+  "meaning": "תושב",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "inherent",
+  "meaning": "אינהרנטי, טבוע",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "inherited",
+  "meaning": "בירושה",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "inhibited",
+  "meaning": "לעכב, לבלום",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "initial",
+  "meaning": "התחלתי / ראשוני",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "initially",
+  "meaning": "בהתחלה",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "innocently",
+  "meaning": "בתמימות",
+  "hook": "(חף מפשע) בלי חשד",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "inquiry",
+  "meaning": "חקירה, בירור",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "inscribe",
+  "meaning": "חרוט, חקוק, כתוב",
+  "hook": "(בדרךכלל בסלע). כל ה-scribe, script קשור לכתיבה",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "insects",
+  "meaning": "חרקים",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "insight",
+  "meaning": "תובנה",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "inspector",
+  "meaning": "מפקח",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "installed",
+  "meaning": "מותקן",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "instantly",
+  "meaning": "מיד, באופן מיידי",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "instead",
+  "meaning": "במקום זאת",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "institution",
+  "meaning": "מוסד",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "instruction",
+  "meaning": "הוראות",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "instructive",
+  "meaning": "מחכים",
+  "hook": "כמו לראות סרטון הסבר לנושא ביוטיוב, הוא נותן הוראות, ובכך זה מחכים",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "insulted",
+  "meaning": "להעליב",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "insured",
+  "meaning": "מבוטח",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "intact",
+  "meaning": "בשלמותו, ל לא פגע",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "integrated",
+  "meaning": "עשה אינטגרציה, שילוב של דברים",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "intended",
+  "meaning": "התכוון ל, נועד ל",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "intending",
+  "meaning": "מתכוון",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "interceded",
+  "meaning": "תיווך, התערב",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "intercepted",
+  "meaning": "יורט",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "interrogated",
+  "meaning": "נחקר",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "interrupted",
+  "meaning": "קטע",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "intestine",
+  "meaning": "מעי",
+  "hook": "(המעיים בבטן)",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "intimidate",
+  "meaning": "להפחיד",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "intimidation",
+  "meaning": "הפחדה, איום",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "intrigue",
+  "meaning": "אינטריגותגם כל הריכולים הקטנים שיש נניח בעבודה",
+  "hook": "(מי נגד מי, מי עשה מה למי),",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "intrigued",
+  "meaning": "מעורר עניין",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "intruders",
+  "meaning": "פורצים",
+  "hook": "(כמו פורץ לדירה, וגם מי שמתפרץ לדברים שלכם",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "invasion",
+  "meaning": "פלישה",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "invasive",
+  "meaning": "פולשני",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "inversion",
+  "meaning": "היפוך, הפיכה, שינוי כיוון",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "invested",
+  "meaning": "הושקע, הולבש בסמכות",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "investigates",
+  "meaning": "חוקר",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "invoked",
+  "meaning": "עוררה",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "invokes",
+  "meaning": "קורא",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "irate",
+  "meaning": "מרגיזים",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "irrigation",
+  "meaning": "השקיה",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "janitors",
+  "meaning": "שרתים / עובדי תחזוקה",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "joined",
+  "meaning": "חיבר,הצטרף, כמו ג'וינט",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "journeys",
+  "meaning": "מסעות",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "joyful",
+  "meaning": "מענג",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "jubilant",
+  "meaning": "צוהל שמח מאוד",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "junction",
+  "meaning": "צומת",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "jurors",
+  "meaning": "מושבע, מי שבחבר מושבעים",
+  "hook": "(כמו בבית משפט בארה\"ב",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "just",
+  "meaning": "רק, בלבד",
+  "hook": "גם צודק כמו justice",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "keen",
+  "meaning": "חד",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "label",
+  "meaning": "תווית",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "labels",
+  "meaning": "תוויות",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "lamp",
+  "meaning": "מנורה, דבר אל הלמפה",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "landscape",
+  "meaning": "נוף",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "large",
+  "meaning": "גדולות",
+  "hook": "(לארג', בגודל",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "latitude",
+  "meaning": "קו רוחב",
+  "hook": "(במפה), או מרחב תמרון",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "launched",
+  "meaning": "לשגר",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "league",
+  "meaning": "ליגה",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "lease",
+  "meaning": "חכירה",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "leaves",
+  "meaning": "משאיר",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "legalized",
+  "meaning": "לעשות לגליזציה, להפוך לחוקי",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "legible",
+  "meaning": "קריא",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "lend",
+  "meaning": "להלוות",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "lenience",
+  "meaning": "סלחנות, הקלה",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "lethal",
+  "meaning": "קטלני",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "levels",
+  "meaning": "שלבים, קומות",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "liberate",
+  "meaning": "לשחרר",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "liberated",
+  "meaning": "שוחררו",
+  "hook": "",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "limits",
+  "meaning": "גבולות",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "linger",
+  "meaning": "התעכב, התמהמה, המשיך",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "lodge",
+  "meaning": "לגור, להתאכסן",
+  "hook": "אולי הם פולנים והם גרים בלודז",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "lore",
+  "meaning": "ידע מסורתי/פולקלור",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "lost",
+  "meaning": "לאבד",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "luckily",
+  "meaning": "במזל",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "lulled",
+  "meaning": "מרגיע",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "magnifying",
+  "meaning": "מגדיל",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "maintain",
+  "meaning": "לתחז ק",
+  "hook": "גם תחז וקה כמו אב בית בבית ספר, גם לתחזק משמעת בקרב חיילים",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "majestic",
+  "meaning": "מלכותי",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "management",
+  "meaning": "הנהלה",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "maneuvered",
+  "meaning": "תומרן",
+  "hook": "(לתמרן, כמו בניווט אל היעד, או כמו שעושים תחבולה, לתמרן את המצב)",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "manually",
+  "meaning": "באופן ידני",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "manufacture",
+  "meaning": "לייצר",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "manufactured",
+  "meaning": "מיוצר",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "manuscript",
+  "meaning": "כתב יד",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "margin",
+  "meaning": "שוליים, רווח, קצה",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "margins",
+  "meaning": "שוליים",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "markets",
+  "meaning": "שווקים",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "marks",
+  "meaning": "ציונים",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "marsh",
+  "meaning": "ביצה",
+  "hook": "(לא של תרנגולת- אדמה רטובה כמו שמורת החולה)",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "martyr",
+  "meaning": "קדוש מעונה, קורבן",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "martyrs",
+  "meaning": "מרטירים",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "massive",
+  "meaning": "מאסיבי, גדול",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "meaningful",
+  "meaning": "משמעותיות",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "meanwhile",
+  "meaning": "בינתיים",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "mechanism",
+  "meaning": "מנגנון, מכניקה של משהו",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "mechanisms",
+  "meaning": "מכניזם, מנגנון",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "mediators",
+  "meaning": "מתווך, מגשר",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "medical",
+  "meaning": "רפואי",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "medicine",
+  "meaning": "תרופות",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "mediocre",
+  "meaning": "בינוני",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "meek",
+  "meaning": "ענווים",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "melted",
+  "meaning": "התיכו, נמסו",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "memorized",
+  "meaning": "זכר בעל פה",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "menace",
+  "meaning": "איום",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "mentor",
+  "meaning": "מנטור",
+  "hook": "יועץ, מדריך",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "merely",
+  "meaning": "בסך הכל",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "merge",
+  "meaning": "מיזוג",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "methods",
+  "meaning": "שיטות",
+  "hook": "(מתודה)",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "mild",
+  "meaning": "מתון, עדין",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "mildly",
+  "meaning": "בעדינות / במתינות",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "milestone",
+  "meaning": "אבן דרך",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "mitigate",
+  "meaning": "להקל, להפחית",
+  "hook": "(להמתיק עונש",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "mitigating",
+  "meaning": "מפחיתים, מקלים בעונש",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "mock",
+  "meaning": "ללעוג, כמו שעושים חיקוי של מישהו- צוחקים עליו",
+  "hook": "",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "mocked",
+  "meaning": "ללעוג, ללעוג בבוז",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "mode",
+  "meaning": "אמצעי, דרךאופן",
+  "hook": "כמו לבחור מצב במשחק מחשב",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "modest",
+  "meaning": "צנוע",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "modifying",
+  "meaning": "שינוי",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "moisture",
+  "meaning": "לחות",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "monarch",
+  "meaning": "מונרך",
+  "hook": "(שליט יחיד",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "monarchy",
+  "meaning": "מונרכיה, שלטון מלוכה",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "money",
+  "meaning": "כסף",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "moral",
+  "meaning": "מוסר, לקח, מוסר השכל",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "morally",
+  "meaning": "מבחינה מוסרית",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "mostly",
+  "meaning": "לרוב",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "motive",
+  "meaning": "מוטיב, גם בספרות",
+  "hook": "(רעיון מרכזי) וגם מניע של פשע, מה שנתן מוטיבציה לעשות",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "mounting",
+  "meaning": "מתגבר גדל",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "mourned",
+  "meaning": "התאבל",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "mumbled",
+  "meaning": "מלמל",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "mutual",
+  "meaning": "הדדי",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "narrated",
+  "meaning": "קריין",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "narrative",
+  "meaning": "סיפור, עלילה",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "narrowly",
+  "meaning": "בקושי, בצמצום",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "nausea",
+  "meaning": "בחילה",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "navigate",
+  "meaning": "לנווט",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "near",
+  "meaning": "ליד",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "needlessly",
+  "meaning": "בלי צורךneed less",
+  "hook": "",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "neglected",
+  "meaning": "להזניח, להתעלם",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "negligence",
+  "meaning": "רשלנות",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "negligent",
+  "meaning": "רשלני",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "negotiated",
+  "meaning": "לעשות משא ומתן",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "negotiation",
+  "meaning": "משאומתן",
+  "hook": "",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "neighbor",
+  "meaning": "שכן, סמוך",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "network",
+  "meaning": "רשת",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "neutralize",
+  "meaning": "לנטרל, לאזן",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "nevertheless",
+  "meaning": "למרותזאת",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "nocturnal",
+  "meaning": "לילי",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "nomad",
+  "meaning": "נווד",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "nonetheless",
+  "meaning": "בכל זאת",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "nothing",
+  "meaning": "כלום",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "notify",
+  "meaning": "להודיע",
+  "hook": "(כמו שיש נוטיפיקיישן בפלאפון",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "notion",
+  "meaning": "רעיון",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "notorious",
+  "meaning": "ידוע לשמצה",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "notwithstanding",
+  "meaning": "למרות",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "nourishing",
+  "meaning": "מזין",
+  "hook": "(אוכל מזין, תזונה)",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "nucleus",
+  "meaning": "גרעין",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "nutritious",
+  "meaning": "מזין, בעל ערך תזונתי",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "obedient",
+  "meaning": "צייתן",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "obeyed",
+  "meaning": "לציית",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "object",
+  "meaning": "חפץ/ אובייקט, מושא",
+  "hook": "(מטרה, על מי עושים פעולה במשפט), להתנגד",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "objections",
+  "meaning": "התנגדויות",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "oblige",
+  "meaning": "לחייב",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "oblivious",
+  "meaning": "שאינו מודע, שאינו שם לב",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "obscure",
+  "meaning": "מעורפל, מטושטש, לא ברור",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "observing",
+  "meaning": "התבוננות",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "obsolete",
+  "meaning": "ישן",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "obstruct",
+  "meaning": "מכשול, להכשיל I can see clearly now the rain is gone, I can see all obstacles in",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "obtained",
+  "meaning": "השיג",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "obviously",
+  "meaning": "מובן מאליו, כאילו דה, כאילו אובייסלי",
+  "hook": "",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "odor",
+  "meaning": "ריח",
+  "hook": "(כמו דאודורנט- מוציא ריח, או הודור של מ שחקי הכס)",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "offending",
+  "meaning": "להעליב",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "offends",
+  "meaning": "פוגע",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "offenses",
+  "meaning": "עבירות",
+  "hook": "(דברים פוגעניים)",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "offer",
+  "meaning": "להציע",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "office",
+  "meaning": "משרד",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "offspring",
+  "meaning": "צאצאים",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "omen",
+  "meaning": "אות, סימן, לרוב קשור למשהו רע",
+  "hook": "(רואים חתול שחור- או.. מן oh men )",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "omniscient",
+  "meaning": "יודע הכל",
+  "hook": "Omni זה הכל, ו -scient זה כמו מדע, ידע",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "once",
+  "meaning": "פעם, גם פעם מזמן, וגם פעם אחת, פעמיים, וגם ברגע ש",
+  "hook": "( once you do it its",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "opaque",
+  "meaning": "אטום, לא ברור, מעורפל",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "openly",
+  "meaning": "בגלוי / באופן ישיר",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "opportunities",
+  "meaning": "הזדמנויות",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "opposing",
+  "meaning": "להתנגד",
+  "hook": "(כמו אופוזיציה)",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "oral",
+  "meaning": "בעל פה / קשור לפה",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "orations",
+  "meaning": "נאומים",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "orator",
+  "meaning": "נואם",
+  "hook": "קשור לאוראלי (הוא נואם עם הפה",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "orchestra",
+  "meaning": "תזמורת",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "ordeal",
+  "meaning": "ניסיון קשה, מסע ייסורים",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "ordinarily",
+  "meaning": "ברגיל בשגרה",
+  "hook": "(אורדינרי, לפי ה-אורדר, הסדר הרגיל...)",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "organic",
+  "meaning": "אורגני, כמו האוכל הלא טעים והיקר שהוא כאילו טבעי",
+  "hook": "(גם ציאניד זה אורגני)",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "organizing",
+  "meaning": "לארגן",
+  "hook": "(מסיח מרושע, כי זה נשמע כמו \"אורגני\")",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "ornament",
+  "meaning": "קישוט",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "orphaned",
+  "meaning": "יתום",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "ostentatious",
+  "meaning": "ראוותני",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "otherwise",
+  "meaning": "אחרת",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "outbreak",
+  "meaning": "התפרצות",
+  "hook": "(כמו של מגיפה). Out החוצה break לשבור",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "outlasted",
+  "meaning": "החמיץ",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "outlawed",
+  "meaning": "הוצאמהחוק",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "outlets",
+  "meaning": "שקעים",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "outweighed",
+  "meaning": "גברועל",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "overjoyed",
+  "meaning": "מאושר",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "overpaid",
+  "meaning": "תשלום יתר",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "overruled",
+  "meaning": "בוטל, נדחה בהחלטה",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "overrun",
+  "meaning": "מוצף",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "oversight",
+  "meaning": "פיקוח",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "overstated",
+  "meaning": "מוגזם",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "overturned",
+  "meaning": "התהפך",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "pacifists",
+  "meaning": "פציפיסטים",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "padding",
+  "meaning": "ריפוד / מילוי",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "pale",
+  "meaning": "חיוור",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "parallel",
+  "meaning": "מקביל",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "parasitic",
+  "meaning": "פרזיט טפיל",
+  "hook": "",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "pardoned",
+  "meaning": "חנון, סולח",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "particles",
+  "meaning": "חלקיקים",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "parties",
+  "meaning": "מסיבות",
+  "hook": "(גם מפלגות",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "passenger",
+  "meaning": "נוסעים",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "paste",
+  "meaning": "להדביק",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "pasted",
+  "meaning": "מודבק",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "pastime",
+  "meaning": "תחביבים, מה שמעביר את הזמן הפנוי , pass the tiime",
+  "hook": "",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "paternal",
+  "meaning": "אבהי",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "pathway",
+  "meaning": "מעבר",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "patrol",
+  "meaning": "פטרול, כמו בגבול",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "patrolled",
+  "meaning": "סיור",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "pause",
+  "meaning": "לעצור, הפסקה",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "pavement",
+  "meaning": "מדרכה",
+  "hook": "",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "paw",
+  "meaning": "כפה",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "peasant",
+  "meaning": "איכר",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "pedal",
+  "meaning": "דוושה, פדל",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "pedestal",
+  "meaning": "מעמד, כן",
+  "hook": "(כמו של ציור). זה בא מהמילה ped שזה רגל. (פדיקור...)",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "pedestrian",
+  "meaning": "הולך רגל",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "peg",
+  "meaning": "יתד",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "penalty",
+  "meaning": "עונש, קנס, כמו פנדל",
+  "hook": "",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "pension",
+  "meaning": "פנסיה",
+  "hook": "",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "perceived",
+  "meaning": "נתפס, מובן",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "performer",
+  "meaning": "אומן שעושה הופעה על במה",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "performing",
+  "meaning": "להופיע",
+  "hook": "(כמו על במה), לבצע",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "perfume",
+  "meaning": "בושם",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "perhaps",
+  "meaning": "אולי",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "perished",
+  "meaning": "נספה",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "persist",
+  "meaning": "להתמיד",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "persistence",
+  "meaning": "התמדה",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "personality",
+  "meaning": "האישיות שלה",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "perspective",
+  "meaning": "פרספקטיבה, נקודת מבט",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "persuaded",
+  "meaning": "שכנע",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "persuasion",
+  "meaning": "שכנוע",
+  "hook": "(כמו פרסי שמשכנע אתכם לקנות שטיח...)",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "persuasive",
+  "meaning": "משכנע",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "pessimist",
+  "meaning": "פסימיסט, שחורן",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "pests",
+  "meaning": "מזיקים",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "pharmacist",
+  "meaning": "רוקח",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "phase",
+  "meaning": "שלב, פאזה",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "phenomenon",
+  "meaning": "תופעה",
+  "hook": "",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "philanthropist",
+  "meaning": "פילנתרופ, תורם, נדבן",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "phrases",
+  "meaning": "ביטויים",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "pigment",
+  "meaning": "פיגמנט, חומר צבע",
+  "hook": "(כמו שיש בעור)",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "pilgrimage",
+  "meaning": "עליה לרגל",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "pilgrims",
+  "meaning": "עולי רגלצליינים",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "pillars",
+  "meaning": "עמודים",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "pious",
+  "meaning": "אדוק",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "pitched",
+  "meaning": "משופעים",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "plagued",
+  "meaning": "מוכה, נגועה",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "plea",
+  "meaning": "בקשה, תחינה, עתי רה",
+  "hook": "כמו המילה please !",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "pleasant",
+  "meaning": "נעים",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "pledge",
+  "meaning": "התחייבות",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "pledged",
+  "meaning": "התחייב",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "plentiful",
+  "meaning": "בשפע, מלא ממנו",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "plight",
+  "meaning": "מצוקה, מצב קשה",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "plucks",
+  "meaning": "מורט",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "plunged",
+  "meaning": "צנחה",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "points",
+  "meaning": "נקודות",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "pollution",
+  "meaning": "זיהום",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "ponder",
+  "meaning": "להרהר, לחשוב לעומק",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "ponders",
+  "meaning": "מהרהר, תוהה",
+  "hook": "",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "portable",
+  "meaning": "נייד",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "portfolio",
+  "meaning": "תיק",
+  "hook": "(כמו תיק השקעות, תיק עבודות, או תיק של שר בממשלה",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "portrays",
+  "meaning": "מתאר",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "possessed",
+  "meaning": "ישבבעלותו",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "possession",
+  "meaning": "החזקה",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "possessively",
+  "meaning": "ברכושנותPossess - להחזיק/להיות בעלים של",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "postpone",
+  "meaning": "לדחות, לעכב",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "postures",
+  "meaning": "תנוחות",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "pounced",
+  "meaning": "הסתער, היכה",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "praise",
+  "meaning": "להלל",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "praised",
+  "meaning": "הילל, שיבח",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "preceded",
+  "meaning": "קדם ל",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "precedent",
+  "meaning": "תקדים",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "precepts",
+  "meaning": "צר",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "precisely",
+  "meaning": "בדיוק",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "predicament",
+  "meaning": "מצב נאחס, קשיים",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "predictable",
+  "meaning": "צפוי, אפשרpredict אותו",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "predicted",
+  "meaning": "ניבא",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "preferably",
+  "meaning": "בהעדפה",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "preferred",
+  "meaning": "מועדף",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "premature",
+  "meaning": "מוקדם מדי",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "presently",
+  "meaning": "כרגע, בהווה",
+  "hook": "",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "pressing",
+  "meaning": "לחיצה / דחיסה / דוחק",
+  "hook": "(מצב דחוף",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "prestige",
+  "meaning": "יוקרה",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "presumed",
+  "meaning": "להניח",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "presuming",
+  "meaning": "מניח",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "prevalent",
+  "meaning": "שכיח, נפוץ, רווח",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "prevented",
+  "meaning": "למנוע",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "previous",
+  "meaning": "קודם",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "previously",
+  "meaning": "קודם לכן, לפני",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "principle",
+  "meaning": "עיקרון / חוק יסוד",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "principles",
+  "meaning": "עקרונות",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "prioritized",
+  "meaning": "לתעדף לתת עדיפות",
+  "hook": "(פרה- לפני, לשים דברים לפני השאר)",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "priority",
+  "meaning": "עדיפות",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "privacy",
+  "meaning": "פרטיות",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "privileges",
+  "meaning": "זכויותיתר",
+  "hook": "(פריווילגיות)",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "prized",
+  "meaning": "מוערך",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "procedure",
+  "meaning": "הליך, פרוצדורה",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "processed",
+  "meaning": "מעובד",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "procession",
+  "meaning": "תהלוכה",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "proclaimed",
+  "meaning": "להכריז, לפרסם רשמית",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "proclamations",
+  "meaning": "הצהרות, הכרזות",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "prodigy",
+  "meaning": "עילוי, יוצא דופן, יש גם להקה כזו",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "productive",
+  "meaning": "פרודוקטיבי, יצרני",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "profession",
+  "meaning": "עיסוק",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "proficiency",
+  "meaning": "מיומנות, בקיאות",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "profit",
+  "meaning": "רווח",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "profound",
+  "meaning": "מעמיק",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "prolific",
+  "meaning": "פורה, ייצרני",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "prolonged",
+  "meaning": "האריך, נמשך",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "prominence",
+  "meaning": "בולטות",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "promoted",
+  "meaning": "מקודם",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "promotion",
+  "meaning": "קידום",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "promptly",
+  "meaning": "מיד",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "prone",
+  "meaning": "נוטים",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "propel",
+  "meaning": "להניע, לדחוף קדימה",
+  "hook": "(כמו פרופלור של מטוס)",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "proposals",
+  "meaning": "הצעות",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "protagonist",
+  "meaning": "גיבור הסיפור, הדמות הראשית",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "protruding",
+  "meaning": "בולט",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "provision",
+  "meaning": "הוראה",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "provoked",
+  "meaning": "עורר, גרה, הסית",
+  "hook": "(עשה פרובוקציה)",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "pruned",
+  "meaning": "גזם",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "pry",
+  "meaning": "לחטט, לפשפש",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "pulls",
+  "meaning": "מושך",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "punctuated",
+  "meaning": "מנוקד",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "punctuates",
+  "meaning": "מסמן, מנקד",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "purchase",
+  "meaning": "רכישה",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "pure",
+  "meaning": "טהור",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "pursued",
+  "meaning": "רודף אחרי",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "pursuing",
+  "meaning": "רדיפה",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "query",
+  "meaning": "שאילתה",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "racing",
+  "meaning": "להתחרות, לעשות רייסים",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "rainfall",
+  "meaning": "גשם",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "raising",
+  "meaning": "להעלות להרים , לגדל",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "range",
+  "meaning": "טווח",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "rash",
+  "meaning": "פריחה",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "rate",
+  "meaning": "קצב",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "raw",
+  "meaning": "נע",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "really",
+  "meaning": "באמת",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "realms",
+  "meaning": "ממלכות",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "reasonably",
+  "meaning": "באופן סביר",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "rebellious",
+  "meaning": "מרדני",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "recall",
+  "meaning": "להיזכר",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "receptive",
+  "meaning": "קולט, פתוח לרעיונות, מסוגל לקלוט",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "reciprocal",
+  "meaning": "הדדי",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "recited",
+  "meaning": "דקלם, הקריא",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "reciting",
+  "meaning": "לדקלם",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "recline",
+  "meaning": "להישען לאחור",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "reclining",
+  "meaning": "נשען",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "recollections",
+  "meaning": "זכרונות",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "recommendation",
+  "meaning": "המלצהrecommend - להמליץ",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "reconcile",
+  "meaning": "ליישב, לפייס",
+  "hook": "",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "reconciled",
+  "meaning": "השלים",
+  "hook": "(עם מצב או אדם",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "reconstructive",
+  "meaning": "משקם, שחזורי, משחזר",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "recover",
+  "meaning": "להשיב, או להחלים",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "recuperated",
+  "meaning": "התאוששה, שוחזרה",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "recurring",
+  "meaning": "חוזר ונשנהRecur - שילוב שלre - מחדש, ושלoccur- קורה, מתרחש",
+  "hook": "יעני מתרחש שוב)",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "redeem",
+  "meaning": "לפדות, לגאול",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "redeemed",
+  "meaning": "נפדה",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "reduced",
+  "meaning": "הופחת/צומצם",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "reflection",
+  "meaning": "השתקפות כמו במראה, התבוננות עצמית, הרהור, מחשבות",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "refuge",
+  "meaning": "מפלט, מקלט",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "refusal",
+  "meaning": "סירובRefuse - לסרב",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "refute",
+  "meaning": "להפריך",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "refuted",
+  "meaning": "הופרך, נסתר, נדחה",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "regenerate",
+  "meaning": "להפיח חיים, להחיות, להתחדש",
+  "hook": "רה זה שוב, גנרט זה כמו גנרטור",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "regret",
+  "meaning": "חרטה",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "rehearsing",
+  "meaning": "מתאמן עושה חזרות",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "reign",
+  "meaning": "שלטון",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "reimburse",
+  "meaning": "לפצות",
+  "hook": "(על נזק שנגרם",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "reinstated",
+  "meaning": "הוחזרה",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "rejection",
+  "meaning": "דחייה",
+  "hook": "(כמו להתחיל עם מישהי ולחטוף ממנה \"לא\"), סירוב",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "relapse",
+  "meaning": "להידרדר שוב",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "relapses",
+  "meaning": "נסיגה",
+  "hook": "(במחלה) (מורכב מ-re (שובlapse נפילה/חלוף זמן",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "relatively",
+  "meaning": "יחסית",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "relented",
+  "meaning": "התרצה, הסכים",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "relief",
+  "meaning": "הקלה, תבליט, סיוע",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "relieve",
+  "meaning": "שחרור, הרפיה",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "relieved",
+  "meaning": "הקלו עליו, שוחרר, הוקל",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "relieving",
+  "meaning": "מקל",
+  "hook": "(גורם להקלה כמו מכאב), מסייע, בא להחליף",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "remedy",
+  "meaning": "תרופה תיקון",
+  "hook": "",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "remote",
+  "meaning": "מרוחק, נידח",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "renouncing",
+  "meaning": "מוותרים, מתכחשים, מתפטרים",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "renovations",
+  "meaning": "שיפוצים",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "repaired",
+  "meaning": "תוקן",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "repetition",
+  "meaning": "חזרה, כמו תוכי",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "replica",
+  "meaning": "שחזור",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "repressive",
+  "meaning": "דיכוי",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "reprimands",
+  "meaning": "נזיפות",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "reproduction",
+  "meaning": "רבייה",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "request",
+  "meaning": "בקשה, דרישה",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "requiring",
+  "meaning": "מחייב",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "rescues",
+  "meaning": "הצלות",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "resemblance",
+  "meaning": "דמיון",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "resentful",
+  "meaning": "ממורמר",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "resenting",
+  "meaning": "מתרעם",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "residually",
+  "meaning": "באופן שיורי, כעודף",
+  "hook": "(מה שנשאר, העודף)",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "resist",
+  "meaning": "התנגדות",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "resolutions",
+  "meaning": "החלטות",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "resolved",
+  "meaning": "פתרו",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "resourceful",
+  "meaning": "בעל תושייה! יעני אחד שקם ועושה",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "restore",
+  "meaning": "שחזור",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "restricted",
+  "meaning": "מוגבל",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "restricting",
+  "meaning": "מגביל, מצמצם",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "restriction",
+  "meaning": "הגבלה",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "restrictions",
+  "meaning": "הגבלות",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "retaining",
+  "meaning": "שמירה",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "retaliate",
+  "meaning": "לנקום",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "retiring",
+  "meaning": "פורש, בגמלאות",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "retractable",
+  "meaning": "מתקפל, ניתן למשיכה חזרה",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "retroactively",
+  "meaning": "באופן רטרואקטיבי, למפרע, החלטה שעושים עכשיו אבל תקפה גם למה שכבר היה",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "reveals",
+  "meaning": "נחשף",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "revelations",
+  "meaning": "גילויים",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "revenge",
+  "meaning": "נקמה",
+  "hook": "",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "reverent",
+  "meaning": "מלא יראת כבוד",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "reverted",
+  "meaning": "להחזיר לבעליו, די מרושע כי יש כאן משהו שהוא קצת רוורס",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "revision",
+  "meaning": "בדיקה מחדש",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "revive",
+  "meaning": "לחיות",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "revoked",
+  "meaning": "שלל / ביטל",
+  "hook": "(רישיון, זכות",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "revolutionary",
+  "meaning": "מהפכני",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "revolved",
+  "meaning": "הסתובב",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "rewarding",
+  "meaning": "מתגמל, מספק, יעני נותן פרס על המאמץ",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "riddle",
+  "meaning": "חידהכמו הרידלר של בטמן, עם הסימני -שאלה)",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "rides",
+  "meaning": "רוכב",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "rift",
+  "meaning": "קרע, שסע",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "rifts",
+  "meaning": "קרעים",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "ripe",
+  "meaning": "בשל",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "ripples",
+  "meaning": "גלים, אדוות",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "ritual",
+  "meaning": "טקס, פולחן, מנהג קבוע",
+  "hook": "(אומרים בעברית לפעמים- ריטואל)",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "rituals",
+  "meaning": "טקסים",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "rival",
+  "meaning": "יריב",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "rockets",
+  "meaning": "טילים",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "rod",
+  "meaning": "מוט",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "roll",
+  "meaning": "מתגלגל",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "rose",
+  "meaning": "עלו",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "rotations",
+  "meaning": "סבבים, רוטציות",
+  "hook": "(כמו ממשלה שכל פעם תורו של מישהו אחר לשלוט",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "royalty",
+  "meaning": "מלוכה",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "sacrifice",
+  "meaning": "הקרבה",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "salvage",
+  "meaning": "להושיע, להציל, גם כשמחלצים מהריסות",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "salvaged",
+  "meaning": "להציל, הצילו",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "sanctuary",
+  "meaning": "מקלט",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "sanitary",
+  "meaning": "תברואתי",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "scales",
+  "meaning": "סולמות",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "scarce",
+  "meaning": "נדיר, מועט, חסר",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "scarcely",
+  "meaning": "בקושי, על הקשקש",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "scathing",
+  "meaning": "קטלני/חריף/נוקבScathe - לפגוע/לפצוע",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "scatter",
+  "meaning": "לפזר, מפוזר",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "scattering",
+  "meaning": "פיזור",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "scene",
+  "meaning": "סצנה",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "scenic",
+  "meaning": "נופי, יפה, ציורי",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "scheduled",
+  "meaning": "תזמן, קבע לוח זמנים",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "scorching",
+  "meaning": "לוהט",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "scribes",
+  "meaning": "סופרים",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "script",
+  "meaning": "כתב, תסריט, כתב יד",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "scroll",
+  "meaning": "גלילה",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "scrolled",
+  "meaning": "לגלול במסך, לדפדף",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "season",
+  "meaning": "עונה",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "secular",
+  "meaning": "חילוני",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "seldom",
+  "meaning": "לעיתים נדירות",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "sensibly",
+  "meaning": "בצורה הגיונית",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "sensor",
+  "meaning": "חיישן",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "sent",
+  "meaning": "לשלוח",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "served",
+  "meaning": "שירת",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "set",
+  "meaning": "סט",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "severe",
+  "meaning": "חמור, רציני",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "severity",
+  "meaning": "חומרה",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "shade",
+  "meaning": "צל, גוון, וילון",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "shades",
+  "meaning": "גוונים/צלליםכמו shadow - צל",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "shadow",
+  "meaning": "צל",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "sharks",
+  "meaning": "כרישים",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "sharply",
+  "meaning": "בצורה חדה, בבהירות",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "shattered",
+  "meaning": "מנופצת",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "shear",
+  "meaning": "לגזוז",
+  "hook": "(כמו צמר של כבשה",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "shelters",
+  "meaning": "מקלטים",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "shortcoming",
+  "meaning": "חסרון",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "shortcut",
+  "meaning": "קיצור דרך",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "show",
+  "meaning": "להראות",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "shrill",
+  "meaning": "צווחניים",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "shrinks",
+  "meaning": "מתכווץ",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "shudder",
+  "meaning": "רעד, התחלחל",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "shuffle",
+  "meaning": "לערבב, כמו שעושים לקלפים, או בפלייליסט של שירים",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "sibling",
+  "meaning": "אח",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "sides",
+  "meaning": "צדדים",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "sift",
+  "meaning": "לסנן, לנפות",
+  "hook": "",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "signal",
+  "meaning": "אות",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "similar",
+  "meaning": "דומה",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "single",
+  "meaning": "יחיד, בודד",
+  "hook": "(גם רווק/ ה)",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "sipped",
+  "meaning": "שלגמו אותוסיפ זה לקחת שלוק",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "site",
+  "meaning": "אתר, גם מקום וגם באינטרנט",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "situated",
+  "meaning": "ממוקם, מהמילהsit, יושב ב",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "skeleton",
+  "meaning": "שלד",
+  "hook": "",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "skyrocketed",
+  "meaning": "הרקיע שחקים",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "slain",
+  "meaning": "נהרג, נרצח",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "sliced",
+  "meaning": "נחתך בדרך כלל לפרוסות, או כמו סלייס של פיצה",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "slight",
+  "meaning": "מעט, קצת",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "slogan",
+  "meaning": "סלוגן, סיסמא",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "smoldering",
+  "meaning": "לוחשכמו גחלים",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "smuggle",
+  "meaning": "להבריח, להגניב",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "smuggled",
+  "meaning": "הוברח",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "soak",
+  "meaning": "להשרות, להרטיב",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "sober",
+  "meaning": "פיכח, לא מסטול",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "socializing",
+  "meaning": "להיותבחברה עם מישהו, לעשות סוציאליזציה, להתרועע עם",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "solution",
+  "meaning": "פתרון",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "sore",
+  "meaning": "כואב, כמו פצע",
+  "hook": "זה כמעט כמו המילה שור..ף.",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "sources",
+  "meaning": "מקורות",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "spanned",
+  "meaning": "התפרסה, להשתרע",
+  "hook": "",
+  "sitting": "סתיו20-א2"
+ },
+ {
+  "word": "spark",
+  "meaning": "ניצוץ",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "sparkle",
+  "meaning": "לנצנץ",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "spectacle",
+  "meaning": "מחזה, מראה",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "spectator",
+  "meaning": "צופים",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "split",
+  "meaning": "פיצלו",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "sprawling",
+  "meaning": "מתפרס",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "stacked",
+  "meaning": "מוערמים",
+  "hook": "",
+  "sitting": "אביב21-א2"
+ },
+ {
+  "word": "stamina",
+  "meaning": "סיבולת/כושר עמידה",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "standby",
+  "meaning": "היכון, לעמוד בהכן",
+  "hook": "(כמו שאומרים לניידות משטרה, כולם להיות מוכנים ל). גם לעמוד",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "staple",
+  "meaning": "מצרך קבוע, דבר שגרתי",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "staples",
+  "meaning": "מרכיבים מרכזייםסיכות",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "stare",
+  "meaning": "להביט, לנעוץ מבט",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "starves",
+  "meaning": "מורעב גווע ברעב",
+  "hook": "",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "station",
+  "meaning": "תחנה",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "stored",
+  "meaning": "לאחסן, לאגור",
+  "hook": "כמו שעושים בחנות (סטור), שם אוגרים את המצרכים שכולם קונים",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "straightened",
+  "meaning": "מיושרות",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "strand",
+  "meaning": "רצועה",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "stranger",
+  "meaning": "זר",
+  "hook": "(כמו איש לא מוכר עם מעיל גשם), מוזר",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "strength",
+  "meaning": "חוזקStrong - חזק",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "strict",
+  "meaning": "נוקשה, כמו חינוך סובייטי",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "strike",
+  "meaning": "לפגוע",
+  "hook": "(כמו סטרייק בבאולינג, כשפוגעים בכולם)",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "striking",
+  "meaning": "בולט",
+  "hook": "(כמו מראה שמכה בכם)",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "stripped",
+  "meaning": "מופשט",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "stripping",
+  "meaning": "קילוף / הפשטה / הסרה",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "stubborn",
+  "meaning": "עקשן",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "stumbled",
+  "meaning": "נתקל, מעד",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "stun",
+  "meaning": "להמם, להפתיע",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "stunned",
+  "meaning": "שוק, הלם",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "stunt",
+  "meaning": "פעלול, תרגיל ראווה",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "subordinate",
+  "meaning": "כפוף, משני, נחות",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "subscribed",
+  "meaning": "נרשם",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "subscription",
+  "meaning": "מנוי",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "subscriptions",
+  "meaning": "רשומים, כמו של ערוץ יוטיוב",
+  "hook": "",
+  "sitting": "סתיו22-א2"
+ },
+ {
+  "word": "subsequent",
+  "meaning": "לאחר מכן",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "subsidize",
+  "meaning": "לסבסד",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "substitute",
+  "meaning": "תחליף",
+  "hook": "",
+  "sitting": "חורף21-א2"
+ },
+ {
+  "word": "substitutions",
+  "meaning": "החלפות",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "subtraction",
+  "meaning": "חיסור, יש את התחילית sub ,שזה מתחת, כמו צוללת",
+  "hook": "אז זה להוריד !",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "suggest",
+  "meaning": "להציע",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "suitably",
+  "meaning": "מתאים ל, כמו שחל יפה מתאימה suits you",
+  "hook": "",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "suited",
+  "meaning": "מותאמים",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "summit",
+  "meaning": "פסגה",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "superstition",
+  "meaning": "אמונה טפלה",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "superstitious",
+  "meaning": "מאמין באמונותטפלות",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "supervise",
+  "meaning": "לפקח",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "supervision",
+  "meaning": "פיקוח, השגחה",
+  "hook": "",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "supplement",
+  "meaning": "להוסיף, להשלים",
+  "hook": "",
+  "sitting": "חורף-22-א2"
+ },
+ {
+  "word": "supplied",
+  "meaning": "סופקsupply - לספק",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "supplier",
+  "meaning": "ספק",
+  "hook": "(של סחורה",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "surface",
+  "meaning": "פני השטח",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "surplus",
+  "meaning": "עודף",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "surveyed",
+  "meaning": "לעשות סקר",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "susceptible",
+  "meaning": "רגיש ל-, פגיע ל-, מושפע בקלות",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "suspend",
+  "meaning": "להיות תלוי",
+  "hook": "(כמו תלוי מהתקרה), להשעות (כמו מהבית-ספר), למתוח (כמו סרט",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "sustenance",
+  "meaning": "מזון, מחיה, קיום",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "swamp",
+  "meaning": "ביצה",
+  "hook": "(כמו של שרק)",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "swept",
+  "meaning": "שוטף",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "swiftly",
+  "meaning": "במהירות",
+  "hook": "",
+  "sitting": "אביב24-א1"
+ },
+ {
+  "word": "switched",
+  "meaning": "לעשות החלפה, להמיר משהו במשהו",
+  "hook": "כמו סוויצ' של אור, שמחליף חושך באור",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "swollen",
+  "meaning": "נפוח",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "sympathetic",
+  "meaning": "סימפטי, אוהד, תומך במשהו",
+  "hook": "(יש לי סימפטיה לאנשים לה לה לה בתל אביב",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "tact",
+  "meaning": "טא קט,",
+  "hook": "(מישהו חסר טאקט זה מישה ו שפולט שטויות כשהוא אמור לשתוק). נימוס",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "tail",
+  "meaning": "זנב, כמו של כלב",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "talent",
+  "meaning": "כישרון, מחונן, טאלנט כמו מסי",
+  "hook": "",
+  "sitting": "אביב23-א2"
+ },
+ {
+  "word": "tangible",
+  "meaning": "מוחשי, ממשי",
+  "hook": "",
+  "sitting": "חורף25-א1"
+ },
+ {
+  "word": "tasks",
+  "meaning": "מטלות",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "tasteful",
+  "meaning": "בטוב טעם",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "taut",
+  "meaning": "מתוח",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "techniques",
+  "meaning": "טכניקות",
+  "hook": "",
+  "sitting": "סתיו23-א2"
+ },
+ {
+  "word": "tedious",
+  "meaning": "מייגע",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "temperaments",
+  "meaning": "מזג/אופיtemper - מזג",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "temperature",
+  "meaning": "טמפרטורה",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "tenacious",
+  "meaning": "עקשן",
+  "hook": "",
+  "sitting": "סתיו24-א1-2"
+ },
+ {
+  "word": "tended",
+  "meaning": "נוטה ל",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "territories",
+  "meaning": "שטחים",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "thaw",
+  "meaning": "להפשיר",
+  "hook": "",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "thaws",
+  "meaning": "מפשיר",
+  "hook": "",
+  "sitting": "קיץ-21-א1"
+ },
+ {
+  "word": "then",
+  "meaning": "אז",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "therapeutic",
+  "meaning": "מרפא",
+  "hook": "(עושה תרפיה",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "thin",
+  "meaning": "רזה, דק",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "thoughts",
+  "meaning": "מחשבות",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "thread",
+  "meaning": "חוט",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "tight",
+  "meaning": "הדוק, צמוד",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "tightens",
+  "meaning": "מתהדק",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "tilted",
+  "meaning": "נוטה",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "timeless",
+  "meaning": "חסר זמן",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "toiled",
+  "meaning": "לעמול קשה, לעבוד בפרך",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "token",
+  "meaning": "אות, סימן, סמל",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "tolerable",
+  "meaning": "נסבל, אפשר לסבול את זה",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "tolerant",
+  "meaning": "סובלני",
+  "hook": "(לא כמו נמוכים שהםintolerants )",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "tower",
+  "meaning": "מגדל",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "traced",
+  "meaning": "עקב",
+  "hook": "",
+  "sitting": "סתיו23-א1"
+ },
+ {
+  "word": "traces",
+  "meaning": "עקבות, סימנים",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "tracing",
+  "meaning": "מעקב",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "trail",
+  "meaning": "נתיב",
+  "hook": "",
+  "sitting": "אביב21-א1"
+ },
+ {
+  "word": "trained",
+  "meaning": "מאומן",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "trampled",
+  "meaning": "נרמס",
+  "hook": "",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "tramples",
+  "meaning": "רומס",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "trance",
+  "meaning": "טראנס, מצב תודעתי, שכרון חושים",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "tranquil",
+  "meaning": "שליו, שקט",
+  "hook": "",
+  "sitting": "קיץ2026-א1"
+ },
+ {
+  "word": "transformed",
+  "meaning": "שינה צורה",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "transgress",
+  "meaning": "לעבור על החוק, לחרוג",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "transported",
+  "meaning": "להעביר",
+  "hook": "(טראנספורט, כמו ברכבות...)",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "treaty",
+  "meaning": "אמנה, הסכם, חוזה בין מדינות",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "trend",
+  "meaning": "טרנד, מה שבאופנה",
+  "hook": "",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "trigger",
+  "meaning": "לגרום, לעורר, להצית",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "triggered",
+  "meaning": "הפעיל, עורר, הצית",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "truth",
+  "meaning": "אמתtrue )",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "tube",
+  "meaning": "צינור, שפופרת",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "tutor",
+  "meaning": "מורה פרטי",
+  "hook": "",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "twig",
+  "meaning": "ענף",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "twists",
+  "meaning": "מסובב, מעוות",
+  "hook": "",
+  "sitting": "חורף24-א2"
+ },
+ {
+  "word": "type",
+  "meaning": "סוג",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "undermined",
+  "meaning": "להחליש, לחתור תחת",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "underneath",
+  "meaning": "מתחת",
+  "hook": "",
+  "sitting": "אביב26-א1"
+ },
+ {
+  "word": "unearthed",
+  "meaning": "חשפו",
+  "hook": "",
+  "sitting": "אביב24-א2"
+ },
+ {
+  "word": "uneasy",
+  "meaning": "לא בנוח, לא נעים",
+  "hook": "זה מסיח בגלל התחילית שלהשלילה, או בגלל זיהום",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "unified",
+  "meaning": "אוחדו",
+  "hook": "(לאחד, לעשות אונו- אחד)",
+  "sitting": "אביב25-א1"
+ },
+ {
+  "word": "units",
+  "meaning": "יחידות",
+  "hook": "",
+  "sitting": "חורף21-א1"
+ },
+ {
+  "word": "universally",
+  "meaning": "באופן אוניברסלי, בכל מקום",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "unless",
+  "meaning": "אלא אם",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ },
+ {
+  "word": "unorthodox",
+  "meaning": "חדשני ולא רגיל, לא אורתודוכסי",
+  "hook": "",
+  "sitting": "חורף-23-א2"
+ },
+ {
+  "word": "unpredictable",
+  "meaning": "לא צפוי",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "untamed",
+  "meaning": "פרוע, לא מאולף",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "unusual",
+  "meaning": "לא רגיל",
+  "hook": "",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "upheaval",
+  "meaning": "מהפך, מהומה, טלטלה",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "uprising",
+  "meaning": "התקוממות",
+  "hook": "",
+  "sitting": "קיץ22-א2"
+ },
+ {
+  "word": "urgent",
+  "meaning": "דחוף",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "urgently",
+  "meaning": "בדחיפות",
+  "hook": "",
+  "sitting": "קיץ-21-א2"
+ },
+ {
+  "word": "utility",
+  "meaning": "שימושיות, שירות שמקבלים",
+  "hook": "",
+  "sitting": "סתיו23-א2-2"
+ },
+ {
+  "word": "utilizing",
+  "meaning": "לעשות שימוש",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "vacant",
+  "meaning": "פנוי",
+  "hook": "",
+  "sitting": "סתיו20-א1"
+ },
+ {
+  "word": "valid",
+  "meaning": "תקף",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "value",
+  "meaning": "ערך",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "vehicle",
+  "meaning": "כלי רכב",
+  "hook": "",
+  "sitting": "חורף-23-א1"
+ },
+ {
+  "word": "vehicles",
+  "meaning": "כלי רכב",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "veil",
+  "meaning": "צעיף, הינומה, מסווה",
+  "hook": "",
+  "sitting": "קיץ2026-א2"
+ },
+ {
+  "word": "vein",
+  "meaning": "וריד",
+  "hook": "",
+  "sitting": "סתיו25-א1"
+ },
+ {
+  "word": "vendors",
+  "meaning": "מוכרים / ספקים",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "venom",
+  "meaning": "ארס",
+  "hook": "",
+  "sitting": "חורף20-א1"
+ },
+ {
+  "word": "ventured",
+  "meaning": "העז, יצא",
+  "hook": "",
+  "sitting": "אביב25-א2"
+ },
+ {
+  "word": "verify",
+  "meaning": "לוודא / לאמת",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "versatile",
+  "meaning": "רב־גוני, בעל יכולות רבות",
+  "hook": "",
+  "sitting": "חורף25-א2"
+ },
+ {
+  "word": "vertical",
+  "meaning": "אנכי",
+  "hook": "",
+  "sitting": "אביב26-א2"
+ },
+ {
+  "word": "virtually",
+  "meaning": "למעשה",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "virtue",
+  "meaning": "סגולה",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "vision",
+  "meaning": "ראייה, חזון, מראה",
+  "hook": "(כמו טלוויזיה)",
+  "sitting": "קיץ25-א1"
+ },
+ {
+  "word": "visions",
+  "meaning": "חזונות",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "visualize",
+  "meaning": "לדמיין",
+  "hook": "(להפוך לויזואלי",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "vocation",
+  "meaning": "מקצוע, במהמישהו עובד",
+  "hook": "זה מזכיר את vacation שזה חופשה, פנאי, שזה קצת",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "volumes",
+  "meaning": "כרכים",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "voluntary",
+  "meaning": "בהתנדבות, מרצון",
+  "hook": "",
+  "sitting": "חורף22-א1"
+ },
+ {
+  "word": "vowel",
+  "meaning": "אות ניקוד",
+  "hook": "",
+  "sitting": "חורף24-א1"
+ },
+ {
+  "word": "vowels",
+  "meaning": "תנועות",
+  "hook": "(בעיקר בהקשר להגיי הדיבור",
+  "sitting": "קיץ22-א1"
+ },
+ {
+  "word": "voyage",
+  "meaning": "הפלגה",
+  "hook": "",
+  "sitting": "אביב22-א2"
+ },
+ {
+  "word": "wardrobe",
+  "meaning": "ארון בגדים",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "warm",
+  "meaning": "חמים",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "wasted",
+  "meaning": "מבוזבז",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "waved",
+  "meaning": "נופף",
+  "hook": "",
+  "sitting": "סתיו21-א1"
+ },
+ {
+  "word": "weave",
+  "meaning": "לארוג",
+  "hook": "",
+  "sitting": "קיץ24-אנגלית2"
+ },
+ {
+  "word": "which",
+  "meaning": "אז",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "who",
+  "meaning": "ארגון הבריאות העולמי",
+  "hook": "(זה שהסתיר את הבלאגן שהשלטון הקומוניסטי הסיני עשה ל עולם עם",
+  "sitting": "אביב23-א1"
+ },
+ {
+  "word": "wholesome",
+  "meaning": "בריא, טוב",
+  "hook": "",
+  "sitting": "קיץ20-א1"
+ },
+ {
+  "word": "wit",
+  "meaning": "שנינות",
+  "hook": "",
+  "sitting": "חורף20-א2"
+ },
+ {
+  "word": "wither",
+  "meaning": "יקמל",
+  "hook": "",
+  "sitting": "סתיו21-א2"
+ },
+ {
+  "word": "wove",
+  "meaning": "לטוות",
+  "hook": "",
+  "sitting": "קיץ20-א2"
+ },
+ {
+  "word": "wrongly",
+  "meaning": "שלא בצדק",
+  "hook": "(באופן מוטעה",
+  "sitting": "קיץ24-אנגלית-1"
+ },
+ {
+  "word": "wrung",
+  "meaning": "נסחט, נלחץ, סחטו אותו",
+  "hook": "",
+  "sitting": "קיץ25-א2"
+ },
+ {
+  "word": "yet",
+  "meaning": "עדיין, בעוד ש",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "young",
+  "meaning": "צעיר",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "zealous",
+  "meaning": "קנאי",
+  "hook": "",
+  "sitting": "אביב22-א1"
+ },
+ {
+  "word": "zone",
+  "meaning": "איזור",
+  "hook": "",
+  "sitting": "סתיו22-א1"
+ },
+ {
+  "word": "zoning",
+  "meaning": "אזוריות",
+  "hook": "",
+  "sitting": "סתיו24-א1"
+ }
+]

@@ -20,12 +20,13 @@ function lift(from, to) {
 /* Two separate regions: the scheduler lives with the trainer, the quiz below it. */
 const src =
   lift('/* ---------- scheduling: SM-2', '/* ---------- picking the next word') +
-  lift('var Q={on:false', '/* ---------- screens ----------') +
+  lift('var Q={items:[]', '/* ---------- screens ----------') +
   lift('function shuffled(arr)', '/* A reading section\'s level');
 
 const api = new Function(
-  'cards',
-  src + '\n;return {schedule, newCard, quizPool, related, glossClash, glossTerms, buildItem, buildQuiz};'
+  'cards', 'COURSE', 'shuffled',
+  src + '\n;return {schedule, newCard, quizPool, related, glossClash, glossTerms, buildItem, buildQuiz,' +
+        ' completionFor, buildCompletionQuiz};'
 );
 
 let fail = 0;
@@ -43,7 +44,15 @@ for (const c of FIX.cards) {
     ease: 2.5, interval: 0, reps: 0, lapses: 0, due: 0,
   };
 }
-const q = api(cards);
+/* buildCompletionQuiz reads the course bank and shuffled() comes from the exam
+   engine, so both are handed in rather than lifted a second time. */
+const COURSE = require('./course-bank.json');
+const shuffle = (arr) => {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) { const j = (Math.random() * (i + 1)) | 0; [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+};
+const q = api(cards, COURSE, shuffle);
 const pool = q.quizPool();
 
 console.log('=== pool ===');
@@ -188,6 +197,27 @@ check(Math.abs(w.due - (Date.now() + DAY)) < 5000, 'due is set one day out');
 let floor = { word: 'f', ease: 1.3, interval: 1, reps: 1, lapses: 9, due: 0 };
 for (let i = 0; i < 5; i++) floor = q.schedule(floor, false);
 check(floor.ease >= 1.3, 'ease never falls through its floor (' + floor.ease.toFixed(2) + ')');
+
+/* ------------------------------------ completion on the words already learned */
+console.log('\n=== sentence completion on learned words ===');
+const learnedWords = pool.map((c) => c.word);
+const avail = q.completionFor(learnedWords);
+check(avail.length > 0, `${avail.length} course questions turn on a word in the studied set`);
+check(avail.every((x) => x.t !== 'restatement'), 'restatement is never served as a completion drill');
+check(avail.every((x) => learnedWords.includes(x.v[0])),
+  'every served question keys on a studied word, not merely mentions one');
+check(avail.every((x) => /_{3,}/.test(x.p)), 'every served stem carries its blank');
+
+const unknown = q.completionFor(['zzzznotaword']);
+check(unknown.length === 0, 'a word never studied yields nothing');
+
+const drill = q.buildCompletionQuiz(pool, 5);
+check(drill.length === Math.min(5, avail.length), `a 5-question drill is built (${drill.length})`);
+check(drill.every((it) => it.dir === 'completion'), 'items are tagged as completion');
+check(drill.every((it) => it.options.length === 4 && it.a >= 0 && it.a < 4), 'four options with a key in range');
+check(drill.every((it) => it.options[it.a].toLowerCase() === it.word), 'the keyed option is the learned word');
+check(drill.every((it) => it.hook === (cards[it.word] || {}).mnemonic || !cards[it.word]),
+  'each item carries the learner\'s own hook as its hint');
 
 console.log(fail ? '\n' + fail + ' FAILED\n' : '\nAll quiz checks passed.\n');
 process.exit(fail ? 1 : 0);
