@@ -121,6 +121,16 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 .adaptive-cta .t{font-family:var(--font-display);font-weight:900;font-size:24px;color:var(--accent);line-height:1.2}
 .adaptive-cta .m{font-size:14px;color:var(--muted);max-width:52ch;line-height:1.55}
 .adaptive-cta .go{font-weight:700;color:var(--accent);margin-top:6px;font-size:14.5px}
+.drill-cta{display:flex;flex-direction:column;gap:6px;width:100%;text-align:start;
+  padding:17px 20px;margin-top:12px;transition:border-color .15s}
+.drill-cta:hover{border-color:var(--accent)}
+.drill-cta .t{font-family:var(--font-display);font-weight:900;font-size:21px;line-height:1.2}
+.drill-cta .m{font-size:13.5px;color:var(--muted);max-width:52ch;line-height:1.55}
+.drill-cta .go{font-weight:700;color:var(--accent);margin-top:4px;font-size:14px}
+.pick{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 2px}
+.pick button{padding:9px 15px;border:1.5px solid var(--line);border-radius:var(--r);
+  background:var(--surface);font-weight:600;font-size:14px}
+.pick button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
 .trail{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
 .trail-step{flex:1;min-width:84px;padding:9px 8px;border:1px solid var(--line);border-radius:8px;
   background:var(--surface-2);text-align:center}
@@ -232,6 +242,7 @@ table.t td b{color:var(--accent);font-variant-numeric:tabular-nums}
       <button role="tab" id="tab-sims" aria-selected="true">סימולציות</button>
       <button role="tab" id="tab-set" aria-selected="false">הגדרות זמן</button>
       <button role="tab" id="tab-guide" aria-selected="false">איך פותרים</button>
+      <button role="tab" id="tab-trainer" aria-selected="false">מאמן מילים</button>
       <button role="tab" id="tab-vocab" aria-selected="false">אוצר מילים</button>
     </div>
 
@@ -242,6 +253,13 @@ table.t td b{color:var(--accent);font-variant-numeric:tabular-nums}
         <span class="m">שישה פרקים מתוך כל 580 השאלות. מתחיל ברמה בינונית, ואחרי כל פרק הרמה עולה או יורדת לפי הביצועים שלך — בדיוק כמו באמירנט.</span>
         <span class="go">התחל ←</span>
       </button>
+      <button class="card drill-cta" id="drillBtn">
+        <span class="eyebrow">תרגול ממוקד</span>
+        <span class="t">פרק בודד</span>
+        <span class="m">להתאמן רק על הסוג שחלש אצלך — השלמת משפטים, ניסוח מחדש או הבנת הנקרא. עם שעון או בלי.</span>
+        <span class="go">בחר פרק ←</span>
+      </button>
+
       <div class="eyebrow" style="margin:24px 0 10px">או סימולציה ברמה קבועה</div>
       <div class="grid" id="simGrid"></div>
     </div>
@@ -249,6 +267,8 @@ table.t td b{color:var(--accent);font-variant-numeric:tabular-nums}
     <div id="pane-set" hidden></div>
 
     <div id="pane-guide" hidden class="guide"></div>
+
+    <div id="pane-trainer" hidden></div>
 
     <div id="pane-vocab" hidden></div>
   </section>
@@ -400,6 +420,106 @@ function renderSettings(){
 }
 
 
+
+
+/* =================== SINGLE-SECTION DRILL =================== */
+/*
+ * Practise one section type on its own. It reuses the adaptive engine's bank
+ * and draw, then runs the ordinary section machinery with a one-section plan,
+ * so the timer, navigation, flagging, scoring and review all behave exactly as
+ * they do in a full sitting.
+ */
+var drillPick={type:"sentence_completion", level:"medium", timed:true};
+
+function renderDrillSetup(){
+  buildBank();
+  $("home").hidden=true; $("results").hidden=true; $("exam").hidden=false; $("bar").hidden=false;
+  $("barTitle").textContent="תרגול פרק בודד";
+  $("timer").textContent="--:--"; $("timer").className="timer";
+  $("prog").style.width="0%";
+  window.scrollTo(0,0);
+
+  var root=$("exam"); root.textContent="";
+  var c=el("div","card set"); c.style.padding="20px";
+
+  c.appendChild(el("div","eyebrow","סוג הפרק"));
+  var types=el("div","pick");
+  [["sentence_completion","השלמת משפטים"],["restatement","ניסוח מחדש"],["reading_comprehension","הבנת הנקרא"]]
+    .forEach(function(pair){
+      var b=el("button",null,pair[1]);
+      b.setAttribute("aria-pressed", drillPick.type===pair[0]?"true":"false");
+      b.onclick=function(){drillPick.type=pair[0];renderDrillSetup()};
+      types.appendChild(b);
+    });
+  c.appendChild(types);
+
+  c.appendChild(el("div","eyebrow","רמת קושי")).style.marginTop="18px";
+  var levels=el("div","pick");
+  LEVELS.concat(["mixed"]).forEach(function(L){
+    var b=el("button",null,L==="mixed"?"מעורב":(LEVEL_HE[L]||L));
+    b.setAttribute("aria-pressed", drillPick.level===L?"true":"false");
+    b.onclick=function(){drillPick.level=L;renderDrillSetup()};
+    levels.appendChild(b);
+  });
+  c.appendChild(levels);
+
+  c.appendChild(el("div","eyebrow","זמן")).style.marginTop="18px";
+  var timing=el("div","pick");
+  [[true,"עם שעון"],[false,"בלי הגבלת זמן"]].forEach(function(pair){
+    var b=el("button",null,pair[1]);
+    b.setAttribute("aria-pressed", drillPick.timed===pair[0]?"true":"false");
+    b.onclick=function(){drillPick.timed=pair[0];renderDrillSetup()};
+    timing.appendChild(b);
+  });
+  c.appendChild(timing);
+
+  var spec=SPEC[drillPick.type];
+  var note=el("p","muted", spec
+    ? (drillPick.type==="reading_comprehension"
+        ? "קטע אחד עם 5 שאלות" + (drillPick.timed?" · 15 דקות":"")
+        : spec.serve+" שאלות" + (drillPick.timed?" · "+Math.round(spec.time/60)+" דקות":""))
+    : "");
+  note.style.cssText="margin:18px 0 0;font-size:14px";
+  c.appendChild(note);
+
+  var go=el("button","btn","התחל ←"); go.style.marginTop="14px";
+  go.onclick=startDrill; c.appendChild(go);
+  root.appendChild(c);
+}
+
+function startDrill(){
+  var levelIdx = drillPick.level==="mixed"
+    ? Math.floor(Math.random()*LEVELS.length)
+    : LEVELS.indexOf(drillPick.level);
+  if(levelIdx<0) levelIdx=1;
+
+  S={sim:{id:"drill",title:"תרגול "+(TYPE_HE[drillPick.type]||drillPick.type)},
+     drill:true, untimed:!drillPick.timed, used:{}, total:1,
+     sections:[], si:0, qi:0, answers:[], flags:[], left:0, tick:null, phase:"intro"};
+
+  /* One section, built from the same plan slot the type occupies in a real test. */
+  var slot=ADAPTIVE_PLAN.indexOf(drillPick.type);
+  var saved=ADAPTIVE_PLAN[0];
+  ADAPTIVE_PLAN[0]=drillPick.type;
+  var sec=buildAdaptiveSection(0, levelIdx);
+  ADAPTIVE_PLAN[0]=saved;
+
+  if(!sec || !sec.qs.length){
+    var root=$("exam"); root.textContent="";
+    var c=el("div","card sect-intro");
+    c.appendChild(el("h2",null,"אין מספיק שאלות"));
+    c.appendChild(el("p","muted","נגמרו השאלות ברמה הזו. נסה רמה אחרת, או אפס את מצב המאגר בהגדרות."));
+    var b=el("button","btn ghost","חזרה"); b.style.marginTop="16px"; b.onclick=quitExam;
+    c.appendChild(b); root.appendChild(c);
+    return;
+  }
+
+  sec.meta.slot=1;
+  S.sections[0]=sec;
+  S.answers[0]=new Array(sec.qs.length).fill(null);
+  S.flags[0]={};
+  renderIntro();
+}
 
 /* =================== SCORE ESTIMATE =================== */
 /*
@@ -615,7 +735,7 @@ function renderIntro(){
   var total=S.total||S.sections.length;
   var s=S.sections[S.si], sec=s.meta;
   $("barTitle").textContent=S.sim.title;
-  $("timer").textContent=mmss(s.dur); $("timer").className="timer";
+  $("timer").textContent=S.untimed?"∞":mmss(s.dur); $("timer").className="timer";
   $("prog").style.width=(S.si/total*100)+"%";
 
   var root=$("exam"); root.textContent="";
@@ -624,8 +744,8 @@ function renderIntro(){
   c.appendChild(el("h2",null,sec.titleHe||TYPE_HE[sec.type]));
   var d=el("p","muted",sec.descHe||""); d.style.cssText="max-width:46ch;margin:10px auto 0;font-size:14.5px";
   c.appendChild(d);
-  c.appendChild(el("div","big",mmss(s.dur)));
-  c.appendChild(el("div","muted",s.qs.length+" שאלות · הזמן לא נצבר לפרק הבא"));
+  c.appendChild(el("div","big",S.untimed?"∞":mmss(s.dur)));
+  c.appendChild(el("div","muted",s.qs.length+" שאלות · "+(S.untimed?"ללא הגבלת זמן":"הזמן לא נצבר לפרק הבא")));
   if(S.adaptive){
     var lv=el("div","pill","רמה: "+(LEVEL_HE[s.level]||s.level));
     lv.style.marginTop="10px";
@@ -649,6 +769,11 @@ function renderIntro(){
 function startSection(){
   S.phase="quiz"; S.qi=0; S.left=S.sections[S.si].dur;
   stopTick();
+  if(S.untimed){
+    /* Untimed drill: no clock at all, so the section ends only when finished. */
+    $("timer").textContent="∞"; $("timer").className="timer";
+    renderQuestion(); return;
+  }
   S.tick=setInterval(function(){
     S.left--;
     paintTimer();
@@ -1083,6 +1208,341 @@ var GUIDE_HTML=[
 
 
 
+
+/* =================== VOCABULARY TRAINER =================== */
+/*
+ * A word is shown, you write what you think it means, Claude says whether you
+ * were right, and then the two of you build a memory hook for it.
+ *
+ * The hook style is the learner's own, and the prompt below carries their
+ * example verbatim so the model has the pattern rather than a description of
+ * it: abduct -> "אבא דק" -> אבא ברווז -> "אבא ברווז חטף את הילד שלו".
+ * It is a phonetic bridge into Hebrew tied to the meaning, not a translation.
+ *
+ * Judging needs `sample` (the page asking Claude) and the hooks are kept in
+ * `db` so they survive a cleared browser, follow the user between devices, and
+ * can be read back in a later chat to revise from. Both resolve late and may
+ * resolve null, so the tab renders and says what is missing rather than
+ * pretending to grade.
+ */
+
+var TRAINER=null;            /* the word pool */
+var sampleApi=null, dbApi=null;
+var capsReady=false;
+var cards={};                /* word -> scheduling + hook, mirrored from db */
+var T={word:null, phase:"idle", judged:null, queue:[], session:{seen:0, right:0}};
+
+try{
+  if(window.claude&&typeof window.claude.use==="function"){
+    Promise.all([
+      window.claude.use("sample").then(function(a){sampleApi=a||null}).catch(function(){}),
+      window.claude.use("db").then(function(a){dbApi=a||null}).catch(function(){})
+    ]).then(function(){
+      capsReady=true;
+      if($("pane-trainer") && !$("pane-trainer").hidden) renderTrainer();
+    });
+  } else { capsReady=true; }
+}catch(e){ capsReady=true; }
+
+/* ---------- scheduling: SM-2, trimmed to what this needs ---------- */
+var DAY=86400000;
+function newCard(word){ return {word:word, ease:2.5, interval:0, lapses:0, reps:0, due:0}; }
+function schedule(card, correct){
+  var c=card||newCard();
+  c.reps=(c.reps||0)+1;
+  if(correct){
+    c.interval = !c.interval ? 1 : Math.max(1, Math.round(c.interval*c.ease));
+    c.ease = Math.min(3.0, (c.ease||2.5)+0.1);
+  }else{
+    c.interval = 1;                                  /* back tomorrow */
+    c.ease = Math.max(1.3, (c.ease||2.5)-0.2);       /* and more often after that */
+    c.lapses = (c.lapses||0)+1;
+  }
+  c.due = Date.now() + c.interval*DAY;
+  return c;
+}
+
+/* ---------- picking the next word ---------- */
+function nextWord(){
+  if(T.queue.length) return T.queue.shift();          /* missed earlier this session */
+  var now=Date.now();
+  var due=Object.keys(cards).map(function(k){return cards[k]})
+    .filter(function(c){return c.due && c.due<=now})
+    .sort(function(a,b){return a.due-b.due});
+  if(due.length) return due[0].word;
+  var fresh=TRAINER.filter(function(w){return !cards[w.word]});
+  if(fresh.length) return fresh[0].word;              /* pool is ranked by frequency */
+  var all=Object.keys(cards).map(function(k){return cards[k]}).sort(function(a,b){return a.due-b.due});
+  return all.length?all[0].word:null;
+}
+
+/* ---------- asking Claude ---------- */
+function judgePrompt(word, guess){
+  return [
+'אתה עוזר ללומד ישראלי שמתכונן לבחינת אמירנט באנגלית.',
+'',
+'המילה: "'+word+'"',
+'מה שהלומד כתב שהפירוש: "'+guess+'"',
+'',
+'החזר JSON בלבד, בדיוק במבנה הזה:',
+'{',
+'  "verdict": "correct" | "partial" | "wrong",',
+'  "meaning": "הפירוש בעברית, 2-5 מילים",',
+'  "english": "a short English gloss",',
+'  "note": "משפט אחד שמסביר למה התשובה נכונה/חלקית/שגויה",',
+'  "mnemonic": "הסימן עצמו",',
+'  "story": "משפט קצר וויזואלי שמחבר את הסימן למשמעות"',
+'}',
+'',
+'כללי הסימן — זה החלק החשוב, אל תדלג עליו:',
+'הסימן הוא פירוק פונטי של המילה האנגלית למילים עבריות שנשמעות כמוה,',
+'ואז תמונה שמקשרת אותן למשמעות. זה לא תרגום ולא אטימולוגיה.',
+'',
+'כך הלומד עצמו עושה את זה:',
+'  abduct (לחטוף) ← נשמע "אבא דק" ← אבא ברווז ←',
+'  הסיפור: "אבא ברווז חטף את הילד שלו"',
+'  ומאז כשהוא רואה abduct הוא נזכר מיד בחטיפה.',
+'',
+'אם אי אפשר לפרק את המילה פונטית לעברית בצורה טבעית, בנה את הסימן על',
+'דמיון למילה עברית או אנגלית מוכרת — אבל שהקשר למשמעות יישאר חד.',
+'סימן אחד חזק עדיף על שלושה חלשים. אל תמציא עברית שלא קיימת.'
+  ].join('\n');
+}
+
+/* ---------- rendering ---------- */
+function renderTrainer(){
+  var p=$("pane-trainer"); p.textContent="";
+
+  if(!TRAINER){
+    p.appendChild(el("div","muted","טוען מילים…"));
+    fetch("trainer-words.json").then(function(r){return r.json()}).then(function(j){
+      TRAINER=j; loadCards().then(renderTrainer);
+    }).catch(function(){ p.textContent=""; p.appendChild(el("div","card set","לא ניתן לטעון את רשימת המילים.")) });
+    return;
+  }
+
+  var head=el("div");
+  var h=el("h2",null,"מאמן מילים"); h.style.cssText="font-size:23px;margin-bottom:6px";
+  head.appendChild(h);
+  var known=Object.keys(cards).length;
+  var sub=el("p","muted", TRAINER.length+" מילים במאגר · "+known+" כבר התחלת · "+
+            (T.session.seen?("הפעם: "+T.session.right+"/"+T.session.seen):"מדורגות לפי כמה הן חוזרות"));
+  sub.style.cssText="margin:0 0 14px;font-size:14px";
+  head.appendChild(sub);
+  p.appendChild(head);
+
+  if(!capsReady){ p.appendChild(el("div","card set","מתחבר…")); return }
+
+  if(!sampleApi){
+    var warn=el("div","card set");
+    warn.appendChild(el("div","eyebrow","המאמן צריך הרשאה"));
+    var w1=el("p",null,"כדי לשפוט את הפירוש שלך ולבנות איתך סימן, הדף צריך לשאול אותי בזמן אמת — וההרשאה לכך לא ניתנה בתצוגה הזו.");
+    w1.style.cssText="margin:8px 0;font-size:14.5px"; warn.appendChild(w1);
+    var w2=el("p","muted","אפשר לאשר דרך תפריט ההרשאות של הדף. בלי זה אני לא יכול לדעת אם צדקת — ולא אנחש.");
+    w2.style.cssText="margin:0;font-size:13.5px"; warn.appendChild(w2);
+    var openPerms=el("button","btn ghost","פתח הרשאות"); openPerms.style.marginTop="12px";
+    openPerms.onclick=function(){
+      try{ window.claude.use("permissions").then(function(pm){ pm&&pm.manage&&pm.manage() }) }catch(e){}
+    };
+    warn.appendChild(openPerms);
+    p.appendChild(warn);
+    p.appendChild(trainerListPreview());
+    return;
+  }
+
+  if(!T.word) T.word=nextWord();
+  if(!T.word){ p.appendChild(el("div","card set","אין מילים זמינות.")); return }
+
+  var card=el("div","card"); card.style.padding="22px 20px";
+  var entry=TRAINER.filter(function(w){return w.word===T.word})[0]||{};
+  var c=cards[T.word];
+
+  var top=el("div","row"); top.style.cssText="justify-content:space-between;align-items:baseline";
+  var wordEl=el("div","en",T.word);
+  wordEl.style.cssText="font-family:var(--font-display);font-weight:900;font-size:34px;color:var(--accent);line-height:1.1";
+  top.appendChild(wordEl);
+  if(c&&c.lapses) top.appendChild(el("span","pill","טעית בה "+c.lapses+(c.lapses===1?" פעם":" פעמים")));
+  else if(entry.times>1) top.appendChild(el("span","pill","חוזרת "+entry.times+" פעמים"));
+  card.appendChild(top);
+
+  if(T.phase==="idle"||T.phase==="judging"){
+    var ask=el("p","muted","מה הפירוש? כתוב מה שאתה חושב, גם אם אתה לא בטוח.");
+    ask.style.cssText="margin:12px 0 8px;font-size:14.5px"; card.appendChild(ask);
+
+    var ta=document.createElement("textarea");
+    ta.className="note-field"; ta.rows=2; ta.id="guessField";
+    ta.placeholder="הפירוש בעברית…"; ta.value=T.guessDraft||"";
+    ta.oninput=function(){T.guessDraft=ta.value};
+    ta.onkeydown=function(e){ if(e.key==="Enter"&&(e.metaKey||e.ctrlKey)) submitGuess() };
+    card.appendChild(ta);
+
+    var row=el("div","row"); row.style.marginTop="12px";
+    var go=el("button","btn", T.phase==="judging"?"בודק…":"בדוק");
+    go.disabled = T.phase==="judging";
+    go.onclick=submitGuess; row.appendChild(go);
+    var skip=el("button","btn ghost","לא יודע");
+    skip.disabled = T.phase==="judging";
+    skip.onclick=function(){ T.guessDraft="—"; submitGuess() };
+    row.appendChild(skip);
+    if(T.error){ var er=el("span","muted",T.error); er.style.fontSize="13.5px"; row.appendChild(er) }
+    card.appendChild(row);
+  }
+
+  if(T.phase==="result"&&T.judged){
+    var j=T.judged;
+    var VERDICT={correct:["נכון","var(--good)","var(--good-soft)"],
+                 partial:["כמעט","var(--warn)","color-mix(in srgb,var(--warn) 14%,transparent)"],
+                 wrong:["לא נכון","var(--bad)","var(--bad-soft)"]};
+    var v=VERDICT[j.verdict]||VERDICT.wrong;
+    var badge=el("div",null,v[0]);
+    badge.style.cssText="display:inline-block;font-weight:700;padding:5px 14px;border-radius:999px;margin:14px 0 10px;color:"+v[1]+";background:"+v[2];
+    card.appendChild(badge);
+
+    var mean=el("p",null,"");
+    mean.style.cssText="margin:0 0 4px;font-size:17px;font-weight:700";
+    mean.textContent=j.meaning||"";
+    card.appendChild(mean);
+    if(j.english){ var en=el("p","muted en",j.english); en.style.cssText="margin:0 0 10px;font-size:14px"; card.appendChild(en) }
+    if(j.note){ var nt=el("p","muted",j.note); nt.style.cssText="margin:0 0 14px;font-size:14px"; card.appendChild(nt) }
+
+    var hook=el("div","expl"); hook.style.marginTop="4px";
+    hook.appendChild(el("div","eyebrow","הסימן שאני מציע"));
+    var mn=el("p",null,j.mnemonic||""); mn.style.cssText="margin:8px 0 4px;font-size:16px;font-weight:700";
+    hook.appendChild(mn);
+    if(j.story){ var st=el("p",null,"„"+j.story+"”"); st.style.cssText="margin:0;font-size:15px"; hook.appendChild(st) }
+    card.appendChild(hook);
+
+    if(T.phase==="result"&&T.writingOwn){
+      var own=document.createElement("textarea");
+      own.className="note-field"; own.rows=2; own.id="ownHook";
+      own.placeholder="הסימן שלך — איך אתה תזכור את המילה הזו?";
+      own.value=T.ownDraft||((c&&c.mnemonic)||"");
+      own.oninput=function(){T.ownDraft=own.value};
+      card.appendChild(own);
+    }
+
+    var acts=el("div","row"); acts.style.marginTop="14px";
+    if(!T.writingOwn){
+      var takeIt=el("button","btn","שמור את הסימן הזה");
+      takeIt.onclick=function(){ saveAndAdvance(j.mnemonic+(j.story?" — "+j.story:""), "claude") };
+      acts.appendChild(takeIt);
+      var mine=el("button","btn ghost","אכתוב משלי");
+      mine.onclick=function(){T.writingOwn=true;renderTrainer()};
+      acts.appendChild(mine);
+    }else{
+      var saveMine=el("button","btn","שמור את שלי");
+      saveMine.onclick=function(){ saveAndAdvance((T.ownDraft||"").trim(), "mine") };
+      acts.appendChild(saveMine);
+      var back=el("button","btn ghost","חזרה להצעה שלי");
+      back.onclick=function(){T.writingOwn=false;renderTrainer()};
+      acts.appendChild(back);
+    }
+    var skip2=el("button","btn ghost","בלי סימן, המשך");
+    skip2.onclick=function(){ saveAndAdvance("", "none") };
+    acts.appendChild(skip2);
+    card.appendChild(acts);
+
+    if(c&&c.mnemonic){
+      var prev=el("p","muted","הסימן שכבר שמור: "+c.mnemonic);
+      prev.style.cssText="margin:12px 0 0;font-size:13px"; card.appendChild(prev);
+    }
+  }
+
+  p.appendChild(card);
+  if(!dbApi){
+    var nodb=el("p","muted","הסימנים לא נשמרים בתצוגה הזו — אין הרשאת אחסון.");
+    nodb.style.cssText="margin:10px 2px 0;font-size:13px"; p.appendChild(nodb);
+  }
+  p.appendChild(trainerListPreview());
+}
+
+/* A short look at what is already saved, so the tab is useful before grading. */
+function trainerListPreview(){
+  var wrap=el("div"); wrap.style.marginTop="22px";
+  var saved=Object.keys(cards).map(function(k){return cards[k]})
+    .filter(function(c){return c.mnemonic}).sort(function(a,b){return (b.savedAt||0)-(a.savedAt||0)});
+  if(!saved.length) return wrap;
+  wrap.appendChild(el("div","eyebrow","הסימנים שבנית ("+saved.length+")"));
+  saved.slice(0,12).forEach(function(c){
+    var d=el("div","card"); d.style.cssText="padding:11px 14px;margin-top:7px";
+    var w=el("span","en",c.word); w.style.cssText="font-weight:700;color:var(--accent);font-size:15.5px";
+    d.appendChild(w);
+    if(c.meaning){ var m=el("span",null," — "+c.meaning); m.style.fontSize="14px"; d.appendChild(m) }
+    var h=el("div","muted",c.mnemonic); h.style.cssText="font-size:13.5px;margin-top:3px"; d.appendChild(h);
+    wrap.appendChild(d);
+  });
+  return wrap;
+}
+
+/* ---------- actions ---------- */
+function submitGuess(){
+  var guess=(T.guessDraft||"").trim();
+  if(!guess){ T.error="כתוב משהו קודם, גם ניחוש."; renderTrainer(); return }
+  if(!sampleApi) return;
+  T.phase="judging"; T.error=null; renderTrainer();
+
+  /* sample.json resolves the parsed object directly; nothing is validated for
+     us, so check the one field everything downstream depends on. */
+  sampleApi.json(judgePrompt(T.word, guess), {modelTier:"default"}).then(function(j){
+    if(!j||!j.verdict) throw {code:"invalid_json"};
+    T.judged=j; T.phase="result"; T.writingOwn=false; T.ownDraft="";
+    T.session.seen++; if(j.verdict==="correct") T.session.right++;
+    /* Missed words come back inside this session, not only tomorrow. */
+    if(j.verdict!=="correct"){
+      var q=T.queue; q.splice(Math.min(3,q.length),0,T.word);
+    }
+    renderTrainer();
+  }).catch(function(err){
+    var code=err&&err.code;
+    T.phase="idle";
+    /* invalid_json is never retried from code — the docs are explicit that a
+       retry loop here just burns calls. The viewer decides. */
+    T.error = code==="not_granted" ? "ההרשאה לשאול אותי לא ניתנה."
+            : code==="rate_limited" ? "רגע, יותר מדי בקשות. נסה שוב בעוד כמה שניות."
+            : code==="invalid_json" ? "קיבלתי תשובה לא תקינה. לחץ בדוק שוב."
+            : "לא הצלחתי לבדוק כרגע. נסה שוב.";
+    renderTrainer();
+  });
+}
+
+function saveAndAdvance(mnemonic, source){
+  var j=T.judged||{};
+  var card=schedule(cards[T.word], j.verdict==="correct");
+  card.word=T.word;
+  card.meaning=j.meaning||card.meaning||"";
+  card.english=j.english||card.english||"";
+  if(mnemonic){ card.mnemonic=mnemonic; card.source=source; card.savedAt=Date.now() }
+  cards[T.word]=card;
+  persistCard(card);
+
+  T.word=null; T.judged=null; T.guessDraft=""; T.ownDraft=""; T.writingOwn=false; T.phase="idle";
+  renderTrainer();
+}
+
+/* ---------- storage ---------- */
+function loadCards(){
+  if(!dbApi) { cards=load("amirnet.cards",{})||{}; return Promise.resolve() }
+  return dbApi.collection("mnemonics").get().then(function(snap){
+    var out={};
+    snap.docs.forEach(function(d){
+      var v=d.data();
+      if(v&&v.word) out[v.word]=v;
+    });
+    cards=out;
+  }).catch(function(){ cards=load("amirnet.cards",{})||{} });
+}
+
+function persistCard(card){
+  save("amirnet.cards", cards);          /* always keep a local copy */
+  if(!dbApi) return;
+  /* Snapshot bodies are frozen and must not be sent back as-is; send a clone.
+     A failed write must not interrupt the drill — the local copy still holds. */
+  try{
+    dbApi.collection("mnemonics").doc(card.word).set(JSON.parse(JSON.stringify(card)))
+      .catch(function(){});
+  }catch(e){}
+}
+
 /* =================== EXPORT =================== */
 /*
  * Saving the run as a real file goes through the viewer's `downloads`
@@ -1279,7 +1739,8 @@ function paintVocab(filter){
 
 /* =================== TABS =================== */
 function tab(which){
-  var map={sims:["tab-sims","pane-sims"],set:["tab-set","pane-set"],guide:["tab-guide","pane-guide"],vocab:["tab-vocab","pane-vocab"]};
+  var map={sims:["tab-sims","pane-sims"],set:["tab-set","pane-set"],guide:["tab-guide","pane-guide"],
+           trainer:["tab-trainer","pane-trainer"],vocab:["tab-vocab","pane-vocab"]};
   Object.keys(map).forEach(function(k){
     var on=k===which;
     $(map[k][0]).setAttribute("aria-selected",on?"true":"false");
@@ -1288,14 +1749,17 @@ function tab(which){
   if(which==="set")renderSettings();
   if(which==="guide")renderGuide();
   if(which==="vocab")renderVocab();
+  if(which==="trainer")renderTrainer();
 }
 $("tab-sims").onclick=function(){tab("sims")};
 $("tab-set").onclick=function(){tab("set")};
 $("tab-guide").onclick=function(){tab("guide")};
 $("tab-vocab").onclick=function(){tab("vocab")};
+$("tab-trainer").onclick=function(){tab("trainer")};
 
 /* =================== BOOT =================== */
 $("adaptiveBtn").onclick=function(){ if(DATA) startAdaptive() };
+$("drillBtn").onclick=function(){ if(DATA) renderDrillSetup() };
 
 fetch("simulations.json").then(function(r){return r.json()}).then(function(j){
   DATA=j; renderHome();

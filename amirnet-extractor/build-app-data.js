@@ -119,3 +119,97 @@ console.log(
     `(${vocabList.filter((w) => w.answer).length} were a correct answer), ` +
     `${(fs.statSync(VOCAB_TARGET).size / 1024).toFixed(0)}KB`
 );
+
+
+// ---------------------------------------------------------------------------
+// Trainer word pool
+// ---------------------------------------------------------------------------
+
+/**
+ * The vocabulary trainer needs words worth drilling, which is neither "the most
+ * frequent" nor "the rarest".
+ *
+ * Ranking by frequency alone returns so(32), because(25), but(14) — the words
+ * the trainer should never ask about. But filtering by a frequency tier does
+ * not fix it either: SCOWL puts `so`, `but` and `because` in the same tier as
+ * `consistent`, `assumption`, `evidence` and `argument`, which ARE worth
+ * drilling. Commonness is the wrong axis.
+ *
+ * The real split is grammatical: the junk is FUNCTION words — conjunctions,
+ * prepositions, pronouns, determiners, auxiliaries — a closed class small
+ * enough to list. Everything else is a content word and earns its place.
+ */
+const TRAINER_TARGET = path.join(__dirname, 'app', 'trainer-words.json');
+const ACADEMIC_SRC = path.join(__dirname, 'vocab', 'academic-words.json');
+
+const FUNCTION_WORDS = new Set(`
+a an the this that these those such each every either neither both all any some no none
+i me my mine myself you your yours yourself he him his she her hers it its they them their theirs
+we us our ours who whom whose which what where when why how
+am is are was were be been being have has had having do does did doing
+can could shall should will would may might must ought need dare used
+and or but nor for yet so because although though while whereas since unless until till
+if whether than then thus hence therefore however moreover furthermore nevertheless nonetheless
+otherwise meanwhile besides instead rather accordingly consequently
+in on at by to from of off out up down over under above below across through into onto upon with
+within without between among around about against during before after behind beyond beside
+near toward towards along past per via amid despite
+not very too quite just only even also still already yet always never often sometimes usually
+more most less least much many few little more enough almost nearly rather somewhat
+here there now today tonight tomorrow yesterday again once twice ever
+as like unlike same other another else
+`.trim().split(/\s+/));
+
+/**
+ * Junk for this trainer: a function word, or any multi-word entry. Every
+ * multi-word item in the corpus is a connective phrase ("in order to",
+ * "as a result", "owing to"), and the mnemonic method the trainer is built
+ * around works on single words anyway.
+ */
+function isFunctional(term) {
+  const t = term.toLowerCase().trim();
+  if (/\s/.test(t)) return true;
+  return FUNCTION_WORDS.has(t);
+}
+
+function buildTrainerPool() {
+  const pool = new Map();
+
+  // Source 1: the corpus vocabulary, which carries frequency and example sentences.
+  for (const entry of JSON.parse(fs.readFileSync(VOCAB_TARGET, 'utf8'))) {
+    if (entry.word.length < 4) continue;
+    if (isFunctional(entry.word)) continue;
+    pool.set(entry.word, {
+      word: entry.word,
+      times: entry.times || 1,
+      answer: Boolean(entry.answer),
+      example: entry.example || '',
+      src: 'corpus',
+    });
+  }
+
+  // Source 2: academic words harvested from the psychometric English sections.
+  // Words only — no sentence, question or passage from those papers is used.
+  if (fs.existsSync(ACADEMIC_SRC)) {
+    for (const word of JSON.parse(fs.readFileSync(ACADEMIC_SRC, 'utf8'))) {
+      if (isFunctional(word)) continue;
+      const existing = pool.get(word);
+      if (existing) existing.src = 'both';
+      else pool.set(word, { word, times: 1, answer: false, example: '', src: 'academic' });
+    }
+  }
+
+  // Most-repeated first: a word the corpus leans on is worth learning first.
+  const list = [...pool.values()].sort(
+    (a, b) => b.times - a.times || Number(b.answer) - Number(a.answer) || a.word.localeCompare(b.word)
+  );
+
+  fs.writeFileSync(TRAINER_TARGET, JSON.stringify(list), 'utf8');
+  const bySrc = list.reduce((m, w) => ((m[w.src] = (m[w.src] || 0) + 1), m), {});
+  console.log(
+    `Wrote ${path.relative(process.cwd(), TRAINER_TARGET)} — ${list.length} words ` +
+      `(${JSON.stringify(bySrc)}), ${(fs.statSync(TRAINER_TARGET).size / 1024).toFixed(0)}KB`
+  );
+}
+
+buildTrainerPool();
