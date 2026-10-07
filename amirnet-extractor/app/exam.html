@@ -227,6 +227,8 @@ table.t td b{color:var(--accent);font-variant-numeric:tabular-nums}
 .scroll{overflow-x:auto}
 </style>
 
+<script src="hints.js"></script>
+
 <div id="bar" class="bar" hidden>
   <div class="bar-in">
     <button class="btn ghost" id="quit" style="padding:7px 13px;font-size:13.5px">יציאה</button>
@@ -922,6 +924,71 @@ function endSection(timedOut){
   }else finish();
 }
 
+/* =================== HOW IT COULD HAVE BEEN SOLVED =================== */
+/*
+ * Shown under every question in a review: the signals that were actually
+ * present in that question, and what each one tells you. Rules with no
+ * evidence in a given question stay silent for it, so this is never a wall of
+ * generic advice.
+ *
+ * A HARD rule follows from the grammar or from the format of a multiple-choice
+ * question. A SOFT rule is a tendency of the people who write these exams, and
+ * each one's measured strength on this very bank is printed beside it — a
+ * claim about a rule is worth nothing next to the number.
+ */
+var HINT_STRENGTH={ soundalike:"73%", extreme:"80%", definition:"", prefix:"" };
+
+function glossMap(){
+  if(!TRAINER) return null;
+  if(glossMap._c) return glossMap._c;
+  var m={};
+  TRAINER.forEach(function(w){ if(w.he) m[w.word]=w.he });
+  glossMap._c=m;
+  return m;
+}
+
+/* `q` is the stored question {p,o,a}. Returns a collapsible block, or null. */
+function hintBlock(q){
+  if(typeof Hints==="undefined") return null;
+  var hs=[];
+  try{ hs=Hints.solveHints(q,{glosses:glossMap()}) }catch(e){ return null }
+  if(!hs.length) return null;
+
+  var box=el("div","expl"); box.style.marginTop="12px";
+  var toggle=el("button","btn ghost","איך אפשר היה לפתור (‎"+hs.length+"‎)");
+  toggle.style.cssText="padding:7px 14px;font-size:13px";
+  var body=el("div"); body.hidden=true; body.style.marginTop="12px";
+
+  hs.forEach(function(h){
+    var row=el("div"); row.style.cssText="margin-bottom:12px";
+    var head=el("div","row"); head.style.cssText="gap:8px;align-items:baseline;margin-bottom:3px";
+    var t=el("span",null,h.title); t.style.cssText="font-weight:700;font-size:14.5px;color:var(--accent)";
+    head.appendChild(t);
+    var badge=el("span","pill", h.hard?"חוק קשיח":("כלל סטטיסטי"+(HINT_STRENGTH[h.id]?" · "+HINT_STRENGTH[h.id]:"")));
+    if(h.hard) badge.classList.add("done");
+    head.appendChild(badge);
+    row.appendChild(head);
+    var b=el("p",null,h.body); b.style.cssText="margin:0;font-size:14px;line-height:1.6";
+    row.appendChild(b);
+    if(h.kills&&h.kills.length){
+      var k=el("p","muted","נפסלות לפי הכלל הזה: "+h.kills.map(function(i){return (q.o[i]||"")}).join(" · "));
+      k.style.cssText="margin:4px 0 0;font-size:13px"; row.appendChild(k);
+    }
+    body.appendChild(row);
+  });
+
+  var foot=el("p","muted","חוק קשיח נובע מהדקדוק או מכך שבשאלה אמריקאית יש תשובה אחת בלבד. כלל סטטיסטי הוא נטייה של כותבי המבחן, והאחוז שלידו נמדד על כל 1,175 השאלות שבאפליקציה.");
+  foot.style.cssText="margin:4px 0 0;font-size:12.5px;line-height:1.5";
+  body.appendChild(foot);
+
+  toggle.onclick=function(){
+    body.hidden=!body.hidden;
+    toggle.textContent=(body.hidden?"איך אפשר היה לפתור (‎"+hs.length+"‎)":"הסתר");
+  };
+  box.appendChild(toggle); box.appendChild(body);
+  return box;
+}
+
 /* =================== RESULTS =================== */
 function finish(){
   stopTick(); S.phase="done";
@@ -945,6 +1012,11 @@ function finish(){
   $("exam").hidden=true; $("bar").hidden=true; $("results").hidden=false;
   window.scrollTo(0,0);
   var root=$("results"); root.textContent="";
+
+  /* The synonym rule reads the Hebrew glosses, which live in the trainer pool.
+     A session that only ever sat an exam has not loaded it, so fetch it now and
+     repaint the review once it lands rather than silently dropping that rule. */
+  if(!TRAINER) ensureTrainerData().then(function(){ if(S&&S.phase==="done") finish() });
 
   var score=estimateScore(review), band=bandOf(score);
   lastRun={title:S.sim.title,adaptive:!!S.adaptive,score:score,band:band,pct:pct,
@@ -1055,6 +1127,8 @@ function finish(){
       ex.appendChild(document.createTextNode(r.q.e));
       c.appendChild(ex);
     }
+    var hb=hintBlock(r.q);
+    if(hb) c.appendChild(hb);
     var nk=noteKey(r.q);
     var ta=document.createElement("textarea");
     ta.className="note-field"; ta.rows=2; ta.id="note-"+i;
@@ -2134,6 +2208,12 @@ function renderQuizResults(p){
     if(it.hook){
       var hk=el("p","muted",it.hook);
       hk.style.cssText="margin:8px 0 0;font-size:13.5px"; r.appendChild(hk);
+    }
+    /* Only the completion format is a real exam question; the meaning quiz is
+       built from the saved cards and has no sentence to read signals out of. */
+    if(it.dir==="completion"){
+      var qhb=hintBlock({p:it.prompt,o:it.options,a:it.a});
+      if(qhb) r.appendChild(qhb);
     }
     p.appendChild(r);
   });
