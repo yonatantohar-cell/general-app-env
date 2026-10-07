@@ -14,7 +14,8 @@ const settings={useCustom:false,times:{}};
 let S=null;
 // `S` is a module-level variable the engine reads. Declare it INSIDE the
 // compiled scope and hand the harness accessors, so both sides see one binding.
-const run=new Function('DATA','settings',
+const COURSE_DATA=JSON.parse(fs.readFileSync('/home/user/general-app-env/amirnet-extractor/app/course-bank.json','utf8'));
+const run=new Function('DATA','settings','COURSE',
   /* The engine now reads a cross-sitting `seenBank` and persists through
      save/load; stub those so the harness exercises the real draw logic. */
   'var S;var seenBank={};'+
@@ -27,7 +28,7 @@ const run=new Function('DATA','settings',
   'setS:function(v){S=v},getS:function(){return S},'+
   'resetSeen:function(){for(var k in seenBank)delete seenBank[k]}};');
 
-const api=run(DATA, settings);
+const api=run(DATA, settings, COURSE_DATA);
 
 const {LEVELS,ADAPTIVE_PLAN,UP,DOWN}=api;
 api.buildBank();

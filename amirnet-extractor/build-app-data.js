@@ -139,6 +139,9 @@ console.log(
  * prepositions, pronouns, determiners, auxiliaries — a closed class small
  * enough to list. Everything else is a content word and earns its place.
  */
+const COURSE_SRC = path.join(__dirname, 'course', 'course-questions.json');
+const MNEMONIC_SRC = path.join(__dirname, 'course', 'mnemonics.json');
+const COURSE_TARGET = path.join(__dirname, 'app', 'course-bank.json');
 const TRAINER_TARGET = path.join(__dirname, 'app', 'trainer-words.json');
 const ACADEMIC_SRC = path.join(__dirname, 'vocab', 'academic-words.json');
 
@@ -188,7 +191,23 @@ function buildTrainerPool() {
     });
   }
 
-  // Source 2: academic words harvested from the psychometric English sections.
+  // Source 2: the course sheets' own answer words.
+  if (fs.existsSync(COURSE_SRC)) {
+    for (const q of JSON.parse(fs.readFileSync(COURSE_SRC, 'utf8'))) {
+      if (typeof q.correctAnswerIndex !== 'number') continue;
+      const word = String(q.options[q.correctAnswerIndex]).toLowerCase();
+      if (isFunctional(word) || word.length < 4) continue;
+      const existing = pool.get(word);
+      if (existing) {
+        existing.times += 1;
+        existing.src = existing.src === 'academic' ? 'both' : existing.src;
+      } else {
+        pool.set(word, { word, times: 1, answer: true, example: q.prompt, src: 'course' });
+      }
+    }
+  }
+
+  // Source 3: academic words harvested from the psychometric English sections.
   // Words only — no sentence, question or passage from those papers is used.
   if (fs.existsSync(ACADEMIC_SRC)) {
     for (const word of JSON.parse(fs.readFileSync(ACADEMIC_SRC, 'utf8'))) {
@@ -196,6 +215,29 @@ function buildTrainerPool() {
       const existing = pool.get(word);
       if (existing) existing.src = 'both';
       else pool.set(word, { word, times: 1, answer: false, example: '', src: 'academic' });
+    }
+  }
+
+  // Each drill sheet is titled with a Hebrew phonetic hook for one of its answer
+  // words — the course teaches vocabulary the same way the trainer does. Carrying
+  // those titles through means a seeded word opens with a real, course-authored
+  // example instead of one invented on the spot.
+  if (fs.existsSync(MNEMONIC_SRC)) {
+    const seeds = JSON.parse(fs.readFileSync(MNEMONIC_SRC, 'utf8'));
+    for (const [word, seed] of Object.entries(seeds)) {
+      if (word.startsWith('_')) continue;
+      const entry = pool.get(word);
+      if (!entry) {
+        console.error(`  seeded mnemonic for "${word}" has no pool entry; skipped`);
+        continue;
+      }
+      entry.seed = {
+        hook: seed.hook,
+        story: seed.story,
+        meaning: seed.meaning,
+        hookBy: seed.hookBy,
+        storyBy: seed.storyBy,
+      };
     }
   }
 
@@ -213,3 +255,67 @@ function buildTrainerPool() {
 }
 
 buildTrainerPool();
+
+
+// ---------------------------------------------------------------------------
+// Course drill sheets
+// ---------------------------------------------------------------------------
+
+/**
+ * The "מנה יומית" sheets from the course the user bought, converted into the
+ * app's question shape so the bank and the drills can serve them.
+ *
+ * Difficulty is not guessed: each question is graded by the SCOWL frequency
+ * tier of its own answer word, so a question turning on `satellite` lands
+ * easier than one turning on `pejorative`. Questions whose answer the sheets
+ * did not supply are dropped rather than scored against a guess.
+ */
+
+function tierToDifficulty(tiers, word) {
+  const w = String(word || '').toLowerCase();
+  const inTier = (t) => tiers['english/' + t].some((x) => x.toLowerCase() === w);
+  if (inTier('10') || inTier('20')) return 'easy';
+  if (inTier('35')) return 'medium';
+  if (inTier('40') || inTier('50')) return 'hard';
+  return 'expert';
+}
+
+function buildCourseBank() {
+  if (!fs.existsSync(COURSE_SRC)) return;
+  let tiers;
+  try {
+    tiers = require('wordlist-english');
+  } catch {
+    console.error('wordlist-english is not installed; skipping course-bank.json');
+    return;
+  }
+
+  const source = JSON.parse(fs.readFileSync(COURSE_SRC, 'utf8'));
+  const out = [];
+  let skipped = 0;
+
+  for (const q of source) {
+    if (typeof q.correctAnswerIndex !== 'number') { skipped += 1; continue; }
+    const answer = q.options[q.correctAnswerIndex];
+    out.push({
+      p: q.prompt,
+      o: q.options,
+      a: q.correctAnswerIndex,
+      e: q.note || '',
+      d: tierToDifficulty(tiers, answer),
+      v: [String(answer).toLowerCase()],
+      src: 'course',
+      sheet: q.sheet,
+      answerBy: q.answerBy || 'claude',
+    });
+  }
+
+  fs.writeFileSync(COURSE_TARGET, JSON.stringify(out), 'utf8');
+  const byDiff = out.reduce((m, q) => ((m[q.d] = (m[q.d] || 0) + 1), m), {});
+  console.log(
+    `Wrote ${path.relative(process.cwd(), COURSE_TARGET)} — ${out.length} questions ` +
+      `${JSON.stringify(byDiff)}` + (skipped ? `, ${skipped} skipped for having no answer` : '')
+  );
+}
+
+buildCourseBank();

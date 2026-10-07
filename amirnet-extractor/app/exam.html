@@ -284,7 +284,7 @@ table.t td b{color:var(--accent);font-variant-numeric:tabular-nums}
 (function(){
 "use strict";
 
-var DATA=null, S=null;
+var DATA=null, S=null, COURSE=null;
 var $=function(id){return document.getElementById(id)};
 var el=function(t,c,x){var e=document.createElement(t); if(c)e.className=c; if(x!=null)e.textContent=x; return e};
 var LETTERS=["A","B","C","D","E","F"];
@@ -603,6 +603,16 @@ function buildBank(){
   if(BANK) return BANK;
   BANK={}; SPEC={};
   ADAPTIVE_PLAN.forEach(function(t){ if(!BANK[t]){BANK[t]={}; LEVELS.forEach(function(L){BANK[t][L]=[]})} });
+
+  /* Course sheets are sentence-completion items with no section of their own;
+     they join that type's shelves so drills and adaptive tests can serve them. */
+  if(COURSE&&COURSE.length){
+    if(!SPEC.sentence_completion) SPEC.sentence_completion={serve:4,time:240,titleHe:"השלמת משפטים",descHe:""};
+    COURSE.forEach(function(q){
+      var L=LEVELS.indexOf(q.d)>=0?q.d:"medium";
+      BANK.sentence_completion[L].push({q:q, meta:{type:"sentence_completion", passages:[]}});
+    });
+  }
 
   DATA.forEach(function(sim){
     sim.sections.forEach(function(sec){
@@ -1276,8 +1286,23 @@ function nextWord(){
   return all.length?all[0].word:null;
 }
 
+/* The course-authored hook for a word, when the sheets supplied one. */
+function seedFor(word){
+  if(!TRAINER) return null;
+  var e=TRAINER.filter(function(w){return w.word===word})[0];
+  return (e&&e.seed&&e.seed.hook)?e.seed:null;
+}
+
 /* ---------- asking Claude ---------- */
-function judgePrompt(word, guess){
+function judgePrompt(word, guess, seed){
+  /* Five words arrive with the hook the course itself titled their sheet with.
+     Inventing a rival hook for those would only compete with what he already
+     memorised, so the course's one is handed over to be reused. */
+  var seeded = seed&&seed.hook ? [
+'',
+'שים לב: הקורס עצמו כבר נתן למילה הזו סימן — "'+seed.hook+'".',
+'השתמש בו כ-"mnemonic" במקום להמציא אחר, וכתוב "story" שמחבר אותו למשמעות.'
+  ] : [];
   return [
 'אתה עוזר ללומד ישראלי שמתכונן לבחינת אמירנט באנגלית.',
 '',
@@ -1306,7 +1331,7 @@ function judgePrompt(word, guess){
 'אם אי אפשר לפרק את המילה פונטית לעברית בצורה טבעית, בנה את הסימן על',
 'דמיון למילה עברית או אנגלית מוכרת — אבל שהקשר למשמעות יישאר חד.',
 'סימן אחד חזק עדיף על שלושה חלשים. אל תמציא עברית שלא קיימת.'
-  ].join('\n');
+  ].concat(seeded).join('\n');
 }
 
 /* ---------- rendering ---------- */
@@ -1412,6 +1437,21 @@ function renderTrainer(){
     if(j.story){ var st=el("p",null,"„"+j.story+"”"); st.style.cssText="margin:0;font-size:15px"; hook.appendChild(st) }
     card.appendChild(hook);
 
+    /* A word the course already titled a sheet with gets that hook shown too, as
+       its own choice — it is the one he may already have seen in the sheets. */
+    var seedHook=seedFor(T.word);
+    if(seedHook&&!T.writingOwn){
+      var sc=el("div","expl"); sc.style.marginTop="10px";
+      sc.appendChild(el("div","eyebrow","הסימן מהקורס"));
+      var sh=el("p",null,seedHook.hook); sh.style.cssText="margin:8px 0 4px;font-size:16px;font-weight:700";
+      sc.appendChild(sh);
+      if(seedHook.story){ var ss=el("p",null,"„"+seedHook.story+"”"); ss.style.cssText="margin:0;font-size:15px"; sc.appendChild(ss) }
+      var takeSeed=el("button","btn ghost","שמור את הסימן מהקורס"); takeSeed.style.marginTop="12px";
+      takeSeed.onclick=function(){ saveAndAdvance(seedHook.hook+(seedHook.story?" — "+seedHook.story:""), "course") };
+      sc.appendChild(takeSeed);
+      card.appendChild(sc);
+    }
+
     if(T.phase==="result"&&T.writingOwn){
       var own=document.createElement("textarea");
       own.className="note-field"; own.rows=2; own.id="ownHook";
@@ -1468,6 +1508,7 @@ function trainerListPreview(){
     var w=el("span","en",c.word); w.style.cssText="font-weight:700;color:var(--accent);font-size:15.5px";
     d.appendChild(w);
     if(c.meaning){ var m=el("span",null," — "+c.meaning); m.style.fontSize="14px"; d.appendChild(m) }
+    if(c.source==="course"){ var tag=el("span","pill","מהקורס"); tag.style.marginInlineStart="8px"; d.appendChild(tag) }
     var h=el("div","muted",c.mnemonic); h.style.cssText="font-size:13.5px;margin-top:3px"; d.appendChild(h);
     wrap.appendChild(d);
   });
@@ -1483,7 +1524,8 @@ function submitGuess(){
 
   /* sample.json resolves the parsed object directly; nothing is validated for
      us, so check the one field everything downstream depends on. */
-  sampleApi.json(judgePrompt(T.word, guess), {modelTier:"default"}).then(function(j){
+  var seed=seedFor(T.word);
+  sampleApi.json(judgePrompt(T.word, guess, seed), {modelTier:"default"}).then(function(j){
     if(!j||!j.verdict) throw {code:"invalid_json"};
     T.judged=j; T.phase="result"; T.writingOwn=false; T.ownDraft="";
     T.session.seen++; if(j.verdict==="correct") T.session.right++;
@@ -1760,6 +1802,14 @@ $("tab-trainer").onclick=function(){tab("trainer")};
 /* =================== BOOT =================== */
 $("adaptiveBtn").onclick=function(){ if(DATA) startAdaptive() };
 $("drillBtn").onclick=function(){ if(DATA) renderDrillSetup() };
+
+/* The course drill sheets load alongside the simulations; a failure there must
+   not stop the app, so the bank simply stays without them. */
+fetch("course-bank.json").then(function(r){return r.json()})
+  .then(function(j){ COURSE=j||[] }).catch(function(){ COURSE=[] })
+  /* buildBank memoises, and this fetch can land after it has already run, so
+     drop the cached bank and let the next call rebuild with the sheets in. */
+  .then(function(){ BANK=null });
 
 fetch("simulations.json").then(function(r){return r.json()}).then(function(j){
   DATA=j; renderHome();

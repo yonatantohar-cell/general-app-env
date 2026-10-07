@@ -1,0 +1,44 @@
+{
+  "_README": "Each drill sheet in the course is titled with a Hebrew phonetic hook for one of its answer words — the course teaches vocabulary exactly the way the trainer does. `hook` is the sheet's own title, quoted as it appears. `story` is the one-line picture that ties the hook to the meaning; the sheets do not supply one, so those are mine and `storyBy` records it. The trainer offers these alongside the mnemonic I build live, so a seeded word opens with a real example instead of an invented one.",
+
+  "satellite": {
+    "sheet": "sheet-1",
+    "hook": "יא סאטל בחלל",
+    "hookBy": "course",
+    "meaning": "לוויין",
+    "story": "סאטל אחד תלוי לו בחלל ומסתובב סביב כדור הארץ — זה הלוויין.",
+    "storyBy": "claude"
+  },
+  "docile": {
+    "sheet": "sheet-2",
+    "hook": "דוסילה חמוד",
+    "hookBy": "course",
+    "meaning": "צייתן, נוח",
+    "story": "דוסילה הוא כלב חמוד וצייתן — נותן כפה בלי להתנגד.",
+    "storyBy": "claude"
+  },
+  "abandon": {
+    "sheet": "sheet-3",
+    "hook": "אבא עם בנדנה",
+    "hookBy": "course",
+    "meaning": "לנטוש, לזנוח",
+    "story": "אבא עם בנדנה עלה על האופנוע ונטש את הבית.",
+    "storyBy": "claude"
+  },
+  "advocate": {
+    "sheet": "sheet-4",
+    "hook": "עו\"ד א. בוקדו",
+    "hookBy": "course",
+    "meaning": "עורך דין, סנגור; לתמוך",
+    "story": "עו\"ד א. בוקדו קם באולם וסנגר על הלקוח שלו.",
+    "storyBy": "claude"
+  },
+  "appropriate": {
+    "sheet": "sheet-5",
+    "hook": "מתאים לי אפרופו",
+    "hookBy": "course",
+    "meaning": "מתאים, הולם",
+    "story": "אפרופו, הזמן הזה מתאים לי בדיוק.",
+    "storyBy": "claude"
+  }
+}

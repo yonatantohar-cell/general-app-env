@@ -46,7 +46,8 @@ const DATA=JSON.parse(fs.readFileSync('/home/user/general-app-env/amirnet-extrac
 const settings={useCustom:false,times:{}};
 let seenBank={};
 const store={};
-const run=new Function('DATA','settings','getSeen','setSeen',
+const COURSE_DATA=JSON.parse(fs.readFileSync('/home/user/general-app-env/amirnet-extractor/app/course-bank.json','utf8'));
+const run=new Function('DATA','settings','COURSE','getSeen','setSeen',
   'var S;var seenBank=getSeen();'+
   'function save(){};function load(k,d){return d};'+
   'function markSeen(keys){keys.forEach(function(k){seenBank[k]=1});setSeen(seenBank)}'+
@@ -54,7 +55,7 @@ const run=new Function('DATA','settings','getSeen','setSeen',
   sectionTime+'\n'+engine+
   '\nreturn {buildBank:buildBank,buildAdaptiveSection:buildAdaptiveSection,LEVELS:LEVELS,'+
   'ADAPTIVE_PLAN:ADAPTIVE_PLAN,keyOf:keyOf,setS:function(v){S=v},seen:function(){return seenBank}};');
-const eng=run(DATA,settings,()=>seenBank,v=>{seenBank=v});
+const eng=run(DATA, settings, COURSE_DATA, ()=>seenBank, v=>{seenBank=v});
 eng.buildBank();
 
 function sitting(level){
