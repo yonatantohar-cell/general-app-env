@@ -84,6 +84,40 @@ function main() {
     '  גם מאמן המילים עובד: הניחוש נבדק מול הפירושים השמורים מהקורס.\n' +
     '-->\n<title>');
 
+  /*
+   * A COMPLETE DOCUMENT.
+   *
+   * exam.html is not one: it opens straight at <title>, with no doctype, no
+   * head and no charset, because the publisher wraps it in a skeleton that
+   * supplies all three. Written to a file as-is it declares no encoding at
+   * all, so anything that does not sniff UTF-8 — an iOS file preview, for one
+   * — reads every Hebrew letter as two Latin-1 characters and shows mojibake.
+   *
+   * So the file gets its own skeleton, carrying the same reset the publisher
+   * applies, and a BOM in front of it. The BOM is the belt to the meta tag's
+   * braces: it is the one encoding signal that outranks a viewer's default,
+   * and it survives being mailed, copied and opened by something that never
+   * looks at the markup.
+   */
+  const RESET =
+    ':root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);' +
+    'padding-bottom:env(safe-area-inset-bottom,0px)}' +
+    'html{scroll-padding-top:env(safe-area-inset-top,0px)}' +
+    'body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;' +
+    'background:#faf9f5;color:#141413}img{max-width:100%}' +
+    '[hidden]:not([hidden=until-found i]){display:none!important}';
+
+  const head =
+    '\uFEFF<!doctype html>\n' +
+    '<html lang="he" dir="rtl">\n<head>\n' +
+    '<meta charset="utf-8">\n' +
+    '<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n' +
+    /* Nothing app-specific here: the home-screen metas live in exam.html, so
+       the file and the published page say the same thing about themselves. */
+    '<style>' + RESET + '</style>\n' +
+    '</head>\n<body>\n';
+
+  html = head + html + '\n</body>\n</html>\n';
   fs.writeFileSync(OUT, html, 'utf8');
 
   const parts = DATA.map((f) => f + ' ' + kb(fs.statSync(path.join(APP, f)).size)).join(' · ');

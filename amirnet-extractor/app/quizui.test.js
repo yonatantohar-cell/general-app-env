@@ -78,7 +78,20 @@ const FIXTURE = require('./fixtures/cards.json');
     /* First question is en2he: English prompt LTR, Hebrew options RTL. */
     check(q1.promptLtr && q1.promptDir === 'ltr', 'the English prompt renders LTR');
     check(q1.optDir === 'rtl', 'Hebrew options render RTL');
-    check(q1.hint, 'the hint button is offered');
+    /* The hint is the learner's OWN hook, so it is offered only for a word
+       that has one. The fixture deliberately includes a word saved without a
+       hook, and when that one comes up first the button is correctly absent —
+       so this checks the rule, not the luck of the draw. */
+    const w1 = await page.evaluate(() => {
+      const box = document.querySelector('.qbox');
+      const opts = Array.from(box.querySelectorAll('.opt .v')).map((v) => v.textContent.trim().toLowerCase());
+      const saved = JSON.parse(localStorage.getItem('amirnet.cards') || '{}');
+      const hit = opts.find((o) => saved[o]);
+      return hit ? { word: hit, hasHook: !!saved[hit].mnemonic } : null;
+    });
+    check(!w1 || q1.hint === w1.hasHook,
+      'the hint is offered exactly when the word has a saved hook (' +
+      (w1 ? w1.word + ', hook=' + w1.hasHook + ', button=' + q1.hint : 'n/a') + ')');
     check(q1.hScroll <= 0, 'no horizontal page scroll');
 
     /* The reverse direction: Hebrew prompt, English options. */
@@ -98,7 +111,18 @@ const FIXTURE = require('./fixtures/cards.json');
     check(q2.optDir === 'ltr', 'English options render LTR');
     check(q2.ask.indexOf('איזו מילה') >= 0, 'the reverse direction asks for the word');
 
-    /* The hint reveals the learner's own hook and is recorded. */
+    /* The hint reveals the learner's own hook and is recorded. Move to a
+       question that has one rather than assuming the current one does. */
+    await page.evaluate(async () => {
+      const saved = JSON.parse(localStorage.getItem('amirnet.cards') || '{}');
+      const dots = Array.from(document.querySelectorAll('.qdot'));
+      for (let i = 0; i < dots.length; i++) {
+        document.querySelectorAll('.qdot')[i].click();
+        await new Promise((r) => setTimeout(r, 30));
+        if (document.getElementById('quizHint')) return;
+      }
+    });
+    await page.waitForSelector('#quizHint', { timeout: 10000 });
     await page.click('#quizHint');
     await page.waitForSelector('.qbox .expl');
     const hinted = await page.textContent('.qbox .expl');

@@ -6,19 +6,35 @@
  * node standalone.test.js
  */
 const { chromium } = require('playwright-core');
+const http = require('http');
 const path = require('path');
 const fs = require('fs');
 const CHROME = '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
-const FILE = 'file://' + path.join(__dirname, 'amirnet-standalone.html');
+const SRC = path.join(__dirname, 'amirnet-standalone.html');
+const FILE = 'file://' + SRC;
 
 (async () => {
   const browser = await chromium.launch({ executablePath: CHROME });
   let fail = 0;
   const check = (c, m) => { if (!c) { fail++; console.log('  FAIL: ' + m); } else console.log('  ok  : ' + m); };
 
-  const size = fs.statSync(path.join(__dirname, 'amirnet-standalone.html')).size;
-  console.log('file: ' + (size / 1024 / 1024).toFixed(2) + 'MB');
-  check(size < 16 * 1024 * 1024, 'the file is small enough to send');
+  const bytes = fs.readFileSync(SRC);
+  console.log('file: ' + (bytes.length / 1024 / 1024).toFixed(2) + 'MB');
+  check(bytes.length < 16 * 1024 * 1024, 'the file is small enough to send');
+
+  /* ----------------------------------------------------------------
+   * ENCODING. exam.html carries no charset of its own — the publisher's
+   * skeleton supplies it — so a file built from it and opened by something
+   * that does not sniff UTF-8 renders every Hebrew letter as mojibake. That
+   * is what an iOS file preview did. These are the bytes that prevent it.
+   * ---------------------------------------------------------------- */
+  console.log('\n=== how the file declares its encoding ===');
+  check(bytes[0] === 0xef && bytes[1] === 0xbb && bytes[2] === 0xbf,
+    'it starts with a UTF-8 BOM, which outranks any viewer default');
+  const head1k = bytes.slice(0, 1024).toString('utf8');
+  check(/^\uFEFF<!doctype html>/i.test(head1k), 'a doctype follows immediately');
+  check(/<meta\s+charset=["']?utf-8/i.test(head1k), 'and a charset meta inside the first 1024 bytes');
+  check(/<html[^>]+lang="he"[^>]+dir="rtl"/i.test(head1k), 'the document is declared Hebrew and right-to-left');
 
   for (const [label, width, height] of [['phone', 390, 844], ['desktop', 1280, 900]]) {
     const ctx = await browser.newContext({ viewport: { width, height } });
@@ -109,6 +125,36 @@ const FILE = 'file://' + path.join(__dirname, 'amirnet-standalone.html');
     check(errors.length === 0, 'no errors' + (errors[0] ? ': ' + errors[0] : ''));
     await page.screenshot({ path: '/tmp/standalone-' + label + '.png' });
     await ctx.close();
+  }
+
+  /* ------------------------------------------------------------------
+   * The hostile case: served while being TOLD it is Latin-1. By the HTML
+   * spec a BOM outranks both the HTTP header and the meta tag, so if the
+   * Hebrew survives this, it survives anything that merely guesses wrong.
+   * ------------------------------------------------------------------ */
+  console.log('\n=== served with a deliberately wrong charset ===');
+  {
+    const server = http.createServer((req, res) => {
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=ISO-8859-1' });
+      res.end(bytes);
+    });
+    await new Promise((r) => server.listen(8799, '127.0.0.1', r));
+    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    await page.addInitScript(() => { try { delete window.claude } catch (e) { window.claude = undefined } });
+    await page.goto('http://127.0.0.1:8799/');
+    await page.waitForFunction(() => document.querySelectorAll('.sim').length > 0, { timeout: 15000 });
+    const seen = await page.evaluate(() => ({
+      title: document.title,
+      h1: (document.querySelector('h1') || {}).textContent || '',
+      enc: document.characterSet,
+    }));
+    console.log('  charset in use: ' + seen.enc + ' · h1: ' + seen.h1);
+    check(seen.h1 === 'חדר מבחן אמירנט', 'the Hebrew heading is intact (' + seen.h1 + ')');
+    check(seen.title === 'חדר מבחן אמירנט', 'so is the title (' + seen.title + ')');
+    check(!/[ÃÂ×Ÿ]/.test(seen.h1 + seen.title), 'no mojibake characters anywhere in them');
+    check(/UTF-8/i.test(seen.enc), 'the browser settled on UTF-8 despite being told otherwise');
+    await page.close();
+    await new Promise((r) => server.close(r));
   }
 
   await browser.close();
