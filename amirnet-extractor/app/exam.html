@@ -1344,11 +1344,26 @@ try{
 /* ---------- scheduling: SM-2, trimmed to what this needs ---------- */
 var DAY=86400000;
 function newCard(word){ return {word:word, ease:2.5, interval:0, lapses:0, reps:0, due:0}; }
+
+/*
+ * A card you are allowed to write to.
+ *
+ * Cards loaded from the app's own storage are document snapshots, and snapshot
+ * bodies are FROZEN. Under "use strict" — which this whole script runs in — a
+ * write to a frozen object throws, so every save silently died the moment the
+ * card had come from storage rather than from this session. Nothing mutates a
+ * card in place any more; each path copies, edits the copy, and stores that.
+ */
+function cloneCard(c){
+  if(!c) return newCard("");
+  try{ return JSON.parse(JSON.stringify(c)) }
+  catch(e){ var o={}; for(var k in c) if(Object.prototype.hasOwnProperty.call(c,k)) o[k]=c[k]; return o }
+}
 /* `recognition` marks an answer picked from four options rather than recalled
    from nothing. It still moves the word further out, but it does not earn the
    ease bump: knowing it when you see it is not the same as knowing it. */
 function schedule(card, correct, recognition){
-  var c=card||newCard();
+  var c=cloneCard(card||newCard(""));
   c.reps=(c.reps||0)+1;
   if(correct){
     c.interval = !c.interval ? 1 : Math.max(1, Math.round(c.interval*c.ease));
@@ -1400,7 +1415,7 @@ function courseEntry(word){
 /* Take the course's hook for a word as your own, from wherever it is shown.
    A word with no card yet gets one, so the schedule starts from this moment. */
 function adoptCourseHook(word, entry, btn){
-  var c=cards[word]||newCard(word);
+  var c=cloneCard(cards[word]||newCard(word));
   c.word=word;
   if(!c.meaning && entry && entry.he) c.meaning=entry.he;
   c.mnemonic=entry.seed.hook;
@@ -1663,6 +1678,7 @@ function submitGuess(){
 
 function saveAndAdvance(mnemonic, source){
   var j=T.judged||{};
+  /* schedule() already returns a copy, so this is safe to write to. */
   var card=schedule(cards[T.word], j.verdict==="correct");
   card.word=T.word;
   card.meaning=j.meaning||card.meaning||"";
@@ -1682,7 +1698,8 @@ function loadCards(){
     var out={};
     snap.docs.forEach(function(d){
       var v=d.data();
-      if(v&&v.word) out[v.word]=v;
+      /* Copied on the way in: the body handed back here is frozen. */
+      if(v&&v.word) out[v.word]=cloneCard(v);
     });
     cards=out;
   }).catch(function(){ cards=load("amirnet.cards",{})||{} });
@@ -1879,7 +1896,8 @@ function savedCards(){
 }
 
 function saveHook(word, text, source){
-  var c=cards[word]; if(!c) return;
+  var c=cloneCard(cards[word]||newCard(word));
+  c.word=word;
   var t=String(text||'').trim();
   if(t){ c.mnemonic=t; c.source=source||'mine'; c.savedAt=Date.now() }
   else { delete c.mnemonic; delete c.source; delete c.savedAt }
