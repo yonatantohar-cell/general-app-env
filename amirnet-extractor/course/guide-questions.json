@@ -1,0 +1,6066 @@
+[
+  {
+    "id": "אביב21-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב21-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "The route followed by the Cherokee Nation when it was forcibly relocated from its tribal lands in 1838 came to be known as the _____ of Tears.",
+    "options": [
+      "Omen",
+      "Trail",
+      "Scroll",
+      "Query"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב21-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב21-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Cheetahs have exceptionally _____ eyesight: they can see objects up to eleven kilometers away.",
+    "options": [
+      "pious",
+      "keen",
+      "taut",
+      "drab"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב21-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב21-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Nothing is known with certainty about the ancient Greek poet Homer; his very existence remains a matter of _____.",
+    "options": [
+      "dispute",
+      "genius",
+      "nausea",
+      "penalty"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב21-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב21-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "Xerography is the most widely used method of photocopying; the name _____ from the Greek words for \"dry writing\".",
+    "options": [
+      "derives",
+      "reveals",
+      "portrays",
+      "complies"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב21-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב21-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Crops are often damaged or destroyed by _____ such as insects and rodents.",
+    "options": [
+      "clans",
+      "pests",
+      "fads",
+      "rifts"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב21-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב21-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "_____ in 1897, the Brooklyn Museum is one of the oldest art museums in the United States .",
+    "options": [
+      "Accelerated",
+      "Inaugurated",
+      "Enlightened",
+      "Orphaned"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב21-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב21-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "Toastmasters International is an educational organization devoted to _____ public speaking skills.",
+    "options": [
+      "fostering",
+      "diverting",
+      "presuming",
+      "resenting"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב21-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב21-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Thomas Edison was a very _____ inventor, patenting over a thousand electrical and mechanical devices.",
+    "options": [
+      "productive",
+      "tolerant",
+      "secular",
+      "rebellious"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב21-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב21-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Although earthquakes are fairly common in Israel, they _____ cause serious damage.",
+    "options": [
+      "alone",
+      "instead",
+      "already",
+      "seldom"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב21-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב21-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Many families find it useful to keep a first aid kit at home for the treatment of minor injuries and _____",
+    "options": [
+      "illusions",
+      "outlets",
+      "ailments",
+      "equations"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב21-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב21-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "A _____ of the vessel that brought the first English settlers to the New World was built for the 400th anniversary of the founding of Jamestown.",
+    "options": [
+      "replica",
+      "hurdle",
+      "garment",
+      "culprit"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב21-א2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב21-א2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Between 2008 and 2012, e-book sales in the US _____ from $68 million to $3 billion.",
+    "options": [
+      "highlighted",
+      "overstated",
+      "outlasted",
+      "skyrocketed"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב21-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב21-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Charles Brenham initially refused to run for mayor of San Francisco but later _____ on condition that, if elected, he could continue operating his business.",
+    "options": [
+      "perished",
+      "flaunted",
+      "grimaced",
+      "relented"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב21-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב21-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "The paths into Fort Chipewyan, a village in northern Canada, were _____ by dog sleds.",
+    "options": [
+      "lulled",
+      "stacked",
+      "pitched",
+      "forged"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב22-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב22-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "In 1492, Christopher Columbus discovered the island of Cuba and _____ it as a territory of Spain.",
+    "options": [
+      "claimed",
+      "doubted",
+      "obeyed",
+      "excused"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב22-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב22-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "The Book of Kells is a beautifully illustrated _____ dating from the ninth century.",
+    "options": [
+      "wardrobe",
+      "colony",
+      "pigment",
+      "manuscript"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב22-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב22-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "The percentage of American families who own farms has decreased over the years, _____ the amount of land devoted to agriculture has actually increased.",
+    "options": [
+      "instead",
+      "then",
+      "yet",
+      "Which"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב22-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב22-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "The modern Republic of Armenia is only a _____ the size of the vast ancient Kingdom of Armenia.",
+    "options": [
+      "habit",
+      "label",
+      "fraction",
+      "profit"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב22-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב22-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Mount Everest is _____ among mountain climbers, not only because of its height but also because of the treacherous conditions there.",
+    "options": [
+      "tranquil",
+      "zealous",
+      "premature",
+      "notorious"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב22-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב22-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Food was so _____ in the Netherlands during the Second World War that many people ate flower bulbs in order to survive.",
+    "options": [
+      "abrupt",
+      "scarce",
+      "irate",
+      "valid"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב22-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב22-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "In his essay \"Walking\", Henry David Thoreau _____ spiritual essence of the natural world.",
+    "options": [
+      "contemplates",
+      "contaminates",
+      "collaborates",
+      "congregates"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב22-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב22-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "The common cold is often accompanied by a cough, which may _____ after all other symptoms have disappeared.",
+    "options": [
+      "signal",
+      "adjust",
+      "persist",
+      "collapse"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב22-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב22-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "With 130,000 people per square kilometer, Hong Kong's Mong Kok _____ is extremely crowded.",
+    "options": [
+      "privacy",
+      "district",
+      "forecast",
+      "virtue"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב22-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב22-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "Many wild animals _____ when they sense danger nearby.",
+    "options": [
+      "clip",
+      "graze",
+      "flee",
+      "dwell"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב22-א2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב22-א2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "A prism can be used to split a _____ of white light into the colors of the spectrum.",
+    "options": [
+      "beam",
+      "tube",
+      "breed",
+      "twig"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב22-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב22-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Venezuela is a botanically _____ land: more plant species are found there than in the United States and Canada combined.",
+    "options": [
+      "lethal",
+      "diverse",
+      "remote",
+      "adept"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב22-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב22-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "Though _____ for many, repetition is a highly effective learning method.",
+    "options": [
+      "tedious",
+      "amorous",
+      "ostentatious",
+      "conspicuous"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב24-א1:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א1",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "The brown pelican, a seabird found in North and South America, catches fish below the ____ of the water.",
+    "options": [
+      "vision",
+      "surface",
+      "index",
+      "ordeal"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב24-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Alexander Fleming discovered penicillin after ____ that a mold growing in his laboratory could kill bacteria.",
+    "options": [
+      "opposing",
+      "offending",
+      "observing",
+      "organizing"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב24-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "The 1842 Webster-Ashburton Treaty ____ the dispute regarding the position of the Maine-New Brunswick border.",
+    "options": [
+      "resolved",
+      "devised",
+      "articulated",
+      "inflicted"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב24-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "In some states in India, the consumption of alcoholic beverages ____.",
+    "options": [
+      "were prohibiting",
+      "are prohibitive",
+      "is prohibited",
+      "has prohibited"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב24-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "Bushido, the samurai code of ____, demands self-discipline, respectful and ethical behavior, and absolute loyalty.",
+    "options": [
+      "impulse",
+      "design",
+      "conduct",
+      "regret"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב24-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Patrick's Day, which ____ the patron saint of Ireland, is celebrated in many countries.",
+    "options": [
+      "enumerates",
+      "punctuates",
+      "investigates",
+      "commemorates"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב24-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "A period film is one that attempts to ____ depict a specific time in history.",
+    "options": [
+      "luckily",
+      "faithfully",
+      "swiftly",
+      "morally"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב24-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "At the end of the 19th century in the United States, huge crowds attended competitive walking races, the most popular ____ sport in the country.",
+    "options": [
+      "spectator",
+      "passenger",
+      "companion",
+      "graduate"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב24-א1:9",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א1",
+    "number": 9,
+    "type": "restatement",
+    "prompt": "For centuries, bars of salt – called amole – served as currency throughout Ethiopia.",
+    "options": [
+      "Centuries ago, salt was a valuable commodity in Ethiopia.",
+      "Amole has been the currency of Ethiopia since ancient times.",
+      "Ethiopian salt was once prized all over the world.",
+      "Amole was an accepted means of payment in Ethiopia for centuries."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב24-א1:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א1",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "Despite never having collaborated, Isaac Newton and Gottfried Leibniz share the credit for pioneering the branch of mathematics known as calculus.",
+    "options": [
+      "Newton and Leibniz were the first mathematicians to recognize calculus as a separate branch of mathematics.",
+      "The invention of calculus is attributed to both Newton and Leibniz, each of whom developed it independently.",
+      "Had they not shared their ideas about mathematics, neither Newton nor Leibniz would have discovered calculus.",
+      "To their credit, both Newton and Leibniz acknowledged each other's contribution to the field of calculus."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב24-א1:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א1",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "Horticulturists at England's East Malling Institute are utilizing conventional breeding techniques rather than genetic engineering to produce giant strawberries.",
+    "options": [
+      "By using genetic engineering instead of conventional breeding techniques, horticulturists at England's East Malling Institute could grow larger strawberries.",
+      "At the East Malling Institute in England, horticulturists are growing very large strawberries using conventional breeding methods, not genetic engineering.",
+      "According to horticulturists at England's East Malling Institute, giant strawberries can be produced using either conventional breeding techniques or genetic engineering.",
+      "Horticulturists at England's East Malling Institute have found that they can produce giant strawberries by using both genetic engineering and conventional breeding techniques."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב24-א1:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א1",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "The roots of opera can be traced to the Camerata, a group of Italian composers enamored of antiquity, who in the 16th century wrote music that emulated the tragic chorus in ancient Greek drama.",
+    "options": [
+      "The Camerata, whose members were fascinated by the ancient world and whose works were modeled on the tragic Greek chorus, are considered the founders of opera.",
+      "The tragic Greek chorus, which was the inspiration for opera, was incorporated into the works of the Camerata, a group of Italian composers.",
+      "The operas composed by the Camerata in the 16th century were the first to abandon the rigid structure of the Greek chorus.",
+      "The enduring appeal of the operas written by the Camerata is a testimony to the impact of the ancient Greek chorus."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב24-א2:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א2",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "There has been a decline in the population of honey bees ____.",
+    "options": [
+      "at the moment",
+      "long ago",
+      "someday soon",
+      "in recent years"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב24-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Byron Nicholai is a popular Alaskan singer whose songs feature a ____ of words from English and his native Yup'ik.",
+    "options": [
+      "scene",
+      "crack",
+      "blend",
+      "rate"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב24-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "The Gifu region in central Japan was ____ by the Great Earthquake of 1891.",
+    "options": [
+      "enlightened",
+      "intercepted",
+      "certified",
+      "devastated"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב24-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Once common across Europe and Asia, the Eurasian beaver was nearly ____ by hunting in the nineteenth century.",
+    "options": [
+      "wiped out",
+      "held back",
+      "shown off",
+      "counted on"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב24-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "The leaves of the dragon's blood tree collect ____ from the air, enabling the tree to survive in places where there is little water.",
+    "options": [
+      "pollution",
+      "emphasis",
+      "applause",
+      "moisture"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב24-א2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "In November 2014, construction workers digging up a road in Iceland's Thingvellir National Park ____ paving stones from a road built in 1907.",
+    "options": [
+      "unearthed",
+      "disgraced",
+      "convicted",
+      "outweighed"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב24-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Reviews of the 1995 film adaptation of Nathaniel Hawthorne's classic novel The Scarlet Letter were unfavorable, describing it as ____ at best.",
+    "options": [
+      "omniscient",
+      "jubilant",
+      "arbitrary",
+      "mediocre"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב24-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "In September 2012, the German government ____ media reports that it planned to stop using the Euro as the national currency, claiming they were absurd.",
+    "options": [
+      "dismissed",
+      "imposed",
+      "obtained",
+      "accommodated"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב24-א2:9",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א2",
+    "number": 9,
+    "type": "restatement",
+    "prompt": "Every year, a hundred million monarch butterflies from across eastern North America converge on Mexico's Monarch Butterfly Biosphere Reserve, where they spend the winter.",
+    "options": [
+      "A hundred million monarch butterflies come from all over eastern North America each year to Mexico's Monarch Butterfly Biosphere Reserve for the winter.",
+      "Mexico's Monarch Butterfly Biosphere Reserve was created as a winter habitat for the hundred million monarch butterflies of eastern North America.",
+      "During the winter, Mexico's Monarch Butterfly Biosphere Reserve is home to a hundred million monarch butterflies, most of them from eastern North America.",
+      "Each year, a hundred million monarch butterflies arrive at Mexico's Monarch Butterfly Biosphere Reserve after spending the winter in eastern North America."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב24-א2:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א2",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "Brain cells that have died from old age, injury or disease cannot be regenerated – or so it was long assumed, until research began to indicate otherwise.",
+    "options": [
+      "For many years, people thought that once brain cells died, they did not grow back; however, studies have begun to show that this is not the case.",
+      "Studies now suggest that old age, injury and disease cause brain cells to deteriorate much more quickly than was previously believed.",
+      "Recent research supports what has long been believed – brain cells that have died cannot be regenerated.",
+      "Until research began to indicate otherwise, it was commonly assumed that brain cells damaged by old age, injury or disease could be repaired."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב24-א2:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א2",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "Given that the information regarding the final days of American author Edgar Allan Poe is fragmentary and contradictory, it is hard to imagine that there will ever be a completely satisfactory answer as to what caused his death.",
+    "options": [
+      "The way in which Poe died will probably never be fully explained because the facts available are incomplete and inconsistent.",
+      "Recently discovered details about Poe's last days are being pieced together into a credible and persuasive theory about his death.",
+      "There is little consensus about the circumstances surrounding Poe's death.",
+      "The cause of Poe's death will remain a mystery until more is known about his final days."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב24-א2:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב24-א2",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "Delivered in the waning months of the US Civil War, President Abraham Lincoln's second inaugural speech was notable for its brevity and its dispirited tone.",
+    "options": [
+      "In the midst of the US Civil War, Lincoln gave his second inaugural speech, which was inspiring but restrained.",
+      "Towards the end of the US Civil War, Lincoln delivered his second inaugural speech, which was strikingly short and somber.",
+      "In his second inaugural speech, Lincoln displayed the same courage and vision that had proven vital during the US Civil War.",
+      "Lincoln's second inaugural speech, delivered shortly after the US Civil War, is remembered for its simplicity and its hopeful message."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב25-א1:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א1",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "The natural _____ known as a von Kármán vortex is named for the physicist who first described it.",
+    "options": [
+      "persuasion",
+      "coincidence",
+      "phenomenon",
+      "remedy"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב25-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "A woodchuck _____ breathes almost 1,000 times per hour, but while hibernating, it breathes only 10 times per hour.",
+    "options": [
+      "consequently",
+      "ordinarily",
+      "obviously",
+      "fortunately"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב25-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Blueberries are rich in antioxidants, which can prevent _____ of the body's cells and promote good health.",
+    "options": [
+      "negotiation",
+      "deterioration",
+      "contemplation",
+      "supervision"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב25-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Sarah Orne Jewett's works were once _____ as having little literary merit.",
+    "options": [
+      "unified",
+      "prioritized",
+      "dismissed",
+      "liberated"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב25-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "In his Nicomachean Ethics, Aristotle _____ philosophical questions such as \"Where does happiness lie?\"",
+    "options": [
+      "hauls",
+      "ponders",
+      "starves",
+      "blunders"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב25-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "The Satchmo Summerfest, held each year in New Orleans, celebrates the _____ legacy of the illustrious jazz musician Louis Armstrong.",
+    "options": [
+      "convincing",
+      "retiring",
+      "indulging",
+      "enduring"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב25-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Since 2021, Myanmar's government has been _____ in a civil war against insurgent groups.",
+    "options": [
+      "enchanted",
+      "embroiled",
+      "dejected",
+      "distorted"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב25-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "Mozart's opera The Marriage of Figaro _____ a castle near Seville, Spain, in the late 18th century.",
+    "options": [
+      "which takes place in",
+      "sets in",
+      "have taken the place of",
+      "is set in"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב25-א1:9",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א1",
+    "number": 9,
+    "type": "restatement",
+    "prompt": "Actress Lotte Lenya's rare film roles included her portrayal of Rosa Klebb in From Russia with Love .",
+    "options": [
+      "Lotte Lenya was outstanding as Rosa Klebb in the film From Russia with Love.",
+      "From Russia with Love was the movie that established Lotte Lenya's reputation as a serious actress .",
+      "Lotte Lenya played Rosa Klebb in From Russia with Love, one of the few movies in which the actress appeared .",
+      "The role of Lotte Lenya in From Russia with Love was played by Rosa Klebb ."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב25-א1:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א1",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "Although the punctuation mark ending a sentence was referred to as a \"period\" in the Shakespearean era, that word eventually fell out of favour in England and was replaced by \"full stop .\"",
+    "options": [
+      "Shakespeare preferred the phrase \"full stop\" to the word \"period\", though the latter was more commonly used in his day .",
+      "At some point after Shakespeare's day, the English stopped referring to the punctuation mark at the end of a sentence as a period, preferring instead to call it a full stop .",
+      "Today, a period is used to indicate a full stop at the end of a sentence, but in Shakespeare's England, it had a different purpose.",
+      "The punctuation marks Shakespeare used to indicate the end of a sentence were later abandoned by the English in favour of the period, or full stop ."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב25-א1:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א1",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "The royal palace in Ugarit was one of the most imposing edifices in all of western Asia , rivaled only by the royal palace in Tyre .",
+    "options": [
+      "The royal palace in Ugarit, the largest in western Asia, was modeled after the royal palace in Tyre .",
+      "No other buildings in western Asia were as magnificent as the royal palaces in Tyre and Ugarit .",
+      "The rulers of western Asia held court at the impressive palaces of Ugarit and Tyre.",
+      "Ugarit and Tyre, both prosperous centers in western Asia, were home to an array of royal palaces ."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב25-א1:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א1",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "Ibn Khaldun, one of the leading Arab scholars of the 14th century, advanced economic theories that anticipated the work of much later thinkers.",
+    "options": [
+      "Ibn Khaldun's innovative economic theories were not shared by other scholars of his time .",
+      "Ibn Khaldun's contributions to the field of economics were unparalleled .",
+      "Ibn Khaldun formulated economic theories that are still relevant today.",
+      "Ibn Khaldun put forth theories of economics that were far ahead of his time ."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב25-א2:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א2",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "The ____ of digital news media led to the closure of many local newspapers.",
+    "options": [
+      "advent",
+      "fragment",
+      "pigment",
+      "consent"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב25-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "The body language of an angry person often includes crossed arms and ____ fists .",
+    "options": [
+      "gnarled",
+      "clenched",
+      "glazed",
+      "expired"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב25-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Actress Marlene Dietrich originally ____ to be a professional violinist, but a wrist injury forced her to change her career plans .",
+    "options": [
+      "aspired",
+      "confided",
+      "revolved",
+      "stumbled"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב25-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "The Cooper Hewitt, Smithsonian Design Museum in New York City reopened in December 2014 after undergoing extensive ____.",
+    "options": [
+      "deficiencies",
+      "renovations",
+      "hallmarks",
+      "substitutions"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב25-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "The striking rock formations in Australia's Uluru-Kata Tjuta National Park contrast ____ with the surrounding sand plains and desert .",
+    "options": [
+      "narrowly",
+      "sharply",
+      "honestly",
+      "basically"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב25-א2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Serving over 110 million passengers per year, Hartsfield-Jackson International Airport in Atlanta, Georgia, is a major _____ for global air travel .",
+    "options": [
+      "flaw",
+      "clan",
+      "hub",
+      "rod"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב25-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "In the last decade of his life, French composer Claude Debussy withdrew from society and rarely _____ outside his home .",
+    "options": [
+      "ventured",
+      "pounced",
+      "compressed",
+      "glimmered"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב25-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "Observing the planet Venus helped Galileo to _____ the widely held idea that the Sun orbits the Earth .",
+    "options": [
+      "retaliate",
+      "refute",
+      "relapse",
+      "recline"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב25-א2:9",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א2",
+    "number": 9,
+    "type": "restatement",
+    "prompt": "The ancient Egyptians believed that the body had to remain intact in order to house the soul during the afterlife .",
+    "options": [
+      "The ancient Egyptians built tombs to make the soul comfortable during the afterlife .",
+      "Ancient Egyptian burial practices were meant to ensure that the body and the soul would be reunited in the afterlife .",
+      "The ancient Egyptians believed that the soul continues to exist in the afterlife .",
+      "The ancient Egyptians believed that in the afterlife the soul could reside only in a body that was whole ."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב25-א2:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א2",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "Tigers, unlike most other predators, rely principally on their sense of sight rather than smell to track prey .",
+    "options": [
+      "Many animals that hunt are guided to their prey by their sense of smell, but tigers depend mainly on their eyesight .",
+      "Tigers differ from other mammals in that they recognize one another on the basis of smell rather than sight .",
+      "The principal difference between tigers and other predators is that tigers use their sense of sight rather than smell when tracking prey .",
+      "Tigers are the only wild animals whose sense of sight is more developed than their sense of smell ."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב25-א2:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א2",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "There is considerable overlap between the regions inhabited by the common raven and those inhabited by the American crow .",
+    "options": [
+      "The common raven and the American crow thrive in similar environments .",
+      "The American crow is gradually being displaced by the common raven .",
+      "The common raven and the American crow are found largely in the same areas .",
+      "The habitats shared by the common raven and the American crow are rapidly shrinking ."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב25-א2:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב25-א2",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "The ancient city-state of Sparta – renowned for its warmongering ethos, rigid social hierarchy, and austerity – is widely regarded as the epitome of an authoritarian regime .",
+    "options": [
+      "Many societies have attempted to emulate ancient Sparta's highly efficient system of government, which fostered a strong, secure, and superior society .",
+      "The distinguishing features of ancient Sparta, seen by many as the classic example of a dictatorship, were its militaristic character, inflexible social order, and minimalist way of life .",
+      "Ancient Sparta was the model of a disciplined and principled combative state capable of protecting its citizens from a multitude of threats .",
+      "Ancient Sparta is remembered primarily as a society that spurned luxury in favor of hard work, strict ethics, and social accountability ."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב26-א1:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א1",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "Dust on a solar panel may block sunlight and prevent the panel from functioning ______.",
+    "options": [
+      "attentively",
+      "cautiously",
+      "efficiently",
+      "possessively"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב26-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Myths generally contain a kernel of historical ______ beneath layers of narrative embellishment.",
+    "options": [
+      "truth",
+      "growth",
+      "health",
+      "strength"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב26-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "The Jolly Roger flag bears an image of a white skull-and-crossbones against a black ______.",
+    "options": [
+      "refusal",
+      "disturbance",
+      "engagement",
+      "background"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב26-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Australian scientists have ______ saltwater crocodiles with transmitters so that the animals' movements can be tracked by satellite.",
+    "options": [
+      "blamed",
+      "curled",
+      "fitted",
+      "melted"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב26-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "The Venus de Milo is a famous statue ______ from white marble.",
+    "options": [
+      "filtered",
+      "carved",
+      "bounced",
+      "mumbled"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב26-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Italian Renaissance painters saw beauty as the physical ______ of spiritual virtue.",
+    "options": [
+      "enrollment",
+      "excavation",
+      "exertion",
+      "embodiment"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב26-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Stonehenge – a circular arrangement of huge stones on Salisbury Plain in England – was built, ______ and reconstructed several times over a period of 2,000 years.",
+    "options": [
+      "dismantled",
+      "discerned",
+      "distilled",
+      "disclosed"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב26-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "After Edgar Allan Poe's death, his rival Rufus W. Griswold wrote a ______ obituary.",
+    "options": [
+      "scathing",
+      "basking",
+      "recurring",
+      "drenching"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב26-א1:9",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א1",
+    "number": 9,
+    "type": "restatement",
+    "prompt": "Linguistic evidence indicates that the Roma people hailed from India.",
+    "options": [
+      "That the Roma settled in India for a time is evident from their language.",
+      "Research into the language of the Roma people shows that their origins lie in India.",
+      "The language of the Roma is similar to some of the languages spoken in India.",
+      "The Roma people claim that their language comes from India."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב26-א1:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א1",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "Desiccation is a progressive increase in the aridity of a region.",
+    "options": [
+      "The degree of desiccation in a region is linked to its geographical features.",
+      "The process by which an area gradually becomes drier is known as desiccation.",
+      "Desiccation takes place only under very specific climatic conditions.",
+      "As population density increases, so does the probability of desiccation."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב26-א1:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א1",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "Herodotus is one of the most venerated of historians, even though he was prone to propagandizing in his chronicling of events.",
+    "options": [
+      "Herodotus tended to write biased historical accounts promoting his own views, yet he is nonetheless highly respected.",
+      "Herodotus is regarded as a reliable historian despite the fact that he claimed credit for the writings of some of his contemporaries.",
+      "Notwithstanding his reputation for meticulous historical research, numerous errors have been found in the writings of Herodotus.",
+      "Though not the most prolific historian of his day, Herodotus is certainly the most prominent."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב26-א2:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א2",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "The Epic of Gilgamesh, a poem that was ____ in ancient Mesopotamia, is regarded as the earliest surviving great work of literature .",
+    "options": [
+      "dismissed",
+      "reduced",
+      "composed",
+      "supplied"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב26-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Chicago's Northwestern University is a private ____ of higher learning",
+    "options": [
+      "institution",
+      "convention",
+      "distraction",
+      "recommendation"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב26-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "The white rhinoceros and the black rhinoceros are actually two different ____ of gray.",
+    "options": [
+      "doses",
+      "shades",
+      "forces",
+      "grains"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "אביב26-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Archeological evidence supports the Ohlone Indian tribe's claim that the city of San Francisco was built on their ____ land.",
+    "options": [
+      "ancestral",
+      "vertical",
+      "hospitable",
+      "tangible"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב26-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "Hard work is not always ____with good wages.",
+    "options": [
+      "determined",
+      "restricted",
+      "compensated",
+      "maneuvered"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב26-א2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "In regions where farmers do not have access to mechanized equipment, they must rely on traditional agricultural ____.",
+    "options": [
+      "implements",
+      "temperaments",
+      "afflictions",
+      "relapses"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב26-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "In October 2024 Hurricane Milton littered the streets of Punta Gorda, Florida, with tree branches, broken glass and other storm ____.",
+    "options": [
+      "haze",
+      "stamina",
+      "debris",
+      "lore"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב26-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "Thousands of Kenyans ____ a living by selling discarded items that they gather at Dandora, one of Africa's largest waste dumps .",
+    "options": [
+      "eke out",
+      "fend off",
+      "stem from",
+      "balk at"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "אביב26-א2:9",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א2",
+    "number": 9,
+    "type": "restatement",
+    "prompt": "The black-footed cat, native to Africa, is among the smallest species of cat in the world – even smaller than the domestic cat.",
+    "options": [
+      "The smallest species of domestic cat, known as the black-footed cat, is native to Africa.",
+      "No cat, except for the African domestic cat, is smaller than the black-footed cat.",
+      "The black-footed cat, though larger than domestic cats, is among the smallest species in Africa.",
+      "One of the smallest of all cats, Africa's black-footed cat is not even as large as the domestic cat."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב26-א2:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א2",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "Several European countries decried Russia's military intervention in Ukraine in 2014, claiming it flagrantly breached international law.",
+    "options": [
+      "In 2014, some European countries came to the aid of Ukraine as it attempted to thwart the Russian incursion into its territory.",
+      "Several European countries severed ties with Russia in 2014, following the Russian army's unprovoked invasion of Ukraine.",
+      "In 2014, Russia was censured by several European countries for interfering in Ukrainian military appointments – an infringement of international law.",
+      "Russia's military action in Ukraine in 2014 was condemned by a number of European countries as a brazen violation of international law."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "אביב26-א2:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א2",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "Sponges thrive in aquatic habitats as diverse as Caribbean coral reefs and Antarctica's McMurdo Sound.",
+    "options": [
+      "Antarctica's McMurdo Sound and the Caribbean coral reefs have little in common other than the presence of sponges.",
+      "The sponges that inhabit Antarctica's McMurdo Sound are unlike those that flourish in the coral reefs of the Caribbean.",
+      "A wide range of environments, from Caribbean coral reefs to Antarctica's McMurdo Sound, are well suited to sponges.",
+      "The coral reefs of the Caribbean and Antarctica's McMurdo Sound are home to an array of sponges."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "אביב26-א2:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "אביב26-א2",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "The rise in European wolf populations – the consequence of various conservation policies – and concomitant livestock losses justify a rethinking of the wolf's protected status.",
+    "options": [
+      "Wolves have been granted protected status by European conservation groups, leaving farmers with few means at their disposal to keep their livestock from being attacked.",
+      "As greater numbers of farm animals are killed by wolves, whose ranks are increasing thanks to efforts to safeguard them, European countries should consider removing the wolf's protected status.",
+      "Because wolves in Europe were protected for many years by conservationists, their numbers have grown to the point that they now pose a significant threat to farm livestock.",
+      "European countries are reevaluating their conservation policies due to a dramatic increase in wolf populations and the subsequent rise in attacks on livestock."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף-23-א1:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף-23-א1",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "Jackals can live up to 10 years in the wild and up to 16 years in _____",
+    "options": [
+      "anxiety",
+      "severity",
+      "captivity",
+      "royalty"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "חורף-23-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף-23-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Landscape architect Hoichi Kurisu _____ nearly two years of his life to designing the Morikami Museum and Japanese Gardens in Delray Beach, Florida.",
+    "options": [
+      "devoted",
+      "exposed",
+      "composed",
+      "obeyed"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף-23-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף-23-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "A large _____ includes, among other instruments, violins, French horns, and drums.",
+    "options": [
+      "vehicle",
+      "mechanism",
+      "orchestra",
+      "experiment"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "חורף-23-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף-23-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "When 13th-century explorer Marco Polo first _____ rhinoceroses, he mistakenly thought that the animals were unicorns.",
+    "options": [
+      "encountered",
+      "deceived",
+      "appointed",
+      "consulted"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף-23-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף-23-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "A _____ characteristic of the brown hyena is its unusually thick coat.",
+    "options": [
+      "persuasive",
+      "distinguishing",
+      "superstitious",
+      "revolutionary"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף-23-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף-23-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "George Orwell's Animal Farm is a stinging _____ of the Soviet Union's corruption of socialist ideals.",
+    "options": [
+      "critique",
+      "invasion",
+      "phase",
+      "notion"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף-23-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף-23-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Designated a national landmark in 1969, The Plaza _____ the most famous hotel in New York City.",
+    "options": [
+      "is arguably",
+      "was argumentative",
+      "is an argument to",
+      "argues for"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף-23-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף-23-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "After a long _____, Canadian singer Leonard Cohen staged a comeback in 2008.",
+    "options": [
+      "latitude",
+      "predicament",
+      "incentive",
+      "hiatus"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף-23-א1:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף-23-א1",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "In 1873, a custom-built gallery was created to house Michelangelo's David, which had stood outside until then.",
+    "options": [
+      "Michelangelo's David was moved indoors to a gallery constructed especially for it in 1873.",
+      "The indoor gallery that now houses Michelangelo's David dates back to 1873.",
+      "Michelangelo's David, originally intended to stand outside, was moved indoors in",
+      "Until 1873, Michelangelo's David was exhibited outside the gallery in which it is currently displayed."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף-23-א2:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף-23-א2",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "Travelers entering New Zealand are prohibited ______ fresh fruits and vegetables.",
+    "options": [
+      "from bringing in",
+      "having brought",
+      "only when bringing",
+      "if ever brought"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף-23-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף-23-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Conservative ______ Nicolas Sarkozy defeated socialist Ségolène Royal in the 2007 French presidential election.",
+    "options": [
+      "solution",
+      "candidate",
+      "spectacle",
+      "compromise"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף-23-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף-23-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Johnny Weissmuller, who starred in many Tarzan movies, began acting after _____ from a career in competitive swimming.",
+    "options": [
+      "rewarding",
+      "retiring",
+      "restricting",
+      "relieving"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף-23-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף-23-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "The ancient Greek statesman Demosthenes was an outspoken ______ of freedom of expression. ____",
+    "options": [
+      "stranger",
+      "neighbor",
+      "performer",
+      "defender"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף-23-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף-23-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "Irritable bowel syndrome shares symptoms with many other digestive disorders; ______, it can be difficult to diagnose.",
+    "options": [
+      "previously",
+      "fortunately",
+      "scarcely",
+      "consequently"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף-23-א2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף-23-א2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Saxophonist Ornette Coleman had such an ______ approach to harmony that it was many years before mainstream musicians came to appreciate his style.",
+    "options": [
+      "unorthodox",
+      "incessant",
+      "adhesive",
+      "equivalent"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף-23-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף-23-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Margaret Bourke-White was one of the first female war ______ to report on the fighting in Europe during World War II.",
+    "options": [
+      "commuters",
+      "collaborators",
+      "constituents",
+      "correspondents"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף-23-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף-23-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "In 2019, fire ______Paris's renowned Notre Dame Cathedral, causing the building's spire and roof to collapse.",
+    "options": [
+      "dismayed",
+      "engulfed",
+      "disgraced",
+      "enchanted"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף20-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף20-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Because the bark scorpion's _____ is highly toxic, a sting requires immediate medical attention.",
+    "options": [
+      "venom",
+      "fatigue",
+      "attire",
+      "esteem"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף20-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף20-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "The industrial city of Hagen, Germany, lies at the _____ of several major transportation routes.",
+    "options": [
+      "diction",
+      "caution",
+      "friction",
+      "junction"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף20-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף20-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Mongolia is a mountainous country with an average _____ of 1,580 meters above sea level.",
+    "options": [
+      "delegation",
+      "acceleration",
+      "circulation",
+      "elevation"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף20-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף20-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "Alcazar, a word meaning castle or fortress, is _____ from the Arabic al-qasr.",
+    "options": [
+      "shattered",
+      "indexed",
+      "contested",
+      "derived"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף20-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף20-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "People who are _____ to falling sometimes use a walking stick to help them keep their balance.",
+    "options": [
+      "shrill",
+      "irate",
+      "prone",
+      "meek"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "חורף20-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף20-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "In 1845, the long-standing border dispute between the United States and Mexico _____ into open warfare.",
+    "options": [
+      "elaborated",
+      "recuperated",
+      "reinstated",
+      "escalated"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף20-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף20-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "The William Upton House – constructed of costly brick in the mid-1800s when most family houses in the U.S. were built of wood – attested to the Upton family's _____",
+    "options": [
+      "affluence",
+      "etiquette",
+      "oversight",
+      "immunity"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף20-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף20-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Readers around the world _____ the death of English author Charles Dickens in June",
+    "options": [
+      "pledged",
+      "mourned",
+      "ensured",
+      "captured"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף20-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף20-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Most of the crude oil pumped from the ground is _____ into gasoline and other fuels.",
+    "options": [
+      "promoted",
+      "prolonged",
+      "predicted",
+      "processed"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף20-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף20-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "The transition from eating _____ food to eating cooked food was an important step in the development of human societies.",
+    "options": [
+      "false",
+      "pure",
+      "blunt",
+      "raw"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף20-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף20-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "In 1907, U.S. President Theodore Roosevelt sent a _____ of 16 battleships on a world tour to display American naval power.",
+    "options": [
+      "fleet",
+      "clan",
+      "spark",
+      "rash"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף20-א2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף20-א2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "The patterns on traditional Mayan clothing are not only decorative but also _____ personal information about the wearer.",
+    "options": [
+      "merge",
+      "deposit",
+      "oblige",
+      "convey"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף20-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף20-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "American poet Ella Wheeler Wilcox published many _____ of verse during her lifetime.",
+    "options": [
+      "factors",
+      "fortunes",
+      "visions",
+      "volumes"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף20-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף20-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "The high concentration of iron in the water of the Rio Tinto gives this river in southern Spain its orange-red _____.",
+    "options": [
+      "hue",
+      "wit",
+      "paw",
+      "rod"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף21-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף21-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "People who go to the supermarket when they are hungry tend to buy more food than they might _____.",
+    "options": [
+      "nonetheless",
+      "furthermore",
+      "otherwise",
+      "meanwhile"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "חורף21-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף21-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "The loudness of sound is measured in _____ called decibels.",
+    "options": [
+      "contacts",
+      "edges",
+      "units",
+      "labels"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "חורף21-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף21-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Mathematician Sofya Kovalevskaya's work on partial differential equations _____ her the recognition of the European mathematical community .",
+    "options": [
+      "earned",
+      "pursued",
+      "installed",
+      "declared"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף21-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף21-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "The Pleistocene _____, which ended 10,000 years ago, was a period when many species of mammals and flightless birds became extinct.",
+    "options": [
+      "epoch",
+      "summit",
+      "nucleus",
+      "digest"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף21-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף21-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "In contrast to his paintings, which are full of passion and violence, the life of French artist Eugène Delacroix was relatively _____.",
+    "options": [
+      "resentful",
+      "paternal",
+      "diagonal",
+      "tranquil"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף21-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף21-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Franklin D. Roosevelt was the first U.S. president to visit Africa during his term in _____.",
+    "options": [
+      "address",
+      "office",
+      "chapter",
+      "station"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף21-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף21-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "A vending machine at a school in West Valley City, Utah, _____ children's books rather than snacks or sodas.",
+    "options": [
+      "dispenses",
+      "reprimands",
+      "invokes",
+      "adjourns"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף21-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף21-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "A mole can _____ a tunnel 100 meters long in a single night.",
+    "options": [
+      "grab",
+      "lend",
+      "dig",
+      "set"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "חורף21-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף21-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Kenya's dramatic _____ is dominated by the Great Rift Valley, which cuts through the country from north to south.",
+    "options": [
+      "hallmark",
+      "fallout",
+      "shortcoming",
+      "landscape"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף21-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף21-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Once home to 150 people, the village of Monowi, Nebraska, had only one remaining _____ in 2011.",
+    "options": [
+      "candidate",
+      "inhabitant",
+      "spectator",
+      "companion"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף21-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף21-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "In 1960, Britain granted independence to Cyprus, _____ sovereignty only over its military bases.",
+    "options": [
+      "dispersing",
+      "modifying",
+      "retaining",
+      "captivating"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "חורף21-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף21-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Because both countries had much to gain, the U.S. purchase of Alaska from Russia in 1867 was negotiated in an _____ atmosphere.",
+    "options": [
+      "inherent",
+      "obsolete",
+      "eternal",
+      "amicable"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף21-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף21-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "During World War II, much of the city of Rotterdam in the Netherlands was _____ to ash and rubble by German bombardments.",
+    "options": [
+      "convinced",
+      "extended",
+      "reduced",
+      "adjusted"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "חורף24-א1:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א1",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "The peregrine falcon can reach a speed of 200 miles per hour, faster than _____ member of the animal kingdom.",
+    "options": [
+      "most of the",
+      "all the",
+      "any other",
+      "each one"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "חורף24-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "The butterfly fish can leap out of the water and soar through the air, _____ its fins like wings.",
+    "options": [
+      "flapping",
+      "stripping",
+      "pressing",
+      "padding"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף24-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "The collection of rare books and manuscripts from Tibet housed in the National Library of Mongolia is _____, comprising more than a million items.",
+    "options": [
+      "immense",
+      "oral",
+      "urgent",
+      "accurate"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף24-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Oil-based paints are more difficult to distribute _____ over the surface of a wall than latex paints.",
+    "options": [
+      "evenly",
+      "fairly",
+      "mildly",
+      "openly"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף24-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "President Franklin D. Roosevelt's middle _____ stands for \"Delano\".",
+    "options": [
+      "appeal",
+      "initial",
+      "principle",
+      "vowel"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף24-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "The compositions of twentieth-century musician John Zorn _____ elements from jazz, klezmer, and punk rock.",
+    "options": [
+      "incorporate",
+      "allocate",
+      "verify",
+      "dispatch"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף24-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "In Jerusalem's Machane Yehuda market, over 250 _____ sell everything from fruit and vegetables to clothing and household goods.",
+    "options": [
+      "janitors",
+      "aviators",
+      "captors",
+      "vendors"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף24-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "In 1923, Italian leader Benito Mussolini was knighted by Britain's King George V , but the honour was _____ when Mussolini declared war on Britain in 1940.",
+    "options": [
+      "abstained",
+      "revoked",
+      "reconciled",
+      "accorded"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף24-א1:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א1",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "World War II provided tremendous impetus for U.S. industries.",
+    "options": [
+      "World War II changed the infrastructure of U.S. industries.",
+      "World War II presented unique challenges to U.S. industries.",
+      "U.S. industries were adapted to meet the military's needs in World War II.",
+      "U.S. industries were significantly boosted by World War II."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף24-א1:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א1",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "British historian John Anthony Crook is of the opinion that the high repute of Roman emperor Marcus Aurelius is misplaced.",
+    "options": [
+      "Crook has expressed contradictory views of Marcus Aurelius' role in history.",
+      "Crook argues that Marcus Aurelius is one of the most misunderstood individuals in history.",
+      "According to Crook, Marcus Aurelius is not deserving of his renown.",
+      "Crook argues that Marcus Aurelius has not been given the attention fitting for a figure of his stature."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "חורף24-א1:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א1",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "The Opium Wars were precipitated by China's efforts to suppress the opium trade.",
+    "options": [
+      "The Opium Wars broke out as a result of China's efforts to regulate the opium trade.",
+      "China emerged victorious from the Opium Wars, thereby securing its domination of the opium trade.",
+      "China's strict control of the opium trade was undermined by the Opium Wars.",
+      "China's attempts to halt the opium trade were the catalyst for the Opium Wars."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף24-א2:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א2",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "In 1948, the United Nations _____ the Universal Declaration of Human Rights, which maintains that all people are born free and equal.",
+    "options": [
+      "adopted",
+      "cautioned",
+      "exaggerated",
+      "persuaded"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף24-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Marie Curie was the first person _____ two Nobel Prizes.",
+    "options": [
+      "to win",
+      "who was winning",
+      "that wins",
+      "having won"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף24-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "For a short period during his career, painter Pablo Picasso favored a certain _____ of blue called Prussian blue.",
+    "options": [
+      "faith",
+      "craft",
+      "deal",
+      "shade"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף24-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "For the first six months of its life, an elephant calf relies almost entirely on its mother's milk for _____.",
+    "options": [
+      "negligence",
+      "sustenance",
+      "decadence",
+      "lenience"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף24-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "After repeated use, knives become _____ and must be sharpened.",
+    "options": [
+      "dull",
+      "firm",
+      "ripe",
+      "pale"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף24-א2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "As their natural habitat _____, India's wild water buffalo increasingly come into contact with domesticated water buffalo.",
+    "options": [
+      "dims",
+      "grinds",
+      "shrinks",
+      "twists"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "חורף24-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "The ancient Egyptians developed _____ systems that enabled them to grow crops despite a lack of rainfall.",
+    "options": [
+      "narrative",
+      "irrigation",
+      "fragrance",
+      "assault"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף24-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "Although Elihu Embree was a slave owner himself, he advocated the _____ of slavery.",
+    "options": [
+      "prestige",
+      "abolition",
+      "deluge",
+      "infidelity"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף24-א2:9",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א2",
+    "number": 9,
+    "type": "restatement",
+    "prompt": "By 2000 B.C.E., Akkadian had largely supplanted Sumerian as the spoken language of southern Mesopotamia.",
+    "options": [
+      "From 2000 B.C.E. onward, Akkadian was no longer spoken in southern Mesopotamia, having been replaced by Sumerian.",
+      "By 2000 B.C.E., the majority of people in southern Mesopotamia were speaking Akkadian rather than Sumerian.",
+      "By 2000 B.C.E., people in southern Mesopotamia were speaking Akkadian as well as Sumerian.",
+      "Until 2000 B.C.E., both Akkadian and Sumerian were the spoken languages of southern Mesopotamia."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף24-א2:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א2",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "Even the minority who regretted the demise of the Austro-Hungarian Empire realized it had been inevitable.",
+    "options": [
+      "It is shocking that the collapse of the Austro-Hungarian Empire was brought about by such a small group of people.",
+      "A complex set of circumstances that no one could have predicted led to the demise of the Austro-Hungarian Empire.",
+      "The disintegration of the Austro-Hungarian Empire was so gradual that it had very little impact on most people's lives.",
+      "The fall of the Austro-Hungarian Empire surprised no one, but only a few were displeased when it actually happened."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף24-א2:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א2",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "The 2020 Mastercard Index of Women Entrepreneurs ranked Ghana as a global leader in the advancement of women-owned businesses.",
+    "options": [
+      "Ghana was listed in the 2020 Mastercard Index of Women Entrepreneurs as one of the countries most supportive of women-owned businesses.",
+      "According to the 2020 Mastercard Index of Women Entrepreneurs, companies owned by women are particularly successful in Ghana.",
+      "In Ghana, women have made impressive gains in every aspect of the business sector, according to the 2020 Mastercard Index of Women Entrepreneurs.",
+      "The 2020 Mastercard Index of Women Entrepreneurs recognized Ghana's efforts to eliminate discrimination against businesses owned by women."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף24-א2:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף24-א2",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "Beware of all enterprises that require new clothes. (Henry David Thoreau)",
+    "options": [
+      "New clothes do not necessarily make a new man.",
+      "Promising enterprises usually involve risks.",
+      "Transforming one's appearance requires courage.",
+      "Undertakings that require one to change should be avoided."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף25-א1:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א1",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "The magnificent palace at Fontainebleau is the crowning _____ of French Renaissance architecture.",
+    "options": [
+      "glory",
+      "desire",
+      "moral",
+      "relief"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף25-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "A well-worded _____ can make an average photograph memorable.",
+    "options": [
+      "facade",
+      "garment",
+      "caption",
+      "martyr"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "חורף25-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Within weeks of the assassination of Archduke Franz Ferdinand, the chief European powers were _____ into World War I.",
+    "options": [
+      "broken",
+      "sewn",
+      "worn",
+      "drawn"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף25-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Rather than _____ Western European musical styles, nineteenth-century composer Modest Petrovich Mussorgsky created distinctively Russian forms of music.",
+    "options": [
+      "imitate",
+      "neutralize",
+      "postpone",
+      "decorate"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף25-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "Seals use their fins and flippers to _____ themselves through the water.",
+    "options": [
+      "propel",
+      "fracture",
+      "extort",
+      "behold"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף25-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "The Center for American War Letters is an archive of wartime _____ from every conflict in American history.",
+    "options": [
+      "correspondence",
+      "affluence",
+      "proficiency",
+      "expansion"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף25-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Souvenirs are _____ reminders of important people, places, or events.",
+    "options": [
+      "retractable",
+      "tangible",
+      "susceptible",
+      "commendable"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף25-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "Some authors prefer to remain anonymous, publishing their works under _____ names.",
+    "options": [
+      "enchanted",
+      "overruled",
+      "assumed",
+      "invested"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "חורף25-א1:9",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א1",
+    "number": 9,
+    "type": "restatement",
+    "prompt": "The pace of construction in Tokyo is dizzying.",
+    "options": [
+      "Tokyo is one of the busiest cities in the world.",
+      "Tokyo is being built up extremely rapidly.",
+      "Tokyo is at the forefront of innovative construction techniques.",
+      "Tokyo is encouraging the development of new industries."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף25-א1:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א1",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "Age-related bias in the workplace is regrettably more prevalent than ever.",
+    "options": [
+      "Increasingly, employers are being pressured to hire people of all ages.",
+      "Unfortunately, the practice of discriminating against workers on the basis of age is more widespread than it once was.",
+      "Surprisingly, the most common form of prejudice in the workplace is age related.",
+      "As people age, they generally have more difficulty finding work."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף25-א1:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א1",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "Noah Webster's widely lauded American English dictionaries represent but a fraction of his scholarly corpus.",
+    "options": [
+      "Webster's groundbreaking American English dictionaries were but the first in a long line of highly regarded scholarly works.",
+      "Webster had a vast number of other scholarly accomplishments to his name besides his celebrated American English dictionaries.",
+      "The impact of Webster's American English dictionaries was overshadowed by his far-reaching influence in other scholarly fields.",
+      "Faced with the immense task of preparing his American English dictionaries, Webster was compelled to set aside his many other scholarly projects."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף25-א1:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א1",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "Having joined NA TO in March 2004, the Baltic states promptly acceded to the European Union (EU), a sequence of events that infuriated Russian President Vladimir Putin.",
+    "options": [
+      "The Baltic states' relationship with Putin, already strained when they joined the EU, completely collapsed when they applied to NATO in 2004.",
+      "The Baltic states were hesitant to become part of NATO and the EU in 2004, knowing that this would provoke Putin.",
+      "In defiance of Putin's protestations, the Baltic states initiated membership negotiations with the EU shortly after they had been accepted into NA TO in 2004.",
+      "Putin was outraged when the Baltic states were admitted to the EU on the heels of becoming members of NATO in 2004."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף25-א2:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א2",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "Babe Didrikson Zaharias was an exceptionally _____ athlete who excelled in golf, basketball, baseball, and field athletics.",
+    "options": [
+      "compliant",
+      "versatile",
+      "explicit",
+      "opaque"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף25-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Twentieth-century food writer Clementine Paddleford researched her subjects _____ , traveling thousands of miles a year to gather information for her articles.",
+    "options": [
+      "innocently",
+      "enviously",
+      "extensively",
+      "instantly"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "חורף25-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Curved mirrors _____ the shape of reflected objects, making them appear shorter and wider or longer and narrower than they actually are.",
+    "options": [
+      "distort",
+      "erode",
+      "ignite",
+      "ponder"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף25-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "In 2004, a 31-meter-long barge which had been _____ by a thick layer of mud for nearly 2,000 years was found and pulled out of the Rhine River.",
+    "options": [
+      "designated",
+      "concealed",
+      "enhanced",
+      "proclaimed"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "חורף25-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "In medieval times, peasants were required to pledge an oath of _____ to their feudal lord.",
+    "options": [
+      "allegiance",
+      "upheaval",
+      "intimidation",
+      "aptitude"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף25-א2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "The Statue of Liberty was constructed in France, then _____, packed into 214 crates and shipped to the United States, where it was reassembled.",
+    "options": [
+      "dismantled",
+      "undermined",
+      "delineated",
+      "inhibited"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף25-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "In 1948, Earl Shaffer became the first person to hike the entire Appalachian Trail, a _____ he repeated fifty years later.",
+    "options": [
+      "chant",
+      "staple",
+      "feat",
+      "pedal"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "חורף25-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "Hundreds of thousands of migrant workers _____ under often brutal conditions to prepare for the 2022 Football World Cup in Qatar.",
+    "options": [
+      "feigned",
+      "mocked",
+      "scrolled",
+      "toiled"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "חורף25-א2:9",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א2",
+    "number": 9,
+    "type": "restatement",
+    "prompt": "Archaeologists unearthed a trove of 4,600-year-old Egyptian papyri in 2013.",
+    "options": [
+      "A collection of valuable Egyptian papyri from 4,600 years ago was discovered by archaeologists in 2013.",
+      "Archaeologists have confirmed that the well-preserved papyri found in Egypt in 2013 are 4,600 years old.",
+      "In 2013, archaeologists finally succeeded in interpreting several 4,600-year-old Egyptian papyri.",
+      "Archaeologists have determined that the 4,600-year-old papyri unearthed in 2013 originated in Egypt"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "חורף25-א2:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א2",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "The contentious debate over genetic engineering is fueled by irreconcilable perspectives on its potential uses and abuses.",
+    "options": [
+      "The principles and practices of genetic engineering are constantly being refined in response to objections to this revolutionary technology.",
+      "Opinions on how best to exploit the capabilities of genetic engineering range from the conservative to the radical.",
+      "Mutually exclusive viewpoints on the advantages and dangers of genetic engineering have given rise to heated disagreement.",
+      "Thanks to a relentless public relations campaign, former detractors of genetic engineering are gradually becoming advocates."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "חורף25-א2:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "חורף25-א2",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "Early Mesoamerican villages appear to have been politically autonomous and to have had an egalitarian social order.",
+    "options": [
+      "It is believed that in early Mesoamerican villages, positions of authority were reserved for those of high social standing.",
+      "The political and social hierarchy of early Mesoamerican villages was apparently quite rigid.",
+      "The claim that early Mesoamerican villages had highly complex political and social systems has not been substantiated.",
+      "There is some evidence that early Mesoamerican villages were characterized by social equality and self-governance."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו20-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו20-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Vancouver has a _____ climate, thanks to a warm offshore current in the Pacific Ocean",
+    "options": [
+      "foreign",
+      "mild",
+      "parallel",
+      "tight"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "סתיו20-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו20-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "For many centuries, the Roman fortress Castel Sant'Angelo was used by popes as a place of _____ during times of danger",
+    "options": [
+      "sensor",
+      "refuge",
+      "friction",
+      "grief"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "סתיו20-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו20-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "_____ homes are easy targets for thieves",
+    "options": [
+      "Vacant",
+      "Urgent",
+      "Pleasant",
+      "Decent"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו20-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו20-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "Perspiration is one of the biological _____ that regulate human body temperature",
+    "options": [
+      "categories",
+      "formulations",
+      "territories",
+      "mechanisms"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו20-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו20-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "The novels of Jeppe Aakjær describe the harsh conditions _____ by Danish farm workers in the late 19th century",
+    "options": [
+      "pursued",
+      "collided",
+      "endured",
+      "denied"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו20-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו20-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Though her work was _____ by many critics during her lifetime, Finnish-Swedish poet Edith Södergran is now highly regarded.",
+    "options": [
+      "indulged",
+      "dismissed",
+      "obtained",
+      "committed"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "סתיו20-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו20-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "Insects _____ 85 percent of the entire animal kingdom",
+    "options": [
+      "make up",
+      "stand by",
+      "bring up",
+      "keep out"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו20-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו20-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "New York City's Billion Oyster Project aims to _____ the oyster reefs that once covered the New York Harbor area.",
+    "options": [
+      "regret",
+      "resist",
+      "restore",
+      "relieve"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו20-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו20-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Although pesticides can be harmful to people of all ages, they are _____ more dangerous for babies and children than for adults.",
+    "options": [
+      "considerably",
+      "conveniently",
+      "preferably",
+      "precisely"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו20-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו20-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "American physician Charles Richard Drew actively opposed the _____ practice, common in the 1940s, of separating blood donations according to race .",
+    "options": [
+      "abbreviated",
+      "contemplative",
+      "fictitious",
+      "discriminatory"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו20-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו20-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "Pablo Picasso's career as an artist _____ seventy-eight years, from 1895 until his death in 1973.",
+    "options": [
+      "flipped",
+      "blinked",
+      "chanted",
+      "spanned"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו20-א2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו20-א2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "From 1929 until 1959, Cuba's legislative body _____ in the magnificent Capitolio building in Havana.",
+    "options": [
+      "gauged",
+      "perished",
+      "convened",
+      "discerned"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו20-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו20-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "The kookaburra is also known as the laughing jackass because its howls and _____ sound like laughter.",
+    "options": [
+      "realms",
+      "precepts",
+      "blunders",
+      "cackles"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו20-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו20-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "_____ by both terrorism and corruption, Peru has suffered from political instability since the middle of the twentieth century.",
+    "options": [
+      "Presumed",
+      "Plagued",
+      "Intrigued",
+      "Incorporated"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "סתיו21-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו21-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "A trundle bed is a small bed that can be _____ underneath a larger bed when not in use.",
+    "options": [
+      "trained",
+      "waved",
+      "pasted",
+      "stored"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו21-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו21-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "In ancient times, sailors navigated by _____ the sun's position in the sky.",
+    "options": [
+      "assisting",
+      "observing",
+      "intending",
+      "impressing"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "סתיו21-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו21-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Job applicants often need to _____ many forms.",
+    "options": [
+      "fill out",
+      "cut out",
+      "care for",
+      "try on"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו21-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו21-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "Even though an American one-dollar bill is made of a blend of _____ materials, it lasts an average of only 22 months.",
+    "options": [
+      "futile",
+      "durable",
+      "legible",
+      "portable"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "סתיו21-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו21-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Carpenters use square pencils, which do not _____ off surfaces.",
+    "options": [
+      "show",
+      "check",
+      "roll",
+      "brush"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו21-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו21-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "A good editor knows how to rephrase _____ worded sentences.",
+    "options": [
+      "awkwardly",
+      "enviously",
+      "sensibly",
+      "relatively"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו21-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו21-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "In 2014, archaeologists in Israel unearthed an ancient money box containing a _____ of 2,000-year-old coins buried in the remains of a Second Temple-period village .",
+    "options": [
+      "lease",
+      "scroll",
+      "blast",
+      "hoard"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו21-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו21-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Stonehenge, a circular arrangement of huge stones, is proof that prehistoric people were _____ moving very heavy loads.",
+    "options": [
+      "contradicted by",
+      "obedient to",
+      "capable of",
+      "grateful for"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו21-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו21-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Spirit and Opportunity, a pair of two-wheeled robotic _____, were sent to Mars in 2003 to gather data from the planet's surface.",
+    "options": [
+      "particles",
+      "consonants",
+      "fossils",
+      "vehicles"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו21-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו21-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Art Garfunkel studied architecture, art history, and mathematics before _____ a career in music.",
+    "options": [
+      "convincing",
+      "pursuing",
+      "scattering",
+      "escorting"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "סתיו21-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו21-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "The flag of the United Kingdom _____ three symbols, representing England, Scotland , and Ireland.",
+    "options": [
+      "incorporates",
+      "tramples",
+      "accelerates",
+      "exhales"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו21-א2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו21-א2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "In contrast to the European black truffle, which has a distinctive flavor, the Chinese variety is _____ tasteless.",
+    "options": [
+      "promptly",
+      "virtually",
+      "manually",
+      "consequently"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "סתיו21-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו21-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Cabbage and rice are both _____ of the Korean diet.",
+    "options": [
+      "bundles",
+      "staples",
+      "currents",
+      "postures"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "סתיו21-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו21-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "To ensure that a marigold bush in bloom will not _____ and die, its flowers must be cut before they produce seeds.",
+    "options": [
+      "pledge",
+      "menace",
+      "wither",
+      "clasp"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו23-א1:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו23-א1",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "Reluctant to exploit the renown of his already successful brother George, Ira Gershwin began his lyric-writing career under the assumed name of Arthur Francis.",
+    "options": [
+      "Ira Gershwin first wrote lyrics under the name Arthur Francis because he did not want to take advantage of his brother George's fame.",
+      "Determined to make his own way as a lyric writer, Ira Gershwin affiliated himself with Arthur Francis rather than with his famous brother, George Gershwin.",
+      "In order to avoid being confused with his well-known brother George, Ira Gershwin took the name Arthur Francis when he first started his career as a lyric writer.",
+      "Ira Gershwin was so intimidated by his brother George's success as a lyric writer that he took the pen name Arthur Francis to avoid unfavorable comparisons."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו23-א1:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו23-א1",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "The ruins of Pompeii, a city wiped out by a volcanic eruption in 79 C.E., were not excavated until 1748.",
+    "options": [
+      "In 1748, the remains of Pompeii – a city destroyed by a volcanic eruption in 79 C.E. – were finally unearthed.",
+      "Only in 1748 did it become known that the city of Pompeii had been devastated by a volcanic eruption in 79 C.E.",
+      "No serious attempts to study Pompeii – which was completely buried during a volcanic eruption in 79 C.E. – were made until 1748.",
+      "The city of Pompeii, which was evacuated during a volcanic eruption in 79 C.E., was rediscovered in 1748."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו23-א2:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו23-א2",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "In a 2014 _____ organized by a Los Angeles comedy club, Ismo Leikola won the title of \"funniest person in the world\".",
+    "options": [
+      "request",
+      "object",
+      "contest",
+      "margin"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו23-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו23-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "In many U.S. cities, small grocery stores have been _____ business by large supermarket chains, which offer a better selection and lower prices.",
+    "options": [
+      "put out of",
+      "pointed out to",
+      "singled out for",
+      "called up for"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו23-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו23-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "NASA worked with 15 countries on the construction of the International Space Station and is seeking even broader _____ for its Journey to Mars mission.",
+    "options": [
+      "abstinence",
+      "disruption",
+      "collaboration",
+      "intrigue"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו23-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו23-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Electric eels can generate a powerful electric current, which they use to _____ their prey.",
+    "options": [
+      "pry",
+      "stun",
+      "don",
+      "soak"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "סתיו23-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו23-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "Once_____ Rembrandt, Portrait of a Young Woman is now thought to be the work of Willem Drost.",
+    "options": [
+      "attributed to",
+      "confronted with",
+      "reconciled with",
+      "entrusted to"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו23-א2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו23-א2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "All the rivers that flow through Siberia _____ into the Arctic Sea.",
+    "options": [
+      "empty",
+      "offer",
+      "pause",
+      "stare"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו23-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו23-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "To reduce the cost of maintaining the White House grounds during World War I, President Woodrow Wilson brought a _____ of 48 sheep to graze on the lawn.",
+    "options": [
+      "peg",
+      "rift",
+      "flock",
+      "swamp"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו23-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו23-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "Toothpaste contains _____ ingredients which can help remove stains but can also damage a tooth's enamel.",
+    "options": [
+      "oblivious",
+      "imminent",
+      "abrasive",
+      "embellished"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו23-א2:9",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו23-א2",
+    "number": 9,
+    "type": "restatement",
+    "prompt": "The number of people elected to the House of Representatives from each U.S. state is proportionate to the state's population.",
+    "options": [
+      "Representatives from the largest states have a great deal of influence in the U.S. House of Representatives.",
+      "Every U.S. state, regardless of its size, is represented in the House of Representatives.",
+      "The procedure for electing members to the U.S. House of Representatives differs from state to state.",
+      "The larger the population of a U.S. state, the more representatives it has in the House of Representatives."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו23-א2:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו23-א2",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "It was not a foregone conclusion that English would become the dominant spoken language in North America.",
+    "options": [
+      "Although North America has many native languages, English has long been the main official language.",
+      "Though English is spoken throughout North America, there are many regional variations in the language.",
+      "It was only natural that the English spoken in North America would develop unique characteristics over time.",
+      "The eventual emergence of English as the most widely spoken language in North America was far from inevitable."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו23-א2:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו23-א2",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "Carl Sandburg's use of colloquialisms in his poetry challenged the conventions of his day.",
+    "options": [
+      "Poet Carl Sandburg favored everyday expressions over formal language.",
+      "The poetry of Carl Sandburg can teach us much about how language was used at the time.",
+      "Carl Sandburg went against accepted practice by using informal language in his poetry.",
+      "Carl Sandburg's original use of language was imitated by several of his contemporaries."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו23-א2:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו23-א2",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "Domestic and international investors are appropriating ever greater amounts of arable land in Mali.",
+    "options": [
+      "Investors from several countries are competing for what is left of Mali's uninhabited land.",
+      "In Mali, land that is suitable for farming is increasingly being lost to investors from home and abroad.",
+      "Much of the undeveloped land in Mali belongs to foreign investors or local government.",
+      "International and private investors have acquired much of Mali's prime real estate."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "סתיו24-א1-2:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1-2",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "Because dogs have upturned tails and wolves do not, biologist Carl Linnaeus _____ as different species in 1758.",
+    "options": [
+      "classifies both",
+      "decided to classify them",
+      "gave each classification",
+      "had classified"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "סתיו24-א1-2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1-2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "The _____ surrounding the death of Che Guevara, the Cuban revolutionary leader, are unknown.",
+    "options": [
+      "opportunities",
+      "restrictions",
+      "principles",
+      "circumstances"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו24-א1-2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1-2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Egyptian pharaoh Tutankhamun is often referred to as the Boy King because his _____ began when he was only nine years old.",
+    "options": [
+      "heir",
+      "strand",
+      "arch",
+      "reign"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו24-א1-2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1-2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "There is a wide range of _____ for which a hockey player may be sent off the ice.",
+    "options": [
+      "offenses",
+      "proposals",
+      "shelters",
+      "privileges"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו24-א1-2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1-2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "In the summer of 2003, Europe suffered a severe heat wave, with temperatures in southern Portugal reaching a _____ 48 degrees Celsius.",
+    "options": [
+      "sprawling",
+      "nocturnal",
+      "negligent",
+      "scorching"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו24-א1-2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1-2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Tensions in Central Asia are _____ as several countries compete for access to a dwindling supply of fresh water.",
+    "options": [
+      "mounting",
+      "rehearsing",
+      "nourishing",
+      "discounting"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו24-א1-2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1-2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "In northeastern India, fires ignited in a coal mine almost a century ago are still _____ deep below the earth's surface.",
+    "options": [
+      "grimacing",
+      "protruding",
+      "reclining",
+      "smoldering"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו24-א1-2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1-2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "Evergreens are _____ trees, able to thrive in the most inhospitable conditions.",
+    "options": [
+      "frivolous",
+      "devious",
+      "tenacious",
+      "hilarious"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו24-א1-2:9",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1-2",
+    "number": 9,
+    "type": "restatement",
+    "prompt": "A man cannot be comfortable without his own approval. (Mark Twain)",
+    "options": [
+      "Self-respect comes from having respect for others.",
+      "Well-being is possible only for those who accept themselves.",
+      "It is difficult to respect people who do not respect themselves.",
+      "Knowing oneself is the first step towards liking oneself."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "סתיו24-א1-2:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1-2",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "Physicist Murray Gell-Mann conducted groundbreaking research in the 1960s on a class of elementary particles that came to be known as quarks.",
+    "options": [
+      "A group of elementary particles, later called quarks, was the subject of pioneering work done by Murray Gell-Mann.",
+      "In 1960, Murray Gell-Mann named the elementary particles he discovered quarks.",
+      "Murray Gell-Mann began his innovative study on quarks and other elementary particles in the 1960s.",
+      "A noteworthy study by Murray Gell-Mann on elementary particles known as quarks established him as the leading physicist of his day."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו24-א1-2:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1-2",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "Livy was unique among Roman historians in that he played no part in politics.",
+    "options": [
+      "Livy's political views were not reflected in his historical writings.",
+      "Livy was one of the few Roman historians with no political background.",
+      "Livy was the only Roman historian who was not involved in politics.",
+      "Livy's historical writings do not relate to Roman politics."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו24-א1-2:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1-2",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "In June 1977, the Royal Geographical Society embarked on a 15-month inventory of the flora and fauna in Borneo's Gunung Mulu National Park.",
+    "options": [
+      "In June 1977, the Royal Geographical Society recommended that the flora and fauna found in Gunung Mulu National Park be given protected status for 15 months.",
+      "The Royal Geographical Society's study of the flora and fauna in Borneo's Gunung Mulu National Park took 15 months longer than expected.",
+      "Borneo's Gunung Mulu National Park was reopened in June 1977 after the Royal Geographical Society spent 15 months restoring the park's flora and fauna.",
+      "A list of the flora and fauna in Gunung Mulu National Park was prepared by the Royal Geographical Society over a period of 15 months, beginning in June 1977."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו24-א1:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "_____ evidence to the contrary, many people believe that men are better drivers than women.",
+    "options": [
+      "Despite",
+      "Unless",
+      "Following",
+      "Perhaps"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו24-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Anthony Blunt was stripped of his knighthood by Queen Elizabeth when _____ he had spied for the Soviet Union.",
+    "options": [
+      "he was convicted of",
+      "he confessed to",
+      "it became known that",
+      "that was discovered"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו24-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Huge profits from the sale of avocadoes in New Zealand have _____ a wave of thefts from avocado orchards.",
+    "options": [
+      "caught up with",
+      "looked forward to",
+      "given rise to",
+      "kept away from"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו24-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Crows are known to hold a _____, remembering and showing aggression toward crows that have hurt them in the past.",
+    "options": [
+      "blunder",
+      "detour",
+      "grudge",
+      "hurdle"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו24-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "In 2000, the 170-meter tall Washington Monument underwent extensive _____ to repair broken marble blocks, remove stains, and replace windows.",
+    "options": [
+      "revelations",
+      "renovations",
+      "resolutions",
+      "recollections"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "סתיו24-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Martin Luther King Jr.'s \"I Have a Dream\" speech is considered one of the most important _____ in U.S. history.",
+    "options": [
+      "objections",
+      "evictions",
+      "orations",
+      "escalations"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו24-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "_____ regulations prohibit the construction of office buildings in residential neighborhoods.",
+    "options": [
+      "Zoning",
+      "Tracing",
+      "Granting",
+      "Hiring"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו24-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "As a result of drought, land clearing, and wildfires, Australia's koala population has _____ by 30 percent since 2018.",
+    "options": [
+      "invoked",
+      "embellished",
+      "conceded",
+      "plunged"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו24-א1:9",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1",
+    "number": 9,
+    "type": "restatement",
+    "prompt": "The story of Don Quixote implies that fiction and historical truth are frequently indistinguishable.",
+    "options": [
+      "Don Quixote suggests that it is often impossible to tell the difference between fact and fiction.",
+      "Like many great works of fiction, Don Quixote is based primarily on actual historical events.",
+      "Some parts of Don Quixote are totally fictional, while others are rooted in historical fact.",
+      "There is more fiction than fact in Don Quixote."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו24-א1:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "The permanent shutdown of Greyhound bus service in Canada has exacerbated the accessibility problem faced by the country's rural communities.",
+    "options": [
+      "Rural communities in Canada are protesting the closure of the Greyhound bus company.",
+      "Greyhound buses no longer service some of Canada's most remote locations due to poor infrastructure.",
+      "Due to reduced demand among rural customers, the Greyhound bus company has cancelled many of its Canadian routes.",
+      "Travel has become even more difficult for people living in the Canadian countryside since Greyhound bus service was discontinued there."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו24-א1:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "Throughout his career, astrophysicist Charles Greeley Abbot sought to demonstrate that fluctuations in the Sun's energy emissions have a quantifiable effect on Earth's weather.",
+    "options": [
+      "After many years of research, Abbot concluded that the forces that cause variations in the Sun's energy levels are also responsible for changes in the weather on Earth.",
+      "Abbot never managed to conclusively determine how energy released by the Sun influences Earth's weather.",
+      "Abbot spent his career arguing that the Sun's energy emissions have a negligible effect on the weather on Earth.",
+      "Abbot never stopped trying to prove that Earth's weather is measurably affected by changes in the Sun's energy output."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו24-א1:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו24-א1",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "The works showcased at the International Exhibition of Modern Decorative and Industrial Arts, held in Paris in 1925, epitomized the Art Deco movement.",
+    "options": [
+      "The 1925 International Exhibition of Modern Decorative and Industrial Arts in Paris was organized in order to promote Art Deco artists.",
+      "The International Exhibition of Modern Decorative and Industrial Arts, held in Paris in 1925, featured exceptional Art Deco works.",
+      "The pieces which attracted the most attention at the International Exhibition of Modern Decorative and Industrial Arts, held in Paris in 1925, were those created in the Art Deco style.",
+      "The exhibits at the 1925 International Exhibition of Modern Decorative and Industrial Arts in Paris captured the essence of the Art Deco style."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו25-א1:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו25-א1",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "In his preface to Samson Agonistes, John Milton wrote that the work was never _____ for the stage but was meant to be read aloud.",
+    "options": [
+      "exploited",
+      "distracted",
+      "intended",
+      "pursued"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו25-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו25-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "In 1875, Montgomery Ward became the first retail company to _____ \"satisfaction or your money back\".",
+    "options": [
+      "postpone",
+      "manufacture",
+      "compliment",
+      "guarantee"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו25-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו25-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Hypnosis puts a person into a _____: a relaxed, focused state between sleep and wakefulness.",
+    "options": [
+      "thaw",
+      "vein",
+      "remedy",
+      "trance"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו25-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו25-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "The planet Neptune was discovered _____ mathematical calculations before it was observed through a telescope.",
+    "options": [
+      "by means of",
+      "in spite of",
+      "on behalf of",
+      "instead of"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו25-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו25-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "Thousands of refugees _____ to Belize in 1847 to escape the War of the Castes in neighboring Mexico.",
+    "options": [
+      "burst",
+      "swore",
+      "fled",
+      "held"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו25-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו25-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Guilbert de Pixérécourt, a _____ 19th-century dramatist, wrote more than a hundred plays.",
+    "options": [
+      "futile",
+      "dormant",
+      "prolific",
+      "negligent"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו25-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו25-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Potatoes are an ideal vegetable to grow when working within the _____ of a small space.",
+    "options": [
+      "confines",
+      "ripples",
+      "drifts",
+      "pillars"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "סתיו25-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו25-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "Wearing glasses with tinted lenses can _____ the eye strain caused by fluorescent lighting.",
+    "options": [
+      "reimburse",
+      "admonish",
+      "transgress",
+      "mitigate"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו25-א1:9",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו25-א1",
+    "number": 9,
+    "type": "restatement",
+    "prompt": "The Morikami Museum and Japanese Gardens is an oasis of tranquility in the heart of bustling Delray Beach, Florida.",
+    "options": [
+      "Residents of Delray Beach take pride in the understated beauty that the Morikami Museum and Japanese Gardens lends their town.",
+      "Delray Beach was chosen as the site for the Morikami Museum and Japanese Gardens because of its sprawling landscape.",
+      "The Morikami Museum and Japanese Gardens is a peaceful spot in the middle of lively Delray Beach.",
+      "The magnificent Morikami Museum and Japanese Gardens is located in a busy suburb of Delray Beach."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "סתיו25-א1:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו25-א1",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "During World War II, Prime Minister Winston Churchill's exceptional oratorical skills were instrumental in reassuring the despondent British public.",
+    "options": [
+      "It was Churchill's extraordinary leadership that steered Britain through the most difficult years of World War II.",
+      "During World War II, Churchill's remarkable rhetorical abilities played an important role in lifting the British public out of its despair.",
+      "Churchill's military experience reassured the British people that he was well suited to lead the country during World War II.",
+      "Churchill's inexhaustible optimism enabled him to soothe the fears of the British people throughout World War II."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "סתיו25-א1:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו25-א1",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "The maritime transport of pistachio nuts is subject to stringent packing and storing guidelines because these nuts have been known to self-ignite.",
+    "options": [
+      "Pistachio nuts cultivated for export are genetically modified to extend their shelf life and withstand long-distance shipping.",
+      "Special precautions must be taken when sorting, packaging, and transporting pistachio nuts as they can spoil very easily.",
+      "Pistachio nuts, which are very fragile, are carefully packed and stored so that they reach their destination undamaged.",
+      "Pistachio nuts can catch fire spontaneously, which is why the conditions under which they are shipped are strictly regulated."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "סתיו25-א1:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "סתיו25-א1",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "Shah Jahan's opulent ways depleted the coffers of the Mughal Empire.",
+    "options": [
+      "Shah Jahan's stubborn refusal to heed the warnings of his advisors led to the fall of the Mughal Empire.",
+      "Shah Jahan's extravagant lifestyle drained the Mughal Empire of its wealth.",
+      "A brilliant military strategist, Shah Jahan doubled the size of the Mughal Empire.",
+      "The benevolence of Shah Jahan made him the most revered ruler of the Mughal Empire."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ-21-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ-21-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "The smell of a skunk can be _____ from as far away as two kilometers.",
+    "options": [
+      "arranged",
+      "commanded",
+      "detected",
+      "insulted"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ-21-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ-21-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Michelangelo _____ his name on only one of his sculptures, the Pietà.",
+    "options": [
+      "invested",
+      "carved",
+      "adored",
+      "narrated"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ-21-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ-21-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "The film Stuart Little bears surprisingly little _____ to the children's book on which it is based.",
+    "options": [
+      "perspective",
+      "subscription",
+      "resemblance",
+      "incentive"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ-21-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ-21-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "The protagonist of Dostoevsky's novel Crime and Punishment is a student named Raskolnikov who commits murder and is then tormented by his guilty _____.",
+    "options": [
+      "persistence",
+      "conscience",
+      "prominence",
+      "convenience"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ-21-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ-21-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Nuclear plants must _____ strict safety procedures in the production of energy and the disposal of waste.",
+    "options": [
+      "deduct from",
+      "retreat into",
+      "triumph over",
+      "adhere to"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ-21-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ-21-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "The Incas constructed an _____ system of roads and bridges that connected all parts of their huge empire.",
+    "options": [
+      "extensive",
+      "accurate",
+      "exclusive",
+      "affectionate"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ-21-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ-21-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "In the state of Vermont, early spring – when the frozen soil _____– is called \"mud season\".",
+    "options": [
+      "plucks",
+      "growls",
+      "hauls",
+      "thaws"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ-21-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ-21-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "The online program in management launched by the Indian Institute of Management Ahmedabad in January 2017 received an _____ response: within three months, more than 2,000 people expressed interest in registering for it.",
+    "options": [
+      "amateur",
+      "enthusiastic",
+      "ignorant",
+      "obedient"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ-21-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ-21-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Queen Liliuokalani, the last reigning _____ of Hawaii, died on November 11, 1917.",
+    "options": [
+      "peasant",
+      "sibling",
+      "nomad",
+      "monarch"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ-21-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ-21-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Once a powerful city-state, Carthage is today _____ a suburb of the city of Tunis.",
+    "options": [
+      "urgently",
+      "gradually",
+      "initially",
+      "merely"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ-21-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ-21-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "Commercial airline pilots are particularly _____ cataracts because their eyes are exposed to dangerous amounts of radiation.",
+    "options": [
+      "stunned by",
+      "skilled with",
+      "prone to",
+      "fond of"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ-21-א2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ-21-א2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "People often _____ discomfort for the sake of etiquette.",
+    "options": [
+      "revive",
+      "endure",
+      "exploit",
+      "redeem"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ-21-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ-21-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Archaeologists have _____ a 2,000-year-old medical kit from a shipwreck off the coast of Tuscany.",
+    "options": [
+      "salvaged",
+      "funded",
+      "outlawed",
+      "hindered"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ-21-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ-21-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "The Miao people of southeast Asia wear embroidered garments that tell the stories of their ancestors in _____.",
+    "options": [
+      "thread",
+      "half",
+      "range",
+      "paste"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ20-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ20-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "A camel closes its nostrils to _____ breathing in sand.",
+    "options": [
+      "avoid",
+      "bend",
+      "afford",
+      "balance"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ20-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ20-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Beethoven's hearing began to _____ when he was a young man, and by age 44 he was completely deaf",
+    "options": [
+      "designate",
+      "incorporate",
+      "deteriorate",
+      "navigate"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ20-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ20-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "The Aztec city of Tenochtitlan boasted a complex _____ of bridges, canals, and islands.",
+    "options": [
+      "cornerstone",
+      "highway",
+      "homeland",
+      "network"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ20-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ20-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "The American comic strip Dennis the Menace _____ on March 12, 1951, to almost instant success.",
+    "options": [
+      "debuted",
+      "hinted",
+      "patrolled",
+      "resolved"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ20-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ20-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Thomas Edison's kinetoscope, the first device that generated moving pictures, was a _____ in the history of the film industry.",
+    "options": [
+      "pathway",
+      "perspective",
+      "milestone",
+      "commitment"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ20-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ20-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Between 2014 and 2017, a military court in Cameroon repeatedly _____ journalists from reporting information considered harmful to national security.",
+    "options": [
+      "barred",
+      "stunned",
+      "tilted",
+      "frayed"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ20-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ20-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "Despite the fact that kingfish are _____ in Hawke's Bay, New Zealand, local fishermen are not able to catch many of these fast-swimming fish",
+    "options": [
+      "profound",
+      "abundant",
+      "elaborate",
+      "wholesome"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ20-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ20-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "The science of physics is divided into specialized _____including mechanics, acoustics and optics.",
+    "options": [
+      "marks",
+      "fields",
+      "sides",
+      "points"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ20-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ20-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Every spring, tens of thousands of horseshoe crabs come _____ to lay their eggs on the beaches of Delaware Bay.",
+    "options": [
+      "ajar",
+      "ashore",
+      "aboard",
+      "ablaze"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ20-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ20-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "In the United States, sales of red wine _____ following the publication of studies which suggested that it might help prevent heart disease.",
+    "options": [
+      "healed",
+      "split",
+      "rose",
+      "departed"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ20-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ20-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "Scientists have succeeded in _____ some toxic plants for medicinal purposes.",
+    "options": [
+      "utilizing",
+      "absorbing",
+      "magnifying",
+      "reciting"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ20-א2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ20-א2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "In 2015, scientists finally detected gravitational waves, the small movements in space and time _____ by Albert Einstein a century earlier.",
+    "options": [
+      "hypothesized",
+      "transformed",
+      "alternated",
+      "interceded"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ20-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ20-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Many people are drawn to northern Canada by the rugged splendor of its _____ wilderness.",
+    "options": [
+      "undermined",
+      "indisposed",
+      "untamed",
+      "inflamed"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ20-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ20-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "Persecuted for their religious beliefs, 40,000 Huguenots _____ their native France between 1670 and 1710 to seek refuge in England.",
+    "options": [
+      "wove",
+      "swept",
+      "fled",
+      "bound"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ2026-א1:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א1",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "To escape persecution in his native France, radical reformer Etienne Cabet _____ England in 1834 .",
+    "options": [
+      "clung",
+      "fled",
+      "rose",
+      "wore"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ2026-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Geese ____ energy by flying in a V-shaped formation, which reduces wind resistance.",
+    "options": [
+      "conserve",
+      "confront",
+      "conceal",
+      "convict"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ2026-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "The US Federal Motor Carrier Safety Administration requires truck drivers to take regular breaks to ensure that they remain _____ on the road.",
+    "options": [
+      "remote",
+      "barren",
+      "implicit",
+      "alert"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ2026-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "The Fugger family, prominent 16th-century bankers, used some of the wealth they had ______ to build a housing project for the working poor.",
+    "options": [
+      "discouraged",
+      "accumulated",
+      "scheduled",
+      "consoled"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ2026-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "Canada's lakes and rivers provide hydroelectric power for both _____ consumption and export.",
+    "options": [
+      "domestic",
+      "incidental",
+      "pedestrian",
+      "voluntary"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ2026-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Some people are able to _____ in writing feelings that they would find hard to express in conversation.",
+    "options": [
+      "convey",
+      "deprive",
+      "commend",
+      "devour"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ2026-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Singer Harry Belafonte was involved in various social ____, most notably the struggle for civil rights in the United States.",
+    "options": [
+      "causes",
+      "methods",
+      "sources",
+      "traces"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ2026-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "The ____ Adalar islands, off the coast of Istanbul, offer a respite from the hustle and bustle of the city.",
+    "options": [
+      "reverent",
+      "tranquil",
+      "blatant",
+      "haggard"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ2026-א1:9",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א1",
+    "number": 9,
+    "type": "restatement",
+    "prompt": "Remembrance Day has been observed in Commonwealth member states on November 11th since 1919.",
+    "options": [
+      "In 1919, Commonwealth member states chose November 11th as the date for Remembrance Day.",
+      "November 11th is a day of remembrance in most Commonwealth countries.",
+      "Every year since 1919, Commonwealth member countries have marked November 11th as Remembrance Day.",
+      "Remembrance Day is observed on November 11th only by countries that belonged to the Commonwealth in 1919."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ2026-א1:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א1",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "The European Central Bank has authorized the printing of Zero Euro banknotes to be sold as keepsakes.",
+    "options": [
+      "The Zero Euro banknotes printed by the European Central Bank are highly valued by collectors.",
+      "The European Central Bank has introduced a new banknote, the Zero Euro.",
+      "The production of souvenir Zero Euro banknotes has been officially approved by the European Central Bank.",
+      "The European Central Bank has warned that counterfeit Zero Euro banknotes are being circulated."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ2026-א1:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א1",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "Huangshan pines are tenacious trees that thrive in the inhospitable mountains of eastern China.",
+    "options": [
+      "The prized Huangshan pine tree is endemic to the majestic mountains of eastern China.",
+      "The towering Huangshan pine tree is rarely seen in the mountains of eastern China, where it once grew in abundance.",
+      "The hardy Huangshan pine tree flourishes in the mountains of eastern China despite the harsh conditions there.",
+      "The Huangshan pine is an ancient species of tree still found in the highest mountains of eastern China."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ2026-א1:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א1",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "Research on the landscape surrounding a recently erupted volcano has challenged conventional notions about how ecosystems respond to disturbance.",
+    "options": [
+      "Recent studies on the recovery of ecosystems following a major disturbance have shed new light on how to protect the landscape in the wake of a volcanic eruption.",
+      "The regeneration of disrupted ecosystems, such as the restoration of the landscape around a recently erupted volcano, is a topic that warrants further research.",
+      "Research on the area surrounding a volcano soon after eruption suggests that widely accepted ideas about the effects of dramatic change on an ecosystem may not be true.",
+      "By examining the impact of a volcanic eruption on the surrounding landscape, researchers are hoping to understand why some ecosystems fail to recover from catastrophic events."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ2026-א2:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א2",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "The Hindu-Arabic number system is used almost ____ today, having replaced the Roman number system in the 15th century.",
+    "options": [
+      "fortunately",
+      "universally",
+      "reasonably",
+      "exceptionally"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ2026-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "French philosopher Jean-Jacques Rousseau believed that people are born good but become _____ by the evils of society.",
+    "options": [
+      "committed",
+      "perceived",
+      "corrupted",
+      "preceded"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ2026-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "The _____ of a carnivorous dinosaur discovered in Argentina in 2020 is now on display at a museum in Buenos Aires.",
+    "options": [
+      "stunt",
+      "veil",
+      "fossil",
+      "clasp"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ2026-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "As punishment for his misdeeds, the Greek mythological figure Sisyphus was_____ to push a boulder up a hill every day for eternity.",
+    "options": [
+      "possessed",
+      "condemned",
+      "betrayed",
+      "justified to"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ2026-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "When the production of milk exceeds consumption, the ____ is used to make cheese.",
+    "options": [
+      "comeback",
+      "aftermath",
+      "incline",
+      "surplus"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ2026-א2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "The ____ in most detective novels is a tough and resourceful investigator.",
+    "options": [
+      "philanthropist",
+      "pharmacist",
+      "pessimist",
+      "protagonist"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ2026-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "When entering a village in Fiji, it is customary for visitors to offer a bundle of kava roots to the village chief as a _____ of respect.",
+    "options": [
+      "plight",
+      "token",
+      "clutter",
+      "grimace"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ2026-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "In 1956, the small town of Sutherland, Canada, was _____ by the nearby city of Saskatoon, thus increasing the latter's size.",
+    "options": [
+      "annexed",
+      "neglected",
+      "engraved",
+      "triggered"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ2026-א2:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א2",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "To be classified as a hurricane, a storm must develop winds of over 120 kilometers per hour.",
+    "options": [
+      "A storm with winds of over 120 kilometers per hour usually develops into a hurricane.",
+      "The strongest hurricanes have wind speeds of 120 kilometers per hour or more.",
+      "Hurricanes are fierce storms with winds that can reach 120 kilometers per hour.",
+      "A storm with winds stronger than 120 kilometers per hour is considered a hurricane."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ2026-א2:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א2",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "The infiltration of the Mediterranean Sea by Red Sea aquatic species via the Suez Canal is known as Lessepsian migration.",
+    "options": [
+      "The term Lessepsian migration refers to the movement of marine species from the Red Sea to the Mediterranean Sea by way of the Suez Canal.",
+      "The construction of the Suez Canal resulted in Lessepsian migration, the invasion of Mediterranean waters by fish species from the Red Sea.",
+      "During Lessepsian migration, marine animals from the Mediterranean Sea cross the Suez Canal into the Red Sea.",
+      "The Suez Canal allows aquatic life forms to travel from the Red Sea to the Mediterranean Sea and vice versa, a phenomenon called Lessepsian migration."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ2026-א2:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ2026-א2",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "Epicurean philosophy conceived of the gods as wholly indifferent to human beings.",
+    "options": [
+      "Epicurean philosophers held that the gods were not so different from human beings.",
+      "The tension between gods and human beings was a central concern of Epicurean philosophers.",
+      "According to Epicurean philosophy, human beings were of no interest at all to the gods.",
+      "Epicurean philosophy believed human beings were completely controlled by the gods."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ22-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ22-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Sir Arthur Conan Doyle, author of the Sherlock Holmes detective stories, was a physician by _____",
+    "options": [
+      "provision",
+      "procession",
+      "promotion",
+      "profession"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ22-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ22-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "The term \"heart failure\" does not mean that the heart has stopped working completely, but rather that its ability to function has _____.",
+    "options": [
+      "assimilated",
+      "subscribed",
+      "diminished",
+      "proclaimed"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ22-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ22-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "The burial places of Egyptian pharaohs range from _____ tombs to elaborate pyramids.",
+    "options": [
+      "previous",
+      "hesitant",
+      "modest",
+      "capable"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ22-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ22-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "French Impressionist painter Claude Monet sometimes used the small, dot-like brushstrokes later _____ the pointillist school of painting.",
+    "options": [
+      "surrounded by",
+      "associated with",
+      "occupied by",
+      "dependent on"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ22-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ22-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "The Akkadian language had twenty consonants and eight _____.",
+    "options": [
+      "margins",
+      "vowels",
+      "formats",
+      "scales"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ22-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ22-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Poaching by Chinese fishermen in Japanese territorial waters has become a source of _____ between Beijing and Tokyo.",
+    "options": [
+      "eminence",
+      "friction",
+      "heresy",
+      "coherence"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ22-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ22-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "Seeking to expose the grim conditions at Blackwell's Island asylum, journalist Nellie Bly _____ insanity in order to gain entry to the institution.",
+    "options": [
+      "redeemed",
+      "trampled",
+      "pruned",
+      "feigned"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ22-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ22-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Freeman Dyson is known both for his research in quantum physics and for his important _____ to public awareness of scientific issues.",
+    "options": [
+      "exaggeration",
+      "contribution",
+      "reproduction",
+      "superstition"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ22-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ22-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Twenty years after it was built, the Roman settlement Londinium was burned to the ground during an _____ led by the Celtic queen Boudicca.",
+    "options": [
+      "offspring",
+      "uprising",
+      "insight",
+      "exhibit"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ22-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ22-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Many novelists who admire Stephen King's fiction have tried to _____ his writing style.",
+    "options": [
+      "ascend",
+      "certify",
+      "emulate",
+      "supervise"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ22-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ22-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "The slow, flowing movements of the Silk Weaving Dance make this traditional folkdance from northern Thailand particularly _____.",
+    "options": [
+      "invasive",
+      "graceful",
+      "abundant",
+      "hostile"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ22-א2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ22-א2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Between 1959 and 1961, China was _____ by a drought that caused severe food shortages.",
+    "options": [
+      "smuggled",
+      "plagued",
+      "furnished",
+      "boosted"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ22-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ22-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "A full year after a powerful earthquake struck Wellington, New Zealand in 2016, buildings deemed to be unsafe were still being _____.",
+    "options": [
+      "accelerated",
+      "bestowed",
+      "interrogated",
+      "demolished"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ22-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ22-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "In March 2021, after three days of heavy rain, the _____ Parramatta River in Sydney burst its banks.",
+    "options": [
+      "wholesome",
+      "persuasive",
+      "swollen",
+      "grateful"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ23-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ23-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "to visit _____ areas …require special permits",
+    "options": [
+      "edited",
+      "convicted",
+      "restricted",
+      "distracted"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ23-א2:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ23-א2",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "The Bayeux Tapestry yields invaluable insights into the medieval period.",
+    "options": [
+      "Our understanding of the medieval period has been advanced beyond measure by the Bayeux Tapestry.",
+      "The Bayeux Tapestry, a priceless work of art, is emblematic of the rich artistic legacy of the medieval period.",
+      "The accuracy of the Bayeux Tapestry's depiction of momentous events in the medieval period is unparalleled.",
+      "The Bayeux Tapestry has been scrutinized painstakingly by scholars of medieval history."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ24-אנגלית-1:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית-1",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "The walrus uses its whiskers to ____ shellfish hidden on the ocean floor.",
+    "options": [
+      "detect",
+      "forbid",
+      "praise",
+      "recall"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ24-אנגלית-1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית-1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "With the capacity to generate 2.4 million kilowatts, the Niagara Power Project is the largest ____ of electricity to New York State.",
+    "options": [
+      "forecaster",
+      "supplier",
+      "inspector",
+      "editor"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ24-אנגלית-1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית-1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "According to world aviation officials, 2017 was ____ to date for commercial air travel.",
+    "options": [
+      "the safest year",
+      "safely considered",
+      "particularly safe",
+      "a safer year"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ24-אנגלית-1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית-1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "DNA evidence has been used to clear people ____ convicted of crimes.",
+    "options": [
+      "easily",
+      "wrongly",
+      "mostly",
+      "finally"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ24-אנגלית-1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית-1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "In October 2000, the Bill and Melinda Gates Foundation set up a scholarship fund at Cambridge University to ____ the tuition of international graduate students.",
+    "options": [
+      "visualize",
+      "intimidate",
+      "subsidize",
+      "emulate"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ24-אנגלית-1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית-1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Although alpaca farmers trim their animals' wool regularly, they only ____ them completely once every two years.",
+    "options": [
+      "merge",
+      "bait",
+      "shear",
+      "crease"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ24-אנגלית-1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית-1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "Muslims are required to make a ____ to the holy city of Mecca at least once in their lifetime, if they have the means to do so.",
+    "options": [
+      "precedent",
+      "principle",
+      "portfolio",
+      "pilgrimage"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ24-אנגלית-1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית-1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "In response to the Soviet Union's increasingly ____ stance towards dissidents, physicist Andrei Sakharov became active in the human rights movement.",
+    "options": [
+      "reverent",
+      "repressive",
+      "sanitary",
+      "subsequent"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ24-אנגלית-1:9",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית-1",
+    "number": 9,
+    "type": "restatement",
+    "prompt": "Ladybugs prey on pests and hence are beneficial to gardens.",
+    "options": [
+      "Like other pests, ladybugs damage the plants in a garden.",
+      "Ladybugs, which eat harmful insects, are helpful in gardens.",
+      "Ladybugs feed on garden plants and on other insects.",
+      "The presence of ladybugs in a garden keeps pests away."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ24-אנגלית-1:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית-1",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "Composer and conductor Leonard Bernstein was tireless in his efforts to bring classical music to a wider audience.",
+    "options": [
+      "Bernstein's many admirers never tired of his classical compositions.",
+      "Bernstein's classical music appealed to many different types of audiences.",
+      "Bernstein adapted classical compositions with the aim of making them more popular.",
+      "Bernstein dedicated himself to making classical music accessible to more people."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ24-אנגלית-1:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית-1",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "The 16th-century political philosopher Machiavelli was adamant that political morality is not bound by ethical norms.",
+    "options": [
+      "Machiavelli argued that, by their very nature, politicians are bound to behave unethically.",
+      "According to Machiavelli, politicians have a moral obligation to serve as examples of ethical behavior.",
+      "Machiavelli insisted that the ethical norms governing life do not apply to politics.",
+      "Although politics has few ethical norms, there are certain moral boundaries that politicians must not cross, according to Machiavelli."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ24-אנגלית-1:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית-1",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "Italian tenor Enrico Caruso made his American debut in a production of Verdi's Rigoletto at the Metropolitan Opera.",
+    "options": [
+      "Enrico Caruso's first performance in the United States was at the Metropolitan Opera in Verdi's Rigoletto.",
+      "Enrico Caruso's first starring role was in the Metropolitan Opera's production of Verdi's Rigoletto.",
+      "Verdi's Rigoletto debuted in the United States at the Metropolitan Opera and featured Enrico Caruso.",
+      "Enrico Caruso appeared in Verdi's Rigoletto at the opening of the Metropolitan Opera."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ24-אנגלית2:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית2",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "The Amish people are ____: they believe that war is immoral.",
+    "options": [
+      "martyrs",
+      "scribes",
+      "fugitives",
+      "pacifists"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ24-אנגלית2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Many manufacturing companies offer small promotional gifts in order to ____ sales of their products.",
+    "options": [
+      "hint",
+      "boost",
+      "sift",
+      "weave"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ24-אנגלית2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "In 1929, English explorer Vivian Ernest Fuchs participated in a geological ____ to eastern Greenland.",
+    "options": [
+      "hypothesis",
+      "expedition",
+      "conversion",
+      "acquaintance"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ24-אנגלית2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "Cigarette smoke ____ a toxic residue on furniture and clothing that is referred to as third-hand smoke.",
+    "options": [
+      "finds",
+      "pulls",
+      "leaves",
+      "rides"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ24-אנגלית2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "The famed Sydney Opera House has a distinct shape that makes it ____ .",
+    "options": [
+      "immediate recognition",
+      "recognize right away",
+      "possibly recognizing",
+      "instantly recognizable"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ24-אנגלית2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "In order for ____ results to be obtained, scientific experiments must be conducted under strictly controlled conditions.",
+    "options": [
+      "heightened",
+      "tasteful",
+      "meaningful",
+      "straightened"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ24-אנגלית2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "The 200-mile-long River Thames is ____ with hundreds of small islands.",
+    "options": [
+      "dotted",
+      "prized",
+      "stripped",
+      "faced"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ24-אנגלית2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "The most ____ feature of the Erechtheum temple in Athens is its southern portion, which showcases six sculpted female figures.",
+    "options": [
+      "reciprocal",
+      "negligent",
+      "adverse",
+      "striking"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ24-אנגלית2:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית2",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "Biologists have studied the mating rituals of only a small percentage of the roughly 12,000 known species of butterflies.",
+    "options": [
+      "The mating rituals of nearly 12,000 different species of butterflies have been studied by biologists.",
+      "More than 12,000 studies on butterflies have been conducted by biologists; only a small percentage explore mating rituals.",
+      "Approximately 12,000 species of butterflies have been identified, but biologists have studied the mating rituals of relatively few of them.",
+      "According to biologists, there are only small variations in the mating rituals of the 12,000 known species of butterflies."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ24-אנגלית2:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ24-אנגלית2",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "Following years of stagnation, the city of Duluth, Minnesota, is poised for a period of prosperity.",
+    "options": [
+      "The prosperity currently enjoyed by Duluth is expected to continue.",
+      "As Duluth expands, it is becoming an increasingly attractive urban center.",
+      "Duluth's recent change of leadership promises to stimulate development.",
+      "Duluth's financial future is looking bright after a long economic standstill."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ25-א1:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א1",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "Peanut butter was once considered a _____ and served only in the finest restaurants.",
+    "options": [
+      "vision",
+      "hybrid",
+      "ritual",
+      "delicacy"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ25-א1:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א1",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Coral is sometimes used to replace human bone in facial _____ surgery.",
+    "options": [
+      "reconstructive",
+      "prevalent",
+      "receptive",
+      "subordinate"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ25-א1:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א1",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Mycenaean, an early form of Greek, was written in a _____ known as Linear B.",
+    "options": [
+      "script",
+      "gesture",
+      "treaty",
+      "creed"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ25-א1:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א1",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "The waters of Italy's Aniene River have been _____ into irrigation canals and aqueducts, reducing its once impressive waterfall to a small trickle.",
+    "options": [
+      "afflicted",
+      "depicted",
+      "diverted",
+      "conceded"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ25-א1:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א1",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "In 2020, sub-Saharan Africa was _____ affected by malaria, with 95% of the world’s cases occurring there.",
+    "options": [
+      "confidentially",
+      "retroactively",
+      "dis proportionately",
+      "residually"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ25-א1:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א1",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Once plentiful in North America, freshwater fish have become _____ in recent years.",
+    "options": [
+      "damp",
+      "humble",
+      "scarce",
+      "crude"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ25-א1:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א1",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "According to the Montessori educational method, children who are _____ in a task should not be interrupted.",
+    "options": [
+      "relieved",
+      "pardoned",
+      "convinced",
+      "absorbed"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ25-א1:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א1",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "Certain theories in quantum physics can be neither proven nor _____.",
+    "options": [
+      "refuted",
+      "recited",
+      "prolonged",
+      "provoked"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ25-א1:9",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א1",
+    "number": 9,
+    "type": "restatement",
+    "prompt": "The artistic genius of Vivian Maier was revealed only following her death, when her thousands of remarkable photographs came to light.",
+    "options": [
+      "Vivian Maier's large collection of photographs was exhibited only after her death.",
+      "The photographs of Vivian Maier, who died at the height of her career, reveal her unique artistic eye.",
+      "It wasn't until Vivian Maier died that her many extraordinary photographs were discovered and her great talent was acknowledged.",
+      "Vivian Maier's thousands of photographs, most of which were taken towards the end of her life, are admired by many art critics."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ25-א1:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א1",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "An economic slump is often the harbinger of a recession.",
+    "options": [
+      "The longer a recession persists, the more severe its repercussions.",
+      "Economic crises and recessions are usually inevitable.",
+      "A recession is a particularly acute economic slump.",
+      "In many cases, a recession is heralded by a period of economic decline."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ25-א1:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א1",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "Achieving literacy in Japanese, which uses multiple alphabets, is a formidable undertaking for non-native speakers.",
+    "options": [
+      "Japanese is not easy to write because each of the characters that make up the alphabet is so complex.",
+      "The Japanese alphabet consists of so many characters that non-native speakers find it almost impossible to master reading and writing.",
+      "Because Japanese has more than one alphabet, speakers of other languages find learning to read and write the language very challenging.",
+      "People who study Japanese have trouble distinguishing among the language's many alphabets."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ25-א1:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א1",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "A key tenet of socialist feminism is that patriarchy and capitalism are intertwined systems that perpetuate the exploitation and subjugation of women.",
+    "options": [
+      "According to socialist feminism, patriarchy and capitalism keep women from fully utilizing their skills.",
+      "Socialist feminists argue that capitalism is a modern manifestation of long-standing patriarchal structures.",
+      "Socialist feminism asserts that the discrimination and neglect suffered by women stems from capitalism just as much as from patriarchal control.",
+      "Central to socialist feminism is the idea that society has taken advantage of and oppressed women through a combination of patriarchy and capitalism."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ25-א2:1",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א2",
+    "number": 1,
+    "type": "sentence_completion",
+    "prompt": "Some scientists believe that modern varieties of wheat are more likely than traditional ones to _____ allergic reactions.",
+    "options": [
+      "trigger",
+      "affirm",
+      "exceed",
+      "smuggle"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ25-א2:2",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א2",
+    "number": 2,
+    "type": "sentence_completion",
+    "prompt": "Camel's milk – which has three times as much vitamin C and ten times as much iron as cow's milk – is highly_____ .",
+    "options": [
+      "scenic",
+      "nutritious",
+      "ambitious",
+      "majestic"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ25-א2:3",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א2",
+    "number": 3,
+    "type": "sentence_completion",
+    "prompt": "Although hot springs are usually _____ volcanic activity, there are quite a few on the Australian mainland that are not found in close proximity to a volcano.",
+    "options": [
+      "inherited by",
+      "obedient to",
+      "associated with",
+      "entertained by"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ25-א2:4",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א2",
+    "number": 4,
+    "type": "sentence_completion",
+    "prompt": "The baobab tree stores enough water in its trunk to sustain it during a _____.",
+    "options": [
+      "fluid",
+      "marsh",
+      "trance",
+      "drought"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ25-א2:5",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א2",
+    "number": 5,
+    "type": "sentence_completion",
+    "prompt": "The ancient Egyptians had numerous uses for natron, a mixture of various salts found in _____ along the Nile river.",
+    "options": [
+      "abundance",
+      "endurance",
+      "competence",
+      "defiance"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ25-א2:6",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א2",
+    "number": 6,
+    "type": "sentence_completion",
+    "prompt": "Just three weeks after the assassination of Martin Luther King Jr., the city of Mainz, Germany, named a street in memory of the _____ civil rights leader.",
+    "options": [
+      "slain",
+      "flung",
+      "drawn",
+      "wrung"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ25-א2:7",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א2",
+    "number": 7,
+    "type": "sentence_completion",
+    "prompt": "The purpose of Britain's Road Traffic Reduction Act was to lessen traffic _____.",
+    "options": [
+      "inversion",
+      "abstention",
+      "congestion",
+      "discretion"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "id": "קיץ25-א2:8",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א2",
+    "number": 8,
+    "type": "sentence_completion",
+    "prompt": "Bats are voracious insect eaters, _____ up to 3,500 bugs in a single night.",
+    "options": [
+      "devouring",
+      "renouncing",
+      "mitigating",
+      "encompassing"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ25-א2:9",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א2",
+    "number": 9,
+    "type": "restatement",
+    "prompt": "Federalism is a political system characterized by the separation of powers between the central government and regional governments.",
+    "options": [
+      "Federalism is most successful when there is close cooperation between the central government and regional governments.",
+      "In a federalist system, policies are set by the central government and carried out by regional governments.",
+      "Federalism is defined as a central government working together with smaller regional governments.",
+      "A federalist system is one in which authority is divided between the central government and regional governments."
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "id": "קיץ25-א2:10",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א2",
+    "number": 10,
+    "type": "restatement",
+    "prompt": "Nineteenth-century novelist Mary Ann Evans assumed the male pseudonym George Eliot to ensure that her works be given due consideration.",
+    "options": [
+      "The novels of Mary Ann Evans, also known as George Eliot, were written at a time when female authors were not given the attention they deserved.",
+      "Mary Ann Evans, fearing that her works would otherwise not be taken seriously, adopted the pen name George Eliot.",
+      "Mary Ann Evans was one of many female writers who had to adopt male names in order to have their works published.",
+      "Mary Ann Evans changed her name to George Eliot because she wanted her novels to appeal to a male audience."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "id": "קיץ25-א2:11",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א2",
+    "number": 11,
+    "type": "restatement",
+    "prompt": "When calcium oxide is heated to a temperature approaching its melting point, it emits a brilliant white light.",
+    "options": [
+      "Calcium oxide gives off an intense white light when heated almost to its melting point.",
+      "As calcium oxide melts, its brilliant white light dulls.",
+      "The hotter calcium oxide becomes, the brighter the light it produces.",
+      "Calcium oxide is sometimes melted in order to generate bright white light."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "id": "קיץ25-א2:12",
+    "source": "course-guide",
+    "answerBy": "course",
+    "sitting": "קיץ25-א2",
+    "number": 12,
+    "type": "restatement",
+    "prompt": "The events of St. Francis's life are well chronicled.",
+    "options": [
+      "Most of what we know about St. Francis's life comes from his writings.",
+      "The biography of St. Francis is fascinating.",
+      "Much has been written about the life of St. Francis.",
+      "The works of St. Francis are extremely accurate."
+    ],
+    "correctAnswerIndex": 2
+  }
+]

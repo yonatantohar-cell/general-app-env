@@ -1,0 +1,3493 @@
+[
+  {
+    "id": "sheet-1:1",
+    "source": "course",
+    "sheet": "sheet-1",
+    "mnemonicTitle": "יא סאטל בחלל",
+    "type": "sentence_completion",
+    "prompt": "The European Fecal Standards and Measurements Institute ______ is EFSMI.",
+    "options": [
+      "abbreviation",
+      "alteration",
+      "alleviation",
+      "abduction"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude",
+    "note": "EFSMI is the abbreviation of the institute's name"
+  },
+  {
+    "id": "sheet-1:2",
+    "source": "course",
+    "sheet": "sheet-1",
+    "mnemonicTitle": "יא סאטל בחלל",
+    "type": "sentence_completion",
+    "prompt": "Most child ______ are committed not by strangers, but by one of the parents.",
+    "options": [
+      "abolitions",
+      "abductions",
+      "abortions",
+      "abdications"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-1:3",
+    "source": "course",
+    "sheet": "sheet-1",
+    "mnemonicTitle": "יא סאטל בחלל",
+    "type": "sentence_completion",
+    "prompt": "After staying in the dark, it takes a few seconds for the eyes to ______ to bright light.",
+    "options": [
+      "adjust",
+      "advertise",
+      "accomplish",
+      "account"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-1:4",
+    "source": "course",
+    "sheet": "sheet-1",
+    "mnemonicTitle": "יא סאטל בחלל",
+    "type": "sentence_completion",
+    "prompt": "Even though they look (and smell) like fish, Dolphins are actually ______.",
+    "options": [
+      "matures",
+      "morals",
+      "mammals",
+      "marsupials"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-1:5",
+    "source": "course",
+    "sheet": "sheet-1",
+    "mnemonicTitle": "יא סאטל בחלל",
+    "type": "sentence_completion",
+    "prompt": "Researchers are trying to ______ information that is currently scattered in many libraries.",
+    "options": [
+      "consume",
+      "construct",
+      "contrast",
+      "compile"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude",
+    "note": "compile = gather scattered material together"
+  },
+  {
+    "id": "sheet-1:6",
+    "source": "course",
+    "sheet": "sheet-1",
+    "mnemonicTitle": "יא סאטל בחלל",
+    "type": "sentence_completion",
+    "prompt": "As human beings, we cannot be solely rational creatures, as we are mostly motivated by ______.",
+    "options": [
+      "faults",
+      "promotions",
+      "formulas",
+      "urges"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-1:7",
+    "source": "course",
+    "sheet": "sheet-1",
+    "mnemonicTitle": "יא סאטל בחלל",
+    "type": "sentence_completion",
+    "prompt": "The anesthesia caused the left side of my face to still be ______ hours after leaving the dentist.",
+    "options": [
+      "numb",
+      "plagued",
+      "hostile",
+      "corrupted"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-1:8",
+    "source": "course",
+    "sheet": "sheet-1",
+    "mnemonicTitle": "יא סאטל בחלל",
+    "type": "sentence_completion",
+    "prompt": "History changed on October 4, 1957, when the Soviet Union successfully launched Sputnik I, The world's first artificial ______.",
+    "options": [
+      "intelligence",
+      "satellite",
+      "exploration",
+      "article"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude",
+    "note": "corroborated by the sheet's title יא סאטל בחלל -> satellite"
+  },
+  {
+    "id": "sheet-2:1",
+    "source": "course",
+    "sheet": "sheet-2",
+    "mnemonicTitle": "דוסילה חמוד",
+    "type": "sentence_completion",
+    "prompt": "Feeling ill, Jeremy was ______ from class today.",
+    "options": [
+      "absorbed",
+      "absent",
+      "abandoned",
+      "abroad"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-2:2",
+    "source": "course",
+    "sheet": "sheet-2",
+    "mnemonicTitle": "דוסילה חמוד",
+    "type": "sentence_completion",
+    "prompt": "In the beginning of the 20th century, a common worker could ______ buying a new car with less than three months’ salary, after all expenses.",
+    "options": [
+      "avoid",
+      "attribute",
+      "afford",
+      "assimilate"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-2:3",
+    "source": "course",
+    "sheet": "sheet-2",
+    "mnemonicTitle": "דוסילה חמוד",
+    "type": "sentence_completion",
+    "prompt": "Ever since its inception, there has always been a close ______ between the state of Israel and the USA.",
+    "options": [
+      "bond",
+      "block",
+      "bold",
+      "breach"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-2:4",
+    "source": "course",
+    "sheet": "sheet-2",
+    "mnemonicTitle": "דוסילה חמוד",
+    "type": "sentence_completion",
+    "prompt": "He was apprehended by the police, because he seemed to be a ______ character.",
+    "options": [
+      "diminutive",
+      "doubtful",
+      "dubious",
+      "distorted"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude",
+    "note": "'a dubious character' is the set collocation; 'doubtful' describes a person's belief, not their appearance"
+  },
+  {
+    "id": "sheet-2:5",
+    "source": "course",
+    "sheet": "sheet-2",
+    "mnemonicTitle": "דוסילה חמוד",
+    "type": "sentence_completion",
+    "prompt": "Many thousands of civilians have been ______ in the Syrian civil war.",
+    "options": [
+      "monitored",
+      "masqueraded",
+      "monetized",
+      "massacred"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-2:6",
+    "source": "course",
+    "sheet": "sheet-2",
+    "mnemonicTitle": "דוסילה חמוד",
+    "type": "sentence_completion",
+    "prompt": "The word \"barbarian\" was used by the Greeks as a ______ term for people they viewed as uncivilized.",
+    "options": [
+      "progressive",
+      "courteous",
+      "pejorative",
+      "conjoined"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude",
+    "note": "pejorative = disparaging"
+  },
+  {
+    "id": "sheet-2:7",
+    "source": "course",
+    "sheet": "sheet-2",
+    "mnemonicTitle": "דוסילה חמוד",
+    "type": "sentence_completion",
+    "prompt": "One can hear a leaf falls to the ground in the ______ of the aftermath of the tornado.",
+    "options": [
+      "sovereignty",
+      "serenity",
+      "strictness",
+      "seriousness"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-2:8",
+    "source": "course",
+    "sheet": "sheet-2",
+    "mnemonicTitle": "דוסילה חמוד",
+    "type": "sentence_completion",
+    "prompt": "Unless threatened, dolphins are ______ creatures, and enjoy playing with humans.",
+    "options": [
+      "aggressive",
+      "edible",
+      "innovative",
+      "docile"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude",
+    "note": "corroborated by the sheet's title דוסילה חמוד -> docile"
+  },
+  {
+    "id": "sheet-3:1",
+    "source": "course",
+    "sheet": "sheet-3",
+    "mnemonicTitle": "אבא עם בנדנה",
+    "type": "sentence_completion",
+    "prompt": "The powerful earthquake forced hundreds of inhabitants to ______ their homes.",
+    "options": [
+      "immigrate",
+      "abandon",
+      "insulate",
+      "distribute"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude",
+    "note": "corroborated by the sheet's title אבא עם בנדנה -> abandon"
+  },
+  {
+    "id": "sheet-3:2",
+    "source": "course",
+    "sheet": "sheet-3",
+    "mnemonicTitle": "אבא עם בנדנה",
+    "type": "sentence_completion",
+    "prompt": "______ intelligence is the simulation of human intelligence processes by machines.",
+    "options": [
+      "Negligible",
+      "Functioning",
+      "Artificial",
+      "Emotional"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-3:3",
+    "source": "course",
+    "sheet": "sheet-3",
+    "mnemonicTitle": "אבא עם בנדנה",
+    "type": "sentence_completion",
+    "prompt": "Everyone wore white shirts for the ______ honoring the town's veterans.",
+    "options": [
+      "warfare",
+      "laundry",
+      "debate",
+      "ceremony"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-3:4",
+    "source": "course",
+    "sheet": "sheet-3",
+    "mnemonicTitle": "אבא עם בנדנה",
+    "type": "sentence_completion",
+    "prompt": "In times of national ______, people tend to come together",
+    "options": [
+      "crisis",
+      "debt",
+      "doubt",
+      "crust"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-3:5",
+    "source": "course",
+    "sheet": "sheet-3",
+    "mnemonicTitle": "אבא עם בנדנה",
+    "type": "sentence_completion",
+    "prompt": "During the summer, the ants ______ grain in preparation for the winter.",
+    "options": [
+      "hover",
+      "hoard",
+      "heard",
+      "herald"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude",
+    "note": "hoard = store up; 'heard' and 'herald' are sound-alike distractors"
+  },
+  {
+    "id": "sheet-3:6",
+    "source": "course",
+    "sheet": "sheet-3",
+    "mnemonicTitle": "אבא עם בנדנה",
+    "type": "sentence_completion",
+    "prompt": "______ development caused a sharp increase in life expectancy and a decrease in infant mortality.",
+    "options": [
+      "Arrested",
+      "Impoverished",
+      "Economic",
+      "Domestic"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-3:7",
+    "source": "course",
+    "sheet": "sheet-3",
+    "mnemonicTitle": "אבא עם בנדנה",
+    "type": "sentence_completion",
+    "prompt": "There were hundreds of guests at the royal wedding ______.",
+    "options": [
+      "feast",
+      "frost",
+      "fright",
+      "frown"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-3:8",
+    "source": "course",
+    "sheet": "sheet-3",
+    "mnemonicTitle": "אבא עם בנדנה",
+    "type": "sentence_completion",
+    "prompt": "All job applicants are requested to state their name, birth date, and ______ in the form.",
+    "options": [
+      "occurrence",
+      "gender",
+      "allowance",
+      "participance"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-4:1",
+    "source": "course",
+    "sheet": "sheet-4",
+    "mnemonicTitle": "עו\"ד א. בוקדו",
+    "type": "sentence_completion",
+    "prompt": "The ______ defended the rights of his client in court.",
+    "options": [
+      "advocate",
+      "adjective",
+      "acrobat",
+      "associate"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude",
+    "note": "corroborated by the sheet's title עו\"ד א. בוקדו -> advocate"
+  },
+  {
+    "id": "sheet-4:2",
+    "source": "course",
+    "sheet": "sheet-4",
+    "mnemonicTitle": "עו\"ד א. בוקדו",
+    "type": "sentence_completion",
+    "prompt": "Video surveillance captured the ______ breaking the window of the jewelry store.",
+    "options": [
+      "detective",
+      "burglar",
+      "inspector",
+      "monitor"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-4:3",
+    "source": "course",
+    "sheet": "sheet-4",
+    "mnemonicTitle": "עו\"ד א. בוקדו",
+    "type": "sentence_completion",
+    "prompt": "The symptoms of a common flu are ______ and fever.",
+    "options": [
+      "virus",
+      "illness",
+      "cough",
+      "misery"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-4:4",
+    "source": "course",
+    "sheet": "sheet-4",
+    "mnemonicTitle": "עו\"ד א. בוקדו",
+    "type": "sentence_completion",
+    "prompt": "the League of Nation, created by The Paris peace conference of 1919, was meant to settle border ______ nonviolently.",
+    "options": [
+      "margins",
+      "hounds",
+      "patrols",
+      "disputes"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-4:5",
+    "source": "course",
+    "sheet": "sheet-4",
+    "mnemonicTitle": "עו\"ד א. בוקדו",
+    "type": "sentence_completion",
+    "prompt": "Tarantulas ______ every continent save Antarctica.",
+    "options": [
+      "inhale",
+      "inhabit",
+      "inhibit",
+      "inherit"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude",
+    "note": "inhabit = live in; inhale/inhibit/inherit are sound-alike distractors"
+  },
+  {
+    "id": "sheet-4:6",
+    "source": "course",
+    "sheet": "sheet-4",
+    "mnemonicTitle": "עו\"ד א. בוקדו",
+    "type": "sentence_completion",
+    "prompt": "The heat ______ long after the sun had gone down.",
+    "options": [
+      "lingered",
+      "halted",
+      "melted",
+      "scorch"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-4:7",
+    "source": "course",
+    "sheet": "sheet-4",
+    "mnemonicTitle": "עו\"ד א. בוקדו",
+    "type": "sentence_completion",
+    "prompt": "On May 29, 1953, Edmund Hillary and Tenzing Norgay became the first climbers confirmed to have reached the ______ of Mount Everest.",
+    "options": [
+      "epoch",
+      "foot",
+      "record",
+      "summit"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-4:8",
+    "source": "course",
+    "sheet": "sheet-4",
+    "mnemonicTitle": "עו\"ד א. בוקדו",
+    "type": "sentence_completion",
+    "prompt": "In 1954, the first human organ, a kidney, was ______ successfully.",
+    "options": [
+      "transplanted",
+      "translated",
+      "transported",
+      "transmitted"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-5:1",
+    "source": "course",
+    "sheet": "sheet-5",
+    "mnemonicTitle": "מתאים לי אפרופו",
+    "type": "sentence_completion",
+    "prompt": "Choose your response to this question and mark its number in the ______ place in the answers sheet.",
+    "options": [
+      "appropriate",
+      "opposite",
+      "approximate",
+      "vacant"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude",
+    "note": "corroborated by the sheet's title מתאים לי אפרופו -> appropriate"
+  },
+  {
+    "id": "sheet-5:2",
+    "source": "course",
+    "sheet": "sheet-5",
+    "mnemonicTitle": "מתאים לי אפרופו",
+    "type": "sentence_completion",
+    "prompt": "The police managed to ______ the shooter in the scene.",
+    "options": [
+      "disembowel",
+      "discourage",
+      "despair",
+      "disarm"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-5:3",
+    "source": "course",
+    "sheet": "sheet-5",
+    "mnemonicTitle": "מתאים לי אפרופו",
+    "type": "sentence_completion",
+    "prompt": "A large bronze statue was ______ in Rocky’s honor in the city square.",
+    "options": [
+      "erected",
+      "consulted",
+      "erupted",
+      "concealed"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude",
+    "note": "erect a statue; 'erupted' is the sound-alike distractor"
+  },
+  {
+    "id": "sheet-5:4",
+    "source": "course",
+    "sheet": "sheet-5",
+    "mnemonicTitle": "מתאים לי אפרופו",
+    "type": "sentence_completion",
+    "prompt": "Firefighters managed to ______ the blaze without any damage to people or property.",
+    "options": [
+      "ignite",
+      "extinguish",
+      "incite",
+      "extract"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-5:5",
+    "source": "course",
+    "sheet": "sheet-5",
+    "mnemonicTitle": "מתאים לי אפרופו",
+    "type": "sentence_completion",
+    "prompt": "The couple were in the process of adopting an ______ girl.",
+    "options": [
+      "infant",
+      "infinite",
+      "inferior",
+      "infertile"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-5:6",
+    "source": "course",
+    "sheet": "sheet-5",
+    "mnemonicTitle": "מתאים לי אפרופו",
+    "type": "sentence_completion",
+    "prompt": "The haka, a 'war cry' in Māori, was traditionally performed by men before going to war, using aggressive facial expressions meant to ______ their opponents.",
+    "options": [
+      "infuriate",
+      "introspect",
+      "interrogate",
+      "intimidate"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-5:7",
+    "source": "course",
+    "sheet": "sheet-5",
+    "mnemonicTitle": "מתאים לי אפרופו",
+    "type": "sentence_completion",
+    "prompt": "Problems in management are causing a severe ______ of nurses in many hospitals.",
+    "options": [
+      "minority",
+      "treatment",
+      "remedy",
+      "shortage"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "sheet-5:8",
+    "source": "course",
+    "sheet": "sheet-5",
+    "mnemonicTitle": "מתאים לי אפרופו",
+    "type": "sentence_completion",
+    "prompt": "The treatment did manage to decrease the pain but only ______.",
+    "options": [
+      "slightly",
+      "substantially",
+      "significantly",
+      "simultaneously"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude",
+    "note": "'but only ___' signals a small degree, which rules out substantially and significantly"
+  },
+  {
+    "id": "אקסית-אגרה-תה:1",
+    "source": "course",
+    "sheet": "אקסית-אגרה-תה",
+    "mnemonicTitle": "אקסית אגרה תה",
+    "type": "sentence_completion",
+    "prompt": "It's impossible to ______ the importance of the theory of evolution to our perception of biology.",
+    "options": [
+      "prolong",
+      "except",
+      "exaggerate",
+      "postpone"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"אקסית אגרה תה\" encodes \"exaggerate\""
+  },
+  {
+    "id": "אקסית-אגרה-תה:2",
+    "source": "course",
+    "sheet": "אקסית-אגרה-תה",
+    "mnemonicTitle": "אקסית אגרה תה",
+    "type": "sentence_completion",
+    "prompt": "His visits became less ______ as time passed.",
+    "options": [
+      "accelerated",
+      "frequent",
+      "demolished",
+      "swollen"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "אקסית-אגרה-תה:3",
+    "source": "course",
+    "sheet": "אקסית-אגרה-תה",
+    "mnemonicTitle": "אקסית אגרה תה",
+    "type": "sentence_completion",
+    "prompt": "He joined the navy after ______ from high school.",
+    "options": [
+      "graduating",
+      "evading",
+      "degrading",
+      "ignoring"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "אקסית-אגרה-תה:4",
+    "source": "course",
+    "sheet": "אקסית-אגרה-תה",
+    "mnemonicTitle": "אקסית אגרה תה",
+    "type": "sentence_completion",
+    "prompt": "Should you ever need anything, please don't ______ to contact me.",
+    "options": [
+      "dare",
+      "connect",
+      "dial",
+      "hesitate"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "אקסית-אגרה-תה:5",
+    "source": "course",
+    "sheet": "אקסית-אגרה-תה",
+    "mnemonicTitle": "אקסית אגרה תה",
+    "type": "sentence_completion",
+    "prompt": "Gun violence is ______ at an alarming rate.",
+    "options": [
+      "shooting",
+      "shielding",
+      "increasing",
+      "imprisoning"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "אקסית-אגרה-תה:6",
+    "source": "course",
+    "sheet": "אקסית-אגרה-תה",
+    "mnemonicTitle": "אקסית אגרה תה",
+    "type": "sentence_completion",
+    "prompt": "I grew up in a ______ community where most of my neighbors were farmers.",
+    "options": [
+      "malicious",
+      "nomadic",
+      "suspicious",
+      "rural"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "אקסית-אגרה-תה:7",
+    "source": "course",
+    "sheet": "אקסית-אגרה-תה",
+    "mnemonicTitle": "אקסית אגרה תה",
+    "type": "sentence_completion",
+    "prompt": "Many individuals In Germany were not Nazi ______. Nonetheless they participated in the persecution of Jews.",
+    "options": [
+      "rallies",
+      "zealots",
+      "merchants",
+      "parades"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "אקסית-אגרה-תה:8",
+    "source": "course",
+    "sheet": "אקסית-אגרה-תה",
+    "mnemonicTitle": "אקסית אגרה תה",
+    "type": "sentence_completion",
+    "prompt": "Growing up in an ______ area, he never seen a cow outside a picture.",
+    "options": [
+      "urban",
+      "amorous",
+      "obedient",
+      "erroneous"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "דודה-שלי-אינגריד:1",
+    "source": "course",
+    "sheet": "דודה-שלי-אינגריד",
+    "mnemonicTitle": "דודה שלי אינגריד",
+    "type": "sentence_completion",
+    "prompt": "Along with its sunny beaches and welcoming hospitality, Israel ______ many interesting historical sites.",
+    "options": [
+      "browses",
+      "boasts",
+      "blesses",
+      "boosts"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "דודה-שלי-אינגריד:2",
+    "source": "course",
+    "sheet": "דודה-שלי-אינגריד",
+    "mnemonicTitle": "דודה שלי אינגריד",
+    "type": "sentence_completion",
+    "prompt": "Probably due to their dog-like appearance, most people wrongly assume that Hyenas belong to the ______, not the feline, family.",
+    "options": [
+      "candid",
+      "canine",
+      "carnivorous",
+      "classified"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "דודה-שלי-אינגריד:3",
+    "source": "course",
+    "sheet": "דודה-שלי-אינגריד",
+    "mnemonicTitle": "דודה שלי אינגריד",
+    "type": "sentence_completion",
+    "prompt": "The United Nation assembly ______ the act of terror.",
+    "options": [
+      "condemned",
+      "coordinated",
+      "complied",
+      "cackled"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "דודה-שלי-אינגריד:4",
+    "source": "course",
+    "sheet": "דודה-שלי-אינגריד",
+    "mnemonicTitle": "דודה שלי אינגריד",
+    "type": "sentence_completion",
+    "prompt": "Born on the same day, Charles Darwin and Abraham Lincoln were ______.",
+    "options": [
+      "pedestrians",
+      "compatriots",
+      "rebellious",
+      "contemporaries"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "דודה-שלי-אינגריד:5",
+    "source": "course",
+    "sheet": "דודה-שלי-אינגריד",
+    "mnemonicTitle": "דודה שלי אינגריד",
+    "type": "sentence_completion",
+    "prompt": "The public is not in favor of the open-border policy, as the polls clearly ______.",
+    "options": [
+      "deteriorate",
+      "degrade",
+      "decapitate",
+      "demonstrate"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "דודה-שלי-אינגריד:6",
+    "source": "course",
+    "sheet": "דודה-שלי-אינגריד",
+    "mnemonicTitle": "דודה שלי אינגריד",
+    "type": "sentence_completion",
+    "prompt": "Nowadays, the abundance of fake news makes it hard to ______ fact from fallacy.",
+    "options": [
+      "evade",
+      "respect",
+      "distinguish",
+      "excavate"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "דודה-שלי-אינגריד:7",
+    "source": "course",
+    "sheet": "דודה-שלי-אינגריד",
+    "mnemonicTitle": "דודה שלי אינגריד",
+    "type": "sentence_completion",
+    "prompt": "Fleeing the civil war raging in his homeland, Bob had to run like a ______.",
+    "options": [
+      "lieutenant",
+      "fugitive",
+      "deputy",
+      "lunatic"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "דודה-שלי-אינגריד:8",
+    "source": "course",
+    "sheet": "דודה-שלי-אינגריד",
+    "mnemonicTitle": "דודה שלי אינגריד",
+    "type": "sentence_completion",
+    "prompt": "Every methadone medication has the main ______ methadone hydrochloride.",
+    "options": [
+      "remedy",
+      "tablet",
+      "constant",
+      "ingredient"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"דודה שלי אינגריד\" encodes \"ingredient\""
+  },
+  {
+    "id": "דרוש-קואלה:1",
+    "source": "course",
+    "sheet": "דרוש-קואלה",
+    "mnemonicTitle": "דרוש קואלה",
+    "type": "sentence_completion",
+    "prompt": "After years of hard work he managed to ______ large sum of money.",
+    "options": [
+      "accommodate",
+      "accelerate",
+      "accompany",
+      "accumulate"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "דרוש-קואלה:2",
+    "source": "course",
+    "sheet": "דרוש-קואלה",
+    "mnemonicTitle": "דרוש קואלה",
+    "type": "sentence_completion",
+    "prompt": "When the soviet dictator Josef Stalin gave a speech, the audience had to stand and ______ for hours.",
+    "options": [
+      "abhor",
+      "applaud",
+      "approve",
+      "abort"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "דרוש-קואלה:3",
+    "source": "course",
+    "sheet": "דרוש-קואלה",
+    "mnemonicTitle": "דרוש קואלה",
+    "type": "sentence_completion",
+    "prompt": "High heel shoes aren't very ______ for running.",
+    "options": [
+      "comfortable",
+      "speedy",
+      "elegant",
+      "persuasive"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "דרוש-קואלה:4",
+    "source": "course",
+    "sheet": "דרוש-קואלה",
+    "mnemonicTitle": "דרוש קואלה",
+    "type": "sentence_completion",
+    "prompt": "Lack of proper education will ______ you for most good jobs.",
+    "options": [
+      "disengage",
+      "distribute",
+      "disqualify",
+      "disregard"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"דרוש קואלה\" encodes \"disqualify\""
+  },
+  {
+    "id": "דרוש-קואלה:5",
+    "source": "course",
+    "sheet": "דרוש-קואלה",
+    "mnemonicTitle": "דרוש קואלה",
+    "type": "sentence_completion",
+    "prompt": "The phrase: “don't count your chickens before they ______” means don’t rush to assume you’ll will be successful when this is not certain.",
+    "options": [
+      "boil",
+      "scrambled",
+      "hatch",
+      "fried"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "דרוש-קואלה:6",
+    "source": "course",
+    "sheet": "דרוש-קואלה",
+    "mnemonicTitle": "דרוש קואלה",
+    "type": "sentence_completion",
+    "prompt": "\"It's all downhill from here\" is a ______ with two opposing meanings.",
+    "options": [
+      "prophecy",
+      "profession",
+      "phenomenon",
+      "phrase"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "דרוש-קואלה:7",
+    "source": "course",
+    "sheet": "דרוש-קואלה",
+    "mnemonicTitle": "דרוש קואלה",
+    "type": "sentence_completion",
+    "prompt": "Getting injured more often, children ______ from physical trauma faster than adults.",
+    "options": [
+      "recover",
+      "restore",
+      "recall",
+      "renovate"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "דרוש-קואלה:8",
+    "source": "course",
+    "sheet": "דרוש-קואלה",
+    "mnemonicTitle": "דרוש קואלה",
+    "type": "sentence_completion",
+    "prompt": "Beethoven suffered a ______ hearing loss, and by the time he was 45, he was totally deaf.",
+    "options": [
+      "virtuous",
+      "defeating",
+      "superfluous",
+      "severe"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "היי-אטוס:1",
+    "source": "course",
+    "sheet": "היי-אטוס",
+    "mnemonicTitle": "היי אטוס",
+    "type": "sentence_completion",
+    "prompt": "Despite the conductor's last-minute illness, the entire ______ managed to perform the symphony flawlessly.",
+    "options": [
+      "committee",
+      "delegation",
+      "panel",
+      "orchestra"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "היי-אטוס:2",
+    "source": "course",
+    "sheet": "היי-אטוס",
+    "mnemonicTitle": "היי אטוס",
+    "type": "sentence_completion",
+    "prompt": "After a 13-year break from recording, and to the thrill of fans who had waited more than a decade, the band Tool finally ended their ______ with the release of Fear Inoculum.",
+    "options": [
+      "climax",
+      "hiatus",
+      "downfall",
+      "premiere"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"היי אטוס\" encodes \"hiatus\""
+  },
+  {
+    "id": "היי-אטוס:3",
+    "source": "course",
+    "sheet": "היי-אטוס",
+    "mnemonicTitle": "היי אטוס",
+    "type": "sentence_completion",
+    "prompt": "While most students had already gone home, the ______ continued sweeping up candy wrappers and wiping the desks before locking the classrooms.",
+    "options": [
+      "principal",
+      "monitor",
+      "janitor",
+      "vendor"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "היי-אטוס:4",
+    "source": "course",
+    "sheet": "היי-אטוס",
+    "mnemonicTitle": "היי אטוס",
+    "type": "sentence_completion",
+    "prompt": "When the latest poll results were released, it became clear that the former president running for a second term was the leading ______.",
+    "options": [
+      "supporter",
+      "enthusiast",
+      "critic",
+      "candidate"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "היי-אטוס:5",
+    "source": "course",
+    "sheet": "היי-אטוס",
+    "mnemonicTitle": "היי אטוס",
+    "type": "sentence_completion",
+    "prompt": "Years after the incident, he still held a ______ and refused to speak to his former teammate.",
+    "options": [
+      "favor",
+      "grudge",
+      "regret",
+      "burden"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "היי-אטוס:6",
+    "source": "course",
+    "sheet": "היי-אטוס",
+    "mnemonicTitle": "היי אטוס",
+    "type": "sentence_completion",
+    "prompt": "Between picking up the dry cleaning, mailing a package, and grabbing groceries, the afternoon was packed with one mundane ______ after another.",
+    "options": [
+      "legislation",
+      "errand",
+      "detour",
+      "shortcut"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "היי-אטוס:7",
+    "source": "course",
+    "sheet": "היי-אטוס",
+    "mnemonicTitle": "היי אטוס",
+    "type": "sentence_completion",
+    "prompt": "During the brutal religious wars of the 16th century, anyone who refused to convert was labeled an ______ and often executed.",
+    "options": [
+      "orator",
+      "imposter",
+      "infidel",
+      "exile"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "היי-אטוס:8",
+    "source": "course",
+    "sheet": "היי-אטוס",
+    "mnemonicTitle": "היי אטוס",
+    "type": "sentence_completion",
+    "prompt": "The university revised its entire ______ to include interdisciplinary studies and more real-world applications.",
+    "options": [
+      "curriculum",
+      "brochure",
+      "campus",
+      "tuition"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "הריח-של-הודור:1",
+    "source": "course",
+    "sheet": "הריח-של-הודור",
+    "mnemonicTitle": "הריח של הודור",
+    "type": "sentence_completion",
+    "prompt": "The school lunch should be ______ to meet the nutritional needs.",
+    "options": [
+      "disgusting",
+      "adequate",
+      "absorbent",
+      "delicate"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "הריח-של-הודור:2",
+    "source": "course",
+    "sheet": "הריח-של-הודור",
+    "mnemonicTitle": "הריח של הודור",
+    "type": "sentence_completion",
+    "prompt": "Evolved into birds, dinosaurs are the ______ of the chickens we eat today.",
+    "options": [
+      "buckets",
+      "feathers",
+      "fossils",
+      "ancestors"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "הריח-של-הודור:3",
+    "source": "course",
+    "sheet": "הריח-של-הודור",
+    "mnemonicTitle": "הריח של הודור",
+    "type": "sentence_completion",
+    "prompt": "Cat Stevens, born a Christian, ______ to Islam and adopted the name Yusuf Islam.",
+    "options": [
+      "objected",
+      "converted",
+      "detached",
+      "volunteered"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "הריח-של-הודור:4",
+    "source": "course",
+    "sheet": "הריח-של-הודור",
+    "mnemonicTitle": "הריח של הודור",
+    "type": "sentence_completion",
+    "prompt": "The ______ of Germany in WW2 marked the end of Nazism.",
+    "options": [
+      "defeat",
+      "success",
+      "brutality",
+      "surprise"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "הריח-של-הודור:5",
+    "source": "course",
+    "sheet": "הריח-של-הודור",
+    "mnemonicTitle": "הריח של הודור",
+    "type": "sentence_completion",
+    "prompt": "Do not ______ the rich, instead try to learn how they became wealthy.",
+    "options": [
+      "distribute",
+      "envy",
+      "disturb",
+      "enact"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "הריח-של-הודור:6",
+    "source": "course",
+    "sheet": "הריח-של-הודור",
+    "mnemonicTitle": "הריח של הודור",
+    "type": "sentence_completion",
+    "prompt": "Socialist leaders have a unique ______ for destruction.",
+    "options": [
+      "solidarity",
+      "regime",
+      "latitude",
+      "aptitude"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "הריח-של-הודור:7",
+    "source": "course",
+    "sheet": "הריח-של-הודור",
+    "mnemonicTitle": "הריח של הודור",
+    "type": "sentence_completion",
+    "prompt": "First to achieve sustained and controlled powered flight, the Wright brothers transformed the history of ______.",
+    "options": [
+      "aviation",
+      "linguistics",
+      "theology",
+      "simulation"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "הריח-של-הודור:8",
+    "source": "course",
+    "sheet": "הריח-של-הודור",
+    "mnemonicTitle": "הריח של הודור",
+    "type": "sentence_completion",
+    "prompt": "Epoisses is a French cheese with a distinct strong ______..",
+    "options": [
+      "cuisine",
+      "conviction",
+      "odor",
+      "endurance"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"הריח של הודור\" encodes \"odor\""
+  },
+  {
+    "id": "ומית-בונה-סוכה:1",
+    "source": "course",
+    "sheet": "ומית-בונה-סוכה",
+    "mnemonicTitle": "ומית בונה סוכה",
+    "type": "sentence_completion",
+    "prompt": "He was ______ of murder, but eventually was acquitted.",
+    "options": [
+      "accustomed",
+      "accused",
+      "acknowledged",
+      "accomplished"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "ומית-בונה-סוכה:2",
+    "source": "course",
+    "sheet": "ומית-בונה-סוכה",
+    "mnemonicTitle": "ומית בונה סוכה",
+    "type": "sentence_completion",
+    "prompt": "The movie The Two Towers include a lengthy medieval battle sequence taking place at a ______.",
+    "options": [
+      "clash",
+      "fortress",
+      "infantry",
+      "attic"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "ומית-בונה-סוכה:3",
+    "source": "course",
+    "sheet": "ומית-בונה-סוכה",
+    "mnemonicTitle": "ומית בונה סוכה",
+    "type": "sentence_completion",
+    "prompt": "You can find the same item available on Amazon for just a ______ of the original price.",
+    "options": [
+      "friction",
+      "fracture",
+      "fraction",
+      "freckles"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "ומית-בונה-סוכה:4",
+    "source": "course",
+    "sheet": "ומית-בונה-סוכה",
+    "mnemonicTitle": "ומית בונה סוכה",
+    "type": "sentence_completion",
+    "prompt": "This perfume has the ______ of blooming flowers.",
+    "options": [
+      "fragrance",
+      "sensitivity",
+      "structure",
+      "frustration"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "ומית-בונה-סוכה:5",
+    "source": "course",
+    "sheet": "ומית-בונה-סוכה",
+    "mnemonicTitle": "ומית בונה סוכה",
+    "type": "sentence_completion",
+    "prompt": "The police have ______ an investigation into his activities.",
+    "options": [
+      "lured",
+      "launched",
+      "acquired",
+      "aspired"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "ומית-בונה-סוכה:6",
+    "source": "course",
+    "sheet": "ומית-בונה-סוכה",
+    "mnemonicTitle": "ומית בונה סוכה",
+    "type": "sentence_completion",
+    "prompt": "When a child misbehaves, a parent’s role is to rebuke him for being rude and teach him some ______.",
+    "options": [
+      "amendments",
+      "corrections",
+      "tutors",
+      "manners"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "ומית-בונה-סוכה:7",
+    "source": "course",
+    "sheet": "ומית-בונה-סוכה",
+    "mnemonicTitle": "ומית בונה סוכה",
+    "type": "sentence_completion",
+    "prompt": "Somehow, he ______ all the embarrassing details from his biography.",
+    "options": [
+      "submitted",
+      "omitted",
+      "transcribed",
+      "interrogated"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"ומית בונה סוכה\" encodes \"omitted\""
+  },
+  {
+    "id": "ומית-בונה-סוכה:8",
+    "source": "course",
+    "sheet": "ומית-בונה-סוכה",
+    "mnemonicTitle": "ומית בונה סוכה",
+    "type": "sentence_completion",
+    "prompt": "With officers in ______, the chase after the bandits continued throughout the County.",
+    "options": [
+      "tranquility",
+      "station",
+      "donations",
+      "pursuit"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "כונפה-תביאי-את-הסקייטים:1",
+    "source": "course",
+    "sheet": "כונפה-תביאי-את-הסקייטים",
+    "mnemonicTitle": "כונפה תביאי את הסקייטים",
+    "type": "sentence_completion",
+    "prompt": "The pharaohs’ pyramids in Egypt are ______ structures, erected thousands of years ago to serve as tombs.",
+    "options": [
+      "modest",
+      "tyrannical",
+      "obscure",
+      "ancient"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "כונפה-תביאי-את-הסקייטים:2",
+    "source": "course",
+    "sheet": "כונפה-תביאי-את-הסקייטים",
+    "mnemonicTitle": "כונפה תביאי את הסקייטים",
+    "type": "sentence_completion",
+    "prompt": "The new legislation would enable law enforcement to ______ firearms from individual owners.",
+    "options": [
+      "confess",
+      "confide",
+      "confiscate",
+      "conceal"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"כונפה תביאי את הסקייטים\" encodes \"confiscate\""
+  },
+  {
+    "id": "כונפה-תביאי-את-הסקייטים:3",
+    "source": "course",
+    "sheet": "כונפה-תביאי-את-הסקייטים",
+    "mnemonicTitle": "כונפה תביאי את הסקייטים",
+    "type": "sentence_completion",
+    "prompt": "Avoiding the heat, land snails remain largely ______ throughout the day.",
+    "options": [
+      "moistened",
+      "endangered",
+      "agile",
+      "dormant"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "כונפה-תביאי-את-הסקייטים:4",
+    "source": "course",
+    "sheet": "כונפה-תביאי-את-הסקייטים",
+    "mnemonicTitle": "כונפה תביאי את הסקייטים",
+    "type": "sentence_completion",
+    "prompt": "2000 Mules, a film by Dinesh D'Souza, exposed widespread, coordinated voter ______ in the 2020 election, sufficient to change the overall outcome of the elections.",
+    "options": [
+      "ballots",
+      "legislation",
+      "fraud",
+      "refusal"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "כונפה-תביאי-את-הסקייטים:5",
+    "source": "course",
+    "sheet": "כונפה-תביאי-את-הסקייטים",
+    "mnemonicTitle": "כונפה תביאי את הסקייטים",
+    "type": "sentence_completion",
+    "prompt": "The negotiation went well due to ______ understanding between both sides.",
+    "options": [
+      "mutual",
+      "mutant",
+      "mutiny",
+      "mute"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "כונפה-תביאי-את-הסקייטים:6",
+    "source": "course",
+    "sheet": "כונפה-תביאי-את-הסקייטים",
+    "mnemonicTitle": "כונפה תביאי את הסקייטים",
+    "type": "sentence_completion",
+    "prompt": "Prior to the invention of the Global Positioning System (GPS), sailors ______ using the sun, moon and stars.",
+    "options": [
+      "explored",
+      "shipped",
+      "navigated",
+      "disoriented"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "כונפה-תביאי-את-הסקייטים:7",
+    "source": "course",
+    "sheet": "כונפה-תביאי-את-הסקייטים",
+    "mnemonicTitle": "כונפה תביאי את הסקייטים",
+    "type": "sentence_completion",
+    "prompt": "Unlike their tough predecessors who fought wars, this generation is all too ______.",
+    "options": [
+      "postponed",
+      "presumptuous",
+      "pompous",
+      "pampered"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "כונפה-תביאי-את-הסקייטים:8",
+    "source": "course",
+    "sheet": "כונפה-תביאי-את-הסקייטים",
+    "mnemonicTitle": "כונפה תביאי את הסקייטים",
+    "type": "sentence_completion",
+    "prompt": "______ by his captors, the prisoner revealed his friend’s location.",
+    "options": [
+      "Tormented",
+      "Fondled",
+      "Illuminated",
+      "Pardoned"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-אוהב-רגאיי-רק:1",
+    "source": "course",
+    "sheet": "לא-אוהב-רגאיי-רק",
+    "mnemonicTitle": "לא אוהב רגאיי רק",
+    "type": "sentence_completion",
+    "prompt": "I don't like Reggae music as a whole, I was ______ listening to Bob Marley.",
+    "options": [
+      "desperately",
+      "merely",
+      "nearly",
+      "rarely"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"לא אוהב רגאיי רק\" encodes \"merely\""
+  },
+  {
+    "id": "לא-אוהב-רגאיי-רק:2",
+    "source": "course",
+    "sheet": "לא-אוהב-רגאיי-רק",
+    "mnemonicTitle": "לא אוהב רגאיי רק",
+    "type": "sentence_completion",
+    "prompt": "A skunk might spray a liquid with a strong, unpleasant scent in order to deter a potential ______.",
+    "options": [
+      "prey",
+      "predator",
+      "terminator",
+      "suitor"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-אוהב-רגאיי-רק:3",
+    "source": "course",
+    "sheet": "לא-אוהב-רגאיי-רק",
+    "mnemonicTitle": "לא אוהב רגאיי רק",
+    "type": "sentence_completion",
+    "prompt": "The student who was killed by the hand of the Iranian regime is now being regarded as a ______ by the protestors.",
+    "options": [
+      "scholar",
+      "deity",
+      "mortal",
+      "martyr"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-אוהב-רגאיי-רק:4",
+    "source": "course",
+    "sheet": "לא-אוהב-רגאיי-רק",
+    "mnemonicTitle": "לא אוהב רגאיי רק",
+    "type": "sentence_completion",
+    "prompt": "No matter how nonsensical, there's always a ______ of truth in every joke.",
+    "options": [
+      "grain",
+      "denial",
+      "reflection",
+      "wit"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-אוהב-רגאיי-רק:5",
+    "source": "course",
+    "sheet": "לא-אוהב-רגאיי-רק",
+    "mnemonicTitle": "לא אוהב רגאיי רק",
+    "type": "sentence_completion",
+    "prompt": "Pouring boiling water on his victim, the student was accused with first ______ murder.",
+    "options": [
+      "slaughter",
+      "degree",
+      "carnage",
+      "homicide"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-אוהב-רגאיי-רק:6",
+    "source": "course",
+    "sheet": "לא-אוהב-רגאיי-רק",
+    "mnemonicTitle": "לא אוהב רגאיי רק",
+    "type": "sentence_completion",
+    "prompt": "After winning the election, the next ______ to overcome is forming a stable coalition.",
+    "options": [
+      "voting",
+      "alliance",
+      "hurdle",
+      "ruler"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-אוהב-רגאיי-רק:7",
+    "source": "course",
+    "sheet": "לא-אוהב-רגאיי-רק",
+    "mnemonicTitle": "לא אוהב רגאיי רק",
+    "type": "sentence_completion",
+    "prompt": "Nicknamed “kid dynamite”, Mike Tyson was considered to be a ______ opponent even at a young age.",
+    "options": [
+      "crucial",
+      "docile",
+      "formidable",
+      "mercenary"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-אוהב-רגאיי-רק:8",
+    "source": "course",
+    "sheet": "לא-אוהב-רגאיי-רק",
+    "mnemonicTitle": "לא אוהב רגאיי רק",
+    "type": "sentence_completion",
+    "prompt": "Despite being a bulky looking herbivore, no animal can match the ______ of a charging hippopotamus.",
+    "options": [
+      "slenderness",
+      "bitterness",
+      "toxicity",
+      "ferocity"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-טיפוס-של-בוקר:1",
+    "source": "course",
+    "sheet": "לא-טיפוס-של-בוקר",
+    "mnemonicTitle": "לא טיפוס של בוקר",
+    "type": "sentence_completion",
+    "prompt": "Don't worry that I spent so much money on the dog, it’s a golden ______ …",
+    "options": [
+      "hoarder",
+      "retriever",
+      "canine",
+      "currency"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-טיפוס-של-בוקר:2",
+    "source": "course",
+    "sheet": "לא-טיפוס-של-בוקר",
+    "mnemonicTitle": "לא טיפוס של בוקר",
+    "type": "sentence_completion",
+    "prompt": "She ______ at her reflection in the mirror.",
+    "options": [
+      "echoed",
+      "imaged",
+      "gazed",
+      "growled"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-טיפוס-של-בוקר:3",
+    "source": "course",
+    "sheet": "לא-טיפוס-של-בוקר",
+    "mnemonicTitle": "לא טיפוס של בוקר",
+    "type": "sentence_completion",
+    "prompt": "Baldness is ______ from the mother's side of the family.",
+    "options": [
+      "familiarized",
+      "invaded",
+      "injected",
+      "inherited"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-טיפוס-של-בוקר:4",
+    "source": "course",
+    "sheet": "לא-טיפוס-של-בוקר",
+    "mnemonicTitle": "לא טיפוס של בוקר",
+    "type": "sentence_completion",
+    "prompt": "The weather is getting warmer and the snow is finally ______.",
+    "options": [
+      "freezing",
+      "accumulating",
+      "melting",
+      "shuffling"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-טיפוס-של-בוקר:5",
+    "source": "course",
+    "sheet": "לא-טיפוס-של-בוקר",
+    "mnemonicTitle": "לא טיפוס של בוקר",
+    "type": "sentence_completion",
+    "prompt": "She is still ______ her husband, who died last year.",
+    "options": [
+      "mourning",
+      "measuring",
+      "marrying",
+      "massacring"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"לא טיפוס של בוקר\" encodes \"mourning\""
+  },
+  {
+    "id": "לא-טיפוס-של-בוקר:6",
+    "source": "course",
+    "sheet": "לא-טיפוס-של-בוקר",
+    "mnemonicTitle": "לא טיפוס של בוקר",
+    "type": "sentence_completion",
+    "prompt": "Spending up to 12 hours a day chewing, Pandas' ______ is based mainly on bamboo.",
+    "options": [
+      "habitat",
+      "feces",
+      "digestion",
+      "nutrition"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-טיפוס-של-בוקר:7",
+    "source": "course",
+    "sheet": "לא-טיפוס-של-בוקר",
+    "mnemonicTitle": "לא טיפוס של בוקר",
+    "type": "sentence_completion",
+    "prompt": "The discovery of penicillin ______ the way for the development of effective new treatments.",
+    "options": [
+      "shielded",
+      "paved",
+      "exposed",
+      "hindered"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-טיפוס-של-בוקר:8",
+    "source": "course",
+    "sheet": "לא-טיפוס-של-בוקר",
+    "mnemonicTitle": "לא טיפוס של בוקר",
+    "type": "sentence_completion",
+    "prompt": "Not being able to deliver goods, the factory lost ______ due to the workers’ strike.",
+    "options": [
+      "revenue",
+      "nerves",
+      "compass",
+      "temper"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-כל-כך-נעים-לראות-גן-הרוס:1",
+    "source": "course",
+    "sheet": "לא-כל-כך-נעים-לראות-גן-הרוס",
+    "mnemonicTitle": "לא כל כך נעים לראות גן הרוס",
+    "type": "sentence_completion",
+    "prompt": "Camembert is sprayed with a mold during ripening to help it develop its ______ odor.",
+    "options": [
+      "disturbing",
+      "distinctive",
+      "discipline",
+      "discussing"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-כל-כך-נעים-לראות-גן-הרוס:2",
+    "source": "course",
+    "sheet": "לא-כל-כך-נעים-לראות-גן-הרוס",
+    "mnemonicTitle": "לא כל כך נעים לראות גן הרוס",
+    "type": "sentence_completion",
+    "prompt": "Thanks to ______ donations, all services are free and available to people in need.",
+    "options": [
+      "general",
+      "generous",
+      "gorgeous",
+      "genetic"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"לא כל כך נעים לראות גן הרוס\" encodes \"generous\""
+  },
+  {
+    "id": "לא-כל-כך-נעים-לראות-גן-הרוס:3",
+    "source": "course",
+    "sheet": "לא-כל-כך-נעים-לראות-גן-הרוס",
+    "mnemonicTitle": "לא כל כך נעים לראות גן הרוס",
+    "type": "sentence_completion",
+    "prompt": "Excessive consumption of alcohol is unhealthy and may is potentially ______.",
+    "options": [
+      "intoxicating",
+      "sober",
+      "lethal",
+      "spiritual"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-כל-כך-נעים-לראות-גן-הרוס:4",
+    "source": "course",
+    "sheet": "לא-כל-כך-נעים-לראות-גן-הרוס",
+    "mnemonicTitle": "לא כל כך נעים לראות גן הרוס",
+    "type": "sentence_completion",
+    "prompt": "Some of Jerusalem’s ______ streets are inaccessible for buses.",
+    "options": [
+      "narrow",
+      "orthodox",
+      "dimensional",
+      "marginal"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-כל-כך-נעים-לראות-גן-הרוס:5",
+    "source": "course",
+    "sheet": "לא-כל-כך-נעים-לראות-גן-הרוס",
+    "mnemonicTitle": "לא כל כך נעים לראות גן הרוס",
+    "type": "sentence_completion",
+    "prompt": "A Full moon ______ each month when the moon is fully illuminated by the sun from the Earth’s perspective.",
+    "options": [
+      "retreats",
+      "occurs",
+      "pales",
+      "disappears"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-כל-כך-נעים-לראות-גן-הרוס:6",
+    "source": "course",
+    "sheet": "לא-כל-כך-נעים-לראות-גן-הרוס",
+    "mnemonicTitle": "לא כל כך נעים לראות גן הרוס",
+    "type": "sentence_completion",
+    "prompt": "The salesperson was very ______, so I bought half the store.",
+    "options": [
+      "permanent",
+      "presumptuous",
+      "precise",
+      "persuasive"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-כל-כך-נעים-לראות-גן-הרוס:7",
+    "source": "course",
+    "sheet": "לא-כל-כך-נעים-לראות-גן-הרוס",
+    "mnemonicTitle": "לא כל כך נעים לראות גן הרוס",
+    "type": "sentence_completion",
+    "prompt": "In order to ______ a war, we must be ready for one.",
+    "options": [
+      "schedule",
+      "prevent",
+      "incite",
+      "surrender"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-כל-כך-נעים-לראות-גן-הרוס:8",
+    "source": "course",
+    "sheet": "לא-כל-כך-נעים-לראות-גן-הרוס",
+    "mnemonicTitle": "לא כל כך נעים לראות גן הרוס",
+    "type": "sentence_completion",
+    "prompt": "Saudi Arabia's Highway 10 is the world's longest stretch of completely straight road, lacking any ______ and turns.",
+    "options": [
+      "twists",
+      "crashes",
+      "vehicles",
+      "chauffeurs"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-קל-להיות-מקומי:1",
+    "source": "course",
+    "sheet": "לא-קל-להיות-מקומי",
+    "mnemonicTitle": "לא קל להיות מקומי",
+    "type": "sentence_completion",
+    "prompt": "Poisonous when raw, cashew is ______ only when roasted.",
+    "options": [
+      "legible",
+      "tangible",
+      "feasible",
+      "edible"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-קל-להיות-מקומי:2",
+    "source": "course",
+    "sheet": "לא-קל-להיות-מקומי",
+    "mnemonicTitle": "לא קל להיות מקומי",
+    "type": "sentence_completion",
+    "prompt": "With almost no energy lost in friction between moving parts, electric motors are much more ______ than gasoline engines.",
+    "options": [
+      "expendable",
+      "inflammable",
+      "efficient",
+      "confident"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-קל-להיות-מקומי:3",
+    "source": "course",
+    "sheet": "לא-קל-להיות-מקומי",
+    "mnemonicTitle": "לא קל להיות מקומי",
+    "type": "sentence_completion",
+    "prompt": "Rasputitsa, the Russian rainy season, turned the roads muddy, therefore seriously ______ the invading army's advance.",
+    "options": [
+      "hindering",
+      "littering",
+      "occupying",
+      "boycotting"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-קל-להיות-מקומי:4",
+    "source": "course",
+    "sheet": "לא-קל-להיות-מקומי",
+    "mnemonicTitle": "לא קל להיות מקומי",
+    "type": "sentence_completion",
+    "prompt": "The company is moving its factory to a different ______, where labor costs are cheaper.",
+    "options": [
+      "production",
+      "location",
+      "possession",
+      "contraction"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"לא קל להיות מקומי\" encodes \"location\""
+  },
+  {
+    "id": "לא-קל-להיות-מקומי:5",
+    "source": "course",
+    "sheet": "לא-קל-להיות-מקומי",
+    "mnemonicTitle": "לא קל להיות מקומי",
+    "type": "sentence_completion",
+    "prompt": "Marie Curie always lights up the room with her ______ smile.",
+    "options": [
+      "bashful",
+      "distant",
+      "radiant",
+      "awful"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-קל-להיות-מקומי:6",
+    "source": "course",
+    "sheet": "לא-קל-להיות-מקומי",
+    "mnemonicTitle": "לא קל להיות מקומי",
+    "type": "sentence_completion",
+    "prompt": "I demand my autonomy and ______ being told what to do.",
+    "options": [
+      "resent",
+      "request",
+      "reform",
+      "resume"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-קל-להיות-מקומי:7",
+    "source": "course",
+    "sheet": "לא-קל-להיות-מקומי",
+    "mnemonicTitle": "לא קל להיות מקומי",
+    "type": "sentence_completion",
+    "prompt": "If you intentionally prevent a police officer from effecting an authorized arrest you can be charged with ______ arrest.",
+    "options": [
+      "enforcing",
+      "resisting",
+      "suspending",
+      "obeying"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לא-קל-להיות-מקומי:8",
+    "source": "course",
+    "sheet": "לא-קל-להיות-מקומי",
+    "mnemonicTitle": "לא קל להיות מקומי",
+    "type": "sentence_completion",
+    "prompt": "The designated driver has to stay ______ tonight, and is not allowed to drink alcoholic beverages.",
+    "options": [
+      "thirsty",
+      "unfortunate",
+      "tranquil",
+      "sober"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לך-תחאווד:1",
+    "source": "course",
+    "sheet": "לך-תחאווד",
+    "mnemonicTitle": "לך תחאווד",
+    "type": "sentence_completion",
+    "prompt": "Physician: \"you suffer from an ______ hearing loss\" patient: “what?”",
+    "options": [
+      "acute",
+      "aspiring",
+      "affirming",
+      "acrid"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לך-תחאווד:2",
+    "source": "course",
+    "sheet": "לך-תחאווד",
+    "mnemonicTitle": "לך תחאווד",
+    "type": "sentence_completion",
+    "prompt": "After failing to suppress the riots, the chief of police had the ______ to blame the citizens for the whole crisis.",
+    "options": [
+      "strength",
+      "absurdity",
+      "obligation",
+      "audacity"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לך-תחאווד:3",
+    "source": "course",
+    "sheet": "לך-תחאווד",
+    "mnemonicTitle": "לך תחאווד",
+    "type": "sentence_completion",
+    "prompt": "Though not vegan, he tries to ______ meat products.",
+    "options": [
+      "ignore",
+      "avoid",
+      "digest",
+      "process"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לך-תחאווד:4",
+    "source": "course",
+    "sheet": "לך-תחאווד",
+    "mnemonicTitle": "לך תחאווד",
+    "type": "sentence_completion",
+    "prompt": "Any object that could be caught in a child's throat thus blocking their airway and making it difficult or impossible to breathe must be labeled a choking ______.",
+    "options": [
+      "inhalation",
+      "illustration",
+      "device",
+      "hazard"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לך-תחאווד:5",
+    "source": "course",
+    "sheet": "לך-תחאווד",
+    "mnemonicTitle": "לך תחאווד",
+    "type": "sentence_completion",
+    "prompt": "When bears don't use their computers during the winter, they ______.",
+    "options": [
+      "urinate",
+      "ovulate",
+      "hibernate",
+      "alternate"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לך-תחאווד:6",
+    "source": "course",
+    "sheet": "לך-תחאווד",
+    "mnemonicTitle": "לך תחאווד",
+    "type": "sentence_completion",
+    "prompt": "During the German occupation of Rome the Pope was ______, as he organized that Italian Jews would be concealed in convents and monasteries.",
+    "options": [
+      "perilous",
+      "pious",
+      "precious",
+      "placid"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "לך-תחאווד:7",
+    "source": "course",
+    "sheet": "לך-תחאווד",
+    "mnemonicTitle": "לך תחאווד",
+    "type": "sentence_completion",
+    "prompt": "The sun ______ the frozen soil.",
+    "options": [
+      "frosted",
+      "ground",
+      "thawed",
+      "fused"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"לך תחאווד\" encodes \"thawed\""
+  },
+  {
+    "id": "לך-תחאווד:8",
+    "source": "course",
+    "sheet": "לך-תחאווד",
+    "mnemonicTitle": "לך תחאווד",
+    "type": "sentence_completion",
+    "prompt": "While historians have documented numerous communist ______, much of the public remains unaware of their enormous scale.",
+    "options": [
+      "manifestations",
+      "communities",
+      "atrocities",
+      "agendas"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מה-לובשים-ערסים:1",
+    "source": "course",
+    "sheet": "מה-לובשים-ערסים",
+    "mnemonicTitle": "מה לובשים ערסים",
+    "type": "sentence_completion",
+    "prompt": "The professor told me to ______ his assistant Igor’s awkward behavior.",
+    "options": [
+      "elaborate",
+      "reject",
+      "contrast",
+      "ignore"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מה-לובשים-ערסים:2",
+    "source": "course",
+    "sheet": "מה-לובשים-ערסים",
+    "mnemonicTitle": "מה לובשים ערסים",
+    "type": "sentence_completion",
+    "prompt": "Factory owners, restrained by competition under free market Capitalism, cannot ______ their workers economically.",
+    "options": [
+      "expose",
+      "exploit",
+      "exclude",
+      "expend"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מה-לובשים-ערסים:3",
+    "source": "course",
+    "sheet": "מה-לובשים-ערסים",
+    "mnemonicTitle": "מה לובשים ערסים",
+    "type": "sentence_completion",
+    "prompt": "The brilliant economist, Dr. Thomas Sowell, is ______ by millions worldwide.",
+    "options": [
+      "dreaded",
+      "admired",
+      "terrified",
+      "encircled"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מה-לובשים-ערסים:4",
+    "source": "course",
+    "sheet": "מה-לובשים-ערסים",
+    "mnemonicTitle": "מה לובשים ערסים",
+    "type": "sentence_completion",
+    "prompt": "In addition to paying a direct salary, employers always seek to ______ their employees.",
+    "options": [
+      "incentivize",
+      "income",
+      "invest",
+      "irritate"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מה-לובשים-ערסים:5",
+    "source": "course",
+    "sheet": "מה-לובשים-ערסים",
+    "mnemonicTitle": "מה לובשים ערסים",
+    "type": "sentence_completion",
+    "prompt": "A common superstition, the belief that black cats are a bad ______ … all cats are.",
+    "options": [
+      "pet",
+      "feline",
+      "omen",
+      "company"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מה-לובשים-ערסים:6",
+    "source": "course",
+    "sheet": "מה-לובשים-ערסים",
+    "mnemonicTitle": "מה לובשים ערסים",
+    "type": "sentence_completion",
+    "prompt": "Each year ten percent of the crop is lost to a ______ called corn rootworm.",
+    "options": [
+      "harvest",
+      "spark",
+      "plot",
+      "pest"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מה-לובשים-ערסים:7",
+    "source": "course",
+    "sheet": "מה-לובשים-ערסים",
+    "mnemonicTitle": "מה לובשים ערסים",
+    "type": "sentence_completion",
+    "prompt": "Thanks to modern technology such as the Global Positioning System (GPS), it is far easier to ______ oneself, even in unknown new places.",
+    "options": [
+      "overcome",
+      "occupy",
+      "orient",
+      "offend"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מה-לובשים-ערסים:8",
+    "source": "course",
+    "sheet": "מה-לובשים-ערסים",
+    "mnemonicTitle": "מה לובשים ערסים",
+    "type": "sentence_completion",
+    "prompt": "The coat of many colors is the name for the ______ worn by Joseph, given to by his father, Jacob.",
+    "options": [
+      "hue",
+      "script",
+      "shade",
+      "garment"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"מה לובשים ערסים\" encodes \"garment\""
+  },
+  {
+    "id": "מכות-בהוסטל:1",
+    "source": "course",
+    "sheet": "מכות-בהוסטל",
+    "mnemonicTitle": "מכות בהוסטל",
+    "type": "sentence_completion",
+    "prompt": "By dividing power into three separate branches and creating a clever system of checks and balances, the Founding Fathers hoped to prevent the ______ of power.",
+    "options": [
+      "abuse",
+      "misguidance",
+      "distortion",
+      "application"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מכות-בהוסטל:2",
+    "source": "course",
+    "sheet": "מכות-בהוסטל",
+    "mnemonicTitle": "מכות בהוסטל",
+    "type": "sentence_completion",
+    "prompt": "In 1958, the Chinese government ordered the extermination of sparrows, which left rice ______ vulnerable to pests such as locusts, causing a widespread famine.",
+    "options": [
+      "crops",
+      "dishes",
+      "harvesting",
+      "cultivation"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מכות-בהוסטל:3",
+    "source": "course",
+    "sheet": "מכות-בהוסטל",
+    "mnemonicTitle": "מכות בהוסטל",
+    "type": "sentence_completion",
+    "prompt": "The paratroops were entering ______ territory in occupied Europe.",
+    "options": [
+      "hesitated",
+      "hostage",
+      "hospitable",
+      "hostile"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"מכות בהוסטל\" encodes \"hostile\""
+  },
+  {
+    "id": "מכות-בהוסטל:4",
+    "source": "course",
+    "sheet": "מכות-בהוסטל",
+    "mnemonicTitle": "מכות בהוסטל",
+    "type": "sentence_completion",
+    "prompt": "In the Wild West, most communities elected a sheriff to ______ the law.",
+    "options": [
+      "implore",
+      "impose",
+      "import",
+      "improvise"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מכות-בהוסטל:5",
+    "source": "course",
+    "sheet": "מכות-בהוסטל",
+    "mnemonicTitle": "מכות בהוסטל",
+    "type": "sentence_completion",
+    "prompt": "Author George R.R. Martin's novels are ______ by historical events such as the wars of the Roses.",
+    "options": [
+      "evaluated",
+      "engraved",
+      "inspired",
+      "ruined"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מכות-בהוסטל:6",
+    "source": "course",
+    "sheet": "מכות-בהוסטל",
+    "mnemonicTitle": "מכות בהוסטל",
+    "type": "sentence_completion",
+    "prompt": "Frontier Airlines and Spirit Airlines have agreed to ______, creating what would become the fifth- largest airline in the country.",
+    "options": [
+      "ration",
+      "cluster",
+      "divide",
+      "merge"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מכות-בהוסטל:7",
+    "source": "course",
+    "sheet": "מכות-בהוסטל",
+    "mnemonicTitle": "מכות בהוסטל",
+    "type": "sentence_completion",
+    "prompt": "Tardigrades, also known as water bears, can ______ even in extremely harsh conditions.",
+    "options": [
+      "prosper",
+      "propose",
+      "protect",
+      "postpone"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מכות-בהוסטל:8",
+    "source": "course",
+    "sheet": "מכות-בהוסטל",
+    "mnemonicTitle": "מכות בהוסטל",
+    "type": "sentence_completion",
+    "prompt": "He was ______ from school for bad behavior.",
+    "options": [
+      "surrounded",
+      "suspended",
+      "sustained",
+      "surfaced"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מלח-תוקפני:1",
+    "source": "course",
+    "sheet": "מלח-תוקפני",
+    "mnemonicTitle": "מלח תוקפני",
+    "type": "sentence_completion",
+    "prompt": "Al Capone was the ______ head of a crime syndicate.",
+    "options": [
+      "notorious",
+      "benevolent",
+      "malodorous",
+      "moderate"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מלח-תוקפני:2",
+    "source": "course",
+    "sheet": "מלח-תוקפני",
+    "mnemonicTitle": "מלח תוקפני",
+    "type": "sentence_completion",
+    "prompt": "Karl Marx, an ______ and opinionated man, believed he himself can solve all the world's problems.",
+    "options": [
+      "arrogant",
+      "obsolete",
+      "affluent",
+      "equivalent"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מלח-תוקפני:3",
+    "source": "course",
+    "sheet": "מלח-תוקפני",
+    "mnemonicTitle": "מלח תוקפני",
+    "type": "sentence_completion",
+    "prompt": "He was charged with ______ with a deadly weapon.",
+    "options": [
+      "charging",
+      "dismantling",
+      "charming",
+      "assault"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"מלח תוקפני\" encodes \"assault\""
+  },
+  {
+    "id": "מלח-תוקפני:4",
+    "source": "course",
+    "sheet": "מלח-תוקפני",
+    "mnemonicTitle": "מלח תוקפני",
+    "type": "sentence_completion",
+    "prompt": "The state is not allowed to ______ on the basis of race or gender.",
+    "options": [
+      "expropriate",
+      "discriminate",
+      "overpopulate",
+      "incorporate"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מלח-תוקפני:5",
+    "source": "course",
+    "sheet": "מלח-תוקפני",
+    "mnemonicTitle": "מלח תוקפני",
+    "type": "sentence_completion",
+    "prompt": "Due to overdiagnosis, it is hard to ______ how many children actually suffer from attention deficit hyperactivity disorder (ADHD).",
+    "options": [
+      "concentrate",
+      "coordinate",
+      "estimate",
+      "establish"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מלח-תוקפני:6",
+    "source": "course",
+    "sheet": "מלח-תוקפני",
+    "mnemonicTitle": "מלח תוקפני",
+    "type": "sentence_completion",
+    "prompt": "The articles written by the journalist provoked the ______ of the Russian authorities.",
+    "options": [
+      "warmth",
+      "wrath",
+      "wrecks",
+      "wrestler"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מלח-תוקפני:7",
+    "source": "course",
+    "sheet": "מלח-תוקפני",
+    "mnemonicTitle": "מלח תוקפני",
+    "type": "sentence_completion",
+    "prompt": "The Chinese government had expected the abolition of the one-child policy would lead to an ______ in births.",
+    "options": [
+      "inception",
+      "implode",
+      "impregnate",
+      "increase"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "מלח-תוקפני:8",
+    "source": "course",
+    "sheet": "מלח-תוקפני",
+    "mnemonicTitle": "מלח תוקפני",
+    "type": "sentence_completion",
+    "prompt": "Israel has been ______ to confront its border problems.",
+    "options": [
+      "rejoiced",
+      "revered",
+      "reliant",
+      "reluctant"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "משטרת-עכו-מחפשת:1",
+    "source": "course",
+    "sheet": "משטרת-עכו-מחפשת",
+    "mnemonicTitle": "משטרת עכו מחפשת",
+    "type": "sentence_completion",
+    "prompt": "Bob is the one who shot the sheriff, but he had an ______ helping him.",
+    "options": [
+      "artist",
+      "armistice",
+      "apprentice",
+      "accomplice"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"משטרת עכו מחפשת\" encodes \"accomplice\""
+  },
+  {
+    "id": "משטרת-עכו-מחפשת:2",
+    "source": "course",
+    "sheet": "משטרת-עכו-מחפשת",
+    "mnemonicTitle": "משטרת עכו מחפשת",
+    "type": "sentence_completion",
+    "prompt": "A good pediatrician must have some ______ for children.",
+    "options": [
+      "affinity",
+      "endurance",
+      "abhorrence",
+      "treatment"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "משטרת-עכו-מחפשת:3",
+    "source": "course",
+    "sheet": "משטרת-עכו-מחפשת",
+    "mnemonicTitle": "משטרת עכו מחפשת",
+    "type": "sentence_completion",
+    "prompt": "The Negev used to be an ______ wasteland prior to the creation of the state of Israel.",
+    "options": [
+      "irrigated",
+      "abundant",
+      "arid",
+      "even"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "משטרת-עכו-מחפשת:4",
+    "source": "course",
+    "sheet": "משטרת-עכו-מחפשת",
+    "mnemonicTitle": "משטרת עכו מחפשת",
+    "type": "sentence_completion",
+    "prompt": "Many great empires came and ______ over the course of history, leaving only monuments.",
+    "options": [
+      "flourished",
+      "perished",
+      "conquered",
+      "founded"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "משטרת-עכו-מחפשת:5",
+    "source": "course",
+    "sheet": "משטרת-עכו-מחפשת",
+    "mnemonicTitle": "משטרת עכו מחפשת",
+    "type": "sentence_completion",
+    "prompt": "President Trump ______ the Chinese government for suggesting that the U.S. is to be blame for the outbreak of the coronavirus.",
+    "options": [
+      "encouraged",
+      "disagree",
+      "rebuked",
+      "condoned"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "משטרת-עכו-מחפשת:6",
+    "source": "course",
+    "sheet": "משטרת-עכו-מחפשת",
+    "mnemonicTitle": "משטרת עכו מחפשת",
+    "type": "sentence_completion",
+    "prompt": "In the story the Giving Tree, written and illustrated by Shel Silverstein, the same tree ______ apples and timber.",
+    "options": [
+      "yielded",
+      "consumed",
+      "crafted",
+      "poisoned"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "משטרת-עכו-מחפשת:7",
+    "source": "course",
+    "sheet": "משטרת-עכו-מחפשת",
+    "mnemonicTitle": "משטרת עכו מחפשת",
+    "type": "sentence_completion",
+    "prompt": "In modern agriculture, fertilizer is spread through the ______ systems.",
+    "options": [
+      "assumption",
+      "correlation",
+      "navigation",
+      "irrigation"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "משטרת-עכו-מחפשת:8",
+    "source": "course",
+    "sheet": "משטרת-עכו-מחפשת",
+    "mnemonicTitle": "משטרת עכו מחפשת",
+    "type": "sentence_completion",
+    "prompt": "Once considered an arid wasteland, the Negev is now a ______ ground for many crops.",
+    "options": [
+      "futile",
+      "false",
+      "fertile",
+      "fragile"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "סופר-את-השניות:1",
+    "source": "course",
+    "sheet": "סופר-את-השניות",
+    "mnemonicTitle": "סופר את השניות",
+    "type": "sentence_completion",
+    "prompt": "Since 1995, when wolves were reintroduced to their natural ______ in the American West, research has shown that they have helped revitalize and restore ecosystems.",
+    "options": [
+      "quest",
+      "habitat",
+      "pack",
+      "predator"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "סופר-את-השניות:2",
+    "source": "course",
+    "sheet": "סופר-את-השניות",
+    "mnemonicTitle": "סופר את השניות",
+    "type": "sentence_completion",
+    "prompt": "Flying the world's first successful motor-operated airplane, the Wright brothers were two American aviation ______.",
+    "options": [
+      "pioneers",
+      "ancestors",
+      "contractors",
+      "attendants"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "סופר-את-השניות:3",
+    "source": "course",
+    "sheet": "סופר-את-השניות",
+    "mnemonicTitle": "סופר את השניות",
+    "type": "sentence_completion",
+    "prompt": "She sets off on her ______ for vengeance on those who tried to kill her on her wedding day.",
+    "options": [
+      "retaliation",
+      "stroll",
+      "reprisal",
+      "quest"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "סופר-את-השניות:4",
+    "source": "course",
+    "sheet": "סופר-את-השניות",
+    "mnemonicTitle": "סופר את השניות",
+    "type": "sentence_completion",
+    "prompt": "I have heard ______ of your beauty, and for once, the gossip is right.",
+    "options": [
+      "fabrications",
+      "attractions",
+      "slanders",
+      "rumors"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "סופר-את-השניות:5",
+    "source": "course",
+    "sheet": "סופר-את-השניות",
+    "mnemonicTitle": "סופר את השניות",
+    "type": "sentence_completion",
+    "prompt": "Astronomers are debating whether the universe will continue to expand or will begin to ______.",
+    "options": [
+      "evaporate",
+      "increase",
+      "shrink",
+      "succumb"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "סופר-את-השניות:6",
+    "source": "course",
+    "sheet": "סופר-את-השניות",
+    "mnemonicTitle": "סופר את השניות",
+    "type": "sentence_completion",
+    "prompt": "He was arrested for ______ drugs across the border into the country.",
+    "options": [
+      "injecting",
+      "smuggling",
+      "touring",
+      "breaching"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "סופר-את-השניות:7",
+    "source": "course",
+    "sheet": "סופר-את-השניות",
+    "mnemonicTitle": "סופר את השניות",
+    "type": "sentence_completion",
+    "prompt": "When you're stupid you might have fun, but everybody else ______.",
+    "options": [
+      "suffers",
+      "entertains",
+      "escapes",
+      "differs"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"סופר את השניות\" encodes \"suffers\""
+  },
+  {
+    "id": "סופר-את-השניות:8",
+    "source": "course",
+    "sheet": "סופר-את-השניות",
+    "mnemonicTitle": "סופר את השניות",
+    "type": "sentence_completion",
+    "prompt": "Dog breeds ______ in size from the tiny Chihuahua to the Great Dane",
+    "options": [
+      "bark",
+      "range",
+      "minute",
+      "scratch"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "סופרמן-חמסה-חמסה:1",
+    "source": "course",
+    "sheet": "סופרמן-חמסה-חמסה",
+    "mnemonicTitle": "סופרמן חמסה חמסה",
+    "type": "sentence_completion",
+    "prompt": "Removing just one olive from each passenger salad, the saving for the airline can ______ to thousands of dollars a year.",
+    "options": [
+      "amuse",
+      "amount",
+      "amend",
+      "amputate"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "סופרמן-חמסה-חמסה:2",
+    "source": "course",
+    "sheet": "סופרמן-חמסה-חמסה",
+    "mnemonicTitle": "סופרמן חמסה חמסה",
+    "type": "sentence_completion",
+    "prompt": "From fingerprints to eyewitnesses, the detective found ______ evidence to base his suspicion on.",
+    "options": [
+      "contradicting",
+      "puzzling",
+      "ample",
+      "sophisticated"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "סופרמן-חמסה-חמסה:3",
+    "source": "course",
+    "sheet": "סופרמן-חמסה-חמסה",
+    "mnemonicTitle": "סופרמן חמסה חמסה",
+    "type": "sentence_completion",
+    "prompt": "Foreign criminals sentenced to deportation are to be ______ to a remote island.",
+    "options": [
+      "blurred",
+      "blended",
+      "banded",
+      "banished"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "סופרמן-חמסה-חמסה:4",
+    "source": "course",
+    "sheet": "סופרמן-חמסה-חמסה",
+    "mnemonicTitle": "סופרמן חמסה חמסה",
+    "type": "sentence_completion",
+    "prompt": "In politics, one must ______ in order to achieve some of his goals.",
+    "options": [
+      "compromise",
+      "conform",
+      "compile",
+      "confront"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "סופרמן-חמסה-חמסה:5",
+    "source": "course",
+    "sheet": "סופרמן-חמסה-חמסה",
+    "mnemonicTitle": "סופרמן חמסה חמסה",
+    "type": "sentence_completion",
+    "prompt": "The Stanford prison experiment, in which college students became prisoners or guards, demonstrated how people abuse power using ______ and inhumane methods.",
+    "options": [
+      "casual",
+      "cruel",
+      "compassionate",
+      "crucial"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "סופרמן-חמסה-חמסה:6",
+    "source": "course",
+    "sheet": "סופרמן-חמסה-חמסה",
+    "mnemonicTitle": "סופרמן חמסה חמסה",
+    "type": "sentence_completion",
+    "prompt": "Laughter can strengthen the ______ system and prevent diseases.",
+    "options": [
+      "periodic",
+      "classification",
+      "penal",
+      "immune"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "סופרמן-חמסה-חמסה:7",
+    "source": "course",
+    "sheet": "סופרמן-חמסה-חמסה",
+    "mnemonicTitle": "סופרמן חמסה חמסה",
+    "type": "sentence_completion",
+    "prompt": "The mutual suspicion and hostility between the United States and the Soviet Union, former allies against a common enemy, made them become ______ within days of the ending of WW2.",
+    "options": [
+      "associates",
+      "rivals",
+      "combatants",
+      "mobilize"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "סופרמן-חמסה-חמסה:8",
+    "source": "course",
+    "sheet": "סופרמן-חמסה-חמסה",
+    "mnemonicTitle": "סופרמן חמסה חמסה",
+    "type": "sentence_completion",
+    "prompt": "It is a common ______ that a black cat crossing your path is a sign of bad luck.",
+    "options": [
+      "supervision",
+      "superiority",
+      "suppression",
+      "superstition"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"סופרמן חמסה חמסה\" encodes \"superstition\""
+  },
+  {
+    "id": "פחחח-לא-את:1",
+    "source": "course",
+    "sheet": "פחחח-לא-את",
+    "mnemonicTitle": "פחחח לא את",
+    "type": "sentence_completion",
+    "prompt": "The city has ______ smoking in all public buildings.",
+    "options": [
+      "borrowed",
+      "blend",
+      "bounced",
+      "banned"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "פחחח-לא-את:2",
+    "source": "course",
+    "sheet": "פחחח-לא-את",
+    "mnemonicTitle": "פחחח לא את",
+    "type": "sentence_completion",
+    "prompt": "He used makeup to ______ the bruises in his face.",
+    "options": [
+      "conceal",
+      "consent",
+      "consider",
+      "console"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "פחחח-לא-את:3",
+    "source": "course",
+    "sheet": "פחחח-לא-את",
+    "mnemonicTitle": "פחחח לא את",
+    "type": "sentence_completion",
+    "prompt": "The German bombing of civilians during WW2 was a ______ and malicious act, meant to strike fear.",
+    "options": [
+      "delaying",
+      "duplicated",
+      "deliberate",
+      "docile"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "פחחח-לא-את:4",
+    "source": "course",
+    "sheet": "פחחח-לא-את",
+    "mnemonicTitle": "פחחח לא את",
+    "type": "sentence_completion",
+    "prompt": "Jury members should be impartial and lack any ______ in order to achieve justice.",
+    "options": [
+      "morals",
+      "bias",
+      "principles",
+      "prosecutor"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "פחחח-לא-את:5",
+    "source": "course",
+    "sheet": "פחחח-לא-את",
+    "mnemonicTitle": "פחחח לא את",
+    "type": "sentence_completion",
+    "prompt": "Being ______ for years on a desert island, he had difficulties to adjust to society.",
+    "options": [
+      "advocated",
+      "isolated",
+      "inspected",
+      "excluded"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "פחחח-לא-את:6",
+    "source": "course",
+    "sheet": "פחחח-לא-את",
+    "mnemonicTitle": "פחחח לא את",
+    "type": "sentence_completion",
+    "prompt": "Congressmen are ______ to limit their salaries and the amount of time they can be in office.",
+    "options": [
+      "pleased",
+      "managing",
+      "reliable",
+      "loath"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"פחחח לא את\" encodes \"loath\""
+  },
+  {
+    "id": "פחחח-לא-את:7",
+    "source": "course",
+    "sheet": "פחחח-לא-את",
+    "mnemonicTitle": "פחחח לא את",
+    "type": "sentence_completion",
+    "prompt": "Serial killers have attained celebrity status in society, as our ______ curiosity is being preyed upon by a formidable number of films, TV series and documentaries.",
+    "options": [
+      "harmless",
+      "beneficial",
+      "morbid",
+      "corrosive"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "פחחח-לא-את:8",
+    "source": "course",
+    "sheet": "פחחח-לא-את",
+    "mnemonicTitle": "פחחח לא את",
+    "type": "sentence_completion",
+    "prompt": "Lions ______ on the weaker buffalos in the herd.",
+    "options": [
+      "prey",
+      "pride",
+      "protect",
+      "prosper"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "פרה-לאל:1",
+    "source": "course",
+    "sheet": "פרה-לאל",
+    "mnemonicTitle": "פרה לאל",
+    "type": "sentence_completion",
+    "prompt": "Nothing can ______ a flu, but some remedies might help ease the symptoms and hasten recovery.",
+    "options": [
+      "heat",
+      "cure",
+      "insure",
+      "replace"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "פרה-לאל:2",
+    "source": "course",
+    "sheet": "פרה-לאל",
+    "mnemonicTitle": "פרה לאל",
+    "type": "sentence_completion",
+    "prompt": "Reigning for over 170 million years, Dinosaurs are one of the most successful groups of animals to have ______ the planet.",
+    "options": [
+      "orbited",
+      "extinct",
+      "roamed",
+      "vanished"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "פרה-לאל:3",
+    "source": "course",
+    "sheet": "פרה-לאל",
+    "mnemonicTitle": "פרה לאל",
+    "type": "sentence_completion",
+    "prompt": "The assassination of Archduke Franz Ferdinand caused a localized conflict to ______ into a world war.",
+    "options": [
+      "decrease",
+      "formulate",
+      "demonstrate",
+      "escalate"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "פרה-לאל:4",
+    "source": "course",
+    "sheet": "פרה-לאל",
+    "mnemonicTitle": "פרה לאל",
+    "type": "sentence_completion",
+    "prompt": "Many rules of ______ govern the proper conduct of the chopsticks in Japanese culture.",
+    "options": [
+      "engagement",
+      "survival",
+      "etiquette",
+      "nutrition"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "פרה-לאל:5",
+    "source": "course",
+    "sheet": "פרה-לאל",
+    "mnemonicTitle": "פרה לאל",
+    "type": "sentence_completion",
+    "prompt": "The city of Baghdad ______ its name from ancient Persian, meaning “bestowed by God”.",
+    "options": [
+      "derives",
+      "conquers",
+      "abducts",
+      "reinforces"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "פרה-לאל:6",
+    "source": "course",
+    "sheet": "פרה-לאל",
+    "mnemonicTitle": "פרה לאל",
+    "type": "sentence_completion",
+    "prompt": "Despite his rustic appearance, the propaganda ______ Stalin to godlike status.",
+    "options": [
+      "triumphed",
+      "elevated",
+      "revived",
+      "defamed"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "פרה-לאל:7",
+    "source": "course",
+    "sheet": "פרה-לאל",
+    "mnemonicTitle": "פרה לאל",
+    "type": "sentence_completion",
+    "prompt": "The city of Atbara is located at the ______ of the Nile and Atbarah rivers.",
+    "options": [
+      "current",
+      "junction",
+      "summit",
+      "crossword"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "פרה-לאל:8",
+    "source": "course",
+    "sheet": "פרה-לאל",
+    "mnemonicTitle": "פרה לאל",
+    "type": "sentence_completion",
+    "prompt": "The 20th century saw unprecedented changes, without ______ in recorded history.",
+    "options": [
+      "documents",
+      "antiquity",
+      "parallel",
+      "transformations"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"פרה לאל\" encodes \"parallel\""
+  },
+  {
+    "id": "רוטט-ומסתובב:1",
+    "source": "course",
+    "sheet": "רוטט-ומסתובב",
+    "mnemonicTitle": "רוטט ומסתובב",
+    "type": "sentence_completion",
+    "prompt": "A person who wish to learn must never be too shy to ______ his own mistakes.",
+    "options": [
+      "admit",
+      "adapt",
+      "adore",
+      "advise"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "רוטט-ומסתובב:2",
+    "source": "course",
+    "sheet": "רוטט-ומסתובב",
+    "mnemonicTitle": "רוטט ומסתובב",
+    "type": "sentence_completion",
+    "prompt": "We tend to believe that the ______ century would be more peaceful than the previous one.",
+    "options": [
+      "amicable",
+      "former",
+      "current",
+      "cordial"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "רוטט-ומסתובב:3",
+    "source": "course",
+    "sheet": "רוטט-ומסתובב",
+    "mnemonicTitle": "רוטט ומסתובב",
+    "type": "sentence_completion",
+    "prompt": "He is a ______ person and would never deceive you.",
+    "options": [
+      "degenerate",
+      "decent",
+      "decorated",
+      "decomposed"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "רוטט-ומסתובב:4",
+    "source": "course",
+    "sheet": "רוטט-ומסתובב",
+    "mnemonicTitle": "רוטט ומסתובב",
+    "type": "sentence_completion",
+    "prompt": "Scientists are currently seeking to create a vaccine that ______ the causes of the plague.",
+    "options": [
+      "evacuate",
+      "elaborate",
+      "estimate",
+      "eliminate"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "רוטט-ומסתובב:5",
+    "source": "course",
+    "sheet": "רוטט-ומסתובב",
+    "mnemonicTitle": "רוטט ומסתובב",
+    "type": "sentence_completion",
+    "prompt": "The teacher gave us a ______ on the material we studied yesterday.",
+    "options": [
+      "quiz",
+      "proposition",
+      "failure",
+      "fiasco"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "רוטט-ומסתובב:6",
+    "source": "course",
+    "sheet": "רוטט-ומסתובב",
+    "mnemonicTitle": "רוטט ומסתובב",
+    "type": "sentence_completion",
+    "prompt": "The Earth revolves around the sun and ______ on its axis.",
+    "options": [
+      "resolves",
+      "rotates",
+      "evolves",
+      "retorts"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"רוטט ומסתובב\" encodes \"rotates\""
+  },
+  {
+    "id": "רוטט-ומסתובב:7",
+    "source": "course",
+    "sheet": "רוטט-ומסתובב",
+    "mnemonicTitle": "רוטט ומסתובב",
+    "type": "sentence_completion",
+    "prompt": "According to a recent ______, 53% of the kindergarten students already own a cell phone.",
+    "options": [
+      "survey",
+      "consensus",
+      "conscription",
+      "surveillance"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "רוטט-ומסתובב:8",
+    "source": "course",
+    "sheet": "רוטט-ומסתובב",
+    "mnemonicTitle": "רוטט ומסתובב",
+    "type": "sentence_completion",
+    "prompt": "All of the jury members reached a ______ verdict - not guilty.",
+    "options": [
+      "universal",
+      "unilateral",
+      "unambiguous",
+      "unanimous"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude"
+  },
+  {
+    "id": "שב-בשקט-בלול:1",
+    "source": "course",
+    "sheet": "שב-בשקט-בלול",
+    "mnemonicTitle": "שב בשקט בלול",
+    "type": "sentence_completion",
+    "prompt": "Yorkshire terrier is a specific type of dog that was originally ______ to dig and hunt for prey.",
+    "options": [
+      "mined",
+      "bred",
+      "howled",
+      "sought"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "שב-בשקט-בלול:2",
+    "source": "course",
+    "sheet": "שב-בשקט-בלול",
+    "mnemonicTitle": "שב בשקט בלול",
+    "type": "sentence_completion",
+    "prompt": "Prior to the invention of the ______, sailors used celestial navigation to determine their position.",
+    "options": [
+      "marine",
+      "anchor",
+      "compass",
+      "navy"
+    ],
+    "correctAnswerIndex": 2,
+    "answerBy": "claude"
+  },
+  {
+    "id": "שב-בשקט-בלול:3",
+    "source": "course",
+    "sheet": "שב-בשקט-בלול",
+    "mnemonicTitle": "שב בשקט בלול",
+    "type": "sentence_completion",
+    "prompt": "The Corona virus is highly ______ - transmissible by direct or indirect contact with an infected person.",
+    "options": [
+      "contagious",
+      "cautious",
+      "adhesive",
+      "abusive"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "שב-בשקט-בלול:4",
+    "source": "course",
+    "sheet": "שב-בשקט-בלול",
+    "mnemonicTitle": "שב בשקט בלול",
+    "type": "sentence_completion",
+    "prompt": "The unsatisfied costumer was ______ and demanded to speak to the manager.",
+    "options": [
+      "outnumbered",
+      "outraged",
+      "submissive",
+      "subordinate"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "שב-בשקט-בלול:5",
+    "source": "course",
+    "sheet": "שב-בשקט-בלול",
+    "mnemonicTitle": "שב בשקט בלול",
+    "type": "sentence_completion",
+    "prompt": "When the plague broke out, many infected people were put into ______.",
+    "options": [
+      "quarantine",
+      "labor",
+      "trial",
+      "practice"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  },
+  {
+    "id": "שב-בשקט-בלול:6",
+    "source": "course",
+    "sheet": "שב-בשקט-בלול",
+    "mnemonicTitle": "שב בשקט בלול",
+    "type": "sentence_completion",
+    "prompt": "The “Christmas Truce” of 1914 took place during a ______ in the fighting, when German and British soldiers left their trenches and met in no-man’s-land.",
+    "options": [
+      "shelling",
+      "rage",
+      "piece",
+      "lull"
+    ],
+    "correctAnswerIndex": 3,
+    "answerBy": "claude",
+    "note": "the sheet's own title \"שב בשקט בלול\" encodes \"lull\""
+  },
+  {
+    "id": "שב-בשקט-בלול:7",
+    "source": "course",
+    "sheet": "שב-בשקט-בלול",
+    "mnemonicTitle": "שב בשקט בלול",
+    "type": "sentence_completion",
+    "prompt": "Japan is located in a very active seismic area and therefore is ______ to earthquakes.",
+    "options": [
+      "destroyed",
+      "prone",
+      "shook",
+      "trembles"
+    ],
+    "correctAnswerIndex": 1,
+    "answerBy": "claude"
+  },
+  {
+    "id": "שב-בשקט-בלול:8",
+    "source": "course",
+    "sheet": "שב-בשקט-בלול",
+    "mnemonicTitle": "שב בשקט בלול",
+    "type": "sentence_completion",
+    "prompt": "The ______ for adultery in ancient times was stoning to death.",
+    "options": [
+      "penalty",
+      "advantage",
+      "committee",
+      "blasphemy"
+    ],
+    "correctAnswerIndex": 0,
+    "answerBy": "claude"
+  }
+]

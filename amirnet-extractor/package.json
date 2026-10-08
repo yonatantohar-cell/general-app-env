@@ -1,0 +1,23 @@
+{
+  "name": "amirnet-extractor",
+  "version": "1.0.0",
+  "description": "Extracts the simulation/test content from amirnetwords.com into structured JSON and readable Markdown.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "from-url": "node index.js --from-url https://amirnetwords.com/tests",
+    "from-dir": "node index.js --from-dir ./saved-pages",
+    "validate": "node validate.js",
+    "inspect": "node inspect.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cheerio": "^1.0.0",
+    "iconv-lite": "^0.6.3",
+    "wordlist-english": "^1.2.1"
+  }
+}

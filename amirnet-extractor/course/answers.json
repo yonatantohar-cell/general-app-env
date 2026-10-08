@@ -1,0 +1,48 @@
+{
+  "_README": "The sheets ship no answer key, so these were determined by Claude, not taken from the source. `by` records that. Five of them are independently corroborated: each sheet's Hebrew mnemonic title encodes one of its answers (satellite, docile, abandon, advocate, appropriate), and those five match. Indices are 0-based.",
+
+  "sheet-1:1": { "answer": 0, "by": "claude", "note": "EFSMI is the abbreviation of the institute's name" },
+  "sheet-1:2": { "answer": 1, "by": "claude" },
+  "sheet-1:3": { "answer": 0, "by": "claude" },
+  "sheet-1:4": { "answer": 2, "by": "claude" },
+  "sheet-1:5": { "answer": 3, "by": "claude", "note": "compile = gather scattered material together" },
+  "sheet-1:6": { "answer": 3, "by": "claude" },
+  "sheet-1:7": { "answer": 0, "by": "claude" },
+  "sheet-1:8": { "answer": 1, "by": "claude", "note": "corroborated by the sheet's title יא סאטל בחלל -> satellite" },
+
+  "sheet-2:1": { "answer": 1, "by": "claude" },
+  "sheet-2:2": { "answer": 2, "by": "claude" },
+  "sheet-2:3": { "answer": 0, "by": "claude" },
+  "sheet-2:4": { "answer": 2, "by": "claude", "note": "'a dubious character' is the set collocation; 'doubtful' describes a person's belief, not their appearance" },
+  "sheet-2:5": { "answer": 3, "by": "claude" },
+  "sheet-2:6": { "answer": 2, "by": "claude", "note": "pejorative = disparaging" },
+  "sheet-2:7": { "answer": 1, "by": "claude" },
+  "sheet-2:8": { "answer": 3, "by": "claude", "note": "corroborated by the sheet's title דוסילה חמוד -> docile" },
+
+  "sheet-3:1": { "answer": 1, "by": "claude", "note": "corroborated by the sheet's title אבא עם בנדנה -> abandon" },
+  "sheet-3:2": { "answer": 2, "by": "claude" },
+  "sheet-3:3": { "answer": 3, "by": "claude" },
+  "sheet-3:4": { "answer": 0, "by": "claude" },
+  "sheet-3:5": { "answer": 1, "by": "claude", "note": "hoard = store up; 'heard' and 'herald' are sound-alike distractors" },
+  "sheet-3:6": { "answer": 2, "by": "claude" },
+  "sheet-3:7": { "answer": 0, "by": "claude" },
+  "sheet-3:8": { "answer": 1, "by": "claude" },
+
+  "sheet-4:1": { "answer": 0, "by": "claude", "note": "corroborated by the sheet's title עו\"ד א. בוקדו -> advocate" },
+  "sheet-4:2": { "answer": 1, "by": "claude" },
+  "sheet-4:3": { "answer": 2, "by": "claude" },
+  "sheet-4:4": { "answer": 3, "by": "claude" },
+  "sheet-4:5": { "answer": 1, "by": "claude", "note": "inhabit = live in; inhale/inhibit/inherit are sound-alike distractors" },
+  "sheet-4:6": { "answer": 0, "by": "claude" },
+  "sheet-4:7": { "answer": 3, "by": "claude" },
+  "sheet-4:8": { "answer": 0, "by": "claude" },
+
+  "sheet-5:1": { "answer": 0, "by": "claude", "note": "corroborated by the sheet's title מתאים לי אפרופו -> appropriate" },
+  "sheet-5:2": { "answer": 3, "by": "claude" },
+  "sheet-5:3": { "answer": 0, "by": "claude", "note": "erect a statue; 'erupted' is the sound-alike distractor" },
+  "sheet-5:4": { "answer": 1, "by": "claude" },
+  "sheet-5:5": { "answer": 0, "by": "claude" },
+  "sheet-5:6": { "answer": 3, "by": "claude" },
+  "sheet-5:7": { "answer": 3, "by": "claude" },
+  "sheet-5:8": { "answer": 0, "by": "claude", "note": "'but only ___' signals a small degree, which rules out substantially and significantly" }
+}

@@ -1,0 +1,2712 @@
+<title>חדר מבחן אמירנט</title>
+
+<!-- Added to a phone's home screen, these decide what the icon is called and
+     how the page opens. They are harmless anywhere else. -->
+<meta name="application-name" content="אמירנט">
+<meta name="apple-mobile-web-app-title" content="אמירנט">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0d5464">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@400;600;700&display=swap">
+<style>
+/* Layout: a single focused column under a sticky exam bar; the timer is the
+   emotional centre, so it owns the only warm colour on the page. */
+:root{
+  --bg:#eef1f6; --surface:#ffffff; --surface-2:#f7f9fc;
+  --ink:#121923; --muted:#5a6578; --line:#d9e0ea;
+  --accent:#0d5464; --accent-soft:#e2eef1; --on-accent:#ffffff;
+  --warn:#b4691a; --good:#1a7049; --bad:#a82f22;
+  --good-soft:#e4f2ea; --bad-soft:#fae9e6;
+  --font-display:"Frank Ruhl Libre",Georgia,"Times New Roman",serif;
+  --font-ui:"Assistant","Segoe UI",system-ui,-apple-system,sans-serif;
+  --r:10px; --shadow:0 1px 2px rgba(18,25,35,.06),0 8px 24px -16px rgba(18,25,35,.25);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f141b; --surface:#171e27; --surface-2:#1d2630;
+  --ink:#e7edf5; --muted:#95a1b3; --line:#2a3542;
+  --accent:#58b3c6; --accent-soft:#16323a; --on-accent:#0b1116;
+  --warn:#e0943f; --good:#4cb183; --bad:#e2705f;
+  --good-soft:#15291f; --bad-soft:#2b1917;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.8);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0f141b; --surface:#171e27; --surface-2:#1d2630;
+  --ink:#e7edf5; --muted:#95a1b3; --line:#2a3542;
+  --accent:#58b3c6; --accent-soft:#16323a; --on-accent:#0b1116;
+  --warn:#e0943f; --good:#4cb183; --bad:#e2705f;
+  --good-soft:#15291f; --bad-soft:#2b1917;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -16px rgba(0,0,0,.8);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-ui);
+  font-size:16px;line-height:1.65;direction:rtl;-webkit-text-size-adjust:100%}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;line-height:1.25}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:28px 64px}
+.wrap.wide{max-width:1060px}
+
+/* Reading sections: text and questions side by side, each scrolling on its own.
+   `min-width:0` on the children is what stops long English lines from widening
+   the flex row and pushing the page into a horizontal scroll. */
+.rc-split{display:flex;flex-direction:row-reverse;gap:14px;align-items:flex-start}
+/* row-reverse because the page is RTL: it puts the passage (first in the DOM)
+   on the LEFT and the questions on the right, matching the real test. */
+.rc-split>*{flex:1 1 0;min-width:0}
+.rc-passage,.rc-questions{max-height:calc(100vh - 200px);overflow-y:auto;overscroll-behavior:contain}
+.rc-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:9px}
+.rc-head h3{margin:0}
+.rc-toggle{padding:5px 11px;font-size:12.5px;white-space:nowrap;flex:0 0 auto}
+.rc-split.collapsed .rc-questions{display:none}
+.rc-split.collapsed .rc-passage{flex:1 1 100%}
+
+@media (max-width:760px){
+  .wrap.wide{max-width:760px}
+  .rc-split{flex-direction:column}   /* stacked: passage first, then questions */
+  /* Stacked, the passage gets a capped scroller so the question stays reachable
+     without scrolling past the whole text every time. */
+  .rc-passage{max-height:40vh;width:100%}
+  .rc-questions{max-height:none;overflow:visible;width:100%}
+  .rc-split.collapsed .rc-passage{max-height:none}
+}
+.en{direction:ltr;text-align:left;unicode-bidi:isolate}
+
+/* ---------- top bar ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--surface);
+  border-bottom:1px solid var(--line)}
+.bar-in{max-width:760px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.bar-title{font-family:var(--font-display);font-weight:700;font-size:15px;min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+.timer{font-variant-numeric:tabular-nums;font-weight:700;font-size:20px;letter-spacing:.02em;
+  padding:3px 11px;border-radius:999px;background:var(--accent-soft);color:var(--accent);min-width:84px;text-align:center}
+.timer.warn{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
+.timer.crit{background:color-mix(in srgb,var(--bad) 16%,transparent);color:var(--bad);animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.55}}
+@media (prefers-reduced-motion:reduce){.timer.crit{animation:none}}
+.prog{height:3px;background:var(--line)}
+.prog>i{display:block;height:100%;background:var(--accent);transition:width .3s}
+
+/* ---------- generic ---------- */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  padding:11px 20px;border-radius:var(--r);background:var(--accent);
+  color:var(--on-accent);font-weight:700;transition:filter .15s}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);font-weight:600}
+.btn.ghost:hover{background:var(--surface-2)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.muted{color:var(--muted)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- home ---------- */
+.hero{margin-bottom:26px}
+.hero h1{font-size:clamp(27px,6.4vw,40px);font-weight:900;letter-spacing:-.01em}
+.hero p{color:var(--muted);margin:10px 0 0;max-width:56ch}
+.tabs{display:flex;gap:4px;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:var(--r);padding:4px;margin:22px 0 20px}
+.tabs button{flex:1;padding:9px 8px;border-radius:7px;font-weight:700;font-size:14.5px;color:var(--muted)}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.sim{padding:15px 16px;text-align:start;display:flex;flex-direction:column;gap:7px;transition:border-color .15s}
+.sim:hover{border-color:var(--accent)}
+.sim .n{font-family:var(--font-display);font-weight:900;font-size:25px;line-height:1;color:var(--accent)}
+.sim .t{font-weight:700;font-size:14.5px}
+.sim .m{font-size:12.5px;color:var(--muted)}
+.pill{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:999px;
+  background:var(--surface-2);border:1px solid var(--line);color:var(--muted)}
+.pill.done{background:var(--good-soft);border-color:transparent;color:var(--good)}
+
+.adaptive-cta{display:flex;flex-direction:column;gap:6px;width:100%;text-align:start;
+  padding:19px 20px;border-color:var(--accent);background:var(--accent-soft);transition:filter .15s}
+.adaptive-cta:hover{filter:brightness(1.04)}
+.adaptive-cta .t{font-family:var(--font-display);font-weight:900;font-size:24px;color:var(--accent);line-height:1.2}
+.adaptive-cta .m{font-size:14px;color:var(--muted);max-width:52ch;line-height:1.55}
+.adaptive-cta .go{font-weight:700;color:var(--accent);margin-top:6px;font-size:14.5px}
+.drill-cta{display:flex;flex-direction:column;gap:6px;width:100%;text-align:start;
+  padding:17px 20px;margin-top:12px;transition:border-color .15s}
+.drill-cta:hover{border-color:var(--accent)}
+.drill-cta .t{font-family:var(--font-display);font-weight:900;font-size:21px;line-height:1.2}
+.drill-cta .m{font-size:13.5px;color:var(--muted);max-width:52ch;line-height:1.55}
+.drill-cta .go{font-weight:700;color:var(--accent);margin-top:4px;font-size:14px}
+.pick{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 2px}
+.pick button{padding:9px 15px;border:1.5px solid var(--line);border-radius:var(--r);
+  background:var(--surface);font-weight:600;font-size:14px}
+.pick button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+.trail{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.trail-step{flex:1;min-width:84px;padding:9px 8px;border:1px solid var(--line);border-radius:8px;
+  background:var(--surface-2);text-align:center}
+.trail-step b{display:block;font-size:13.5px;color:var(--accent)}
+.trail-step span{font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* ---------- settings ---------- */
+.set{padding:16px;margin-bottom:12px}
+.set-row{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.set-row:last-child{border-bottom:0}
+.set-row .lbl{flex:1;min-width:150px}
+.set-row .lbl b{display:block;font-size:14.5px}
+.set-row .lbl span{font-size:12.5px;color:var(--muted)}
+input[type=number]{width:74px;padding:7px 9px;border:1px solid var(--line);border-radius:7px;
+  background:var(--surface-2);color:var(--ink);font:inherit;font-variant-numeric:tabular-nums;text-align:center}
+.switch{display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;font-weight:600}
+.switch input{width:17px;height:17px;accent-color:var(--accent);cursor:pointer}
+
+/* ---------- exam ---------- */
+.sect-intro{padding:26px 22px;text-align:center}
+.sect-intro h2{font-size:25px;margin-bottom:6px}
+.sect-intro .big{font-family:var(--font-display);font-size:42px;font-weight:900;color:var(--accent);line-height:1;margin:16px 0 4px}
+.passage{padding:17px 18px;margin-bottom:16px;background:var(--surface-2)}
+.passage h3{font-size:15px;margin-bottom:9px;font-family:var(--font-ui);font-weight:700}
+.passage .body{font-size:15.5px;line-height:1.8}
+.qbox{padding:20px 20px 16px}
+.qnum{font-family:var(--font-display);font-weight:700;color:var(--muted);font-size:13px;margin-bottom:7px}
+.qtext{font-size:17.5px;line-height:1.6;margin-bottom:17px}
+.opts{display:flex;flex-direction:column;gap:9px}
+.opt{display:flex;gap:11px;align-items:flex-start;width:100%;text-align:start;
+  padding:12px 14px;border:1.5px solid var(--line);border-radius:var(--r);background:var(--surface);
+  transition:border-color .12s,background .12s}
+.opt:hover{border-color:var(--accent)}
+.opt[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.opt .k{flex:0 0 25px;height:25px;border-radius:50%;border:1.5px solid var(--line);
+  display:grid;place-items:center;font-weight:700;font-size:12.5px;font-family:var(--font-ui)}
+.opt[aria-pressed="true"] .k{background:var(--accent);color:var(--surface);border-color:var(--accent)}
+.opt .v{flex:1;min-width:0;font-size:15.5px;line-height:1.5}
+.opt.ok{border-color:var(--good);background:var(--good-soft)}
+.opt.ok .k{background:var(--good);color:#fff;border-color:var(--good)}
+.opt.no{border-color:var(--bad);background:var(--bad-soft)}
+.opt.no .k{background:var(--bad);color:#fff;border-color:var(--bad)}
+.nav{display:flex;gap:9px;align-items:center;justify-content:space-between;margin-top:18px;flex-wrap:wrap}
+.dots{display:flex;gap:5px;flex-wrap:wrap;margin:16px 0 0}
+.dot{width:31px;height:31px;border-radius:7px;border:1.5px solid var(--line);background:var(--surface);
+  font-size:12.5px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--muted)}
+.dot.ans{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.dot.cur{outline:2px solid var(--accent);outline-offset:1px}
+.dot.flag{border-color:var(--warn);color:var(--warn)}
+
+/* ---------- results ---------- */
+.score{padding:26px 22px;text-align:center;margin-bottom:14px}
+.score .pct{font-family:var(--font-display);font-size:58px;font-weight:900;line-height:1;color:var(--accent)}
+.bars{display:flex;flex-direction:column;gap:11px;padding:16px}
+.barline .top{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:5px;gap:10px}
+.barline .track{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.barline .fill{height:100%;background:var(--accent);border-radius:99px}
+.rev{padding:16px 18px;margin-bottom:10px}
+.rev.wrong{border-inline-start:3px solid var(--bad)}
+.rev.right{border-inline-start:3px solid var(--good)}
+.expl{margin-top:12px;padding:12px 14px;background:var(--surface-2);border-radius:8px;font-size:14.5px}
+.expl b{color:var(--accent)}
+
+/* The quiz result card deliberately does NOT reuse `.score`: the trainer pane
+   sits before #results in the DOM, so a shared class would make `.score .pct`
+   ambiguous for anything selecting the exam's own result. */
+.quiz-score{padding:24px 20px;text-align:center;margin-bottom:14px}
+.quiz-score .qpct{font-family:var(--font-display);font-size:52px;font-weight:900;
+  line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
+
+.note-field{width:100%;margin-top:12px;padding:9px 11px;border:1px solid var(--line);
+  border-radius:8px;background:var(--surface-2);color:var(--ink);font:inherit;font-size:14px;
+  resize:vertical;line-height:1.5}
+.note-field:focus{outline:2px solid var(--accent);outline-offset:1px}
+
+/* ---------- guide ---------- */
+.guide h2{font-size:23px;margin:30px 0 10px;padding-top:18px;border-top:1px solid var(--line)}
+.guide h2:first-of-type{border-top:0;padding-top:0;margin-top:6px}
+.guide h3{font-size:16.5px;margin:18px 0 6px;font-family:var(--font-ui);font-weight:700}
+.guide p{margin:9px 0}
+.guide ul{margin:9px 0;padding-inline-start:20px}
+.guide li{margin:5px 0}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:10px;margin:14px 0}
+.stat div{padding:13px 14px;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);text-align:center}
+.stat b{display:block;font-family:var(--font-display);font-size:28px;font-weight:900;color:var(--accent);line-height:1.1}
+.stat span{font-size:12.5px;color:var(--muted);display:block;margin-top:4px}
+.note{padding:14px 16px;background:var(--accent-soft);border-radius:var(--r);margin:16px 0;font-size:14.5px}
+.warnbox{padding:14px 16px;background:color-mix(in srgb,var(--warn) 12%,transparent);
+  border-inline-start:3px solid var(--warn);border-radius:var(--r);margin:16px 0;font-size:14.5px}
+table.t{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+table.t th,table.t td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:start}
+table.t th{font-weight:700;font-size:12.5px;color:var(--muted)}
+table.t td b{color:var(--accent);font-variant-numeric:tabular-nums}
+.scroll{overflow-x:auto}
+</style>
+
+<script src="hints.js"></script>
+<script src="judge.js"></script>
+
+<div id="bar" class="bar" hidden>
+  <div class="bar-in">
+    <button class="btn ghost" id="quit" style="padding:7px 13px;font-size:13.5px">יציאה</button>
+    <span class="bar-title" id="barTitle"></span>
+    <span class="timer" id="timer">--:--</span>
+  </div>
+  <div class="prog"><i id="prog" style="width:0%"></i></div>
+</div>
+
+<div class="wrap" id="wrap">
+  <!-- ============ HOME ============ -->
+  <section id="home">
+    <div class="hero">
+      <div class="eyebrow" id="whoami">20 סימולציות · 580 שאלות</div>
+      <h1>חדר מבחן אמירנט</h1>
+      <p>סימולציה מלאה בשישה פרקים, עם שעון נפרד לכל פרק בדיוק כמו בבחינה. בסוף — ניקוד, פילוח לפי פרק, וההסבר לכל שאלה.</p>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-sims" aria-selected="true">סימולציות</button>
+      <button role="tab" id="tab-set" aria-selected="false">הגדרות זמן</button>
+      <button role="tab" id="tab-guide" aria-selected="false">איך פותרים</button>
+      <button role="tab" id="tab-trainer" aria-selected="false">מאמן מילים</button>
+      <button role="tab" id="tab-vocab" aria-selected="false">אוצר מילים</button>
+    </div>
+
+    <div id="pane-sims">
+      <button class="card adaptive-cta" id="adaptiveBtn">
+        <span class="eyebrow">כמו הבחינה האמיתית</span>
+        <span class="t">מבחן אדפטיבי</span>
+        <span class="m">שישה פרקים מתוך כל 580 השאלות. מתחיל ברמה בינונית, ואחרי כל פרק הרמה עולה או יורדת לפי הביצועים שלך — בדיוק כמו באמירנט.</span>
+        <span class="go">התחל ←</span>
+      </button>
+      <button class="card drill-cta" id="drillBtn">
+        <span class="eyebrow">תרגול ממוקד</span>
+        <span class="t">פרק בודד</span>
+        <span class="m">להתאמן רק על הסוג שחלש אצלך — השלמת משפטים, ניסוח מחדש או הבנת הנקרא. עם שעון או בלי.</span>
+        <span class="go">בחר פרק ←</span>
+      </button>
+
+      <div class="eyebrow" style="margin:24px 0 10px">או סימולציה ברמה קבועה</div>
+      <div class="grid" id="simGrid"></div>
+    </div>
+
+    <div id="pane-set" hidden></div>
+
+    <div id="pane-guide" hidden class="guide"></div>
+
+    <div id="pane-trainer" hidden></div>
+
+    <div id="pane-vocab" hidden></div>
+  </section>
+
+  <!-- ============ EXAM ============ -->
+  <section id="exam" hidden></section>
+
+  <!-- ============ RESULTS ============ -->
+  <section id="results" hidden></section>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+var DATA=null, S=null, COURSE=null;
+var $=function(id){return document.getElementById(id)};
+var el=function(t,c,x){var e=document.createElement(t); if(c)e.className=c; if(x!=null)e.textContent=x; return e};
+var LETTERS=["A","B","C","D","E","F"];
+var TYPE_HE={sentence_completion:"השלמת משפטים",reading_comprehension:"הבנת הנקרא",restatement:"ניסוח מחדש"};
+var DIFF_HE={easy:"קל",medium:"בינוני",hard:"קשה",advanced:"מתקדם"};
+
+/* localStorage can throw (private window, blocked site data) and can come back
+   empty. Every read and write is guarded and the app works without it. */
+function load(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+
+var settings=load("amirnet.settings",null)||{useCustom:false,times:{},examMode:true,shuffle:true};
+var history=load("amirnet.history",{})||{};
+/* Questions served in PREVIOUS adaptive sittings, so each new one is fresh.
+   The bank is finite (5 reading passages per level), so this degrades
+   gracefully rather than failing once a level is used up. */
+var seenBank=load("amirnet.seen",{})||{};
+function markSeen(keys){
+  keys.forEach(function(k){ seenBank[k]=1 });
+  save("amirnet.seen",seenBank);
+}
+function seenCount(){ var n=0; for(var k in seenBank) if(seenBank.hasOwnProperty(k)) n++; return n }
+
+function mmss(s){s=Math.max(0,Math.round(s));var m=Math.floor(s/60);
+  return (m<10?"0":"")+m+":"+((s%60)<10?"0":"")+(s%60)}
+
+/* ---------- section time: the user's override, else the exam's own ---------- */
+function sectionTime(sec){
+  if(settings.useCustom){
+    var v=settings.times[sec.type];
+    if(typeof v==="number"&&v>0) return v*60;
+  }
+  return sec.time;
+}
+
+/* =================== HOME =================== */
+function renderHome(){
+  var g=$("simGrid"); g.textContent="";
+  DATA.forEach(function(sim){
+    var b=el("button","card sim");
+    b.appendChild(el("span","n",String(sim.id)));
+    b.appendChild(el("span","t",sim.title.replace(/^סימולציה \d+\s*—\s*/,"")));
+    var total=sim.sections.reduce(function(n,s){return n+s.questions.length},0);
+    b.appendChild(el("span","m",(settings.examMode?sim.served:total)+" שאלות · "+Math.round(sim.totalTimeSeconds/60)+" דקות"));
+    var h=history[sim.id];
+    var p=el("span","pill"+(h?" done":""),h?("ציון "+(h.score||h.pct)):(DIFF_HE[sim.difficulty]||sim.difficulty));
+    p.style.alignSelf="flex-start"; b.appendChild(p);
+    b.onclick=function(){startExam(sim)};
+    g.appendChild(b);
+  });
+}
+
+function renderSettings(){
+  var p=$("pane-set"); p.textContent="";
+
+  var c1=el("div","card set");
+  c1.appendChild(el("div","eyebrow","מצב תרגול"));
+  var r1=el("div","set-row");
+  var l1=el("div","lbl"); l1.appendChild(el("b","מצב בחינה"));
+  l1.appendChild(el("span","מגיש את מספר השאלות של הבחינה האמיתית (23), נבחרות אקראית מהמאגר. כבוי — כל 29 השאלות."));
+  r1.appendChild(l1);
+  var sw=el("label","switch"); var cb=el("input"); cb.type="checkbox"; cb.checked=settings.examMode; cb.id="setExam";
+  cb.onchange=function(){settings.examMode=cb.checked;save("amirnet.settings",settings);renderHome()};
+  sw.appendChild(cb); sw.appendChild(el("span",null,"פעיל")); r1.appendChild(sw); c1.appendChild(r1);
+  p.appendChild(c1);
+
+  var c=el("div","card set");
+  c.appendChild(el("div","eyebrow","זמן לכל פרק"));
+  var intro=el("p","muted","ברירת המחדל היא הזמן הרשמי של הבחינה. אפשר להגדיר זמן משלך לכל סוג פרק — בדקות.");
+  intro.style.cssText="font-size:13.5px;margin:6px 0 10px"; c.appendChild(intro);
+
+  var row0=el("div","set-row");
+  var l0=el("div","lbl"); l0.appendChild(el("b","השתמש בזמנים שלי"));
+  l0.appendChild(el("span","כשכבוי — הזמנים הרשמיים של הבחינה."));
+  row0.appendChild(l0);
+  var sw0=el("label","switch"); var cb0=el("input"); cb0.type="checkbox"; cb0.checked=settings.useCustom; cb0.id="setCustom";
+  cb0.onchange=function(){settings.useCustom=cb0.checked;save("amirnet.settings",settings);renderSettings()};
+  sw0.appendChild(cb0); sw0.appendChild(el("span",null,"פעיל")); row0.appendChild(sw0); c.appendChild(row0);
+
+  var defaults={sentence_completion:4,reading_comprehension:15,restatement:6};
+  var counts={sentence_completion:"4 שאלות · 3 פרקים",reading_comprehension:"5 שאלות · פרק 3",restatement:"3 שאלות · 2 פרקים"};
+  Object.keys(defaults).forEach(function(type){
+    var r=el("div","set-row");
+    var l=el("div","lbl"); l.appendChild(el("b",TYPE_HE[type]));
+    l.appendChild(el("span",counts[type]+" · רשמי: "+defaults[type]+" דק׳"));
+    r.appendChild(l);
+    var inp=el("input"); inp.type="number"; inp.min="1"; inp.max="90"; inp.id="time-"+type;
+    inp.value=settings.times[type]||defaults[type];
+    inp.disabled=!settings.useCustom;
+    inp.onchange=function(){var v=parseInt(inp.value,10);
+      if(v>0){settings.times[type]=v;save("amirnet.settings",settings)}};
+    r.appendChild(inp); r.appendChild(el("span","muted","דקות"));
+    c.appendChild(r);
+  });
+  p.appendChild(c);
+
+  /* Bank coverage — how fresh the next adaptive test can still be. */
+  var cb=el("div","card set");
+  cb.appendChild(el("div","eyebrow","מצב המאגר"));
+  /* Count in QUESTIONS, not bank items: a reading section is one item in the
+     seen-set but five questions on screen, so counting items would understate it. */
+  var totalQ=0, seenQ=0;
+  if(DATA) DATA.forEach(function(s){ s.sections.forEach(function(sec){
+    totalQ += sec.questions.length;
+    if(sec.type==="reading_comprehension"){
+      if(sec.passages[0] && seenBank["P:"+sec.passages[0].title]) seenQ += sec.questions.length;
+    }else{
+      sec.questions.forEach(function(q){ if(seenBank["Q:"+q.p+"|"+(q.o[0]||"")]) seenQ++ });
+    }
+  })});
+  var cbp=el("p",null,"ראית "+seenQ+" שאלות מתוך "+totalQ+".");
+  cbp.style.cssText="margin:6px 0 2px;font-size:14.5px"; cb.appendChild(cbp);
+  var cbn=el("p","muted","כל מבחן אדפטיבי נשלף קודם כול משאלות שלא ראית. צוואר הבקבוק הוא קטעי הקריאה — חמישה בכל רמה — ולכן מבחן נשאר חדש לגמרי לכ-5 הרצות ברמה נתונה, ועד 25 כשהרמות מתערבבות. אחרי זה שאלות חוזרות, והאפליקציה לא תיתקע.");
+  cbn.style.cssText="margin:0 0 10px;font-size:13px"; cb.appendChild(cbn);
+  var reset=el("button","btn ghost","אפס — תן לי הכול כחדש");
+  reset.onclick=function(){seenBank={};save("amirnet.seen",seenBank);renderSettings()};
+  cb.appendChild(reset);
+  p.appendChild(cb);
+
+  if(Object.keys(history).length||Object.keys(notes).length){
+    var cr=el("div","card set");
+    cr.appendChild(el("div","eyebrow","התוצאות וההערות שלי"));
+    var wipe=el("button","btn ghost","מחיקת תוצאות");
+    wipe.style.cssText="margin-top:10px;margin-inline-end:8px";
+    wipe.onclick=function(){history={};save("amirnet.history",history);renderSettings();renderHome()};
+    cr.appendChild(wipe);
+    var wipeN=el("button","btn ghost","מחיקת הערות ("+Object.keys(notes).length+")");
+    wipeN.style.marginTop="10px";
+    wipeN.onclick=function(){notes={};save("amirnet.notes",notes);renderSettings()};
+    cr.appendChild(wipeN);
+    p.appendChild(cr);
+  }
+}
+
+
+
+
+/* =================== SINGLE-SECTION DRILL =================== */
+/*
+ * Practise one section type on its own. It reuses the adaptive engine's bank
+ * and draw, then runs the ordinary section machinery with a one-section plan,
+ * so the timer, navigation, flagging, scoring and review all behave exactly as
+ * they do in a full sitting.
+ */
+var drillPick={type:"sentence_completion", level:"medium", timed:true};
+
+function renderDrillSetup(){
+  buildBank();
+  $("home").hidden=true; $("results").hidden=true; $("exam").hidden=false; $("bar").hidden=false;
+  $("barTitle").textContent="תרגול פרק בודד";
+  $("timer").textContent="--:--"; $("timer").className="timer";
+  $("prog").style.width="0%";
+  window.scrollTo(0,0);
+
+  var root=$("exam"); root.textContent="";
+  var c=el("div","card set"); c.style.padding="20px";
+
+  c.appendChild(el("div","eyebrow","סוג הפרק"));
+  var types=el("div","pick");
+  [["sentence_completion","השלמת משפטים"],["restatement","ניסוח מחדש"],["reading_comprehension","הבנת הנקרא"]]
+    .forEach(function(pair){
+      var b=el("button",null,pair[1]);
+      b.setAttribute("aria-pressed", drillPick.type===pair[0]?"true":"false");
+      b.onclick=function(){drillPick.type=pair[0];renderDrillSetup()};
+      types.appendChild(b);
+    });
+  c.appendChild(types);
+
+  c.appendChild(el("div","eyebrow","רמת קושי")).style.marginTop="18px";
+  var levels=el("div","pick");
+  LEVELS.concat(["mixed"]).forEach(function(L){
+    var b=el("button",null,L==="mixed"?"מעורב":(LEVEL_HE[L]||L));
+    b.setAttribute("aria-pressed", drillPick.level===L?"true":"false");
+    b.onclick=function(){drillPick.level=L;renderDrillSetup()};
+    levels.appendChild(b);
+  });
+  c.appendChild(levels);
+
+  c.appendChild(el("div","eyebrow","זמן")).style.marginTop="18px";
+  var timing=el("div","pick");
+  [[true,"עם שעון"],[false,"בלי הגבלת זמן"]].forEach(function(pair){
+    var b=el("button",null,pair[1]);
+    b.setAttribute("aria-pressed", drillPick.timed===pair[0]?"true":"false");
+    b.onclick=function(){drillPick.timed=pair[0];renderDrillSetup()};
+    timing.appendChild(b);
+  });
+  c.appendChild(timing);
+
+  var spec=SPEC[drillPick.type];
+  var note=el("p","muted", spec
+    ? (drillPick.type==="reading_comprehension"
+        ? "קטע אחד עם 5 שאלות" + (drillPick.timed?" · 15 דקות":"")
+        : spec.serve+" שאלות" + (drillPick.timed?" · "+Math.round(spec.time/60)+" דקות":""))
+    : "");
+  note.style.cssText="margin:18px 0 0;font-size:14px";
+  c.appendChild(note);
+
+  var go=el("button","btn","התחל ←"); go.style.marginTop="14px";
+  go.onclick=startDrill; c.appendChild(go);
+  root.appendChild(c);
+}
+
+function startDrill(){
+  var levelIdx = drillPick.level==="mixed"
+    ? Math.floor(Math.random()*LEVELS.length)
+    : LEVELS.indexOf(drillPick.level);
+  if(levelIdx<0) levelIdx=1;
+
+  S={sim:{id:"drill",title:"תרגול "+(TYPE_HE[drillPick.type]||drillPick.type)},
+     drill:true, untimed:!drillPick.timed, used:{}, total:1,
+     sections:[], si:0, qi:0, answers:[], flags:[], left:0, tick:null, phase:"intro"};
+
+  /* One section, built from the same plan slot the type occupies in a real test. */
+  var slot=ADAPTIVE_PLAN.indexOf(drillPick.type);
+  var saved=ADAPTIVE_PLAN[0];
+  ADAPTIVE_PLAN[0]=drillPick.type;
+  var sec=buildAdaptiveSection(0, levelIdx);
+  ADAPTIVE_PLAN[0]=saved;
+
+  if(!sec || !sec.qs.length){
+    var root=$("exam"); root.textContent="";
+    var c=el("div","card sect-intro");
+    c.appendChild(el("h2",null,"אין מספיק שאלות"));
+    c.appendChild(el("p","muted","נגמרו השאלות ברמה הזו. נסה רמה אחרת, או אפס את מצב המאגר בהגדרות."));
+    var b=el("button","btn ghost","חזרה"); b.style.marginTop="16px"; b.onclick=quitExam;
+    c.appendChild(b); root.appendChild(c);
+    return;
+  }
+
+  sec.meta.slot=1;
+  S.sections[0]=sec;
+  S.answers[0]=new Array(sec.qs.length).fill(null);
+  S.flags[0]={};
+  renderIntro();
+}
+
+/* =================== SCORE ESTIMATE =================== */
+/*
+ * NITE reports AMIRNET on a 50-150 scale and publishes the level bands below,
+ * but not the raw-to-scale conversion (it is an IRT model over the item bank).
+ * So the bands here are official; the number is an estimate, and the app says so.
+ *
+ * The formula weights each question by its difficulty and measures the result
+ * against a perfect run at the hardest level — which is what an adaptive test
+ * is actually measuring: not just how many you got right, but how hard they were.
+ *
+ *      earned = sum over answered questions of (correct ? weight : 0)
+ *      ceiling = questions x weight(expert)
+ *      score  = 50 + 100 x earned / ceiling
+ *
+ * Sanity: everything right at easy -> 75; at medium -> 100; at hard -> 125;
+ * at expert -> 150. Acing easy questions cannot produce an exemption score.
+ */
+var WEIGHT={easy:1,medium:2,hard:3,expert:4};
+var BANDS=[
+  {min:134,name:"פטור",            note:"פטור מלימודי אנגלית"},
+  {min:120,name:"מתקדמים ב׳",      note:"קורס אחרון לפני פטור"},
+  {min:100,name:"מתקדמים א׳",      note:"נדרש קורס נוסף"},
+  {min:85, name:"בסיסי",           note:"נדרש קורס אחד נוסף"},
+  {min:70, name:"טרום בסיסי ב׳",   note:"נדרשים קורסי השלמה"},
+  {min:50, name:"טרום בסיסי א׳",   note:"נדרשים קורסי השלמה"}
+];
+function bandOf(score){
+  for(var i=0;i<BANDS.length;i++) if(score>=BANDS[i].min) return BANDS[i];
+  return BANDS[BANDS.length-1];
+}
+/* @param rows [{ok:boolean, q:{d:difficulty}}] */
+function estimateScore(rows){
+  var earned=0, ceiling=0;
+  rows.forEach(function(r){
+    ceiling += WEIGHT.expert;
+    if(r.ok) earned += WEIGHT[r.q.d] || WEIGHT.medium;
+  });
+  if(!ceiling) return 50;
+  return Math.max(50, Math.min(150, Math.round(50 + 100*(earned/ceiling))));
+}
+
+/* =================== ADAPTIVE ENGINE =================== */
+/*
+ * AMIRNET adapts at the SECTION level: it opens with a moderately difficult
+ * section, then judges the examinee at the end of each section and picks the
+ * next section's difficulty from that.
+ *
+ * This cannot be done inside one of the 20 fixed simulations, because their
+ * difficulty varies BETWEEN simulations, not within: simulation 1 is almost
+ * entirely "easy". So adaptive mode draws from the whole 580-question bank,
+ * which is also how a real adaptive test works — it pulls from an item bank.
+ */
+
+var LEVELS=["easy","medium","hard","expert"];
+var LEVEL_HE={easy:"קל",medium:"בינוני",hard:"קשה",expert:"מתקדם"};
+var ADAPTIVE_PLAN=["sentence_completion","sentence_completion","reading_comprehension",
+                   "restatement","restatement","sentence_completion"];
+var UP=0.75, DOWN=0.40;   /* section score at or above UP moves a level up; at or below DOWN, down */
+var BANK=null, SPEC=null;
+
+function keyOf(item){
+  return item.passage ? ("P:"+item.passage.title)
+                      : ("Q:"+item.q.p+"|"+(item.q.o[0]||""));
+}
+function shuffled(arr){
+  var a=arr.slice();
+  for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}
+  return a;
+}
+/* A reading section's level is the difficulty most of its questions carry. */
+function modalLevel(qs){
+  var c={};
+  qs.forEach(function(q){ if(q.d) c[q.d]=(c[q.d]||0)+1 });
+  var best="medium", n=-1;
+  LEVELS.forEach(function(L){ if((c[L]||0)>n){n=c[L]||0;best=L} });
+  return best;
+}
+
+function buildBank(){
+  if(BANK) return BANK;
+  BANK={}; SPEC={};
+  ADAPTIVE_PLAN.forEach(function(t){ if(!BANK[t]){BANK[t]={}; LEVELS.forEach(function(L){BANK[t][L]=[]})} });
+
+  /* Course questions have no section of their own; each joins the shelves of
+     the type it belongs to, so drills and adaptive tests can serve them. The
+     drill sheets are all completions, but the worked-solution guides also carry
+     restatement, so the type is read off the question rather than assumed. */
+  if(COURSE&&COURSE.length){
+    var FALLBACK={sentence_completion:{serve:4,time:240,titleHe:"השלמת משפטים",descHe:""},
+                  restatement:{serve:3,time:360,titleHe:"ניסוח מחדש",descHe:""}};
+    COURSE.forEach(function(q){
+      var t=(q.t==="restatement")?"restatement":"sentence_completion";
+      if(!BANK[t]) return;
+      if(!SPEC[t]) SPEC[t]=FALLBACK[t];
+      var L=LEVELS.indexOf(q.d)>=0?q.d:"medium";
+      BANK[t][L].push({q:q, meta:{type:t, passages:[]}});
+    });
+  }
+
+  DATA.forEach(function(sim){
+    sim.sections.forEach(function(sec){
+      if(!BANK[sec.type]) return;
+      /* Section shape (serve count, time, titles) is the same across simulations;
+         take it from the first one seen rather than hardcoding exam numbers. */
+      if(!SPEC[sec.type]) SPEC[sec.type]={serve:sec.serve,time:sec.time,titleHe:sec.titleHe,descHe:sec.descHe};
+
+      if(sec.type==="reading_comprehension"){
+        if(!sec.passages||!sec.passages.length) return;
+        /* Kept whole: the five questions only make sense with their passage. */
+        BANK[sec.type][modalLevel(sec.questions)].push(
+          {passage:sec.passages[0], questions:sec.questions, meta:sec});
+      }else{
+        sec.questions.forEach(function(q){
+          var L=LEVELS.indexOf(q.d)>=0?q.d:"medium";
+          BANK[sec.type][L].push({q:q, meta:sec});
+        });
+      }
+    });
+  });
+  return BANK;
+}
+
+/* Draw `count` unused items at `levelIdx`, widening to neighbouring levels
+   rather than silently returning a short section. */
+function draw(type,levelIdx,count,used){
+  var order=[levelIdx];
+  for(var d=1;d<LEVELS.length;d++){
+    if(levelIdx-d>=0) order.push(levelIdx-d);
+    if(levelIdx+d<LEVELS.length) order.push(levelIdx+d);
+  }
+  var out=[], recycled=0;
+  /* Pass 0 takes only questions never served in any previous sitting, so a new
+     adaptive test is genuinely new. Pass 1 reopens the ones already seen, which
+     is what keeps the test working once the bank is exhausted. */
+  for(var pass=0;pass<2&&out.length<count;pass++){
+    for(var i=0;i<order.length&&out.length<count;i++){
+      var pool=shuffled(BANK[type][LEVELS[order[i]]]).filter(function(x){
+        var k=keyOf(x);
+        return !used[k] && (pass===1 || !seenBank[k]);
+      });
+      while(pool.length&&out.length<count){
+        var x=pool.shift(); used[keyOf(x)]=1; out.push(x);
+        if(pass===1) recycled++;
+      }
+    }
+  }
+  if(recycled&&S) S.recycled=(S.recycled||0)+recycled;
+  markSeen(out.map(keyOf));
+  return out;
+}
+
+function buildAdaptiveSection(slotIndex,levelIdx){
+  var type=ADAPTIVE_PLAN[slotIndex], spec=SPEC[type];
+
+  if(type==="reading_comprehension"){
+    var unit=draw(type,levelIdx,1,S.used)[0];
+    var m={slot:slotIndex+1,type:type,titleHe:unit.meta.titleHe,descHe:unit.meta.descHe,
+           passages:[unit.passage],serve:unit.questions.length,time:unit.meta.time};
+    return {meta:m,qs:unit.questions.slice(),dur:sectionTime(m),level:LEVELS[levelIdx]};
+  }
+
+  var items=draw(type,levelIdx,spec.serve,S.used);
+  var m2={slot:slotIndex+1,type:type,titleHe:spec.titleHe,descHe:spec.descHe,
+          passages:[],serve:spec.serve,time:spec.time};
+  return {meta:m2,qs:items.map(function(x){return x.q}),dur:sectionTime(m2),level:LEVELS[levelIdx]};
+}
+
+function startAdaptive(){
+  buildBank();
+  S={sim:{id:"adaptive",title:"מבחן אדפטיבי"},adaptive:true,
+     level:1,                       /* start moderate, as the real test does */
+     trail:[],used:{},total:ADAPTIVE_PLAN.length,
+     sections:[],si:0,qi:0,answers:[],flags:[],left:0,tick:null,phase:"intro"};
+  $("home").hidden=true; $("results").hidden=true; $("exam").hidden=false; $("bar").hidden=false;
+  window.scrollTo(0,0);
+  renderIntro();
+}
+
+/* =================== EXAM =================== */
+function startExam(sim){
+  var sections=sim.sections.map(function(sec){
+    var qs=sec.questions.slice();
+    if(settings.examMode){
+      if(settings.shuffle){for(var i=qs.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=qs[i];qs[i]=qs[j];qs[j]=t}}
+      qs=qs.slice(0,sec.serve||qs.length);
+    }
+    return {meta:sec,qs:qs,dur:sectionTime(sec)};
+  });
+  S={sim:sim,sections:sections,si:0,qi:0,answers:[],flags:[],left:0,tick:null,phase:"intro"};
+  sections.forEach(function(s){S.answers.push(new Array(s.qs.length).fill(null));S.flags.push({})});
+  $("home").hidden=true; $("results").hidden=true; $("exam").hidden=false; $("bar").hidden=false;
+  window.scrollTo(0,0);
+  renderIntro();
+}
+
+function stopTick(){if(S&&S.tick){clearInterval(S.tick);S.tick=null}}
+
+function quitExam(){
+  stopTick(); S=null;
+  $("wrap").className="wrap"; readingCollapsed=false;
+  $("exam").hidden=true; $("results").hidden=true; $("home").hidden=false; $("bar").hidden=true;
+  window.scrollTo(0,0);
+}
+$("quit").onclick=function(){
+  if(S&&S.phase==="quiz"){ if(!confirmInline()) return; }
+  quitExam();
+};
+/* The viewer never shows confirm(), so the confirmation is a two-step button. */
+var quitArmed=false, quitTimer=null;
+function confirmInline(){
+  var b=$("quit");
+  if(quitArmed){clearTimeout(quitTimer);quitArmed=false;b.textContent="יציאה";return true}
+  quitArmed=true; b.textContent="לצאת? לחץ שוב";
+  quitTimer=setTimeout(function(){quitArmed=false;b.textContent="יציאה"},3000);
+  return false;
+}
+
+function renderIntro(){
+  stopTick(); S.phase="intro";
+  $("wrap").className="wrap"; readingCollapsed=false;
+  /* Adaptive sections are built on entry, because which questions they contain
+     depends on how the previous section went. */
+  if(S.adaptive&&!S.sections[S.si]){
+    S.sections[S.si]=buildAdaptiveSection(S.si,S.level);
+    S.answers[S.si]=new Array(S.sections[S.si].qs.length).fill(null);
+    S.flags[S.si]={};
+  }
+  var total=S.total||S.sections.length;
+  var s=S.sections[S.si], sec=s.meta;
+  $("barTitle").textContent=S.sim.title;
+  $("timer").textContent=S.untimed?"∞":mmss(s.dur); $("timer").className="timer";
+  $("prog").style.width=(S.si/total*100)+"%";
+
+  var root=$("exam"); root.textContent="";
+  var c=el("div","card sect-intro");
+  c.appendChild(el("div","eyebrow","פרק "+sec.slot+" מתוך "+total));
+  c.appendChild(el("h2",null,sec.titleHe||TYPE_HE[sec.type]));
+  var d=el("p","muted",sec.descHe||""); d.style.cssText="max-width:46ch;margin:10px auto 0;font-size:14.5px";
+  c.appendChild(d);
+  c.appendChild(el("div","big",S.untimed?"∞":mmss(s.dur)));
+  c.appendChild(el("div","muted",s.qs.length+" שאלות · "+(S.untimed?"ללא הגבלת זמן":"הזמן לא נצבר לפרק הבא")));
+  if(S.adaptive){
+    var lv=el("div","pill","רמה: "+(LEVEL_HE[s.level]||s.level));
+    lv.style.marginTop="10px";
+    c.appendChild(lv);
+    if(S.si>0&&S.trail.length){
+      var prev=S.trail[S.trail.length-1];
+      var moved=LEVELS.indexOf(s.level)-LEVELS.indexOf(prev.level);
+      var msg=moved>0?"ענית נכון על "+prev.pct+"% בפרק הקודם — הרמה עלתה."
+             :moved<0?"ענית נכון על "+prev.pct+"% בפרק הקודם — הרמה ירדה."
+             :"ענית נכון על "+prev.pct+"% בפרק הקודם — הרמה נשארה.";
+      var note=el("p","muted",msg);
+      note.style.cssText="font-size:13.5px;margin:10px auto 0;max-width:40ch";
+      c.appendChild(note);
+    }
+  }
+  var go=el("button","btn","התחל את הפרק ←"); go.style.marginTop="20px";
+  go.onclick=startSection; c.appendChild(go);
+  root.appendChild(c);
+}
+
+function startSection(){
+  S.phase="quiz"; S.qi=0; S.left=S.sections[S.si].dur;
+  stopTick();
+  if(S.untimed){
+    /* Untimed drill: no clock at all, so the section ends only when finished. */
+    $("timer").textContent="∞"; $("timer").className="timer";
+    renderQuestion(); return;
+  }
+  S.tick=setInterval(function(){
+    S.left--;
+    paintTimer();
+    if(S.left<=0){stopTick(); endSection(true)}
+  },1000);
+  paintTimer(); renderQuestion();
+}
+
+function paintTimer(){
+  var t=$("timer"); t.textContent=mmss(S.left);
+  var frac=S.left/Math.max(1,S.sections[S.si].dur);
+  t.className="timer"+(frac<=0.1?" crit":frac<=0.25?" warn":"");
+}
+
+function renderQuestion(){
+  var s=S.sections[S.si], q=s.qs[S.qi], sec=s.meta;
+  $("barTitle").textContent="פרק "+sec.slot+" · "+(sec.titleHe||TYPE_HE[sec.type]);
+  var done=S.sections.slice(0,S.si).reduce(function(n,x){return n+x.qs.length},0)+S.qi;
+  var all=S.sections.reduce(function(n,x){return n+x.qs.length},0);
+  $("prog").style.width=(done/all*100)+"%";
+
+  var root=$("exam"); root.textContent="";
+
+  /* Reading sections run the passage and the questions side by side with their
+     own scrollbars, as the real test does. Moving between the text and the
+     question is part of what the section measures; stacking them in one column
+     makes practice easier than the exam. */
+  var isReading = sec.type==="reading_comprehension" && sec.passages && sec.passages.length;
+  var mount=root, split=null, passageCard=null;
+
+  $("wrap").className = isReading ? "wrap wide" : "wrap";
+
+  if(isReading){
+    split=el("div","rc-split"); 
+    passageCard=el("div","card passage rc-passage");
+
+    var head=el("div","rc-head");
+    head.appendChild(el("h3",null,sec.passages[0].title));
+    var toggle=el("button","btn ghost rc-toggle", readingCollapsed?"הצג שאלות":"הסתר שאלות");
+    toggle.onclick=function(){ readingCollapsed=!readingCollapsed; renderQuestion() };
+    head.appendChild(toggle);
+    passageCard.appendChild(head);
+
+    passageCard.appendChild(el("div","body en",sec.passages[0].text));
+    split.appendChild(passageCard);
+    root.appendChild(split);
+    mount=split;
+    if(readingCollapsed) split.classList.add("collapsed");
+  }
+
+  var box=el("div","card qbox"+(isReading?" rc-questions":""));
+  box.appendChild(el("div","qnum","שאלה "+(S.qi+1)+" מתוך "+s.qs.length));
+  var qt=el("div","qtext en",q.p); box.appendChild(qt);
+
+  var opts=el("div","opts");
+  q.o.forEach(function(text,i){
+    var b=el("button","opt"); b.type="button";
+    b.setAttribute("aria-pressed", S.answers[S.si][S.qi]===i?"true":"false");
+    b.appendChild(el("span","k",LETTERS[i]));
+    var v=el("span","v en",text); b.appendChild(v);
+    b.onclick=function(){
+      S.answers[S.si][S.qi]=(S.answers[S.si][S.qi]===i?null:i);
+      renderQuestion();
+    };
+    opts.appendChild(b);
+  });
+  box.appendChild(opts);
+
+  var nav=el("div","nav");
+  var left=el("div","row");
+  var prev=el("button","btn ghost","→ הקודמת"); prev.disabled=S.qi===0;
+  prev.onclick=function(){if(S.qi>0){S.qi--;renderQuestion()}};
+  var flag=el("button","btn ghost",S.flags[S.si][S.qi]?"★ מסומנת":"☆ סמן לחזרה");
+  flag.onclick=function(){S.flags[S.si][S.qi]=!S.flags[S.si][S.qi];renderQuestion()};
+  left.appendChild(prev); left.appendChild(flag);
+  nav.appendChild(left);
+
+  if(S.qi<s.qs.length-1){
+    var next=el("button","btn","הבאה ←");
+    next.onclick=function(){S.qi++;renderQuestion()};
+    nav.appendChild(next);
+  }else{
+    var fin=el("button","btn",S.si===S.sections.length-1?"סיים את הסימולציה":"סיים פרק ←");
+    fin.onclick=function(){endSection(false)};
+    nav.appendChild(fin);
+  }
+  box.appendChild(nav);
+
+  var dots=el("div","dots");
+  s.qs.forEach(function(_,i){
+    var d=el("button","dot"+(S.answers[S.si][i]!=null?" ans":"")+(i===S.qi?" cur":"")+(S.flags[S.si][i]?" flag":""),String(i+1));
+    d.onclick=function(){S.qi=i;renderQuestion()};
+    dots.appendChild(d);
+  });
+  box.appendChild(dots);
+  mount.appendChild(box);
+}
+
+function endSection(timedOut){
+  stopTick();
+  if(S.adaptive){
+    var s=S.sections[S.si], right=0;
+    s.qs.forEach(function(q,i){ if(S.answers[S.si][i]===q.a) right++ });
+    var frac=s.qs.length?right/s.qs.length:0;
+    S.trail.push({slot:S.si+1,type:s.meta.type,level:s.level,pct:Math.round(frac*100)});
+    if(frac>=UP) S.level=Math.min(LEVELS.length-1,S.level+1);
+    else if(frac<=DOWN) S.level=Math.max(0,S.level-1);
+  }
+  if(S.si<(S.total||S.sections.length)-1){
+    S.si++;
+    if(timedOut){
+      var root=$("exam"); root.textContent="";
+      var c=el("div","card sect-intro");
+      c.appendChild(el("h2",null,"הזמן לפרק נגמר"));
+      var p=el("p","muted","התשובות שסימנת נשמרו. בבחינה האמיתית הזמן אינו נצבר — הפרק הבא מתחיל עם השעון שלו.");
+      p.style.cssText="max-width:40ch;margin:10px auto 0";
+      c.appendChild(p);
+      var go=el("button","btn","המשך לפרק הבא ←"); go.style.marginTop="18px";
+      go.onclick=renderIntro; c.appendChild(go);
+      root.appendChild(c);
+      $("timer").textContent="00:00"; $("timer").className="timer crit";
+    }else renderIntro();
+  }else finish();
+}
+
+/* =================== HOW IT COULD HAVE BEEN SOLVED =================== */
+/*
+ * Shown under every question in a review: the signals that were actually
+ * present in that question, and what each one tells you. Rules with no
+ * evidence in a given question stay silent for it, so this is never a wall of
+ * generic advice.
+ *
+ * A HARD rule follows from the grammar or from the format of a multiple-choice
+ * question. A SOFT rule is a tendency of the people who write these exams, and
+ * each one's measured strength on this very bank is printed beside it — a
+ * claim about a rule is worth nothing next to the number.
+ */
+var HINT_STRENGTH={ soundalike:"73%", extreme:"80%", definition:"", prefix:"" };
+
+function glossMap(){
+  if(!TRAINER) return null;
+  if(glossMap._c) return glossMap._c;
+  var m={};
+  TRAINER.forEach(function(w){ if(w.he) m[w.word]=w.he });
+  glossMap._c=m;
+  return m;
+}
+
+/* `q` is the stored question {p,o,a}. Returns a collapsible block, or null. */
+function hintBlock(q){
+  if(typeof Hints==="undefined") return null;
+  var hs=[];
+  try{ hs=Hints.solveHints(q,{glosses:glossMap()}) }catch(e){ return null }
+  if(!hs.length) return null;
+
+  var box=el("div","expl"); box.style.marginTop="12px";
+  var toggle=el("button","btn ghost","איך אפשר היה לפתור (‎"+hs.length+"‎)");
+  toggle.style.cssText="padding:7px 14px;font-size:13px";
+  var body=el("div"); body.hidden=true; body.style.marginTop="12px";
+
+  hs.forEach(function(h){
+    var row=el("div"); row.style.cssText="margin-bottom:12px";
+    var head=el("div","row"); head.style.cssText="gap:8px;align-items:baseline;margin-bottom:3px";
+    var t=el("span",null,h.title); t.style.cssText="font-weight:700;font-size:14.5px;color:var(--accent)";
+    head.appendChild(t);
+    var badge=el("span","pill", h.hard?"חוק קשיח":("כלל סטטיסטי"+(HINT_STRENGTH[h.id]?" · "+HINT_STRENGTH[h.id]:"")));
+    if(h.hard) badge.classList.add("done");
+    head.appendChild(badge);
+    row.appendChild(head);
+    var b=el("p",null,h.body); b.style.cssText="margin:0;font-size:14px;line-height:1.6";
+    row.appendChild(b);
+    if(h.kills&&h.kills.length){
+      var k=el("p","muted","נפסלות לפי הכלל הזה: "+h.kills.map(function(i){return (q.o[i]||"")}).join(" · "));
+      k.style.cssText="margin:4px 0 0;font-size:13px"; row.appendChild(k);
+    }
+    body.appendChild(row);
+  });
+
+  var foot=el("p","muted","חוק קשיח נובע מהדקדוק או מכך שבשאלה אמריקאית יש תשובה אחת בלבד. כלל סטטיסטי הוא נטייה של כותבי המבחן, והאחוז שלידו נמדד על כל 1,175 השאלות שבאפליקציה.");
+  foot.style.cssText="margin:4px 0 0;font-size:12.5px;line-height:1.5";
+  body.appendChild(foot);
+
+  toggle.onclick=function(){
+    body.hidden=!body.hidden;
+    toggle.textContent=(body.hidden?"איך אפשר היה לפתור (‎"+hs.length+"‎)":"הסתר");
+  };
+  box.appendChild(toggle); box.appendChild(body);
+  return box;
+}
+
+/* =================== RESULTS =================== */
+function finish(){
+  stopTick(); S.phase="done";
+  $("wrap").className="wrap"; readingCollapsed=false;
+  var total=0, correct=0, byType={}, review=[];
+  S.sections.forEach(function(s,si){
+    s.qs.forEach(function(q,qi){
+      var given=S.answers[si][qi], ok=given===q.a;
+      total++; if(ok)correct++;
+      var t=s.meta.type;
+      if(!byType[t])byType[t]={n:0,ok:0};
+      byType[t].n++; if(ok)byType[t].ok++;
+      review.push({q:q,given:given,ok:ok,slot:s.meta.slot,type:t,
+        passage:(t==="reading_comprehension"&&s.meta.passages[0])?s.meta.passages[0]:null});
+    });
+  });
+  var pct=total?Math.round(correct/total*100):0;
+  history[S.sim.id]={pct:pct,correct:correct,total:total,at:Date.now(),score:estimateScore(review)};
+  save("amirnet.history",history);
+
+  $("exam").hidden=true; $("bar").hidden=true; $("results").hidden=false;
+  window.scrollTo(0,0);
+  var root=$("results"); root.textContent="";
+
+  /* The synonym rule reads the Hebrew glosses, which live in the trainer pool.
+     A session that only ever sat an exam has not loaded it, so fetch it now and
+     repaint the review once it lands rather than silently dropping that rule. */
+  if(!TRAINER) ensureTrainerData().then(function(){ if(S&&S.phase==="done") finish() });
+
+  var score=estimateScore(review), band=bandOf(score);
+  lastRun={title:S.sim.title,adaptive:!!S.adaptive,score:score,band:band,pct:pct,
+           correct:correct,total:total,trail:S.trail?S.trail.slice():[],review:review,at:new Date()};
+
+  var sc=el("div","card score");
+  sc.appendChild(el("div","eyebrow",S.sim.title));
+  sc.appendChild(el("div","pct",String(score)));
+  var bandLine=el("div"); bandLine.style.cssText="font-family:var(--font-display);font-weight:700;font-size:21px;margin-top:2px";
+  bandLine.textContent=band.name; sc.appendChild(bandLine);
+  sc.appendChild(el("div","muted",band.note));
+  var sub=el("div","muted",correct+" מתוך "+total+" ("+pct+"%)");
+  sub.style.cssText="margin-top:10px;font-size:14px"; sc.appendChild(sub);
+
+  var how=el("button","btn ghost","איך חושב הציון?");
+  how.style.cssText="margin-top:12px;padding:7px 14px;font-size:13px";
+  var howBox=el("div","expl"); howBox.hidden=true;
+  howBox.style.cssText="margin-top:10px;text-align:start";
+  howBox.appendChild(el("p",null,"מאל״ו מפרסמים את סולם 50–150 ואת הרמות, אבל לא את נוסחת ההמרה מניקוד גולמי לציון. הרמות בטבלה רשמיות; המספר עצמו הוא אומדן, ואלה הכללים שלו:"));
+  var f=el("p"); f.className="en"; f.style.cssText="font-family:ui-monospace,monospace;font-size:13px;background:var(--surface);padding:10px;border-radius:7px";
+  f.textContent="score = 50 + 100 x (earned / ceiling)\nearned  = sum of difficulty weight for each correct answer\nceiling = questions x 4   (weight of an expert question)\nweights: easy 1 , medium 2 , hard 3 , expert 4";
+  f.style.whiteSpace="pre"; howBox.appendChild(f);
+  howBox.appendChild(el("p",null,"כלומר: הכול נכון ברמה קלה → 75, בינונית → 100, קשה → 125, מתקדמת → 150. אי אפשר להגיע לפטור על שאלות קלות בלבד — וזה בדיוק מה שמבחן אדפטיבי מודד."));
+  howBox.appendChild(el("p","muted","זה אומדן תרגול, לא ציון אמירנט. אל תסתמך עליו לקבלה או פטור."));
+  how.onclick=function(){howBox.hidden=!howBox.hidden};
+  sc.appendChild(how); sc.appendChild(howBox);
+  var exportBtn=el("button","btn ghost","שמירת המבחן");
+  exportBtn.style.cssText="margin-top:12px";
+  exportBtn.onclick=function(){ showExport() };
+  sc.appendChild(exportBtn);
+
+  var again=el("div","row"); again.style.cssText="justify-content:center;margin-top:18px";
+  var b1=el("button","btn","חזרה לרשימה"); b1.onclick=quitExam;
+  var wasAdaptive=S.adaptive;
+  var b2=el("button","btn ghost","לעשות שוב");
+  b2.onclick=function(){var s=S.sim;quitExam(); if(wasAdaptive)startAdaptive(); else startExam(s)};
+  again.appendChild(b1); again.appendChild(b2); sc.appendChild(again);
+  root.appendChild(sc);
+
+  if(S.adaptive&&S.trail.length){
+    var tc=el("div","card bars");
+    tc.appendChild(el("div","eyebrow","מסלול הרמות"));
+    var tr=el("div","trail");
+    S.trail.forEach(function(step){
+      var d=el("div","trail-step");
+      d.appendChild(el("b",null,LEVEL_HE[step.level]||step.level));
+      d.appendChild(el("span",null,"פרק "+step.slot+" · "+step.pct+"%"));
+      tr.appendChild(d);
+    });
+    tc.appendChild(tr);
+    var reached=LEVEL_HE[LEVELS[S.level]]||LEVELS[S.level];
+    var r1=el("p",null,"הרמה שהגעת אליה: ");
+    r1.style.cssText="margin:14px 0 0;font-size:15px";
+    var strong=el("b",null,reached); strong.style.color="var(--accent)";
+    r1.appendChild(strong);
+    tc.appendChild(r1);
+    var r2=el("p","muted","אמירנט מדווח ציון על סולם 50–150. הנוסחה של מאל״ו אינה פומבית, ולכן זו רמת הקושי שאליה הגעת — לא המרה לציון.");
+    r2.style.cssText="margin:6px 0 0;font-size:13px;max-width:52ch";
+    tc.appendChild(r2);
+    root.appendChild(tc);
+  }
+
+  var bars=el("div","card bars");
+  bars.appendChild(el("div","eyebrow","לפי סוג שאלה"));
+  Object.keys(byType).forEach(function(t){
+    var o=byType[t], p=Math.round(o.ok/o.n*100);
+    var line=el("div","barline");
+    var top=el("div","top");
+    top.appendChild(el("span",null,TYPE_HE[t]||t));
+    top.appendChild(el("span","muted",o.ok+"/"+o.n+" · "+p+"%"));
+    line.appendChild(top);
+    var tr=el("div","track"); var f=el("div","fill"); f.style.width=p+"%";
+    if(p<50)f.style.background="var(--bad)"; else if(p<75)f.style.background="var(--warn)";
+    tr.appendChild(f); line.appendChild(tr); bars.appendChild(line);
+  });
+  root.appendChild(bars);
+
+  var h=el("h2",null,"סקירת שאלות"); h.style.cssText="margin:26px 0 12px;font-size:21px";
+  root.appendChild(h);
+
+  var lastPassage=null;
+  review.forEach(function(r,i){
+    if(r.passage&&r.passage!==lastPassage){
+      lastPassage=r.passage;
+      var p=el("div","card passage");
+      p.appendChild(el("h3",null,r.passage.title));
+      p.appendChild(el("div","body en",r.passage.text));
+      root.appendChild(p);
+    }
+    var c=el("div","card rev "+(r.ok?"right":"wrong"));
+    var head=el("div","row"); head.style.marginBottom="8px";
+    head.appendChild(el("span","eyebrow","שאלה "+(i+1)+" · "+(TYPE_HE[r.type]||r.type)));
+    head.appendChild(el("span","pill"+(r.ok?" done":""),r.ok?"נכון":(r.given==null?"לא נענתה":"שגוי")));
+    c.appendChild(head);
+    c.appendChild(el("div","qtext en",r.q.p));
+    var opts=el("div","opts");
+    r.q.o.forEach(function(text,oi){
+      var cls="opt"+(oi===r.q.a?" ok":(oi===r.given?" no":""));
+      var d=el("div",cls);
+      d.appendChild(el("span","k",LETTERS[oi]));
+      d.appendChild(el("span","v en",text));
+      opts.appendChild(d);
+    });
+    c.appendChild(opts);
+    if(r.q.e){
+      var ex=el("div","expl");
+      var lb=el("b",null,"למה: "); ex.appendChild(lb);
+      ex.appendChild(document.createTextNode(r.q.e));
+      c.appendChild(ex);
+    }
+    var hb=hintBlock(r.q);
+    if(hb) c.appendChild(hb);
+    var nk=noteKey(r.q);
+    var ta=document.createElement("textarea");
+    ta.className="note-field"; ta.rows=2; ta.id="note-"+i;
+    ta.placeholder="ההערה שלי על השאלה הזו…";
+    ta.value=notes[nk]||"";
+    ta.oninput=function(){
+      if(ta.value.trim()) notes[nk]=ta.value; else delete notes[nk];
+      save("amirnet.notes",notes);
+    };
+    c.appendChild(ta);
+    root.appendChild(c);
+  });
+}
+
+/* =================== GUIDE =================== */
+function renderGuide(){
+  var p=$("pane-guide");
+  if(p.dataset.ready)return;
+  p.dataset.ready="1";
+  p.innerHTML=GUIDE_HTML;
+}
+
+var GUIDE_HTML=[
+'<h2>מבנה הבחינה</h2>',
+'<p>שישה פרקי ליבה מנוקדים, 23 שאלות, 39 דקות. לכל פרק שעון נפרד — <b>זמן שנשאר מפרק אחד לא עובר לפרק הבא</b>, אז אין טעם למהר כדי "לחסוך" זמן.</p>',
+'<div class="note"><b>במבחן האמיתי יש שמונה פרקים, לא שישה.</b> אחרי ששת פרקי הליבה מגיעים שני פרקים ניסיוניים — <span class="en">Continuity of Meaning</span> (כולל קטעי האזנה) ו-<span class="en">Word Formation</span> (נתונה מילת בסיס, כותבים את הצורה הנכונה — תשובה פתוחה, לא רב-ברירה). הם כמעט ואינם משפיעים על הציון: טעות בהם לא מורידה, ותשובה נכונה יכולה להעלות בנקודה או שתיים. האפליקציה הזו מתרגלת את ששת המנוקדים בלבד — אין לי שאלות מהסוגים החדשים, ולא אמציא כאלה. שווה שתכיר אותם מראש כדי שלא יפתיעו אותך.</div>',
+'<div class="scroll"><table class="t"><tr><th>פרק</th><th>סוג</th><th>שאלות</th><th>זמן</th><th>לשאלה</th></tr>',
+'<tr><td>1, 2, 6</td><td>השלמת משפטים</td><td>4 בכל אחד</td><td>4 דק׳</td><td><b>60 שנ׳</b></td></tr>',
+'<tr><td>3</td><td>הבנת הנקרא</td><td>5</td><td>15 דק׳</td><td><b>180 שנ׳</b></td></tr>',
+'<tr><td>4, 5</td><td>ניסוח מחדש</td><td>3 בכל אחד</td><td>6 דק׳</td><td><b>120 שנ׳</b></td></tr>',
+'</table></div>',
+
+'<h2>הטקטיקה כשאתה לא מבין כלום</h2>',
+'<div class="warnbox"><b>קרא את זה לפני הכל.</b> הכללים שלהלן נמדדו על 580 השאלות של האתר הזה, ועובדים עליהן מצוין. בדקתי אותם מול מקור חיצוני — ו<b>הם לא עברו</b>. הפירוט בסוף הפרק, תחת "מבחן המקור החיצוני". השתמש בהם לתרגול כאן; אל תיכנס איתם לבחינה האמיתית.</div>',
+'<p>הרצתי את כל 580 השאלות שבאפליקציה הזו דרך בדיקה סטטיסטית וחיפשתי דפוסים שאפשר לנצל בלי להבין את התוכן. שלושה דפוסים יצאו חזקים מאוד — <i>בתוך האתר הזה</i>.</p>',
+
+'<h3>1. התשובה הארוכה ביותר — החוק החזק ביותר</h3>',
+'<p>בהבנת הנקרא ובניסוח מחדש, האפשרות הארוכה ביותר היא הנכונה ברוב המוחלט של המקרים:</p>',
+'<div class="stat">',
+'<div><b>82%</b><span>הבנת הנקרא — באתר הזה בלבד</span></div>',
+'<div><b>81%</b><span>ניסוח מחדש — באתר הזה בלבד</span></div>',
+'<div><b>25%</b><span>מה שהיה צפוי מניחוש</span></div>',
+'</div>',
+'<p>והצד השני של אותו מטבע: <b>האפשרות הקצרה ביותר כמעט לעולם אינה נכונה</b> — 5% בהבנת הנקרא, 2.5% בניסוח מחדש. אם נגמר הזמן ואתה חייב לסמן משהו, סמן את הארוכה ופסול את הקצרה.</p>',
+'<p class="muted">ההיגיון מאחורי זה: תשובה נכונה צריכה להיות מדויקת, ודיוק דורש סייגים — "even though it cost a lot" לעומת "it was cheap". מסיח שגוי יכול להרשות לעצמו להיות קצר, כי הוא פשוט לא נכון.</p>',
+
+'<h3>2. מילים מוחלטות = דגל אדום</h3>',
+'<p>אפשרות שמכילה <span class="en">all, always, never, only, every, none, completely, impossible</span> כמעט תמיד שגויה:</p>',
+'<div class="stat">',
+'<div><b>38%</b><span>מהמסיחים השגויים בהבנת הנקרא מכילים מילה מוחלטת</span></div>',
+'<div><b>6%</b><span>מהתשובות הנכונות מכילות אחת</span></div>',
+'</div>',
+'<p>פי שישה. זה כלי פסילה מצוין: עובר על ארבע האפשרויות, מוחק כל אחת עם מילה מוחלטת, ולרוב נשארות שתיים.</p>',
+
+'<h3>3. שילוב שני הכללים</h3>',
+'<p>בדקתי מה קורה כשמפעילים את שניהם יחד — קודם פוסלים מילים מוחלטות, ואז בוחרים את הארוכה ביותר מבין מה שנשאר:</p>',
+'<div class="stat">',
+'<div><b>82%</b><span>הבנת הנקרא</span></div>',
+'<div><b>77%</b><span>ניסוח מחדש</span></div>',
+'<div><b>30%</b><span>השלמת משפטים</span></div>',
+'</div>',
+'<p>בשני הפרקים הראשונים זה מחליף ניחוש עיוור בכלי אמיתי. <b>בהשלמת משפטים זה לא עובד</b> — שם כל האפשרויות הן מילה בודדת, אז אין "ארוכה יותר" משמעותית.</p>',
+
+'<h2>מבחן המקור החיצוני</h2>',
+'<p>כלל שנמדד על מקור אחד יכול לתאר את ההרגלים של מי שכתב אותו ולא את סוג השאלה. הדרך היחידה לדעת היא לבדוק מול מקור עצמאי, אז בדקתי מול מבחן לדוגמה של מכון נועם — מכון הכנה שמתאר בדיוק את אותו מבנה: שישה פרקים, שלושה סוגי שאלות.</p>',
+
+'<h3>הכלל נפל</h3>',
+'<p>במבחן שלהם היו רק שלוש שאלות מהסוגים שהכלל מכסה — מעט מדי כדי להסיק מאחוז הצלחה. אז בדקתי משהו חזק יותר: את <b>המנגנון</b> שהכלל נשען עליו. הכלל "בחר את הארוכה ביותר" יכול לעבוד רק אם התשובה הנכונה ארוכה יותר <i>במידה שאפשר לראות בעין</i>.</p>',
+'<div class="scroll"><table class="t"><tr><th>מדד</th><th>amirnetwords</th><th>מכון נועם</th></tr>',
+'<tr><td>פער בין התשובה הנכונה לארוכה הבאה</td><td><b>15 תווים</b></td><td><b>1–2 תווים</b></td></tr>',
+'<tr><td>פיזור האורכים בין ארבע האפשרויות</td><td><b>40%</b></td><td><b>10%</b></td></tr>',
+'</table></div>',
+'<p>במכון נועם ארבע האפשרויות באותו אורך כמעט בדיוק. גם בשתי השאלות שבהן "הארוכה ביותר" במקרה הייתה נכונה, היא ניצחה בתו אחד ובשני תווים — הפרש שאי אפשר לראות בעין תחת לחץ זמן, ושאינו שונה מניחוש.</p>',
+'<div class="warnbox"><b>המסקנה:</b> הפער של 15 התווים הוא מאפיין של איך ש-amirnetwords מייצרים שאלות, לא של סוג השאלה. כותב מקצועי משווה את אורכי האפשרויות בכוונה, וזה מנטרל את הכלל לחלוטין. <b>82% תקף כאן בלבד.</b></div>',
+
+'<h3>ראיה שלישית — הפעם מחומר של מאל״ו</h3>',
+'<p>מצגת רשמית של מאל״ו על אמירנט מכילה צילומי מסך של שאלות אמיתיות מהממשק. הן אומרות את אותו דבר, ובצורה חדה יותר:</p>',
+'<div class="scroll"><table class="t"><tr><th>השאלה</th><th>אורכי ארבע האפשרויות</th><th>הארוכה ביותר נכונה?</th></tr>',
+'<tr><td>Restatement</td><td>105 · 122 · 122 · 106</td><td>כולן דומות — אין אות בכלל</td></tr>',
+'<tr><td>בחירת כותרת לקטע</td><td>28 · <b>33</b> · 49 · 38</td><td><b>לא.</b> הנכונה היא 33; הארוכה (49) שגויה</td></tr>',
+'</table></div>',
+'<p>בשאלת הכותרת הכלל לא סתם מפסיק לעבוד — הוא מוביל ישר לתשובה השגויה. זו הראיה החזקה ביותר שיש לי, והיא מגיעה מהגוף שכותב את הבחינה.</p>',
+
+'<h3>ומה כן שרד את המעבר</h3>',
+'<p>מלכודת הדמיון הגרפי מתאשרת, ובעוצמה גדולה יותר ממה שמדדתי. שאלת השלמת משפטים מהמצגת של מאל״ו:</p>',
+'<p class="en" style="font-weight:700;font-size:16px">sliced · sipped · stored · switched</p>',
+'<p><b>כל ארבע האפשרויות מתחילות באותה אות.</b> אצל amirnetwords מצאתי שב-30% מהשאלות יש מסיח אחד שמתחיל כמו התשובה; כאן כולן. כלומר הכלל הזה — לקרוא כל אפשרות עד הסוף ולא לזהות מילה לפי תחילתה — הוא לא טריק של אתר מסוים אלא מאפיין אמיתי של הבחינה.</p>',
+'<p>מה שכן נשאר תקף בכל מקום: לקרוא את כל ארבע האפשרויות עד הסוף, לפסול מה שסותר את הטקסט, ולא להשאיר שאלה ריקה. אלה לא טריקים — זו קריאה נכונה.</p>',
+'<p class="muted">האתר של מאל״ו חוסם גישה אוטומטית, ומבחן הדוגמה שלהם מוגן מפני חילוץ תוכן — לא עקפתי אף אחד מהשניים. הראיות שלמעלה מגיעות ממצגת הסברה שלהם, שפורסמה פתוחה לקריאה.</p>',
+
+'<h2>השלמת משפטים: מה באמת עובד</h2>',
+'<p>זה הפרק הגדול ביותר — 12 מתוך 23 השאלות — וגם היחיד שבו לא מצאתי כלל ניחוש חזק. חיפשתי ברצינות. הנה מה שיצא, כולל מה שנכשל.</p>',
+
+'<h3>מה שבדקתי ונכשל</h3>',
+'<p>חילקתי את 360 השאלות לשניים: פיתחתי כללים על סימולציות 1–10, ובדקתי אותם על 11–20 שלא השתתפו בפיתוח. זה חשוב — כלל שנבנה ונבדק על אותם נתונים תמיד ייראה מצוין ויתרסק במציאות.</p>',
+'<div class="scroll"><table class="t"><tr><th>כלל</th><th>על מה שפיתחתי</th><th>על מה שלא ראיתי</th></tr>',
+'<tr><td>רשימת "מילים מלכודת"</td><td>31.9%</td><td><b>25.3%</b></td></tr>',
+'<tr><td>התשובה הארוכה ביותר</td><td>30.0%</td><td><b>30.0%</b></td></tr>',
+'<tr><td>תמיד A</td><td>29.4%</td><td><b>31.7%</b></td></tr>',
+'<tr><td>המילה המוכרת/נפוצה ביותר</td><td>31.7%</td><td><b>34.4%</b></td></tr>',
+'<tr><td>התאמה דקדוקית + מילה נפוצה</td><td>31.1%</td><td><b>35.6%</b></td></tr>',
+'</table></div>',
+'<p>רשימת המילים-מלכודת נראתה מבטיחה — <span class="en">unless</span> הופיעה 12 פעמים ואף פעם לא הייתה נכונה, <span class="en">in spite of</span> 10 פעמים ואף פעם. אבל על שאלות שלא ראיתי היא נתנה 25.3%, כלומר <b>בדיוק כמו ניחוש עיוור</b>. היא פשוט שיננה את הסימולציות הראשונות. פסלתי אותה.</p>',
+'<div class="warnbox"><b>המסקנה הישרה:</b> אין בהשלמת משפטים כלל ניחוש חזק. התקרה היא בערך <b>35%</b> במקום 25% — שיפור אמיתי אבל צנוע. מי שמבטיח לך יותר מזה מוכר לך התאמת-יתר.</div>',
+
+'<h3>הכלל היחיד ששרד: בחר את המילה שאתה הכי מכיר</h3>',
+'<p>מבין ארבע האפשרויות, סמן את המילה שראית הכי הרבה פעמים בחיים. זה נתן 34–36% על שאלות שלא השתתפו בפיתוח הכלל. ההיגיון: מסיחים נבנים לעיתים קרובות ממילים נדירות או מומצאות-למחצה שנראות דומה לתשובה.</p>',
+
+'<h3>19% מהפרק לא דורשים אוצר מילים בכלל</h3>',
+'<p>68 מתוך 360 השאלות הן <b>שאלות מילות קישור</b> — כל ארבע האפשרויות הן מילות חיבור. כאן אתה לא צריך להכיר שום מילה אקדמית, רק לזהות את היחס הלוגי בין שני חלקי המשפט. זה החלק הכי משתלם בפרק.</p>',
+'<p>עץ ההחלטה, לפי מה שבפועל היה נכון ב-68 השאלות האלה:</p>',
+'<div class="scroll"><table class="t"><tr><th>היחס בין שני חלקי המשפט</th><th>התשובה</th><th>כמה פעמים</th></tr>',
+'<tr><td>החלק השני הוא <b>תוצאה</b> של הראשון</td><td class="en">so, so that, therefore</td><td><b>19</b></td></tr>',
+'<tr><td>החלק השני הוא <b>הסיבה</b> לראשון</td><td class="en">because, since, owing to</td><td><b>15</b></td></tr>',
+'<tr><td>שני החלקים <b>סותרים</b> זה את זה</td><td class="en">but, although, yet, though, whereas</td><td><b>17</b></td></tr>',
+'<tr><td>שני החלקים <b>קורים יחד</b> בזמן</td><td class="en">while, when</td><td><b>6</b></td></tr>',
+'<tr><td>החלק השני הוא <b>המטרה</b></td><td class="en">to, in order to</td><td><b>8</b></td></tr>',
+'</table></div>',
+'<p>שים לב ש<span class="en">so</span> ו-<span class="en">because</span> לבדן הן 34 מתוך 68. אם זיהית שיש כאן קשר של סיבה ותוצאה אבל לא בטוח לאיזה כיוון — שאל את עצמך מה קרה קודם. הסיבה תמיד קודמת לתוצאה.</p>',
+
+'<h3>המלכודת הגרפית</h3>',
+'<p>ב-30% משאלות השלמת המשפטים יש מסיח שמתחיל באותן שתי אותיות כמו התשובה הנכונה: <span class="en">created / collected / compared / cancelled</span>. הדמיון מכוון — הוא נועד לתפוס מי שמזהה את המילה חלקית. אם שתי אפשרויות נראות דומות מאוד, <b>קרא את שתיהן עד הסוף</b> לפני שאתה בוחר.</p>',
+
+'<h3>מה שבאמת פותר את הפרק</h3>',
+'<p>294 מילים. זה כל אוצר המילים שמהווה את התשובות הנכונות בכל 360 השאלות שבאפליקציה הזו, והוא נמצא בלשונית <b>אוצר מילים</b> עם המשפט של כל מילה. רק 23 מהן חוזרות יותר מפעם אחת — כלומר אין כאן קיצור דרך של "20 המילים החשובות", אבל יש רשימה סופית וסגורה. היא עדיפה על כל טריק ניחוש.</p>',
+
+'<h2>תכנית עבודה לפי סוג שאלה</h2>',
+
+'<h3>השלמת משפטים — 60 שניות לשאלה</h3>',
+'<ol>',
+'<li><b>קרא את המשפט המלא עד הסוף</b> לפני שאתה מסתכל באפשרויות. המוח ישלים לבד את המילה החסרה.</li>',
+'<li><b>חפש את מילת הקישור.</b> היא קובעת את הכיוון: <span class="en">despite, although, however, but</span> = ניגוד. <span class="en">because, therefore, so, since</span> = סיבה ותוצאה. זו לרוב כל השאלה.</li>',
+'<li><b>היזהר ממסיחים שנראים דומים.</b> ב-30% מהשאלות יש מסיח שמתחיל באותן שתי אותיות כמו התשובה הנכונה — <span class="en">created / collected / compared / cancelled</span>. הדמיון הגרפי הוא מלכודת מכוונת, לא צירוף מקרים.</li>',
+'<li><b>הצב את הבחירה שלך בחזרה במשפט</b> וקרא אותו שלם. אם זה צורם — זה שגוי.</li>',
+'</ol>',
+'<div class="note">אם אחרי 60 שניות אתה תקוע: סמן, עבור הלאה, וחזור בסוף. שאלה אחת שגוזלת שלוש דקות עולה לך בשתי שאלות אחרות.</div>',
+
+'<h3>הבנת הנקרא — 3 דקות לשאלה</h3>',
+'<ol>',
+'<li><b>קרא קודם את השאלות, לא את הקטע.</b> ככה אתה יודע מה לחפש וקורא עם מטרה.</li>',
+'<li><b>אחר כך סרוק את הקטע</b> — משפט ראשון של כל פסקה ומשפט אחרון. שם יושב הרעיון המרכזי.</li>',
+'<li><b>כל תשובה חייבת להיות מעוגנת בטקסט.</b> אם אתה צריך להניח משהו שלא כתוב — זו התשובה השגויה.</li>',
+'<li><b>פסול לפי הכללים למעלה:</b> מילים מוחלטות החוצה, ומבין מה שנשאר — הארוכה והמסויגת יותר.</li>',
+'</ol>',
+'<p>שאלת "<span class="en">What is the main idea?</span>" מופיעה כמעט בכל קטע. התשובה הנכונה תכסה את <i>כל</i> הקטע; מסיח טיפוסי יהיה נכון אבל יתאר רק פסקה אחת.</p>',
+
+'<h3>ניסוח מחדש — 2 דקות לשאלה</h3>',
+'<ol>',
+'<li><b>זהה את המבנה הלוגי של המשפט המקורי</b> לפני האפשרויות: ניגוד? סיבה? תנאי? זמן?</li>',
+'<li><b>המבנה חייב להישמר.</b> הניסוח משתנה, הלוגיקה לא.</li>',
+'<li><b>פסול היפוכים.</b> המסיח הנפוץ ביותר הופך את המשמעות: "הם קנו למרות המחיר" מול "הם לא קנו כי זה היה יקר". קרא עד הסוף — ההיפוך מסתתר במילה אחת.</li>',
+'<li><b>פסול שינוי ודאות.</b> אם במקור כתוב שמשהו <i>קרה</i>, ובאפשרות כתוב שהם <i>עדיין מתלבטים</i> — זו לא אותה משמעות.</li>',
+'</ol>',
+
+'<h2>ניהול זמן</h2>',
+'<ul>',
+'<li><b>לעולם אל תשאיר שאלה ריקה.</b> אין נקודות שליליות. גם ניחוש עיוור הוא 25%, וניחוש לפי הכללים למעלה הוא 80% בשני פרקים.</li>',
+'<li><b>בדקה האחרונה של כל פרק</b> — מלא כל מה שריק, לפי הכלל של "הארוכה ביותר".</li>',
+'<li><b>זמן לא נצבר.</b> אם סיימת פרק מוקדם, חזור ובדוק את המסומנות — זה הזמן היחיד שבו הוא שווה משהו.</li>',
+'<li><b>אל תשנה תשובה</b> בלי סיבה קונקרטית שאתה יכול לנסח. התחושה הראשונה בדרך כלל טובה יותר.</li>',
+'</ul>',
+
+'<h2>סדר תרגול מומלץ</h2>',
+'<ul>',
+'<li><b>סימולציות 1–5</b> (קל): בנה ביטחון וזהה את סוגי השאלות. בלי לחץ זמן בהתחלה — הגדר זמן כפול בהגדרות.</li>',
+'<li><b>6–10</b> (בינוני): עבור לזמן הרשמי. כאן מתחילים למדוד.</li>',
+'<li><b>11–15</b> (בינוני עד קשה): התמקד בפרק שבו אתה הכי חלש לפי הפילוח בסוף כל מבחן.</li>',
+'<li><b>16–20</b> (קשה): תנאי בחינה מלאים, רצף, בלי הפסקות.</li>',
+'</ul>',
+'<p>אחרי כל סימולציה קרא את ההסבר של <i>כל</i> שאלה שטעית בה. ההסברים בעברית ומסבירים את הלוגיקה, לא רק את התשובה.</p>',
+
+'<div class="warnbox"><b>חשוב לדעת:</b> כל המספרים בעמוד הזה חושבו מ-580 השאלות של הסימולציות האלה — לא מהבחינה הרשמית של מאל״ו. הדפוסים אמיתיים ושימושיים לתרגול כאן, אבל אל תסמוך עליהם כתחליף לידע בבחינה האמיתית. טקטיקת ניחוש היא רשת ביטחון לשאלות שאתה לא יודע, לא אסטרטגיה למבחן שלם.</div>'
+].join("");
+
+
+
+
+/* =================== VOCABULARY TRAINER =================== */
+/*
+ * A word is shown, you write what you think it means, Claude says whether you
+ * were right, and then the two of you build a memory hook for it.
+ *
+ * The hook style is the learner's own, and the prompt below carries their
+ * example verbatim so the model has the pattern rather than a description of
+ * it: abduct -> "אבא דק" -> אבא ברווז -> "אבא ברווז חטף את הילד שלו".
+ * It is a phonetic bridge into Hebrew tied to the meaning, not a translation.
+ *
+ * Judging needs `sample` (the page asking Claude) and the hooks are kept in
+ * `db` so they survive a cleared browser, follow the user between devices, and
+ * can be read back in a later chat to revise from. Both resolve late and may
+ * resolve null, so the tab renders and says what is missing rather than
+ * pretending to grade.
+ */
+
+var TRAINER=null;            /* the word pool */
+var sampleApi=null, dbApi=null, userApi=null;
+var capsReady=false;
+var cards={};                /* word -> scheduling + hook, kept per viewer */
+var T={word:null, phase:"idle", judged:null, queue:[], session:{seen:0, right:0}};
+
+/*
+ * WHOSE DATA IS THIS.
+ *
+ * Everything a person builds here — their hooks, their meanings, their review
+ * schedule — is private to them. It lives under `data/users/<their id>`, a
+ * path the platform keeps private per viewer: nobody else reads it, the
+ * artifact's owner included. Share this page with someone and they get the
+ * whole app and their own, separate progress; neither of you ever sees the
+ * other's.
+ *
+ * `uid` is the awaited `user.id()`, and the store accepts exactly that value
+ * as this viewer — no substitute works. A null id means no private subtree at
+ * all, which is the case for someone admitted read-only; the app then keeps
+ * their work in this browser and says so, rather than moving it anywhere
+ * shared.
+ */
+var uid=null, isOwner=false, dbWritable=true;
+
+try{
+  if(window.claude&&typeof window.claude.use==="function"){
+    Promise.all([
+      window.claude.use("sample").then(function(a){sampleApi=a||null}).catch(function(){}),
+      window.claude.use("db").then(function(a){dbApi=a||null}).catch(function(){}),
+      window.claude.use("user").then(function(a){userApi=a||null}).catch(function(){})
+    ]).then(function(){
+      if(!userApi) return null;
+      return Promise.all([
+        Promise.resolve().then(function(){ return userApi.id() }).catch(function(){ return null }),
+        Promise.resolve().then(function(){ return userApi.isOwner() }).catch(function(){ return false })
+      ]).then(function(r){ uid=r[0]||null; isOwner=Boolean(r[1]) });
+    }).catch(function(){}).then(function(){
+      capsReady=true;
+      paintWhoAmI();
+      if($("pane-trainer") && !$("pane-trainer").hidden) renderTrainer();
+    });
+  } else { capsReady=true; }
+}catch(e){ capsReady=true; }
+
+/* The owner sees that this is their own copy; a guest sees nothing extra. */
+function paintWhoAmI(){
+  var e=$("whoami"); if(!e) return;
+  var base="20 סימולציות · 580 שאלות";
+  e.textContent = isOwner ? (base+" · מצב מנהל") : base;
+}
+
+/* Document ids accept letters, digits and `_ - . ~ : @ +` only. */
+function docId(word){
+  return String(word||"").toLowerCase().replace(/[^a-z0-9_.~:@+-]/g,"-").slice(0,120) || "-";
+}
+
+/** This viewer's own card collection, or null when they have no private one. */
+function myCards(){
+  if(!dbApi||!uid) return null;
+  try{ return dbApi.collection("data/users/"+uid) }catch(e){ return null }
+}
+
+/* ---------- scheduling: SM-2, trimmed to what this needs ---------- */
+var DAY=86400000;
+function newCard(word){ return {word:word, ease:2.5, interval:0, lapses:0, reps:0, due:0}; }
+
+/*
+ * A card you are allowed to write to.
+ *
+ * Cards loaded from the app's own storage are document snapshots, and snapshot
+ * bodies are FROZEN. Under "use strict" — which this whole script runs in — a
+ * write to a frozen object throws, so every save silently died the moment the
+ * card had come from storage rather than from this session. Nothing mutates a
+ * card in place any more; each path copies, edits the copy, and stores that.
+ */
+function cloneCard(c){
+  if(!c) return newCard("");
+  try{ return JSON.parse(JSON.stringify(c)) }
+  catch(e){ var o={}; for(var k in c) if(Object.prototype.hasOwnProperty.call(c,k)) o[k]=c[k]; return o }
+}
+/* `recognition` marks an answer picked from four options rather than recalled
+   from nothing. It still moves the word further out, but it does not earn the
+   ease bump: knowing it when you see it is not the same as knowing it. */
+function schedule(card, correct, recognition){
+  var c=cloneCard(card||newCard(""));
+  c.reps=(c.reps||0)+1;
+  if(correct){
+    c.interval = !c.interval ? 1 : Math.max(1, Math.round(c.interval*c.ease));
+    if(!recognition) c.ease = Math.min(3.0, (c.ease||2.5)+0.1);
+  }else{
+    c.interval = 1;                                  /* back tomorrow */
+    c.ease = Math.max(1.3, (c.ease||2.5)-0.2);       /* and more often after that */
+    c.lapses = (c.lapses||0)+1;
+  }
+  c.due = Date.now() + c.interval*DAY;
+  return c;
+}
+
+/* ---------- picking the next word ---------- */
+function nextWord(){
+  if(T.queue.length) return T.queue.shift();          /* missed earlier this session */
+  var now=Date.now();
+  var due=Object.keys(cards).map(function(k){return cards[k]})
+    .filter(function(c){return c.due && c.due<=now})
+    .sort(function(a,b){return a.due-b.due});
+  if(due.length) return due[0].word;
+  /* When there is no live judge, a word with no stored meaning cannot be
+     marked right or wrong — so it is not served at all, rather than shown and
+     then refused. */
+  var pool = sampleApi ? TRAINER : localJudgePool();
+  var fresh=pool.filter(function(w){return !cards[w.word]});
+  if(fresh.length) return fresh[0].word;              /* pool is ranked by frequency */
+  var all=Object.keys(cards).map(function(k){return cards[k]}).sort(function(a,b){return a.due-b.due});
+  return all.length?all[0].word:null;
+}
+
+/* Loads the trainer pool and the saved cards once, whichever tab asks first. */
+var trainerDataReady=null;
+function ensureTrainerData(){
+  if(trainerDataReady) return trainerDataReady;
+  trainerDataReady = (TRAINER ? Promise.resolve(TRAINER)
+                              : fetch("trainer-words.json").then(function(r){return r.json()})
+                                  .then(function(j){ TRAINER=j; return j })
+                                  .catch(function(){ return null }))
+    .then(function(){ return loadCards() })
+    .catch(function(){});
+  return trainerDataReady;
+}
+
+/* The trainer-pool entry for a word: what the course teaches about it, meaning
+   and hook alike. The vocabulary tab reads from here too, because this is the
+   only file that carries the Hebrew glosses. */
+function courseEntry(word){
+  if(!TRAINER) return null;
+  return TRAINER.filter(function(w){return w.word===word})[0]||null;
+}
+
+/* Take the course's hook for a word as your own, from wherever it is shown.
+   A word with no card yet gets one, so the schedule starts from this moment. */
+function adoptCourseHook(word, entry, btn){
+  var c=cloneCard(cards[word]||newCard(word));
+  c.word=word;
+  if(!c.meaning && entry && entry.he) c.meaning=entry.he;
+  c.mnemonic=entry.seed.hook;
+  c.source="course";
+  c.savedAt=Date.now();
+  if(!c.due) c.due=Date.now();       /* due now: it enters the review queue */
+  cards[word]=c;
+  persistCard(c);
+  if(btn){ btn.textContent="נשמר ✓"; btn.disabled=true }
+}
+
+/* The course-authored hook for a word, when the sheets supplied one. */
+function seedFor(word){
+  if(!TRAINER) return null;
+  var e=TRAINER.filter(function(w){return w.word===word})[0];
+  return (e&&e.seed&&e.seed.hook)?e.seed:null;
+}
+
+/* ---------- asking Claude ---------- */
+function judgePrompt(word, guess, seed){
+  /* Five words arrive with the hook the course itself titled their sheet with.
+     Inventing a rival hook for those would only compete with what he already
+     memorised, so the course's one is handed over to be reused. */
+  var seeded = seed&&seed.hook ? [
+'',
+'שים לב: הקורס עצמו כבר נתן למילה הזו סימן — "'+seed.hook+'".',
+'השתמש בו כ-"mnemonic" במקום להמציא אחר, וכתוב "story" שמחבר אותו למשמעות.'
+  ] : [];
+  return [
+'אתה עוזר ללומד ישראלי שמתכונן לבחינת אמירנט באנגלית.',
+'',
+'המילה: "'+word+'"',
+'מה שהלומד כתב שהפירוש: "'+guess+'"',
+'',
+'החזר JSON בלבד, בדיוק במבנה הזה:',
+'{',
+'  "verdict": "correct" | "partial" | "wrong",',
+'  "meaning": "הפירוש בעברית, 2-5 מילים",',
+'  "english": "a short English gloss",',
+'  "note": "משפט אחד שמסביר למה התשובה נכונה/חלקית/שגויה",',
+'  "mnemonic": "הסימן עצמו",',
+'  "story": "משפט קצר וויזואלי שמחבר את הסימן למשמעות"',
+'}',
+'',
+'כללי הסימן — זה החלק החשוב, אל תדלג עליו:',
+'הסימן הוא פירוק פונטי של המילה האנגלית למילים עבריות שנשמעות כמוה,',
+'ואז תמונה שמקשרת אותן למשמעות. זה לא תרגום ולא אטימולוגיה.',
+'',
+'כך הלומד עצמו עושה את זה:',
+'  abduct (לחטוף) ← נשמע "אבא דק" ← אבא ברווז ←',
+'  הסיפור: "אבא ברווז חטף את הילד שלו"',
+'  ומאז כשהוא רואה abduct הוא נזכר מיד בחטיפה.',
+'',
+'אם אי אפשר לפרק את המילה פונטית לעברית בצורה טבעית, בנה את הסימן על',
+'דמיון למילה עברית או אנגלית מוכרת — אבל שהקשר למשמעות יישאר חד.',
+'סימן אחד חזק עדיף על שלושה חלשים. אל תמציא עברית שלא קיימת.'
+  ].concat(seeded).join('\n');
+}
+
+/* ---------- rendering ---------- */
+function renderTrainer(){
+  var p=$("pane-trainer"); p.textContent="";
+
+  if(!TRAINER){
+    p.appendChild(el("div","muted","טוען מילים…"));
+    ensureTrainerData().then(function(){
+      if(TRAINER) renderTrainer();
+      else { p.textContent=""; p.appendChild(el("div","card set","לא ניתן לטעון את רשימת המילים.")) }
+    });
+    return;
+  }
+
+  var head=el("div");
+  var h=el("h2",null,"מאמן מילים"); h.style.cssText="font-size:23px;margin-bottom:6px";
+  head.appendChild(h);
+  var known=Object.keys(cards).length;
+  var sub=el("p","muted", TRAINER.length+" מילים במאגר · "+known+" כבר התחלת · "+
+            (T.session.seen?("הפעם: "+T.session.right+"/"+T.session.seen):"מדורגות לפי כמה הן חוזרות"));
+  sub.style.cssText="margin:0 0 14px;font-size:14px";
+  head.appendChild(sub);
+  p.appendChild(head);
+
+  if(!capsReady){ p.appendChild(el("div","card set","מתחבר…")); return }
+
+  /* The quiz is built from the saved cards alone, so it must be reachable even
+     where judging is not permitted — hence both the switch and the quiz branch
+     sit above the `sampleApi` check that the practice flow depends on. */
+  var pool=quizPool();
+  if(pool.length) p.appendChild(modeSwitch(pool.length));
+  if(MODE==="quiz"){ renderQuizInto(p, pool); p.appendChild(storageNote()); return }
+  if(MODE==="library"){ renderLibrary(p); p.appendChild(storageNote()); return }
+
+  /* Without `sample` the guess is judged locally instead, against the Hebrew
+     meaning the course wrote for that word — so the whole loop runs with no
+     account at all. Only a pool with no stored meanings leaves nothing to do. */
+  if(!sampleApi && !localJudgePool().length){
+    var warn=el("div","card set");
+    warn.appendChild(el("div","eyebrow","אין מה לשפוט מולו"));
+    var w1=el("p",null,"אין כאן פירושים שמורים, והרשאת השאלה בזמן אמת לא ניתנה בתצוגה הזו.");
+    w1.style.cssText="margin:8px 0;font-size:14.5px"; warn.appendChild(w1);
+    var openPerms=el("button","btn ghost","פתח הרשאות"); openPerms.style.marginTop="12px";
+    openPerms.onclick=function(){
+      try{ window.claude.use("permissions").then(function(pm){ pm&&pm.manage&&pm.manage() }) }catch(e){}
+    };
+    warn.appendChild(openPerms);
+    p.appendChild(warn);
+    p.appendChild(storageNote());
+    return;
+  }
+
+  if(!T.word) T.word=nextWord();
+  if(!T.word){ p.appendChild(el("div","card set","אין מילים זמינות.")); return }
+
+  var card=el("div","card"); card.style.padding="22px 20px";
+  var entry=TRAINER.filter(function(w){return w.word===T.word})[0]||{};
+  var c=cards[T.word];
+
+  var top=el("div","row"); top.style.cssText="justify-content:space-between;align-items:baseline";
+  var wordEl=el("div","en",T.word);
+  wordEl.style.cssText="font-family:var(--font-display);font-weight:900;font-size:34px;color:var(--accent);line-height:1.1";
+  top.appendChild(wordEl);
+  if(c&&c.lapses) top.appendChild(el("span","pill","טעית בה "+c.lapses+(c.lapses===1?" פעם":" פעמים")));
+  else if(entry.times>1) top.appendChild(el("span","pill","חוזרת "+entry.times+" פעמים"));
+  card.appendChild(top);
+
+  if(T.phase==="idle"||T.phase==="judging"){
+    var ask=el("p","muted","מה הפירוש? כתוב מה שאתה חושב, גם אם אתה לא בטוח.");
+    ask.style.cssText="margin:12px 0 8px;font-size:14.5px"; card.appendChild(ask);
+
+    var ta=document.createElement("textarea");
+    ta.className="note-field"; ta.rows=2; ta.id="guessField";
+    ta.placeholder="הפירוש בעברית…"; ta.value=T.guessDraft||"";
+    ta.oninput=function(){T.guessDraft=ta.value};
+    ta.onkeydown=function(e){ if(e.key==="Enter"&&(e.metaKey||e.ctrlKey)) submitGuess() };
+    card.appendChild(ta);
+
+    var row=el("div","row"); row.style.marginTop="12px";
+    var go=el("button","btn", T.phase==="judging"?"בודק…":"בדוק");
+    go.disabled = T.phase==="judging";
+    go.onclick=submitGuess; row.appendChild(go);
+    var skip=el("button","btn ghost","לא יודע");
+    skip.disabled = T.phase==="judging";
+    skip.onclick=function(){ T.guessDraft="—"; submitGuess() };
+    row.appendChild(skip);
+    if(T.error){ var er=el("span","muted",T.error); er.style.fontSize="13.5px"; row.appendChild(er) }
+    card.appendChild(row);
+  }
+
+  if(T.phase==="result"&&T.judged){
+    var j=T.judged;
+    var VERDICT={correct:["נכון","var(--good)","var(--good-soft)"],
+                 partial:["כמעט","var(--warn)","color-mix(in srgb,var(--warn) 14%,transparent)"],
+                 wrong:["לא נכון","var(--bad)","var(--bad-soft)"]};
+    var v=VERDICT[j.verdict]||VERDICT.wrong;
+    var badge=el("div","verdict",v[0]);
+    badge.style.cssText="display:inline-block;font-weight:700;padding:5px 14px;border-radius:999px;margin:14px 0 10px;color:"+v[1]+";background:"+v[2];
+    card.appendChild(badge);
+
+    var mean=el("p",null,"");
+    mean.style.cssText="margin:0 0 4px;font-size:17px;font-weight:700";
+    mean.textContent=j.meaning||"";
+    card.appendChild(mean);
+    if(j.english){ var en=el("p","muted en",j.english); en.style.cssText="margin:0 0 10px;font-size:14px"; card.appendChild(en) }
+    if(j.note){ var nt=el("p","muted",j.note); nt.style.cssText="margin:0 0 14px;font-size:14px"; card.appendChild(nt) }
+
+    /* A local judgement compares Hebrew text; it does not understand it. A
+       correct synonym the course never listed WILL be marked wrong, so the
+       learner is told how the check was made and can overturn it — and the
+       review schedule honours the correction, not the guess. */
+    if(j.by==="local"){
+      var how=el("p","muted","הבדיקה נעשתה מול הפירוש ששמור מהקורס, בלי חיבור ל-Claude.");
+      how.style.cssText="margin:-8px 0 12px;font-size:12.5px"; card.appendChild(how);
+      if(j.verdict!=="correct"){
+        var iWas=el("button","btn ghost","בעצם צדקתי");
+        iWas.style.cssText="margin:0 0 12px;padding:6px 13px;font-size:13px";
+        iWas.onclick=function(){
+          T.judged.verdict="correct"; T.judged.note="סימנת שצדקת, והמילה תתוזמן בהתאם.";
+          T.session.right++;
+          T.queue=T.queue.filter(function(w){return w!==T.word});
+          renderTrainer();
+        };
+        card.appendChild(iWas);
+      }
+    }
+
+    var hook=el("div","expl"); hook.style.marginTop="4px";
+    hook.appendChild(el("div","eyebrow","הסימן שאני מציע"));
+    var mn=el("p",null,j.mnemonic||""); mn.style.cssText="margin:8px 0 4px;font-size:16px;font-weight:700";
+    hook.appendChild(mn);
+    if(j.story){ var st=el("p",null,"„"+j.story+"”"); st.style.cssText="margin:0;font-size:15px"; hook.appendChild(st) }
+    card.appendChild(hook);
+
+    /* A word the course already titled a sheet with gets that hook shown too, as
+       its own choice — it is the one he may already have seen in the sheets. */
+    var seedHook=seedFor(T.word);
+    if(seedHook&&!T.writingOwn){
+      var sc=el("div","expl"); sc.style.marginTop="10px";
+      sc.appendChild(el("div","eyebrow","הסימן מהקורס"));
+      var sh=el("p",null,seedHook.hook); sh.style.cssText="margin:8px 0 4px;font-size:16px;font-weight:700";
+      sc.appendChild(sh);
+      if(seedHook.story){ var ss=el("p",null,"„"+seedHook.story+"”"); ss.style.cssText="margin:0;font-size:15px"; sc.appendChild(ss) }
+      var takeSeed=el("button","btn ghost","שמור את הסימן מהקורס"); takeSeed.style.marginTop="12px";
+      takeSeed.onclick=function(){ saveAndAdvance(seedHook.hook+(seedHook.story?" — "+seedHook.story:""), "course") };
+      sc.appendChild(takeSeed);
+      card.appendChild(sc);
+    }
+
+    if(T.phase==="result"&&T.writingOwn){
+      var own=document.createElement("textarea");
+      own.className="note-field"; own.rows=2; own.id="ownHook";
+      own.placeholder="הסימן שלך — איך אתה תזכור את המילה הזו?";
+      own.value=T.ownDraft||((c&&c.mnemonic)||"");
+      own.oninput=function(){T.ownDraft=own.value};
+      card.appendChild(own);
+    }
+
+    var acts=el("div","row"); acts.style.marginTop="14px";
+    if(!T.writingOwn){
+      var takeIt=el("button","btn","שמור את הסימן הזה");
+      takeIt.onclick=function(){ saveAndAdvance(j.mnemonic+(j.story?" — "+j.story:""), "claude") };
+      acts.appendChild(takeIt);
+      var mine=el("button","btn ghost","אכתוב משלי");
+      mine.onclick=function(){T.writingOwn=true;renderTrainer()};
+      acts.appendChild(mine);
+    }else{
+      var saveMine=el("button","btn","שמור את שלי");
+      saveMine.onclick=function(){ saveAndAdvance((T.ownDraft||"").trim(), "mine") };
+      acts.appendChild(saveMine);
+      var back=el("button","btn ghost","חזרה להצעה שלי");
+      back.onclick=function(){T.writingOwn=false;renderTrainer()};
+      acts.appendChild(back);
+    }
+    var skip2=el("button","btn ghost","בלי סימן, המשך");
+    skip2.onclick=function(){ saveAndAdvance("", "none") };
+    acts.appendChild(skip2);
+    card.appendChild(acts);
+
+    if(c&&c.mnemonic){
+      var prev=el("p","muted","הסימן שכבר שמור: "+c.mnemonic);
+      prev.style.cssText="margin:12px 0 0;font-size:13px"; card.appendChild(prev);
+    }
+  }
+
+  p.appendChild(card);
+  p.appendChild(storageNote());
+}
+
+/* ---------- actions ---------- */
+/* The words this page can judge on its own: those carrying a stored meaning. */
+function localJudgePool(){
+  if(!TRAINER || typeof Judge==="undefined") return [];
+  if(localJudgePool._c) return localJudgePool._c;
+  localJudgePool._c=TRAINER.filter(function(w){ return Judge.judgeable(w) });
+  return localJudgePool._c;
+}
+
+/* Accept a judgement and move the screen on. Shared by both judges. */
+function acceptJudgement(j){
+  T.judged=j; T.phase="result"; T.writingOwn=false; T.ownDraft="";
+  T.session.seen++; if(j.verdict==="correct") T.session.right++;
+  /* Missed words come back inside this session, not only tomorrow. */
+  if(j.verdict!=="correct"){
+    var q=T.queue; q.splice(Math.min(3,q.length),0,T.word);
+  }
+  renderTrainer();
+}
+
+function submitGuess(){
+  var guess=(T.guessDraft||"").trim();
+  if(!guess){ T.error="כתוב משהו קודם, גם ניחוש."; renderTrainer(); return }
+
+  if(!sampleApi){
+    var entry=(TRAINER||[]).filter(function(w){return w.word===T.word})[0];
+    var local=(typeof Judge!=="undefined") ? Judge.judge(T.word, guess, entry) : null;
+    if(local) acceptJudgement(local);
+    else T.error="אין פירוש שמור למילה הזו, ואי אפשר לשאול כרגע.";
+    if(!local) renderTrainer();
+    return;
+  }
+
+  T.phase="judging"; T.error=null; renderTrainer();
+
+  /* sample.json resolves the parsed object directly; nothing is validated for
+     us, so check the one field everything downstream depends on. */
+  var seed=seedFor(T.word);
+  sampleApi.json(judgePrompt(T.word, guess, seed), {modelTier:"default"}).then(function(j){
+    if(!j||!j.verdict) throw {code:"invalid_json"};
+    acceptJudgement(j);
+  }).catch(function(err){
+    var code=err&&err.code;
+    T.phase="idle";
+    /* invalid_json is never retried from code — the docs are explicit that a
+       retry loop here just burns calls. The viewer decides. */
+    T.error = code==="not_granted" ? "ההרשאה לשאול אותי לא ניתנה."
+            : code==="rate_limited" ? "רגע, יותר מדי בקשות. נסה שוב בעוד כמה שניות."
+            : code==="invalid_json" ? "קיבלתי תשובה לא תקינה. לחץ בדוק שוב."
+            : "לא הצלחתי לבדוק כרגע. נסה שוב.";
+    renderTrainer();
+  });
+}
+
+function saveAndAdvance(mnemonic, source){
+  var j=T.judged||{};
+  /* schedule() already returns a copy, so this is safe to write to. */
+  var card=schedule(cards[T.word], j.verdict==="correct");
+  card.word=T.word;
+  card.meaning=j.meaning||card.meaning||"";
+  card.english=j.english||card.english||"";
+  if(mnemonic){ card.mnemonic=mnemonic; card.source=source; card.savedAt=Date.now() }
+  cards[T.word]=card;
+  persistCard(card);
+
+  T.word=null; T.judged=null; T.guessDraft=""; T.ownDraft=""; T.writingOwn=false; T.phase="idle";
+  renderTrainer();
+}
+
+/* ---------- storage ---------- */
+function readInto(snap){
+  var out={};
+  snap.docs.forEach(function(d){
+    var v=d.data();
+    /* Copied on the way in: the body handed back here is frozen. */
+    if(v&&v.word) out[v.word]=cloneCard(v);
+  });
+  return out;
+}
+
+function loadCards(){
+  var mine=myCards();
+  if(!mine) { cards=load("amirnet.cards",{})||{}; return Promise.resolve() }
+  return mine.get().then(function(snap){
+    cards=readInto(snap);
+    /* Before this version everything went into one shared `mnemonics`
+       collection, which every viewer of the page could read. That data is the
+       OWNER's, so only the owner moves it into their own private subtree and
+       clears it.
+       The access rules already hide that collection from everyone else, but
+       this does not lean on them: a guest opening the page for the first time
+       also has an empty subtree, and without this check the migration would be
+       exactly the code that hands her someone else's work. */
+    if(Object.keys(cards).length) return;
+    if(!isOwner) return;
+    return migrateLegacy(mine);
+  }).catch(function(){ cards=load("amirnet.cards",{})||{} });
+}
+
+function migrateLegacy(mine){
+  return dbApi.collection("mnemonics").get().then(function(snap){
+    var old=readInto(snap);
+    var words=Object.keys(old);
+    if(!words.length) return;
+    cards=old;
+    save("amirnet.cards", cards);
+    /* One write at a time, and only clear the old copy once the new one is
+       safely written: a half-finished move must never lose a hook. */
+    return words.reduce(function(chain,w){
+      return chain.then(function(){
+        return mine.doc(docId(w)).set(cloneCard(old[w]))
+          .then(function(){ return dbApi.collection("mnemonics").doc(w).delete().catch(function(){}) })
+          .catch(function(){});
+      });
+    }, Promise.resolve());
+  }).catch(function(){});
+}
+
+function persistCard(card){
+  save("amirnet.cards", cards);          /* always keep a local copy */
+  var mine=myCards();
+  if(!mine) return;
+  /* Snapshot bodies are frozen and must not be sent back as-is; send a clone.
+     A failed write must not interrupt the drill — the local copy still holds.
+     A rejection also means this viewer may not write their own subtree (a
+     read-only guest), which the trainer reports rather than hiding. */
+  try{
+    mine.doc(docId(card.word)).set(JSON.parse(JSON.stringify(card)))
+      .catch(function(){ noteRefusal() });
+  }catch(e){ noteRefusal() }
+}
+
+/* =================== VOCABULARY QUIZ =================== */
+/*
+ * "Test me on what I have already learned": four options over the words that
+ * carry a meaning. It is built entirely from the saved cards — the answers are
+ * the meanings we agreed on during judging — so unlike the practice flow it
+ * needs no `sample`, and it works in a viewer where judging is not permitted.
+ *
+ * The hard part is distractor quality, and it is not hypothetical. Among the
+ * saved words sit careful/carefully, assumption/assumptions,
+ * consistent/inconsistent and distinguish/distinguished, and contradict
+ * ("סותר, עומד בסתירה") shares the term "סותר" with inconsistent
+ * ("לא עקבי, סותר"). Offered against each other those make a question with two
+ * defensible answers — a test that punishes knowing the word. `related` and
+ * `glossClash` exist for exactly that, and a question is served with three or
+ * two options rather than padded out with a distractor that is arguably right.
+ *
+ * What the guard does NOT catch is a loose semantic neighbour whose wording
+ * differs, e.g. accuracy ("דיוק") against rigorous ("קפדני, מחמיר, דייקני").
+ * The right answer there is still clearly the better one, and catching it would
+ * take a Hebrew morphology pass that would reject far more than it should.
+ */
+var Q={items:[], i:0, answers:[], revealed:{}, done:false, size:10, fmt:"meaning"};
+
+/*
+ * The second format: real sentence-completion questions from the course bank,
+ * kept only where the answer is a word already studied. Recognising a meaning
+ * among four is one thing; using the word in a sentence is the thing the exam
+ * actually asks for, so the words learnt here come back as exam questions.
+ *
+ * A question qualifies on its `v` tag, which build-app-data sets to the lower-
+ * cased answer word — matching on the stem text would catch the word appearing
+ * anywhere in the sentence, which is not what is being tested.
+ */
+function completionFor(words){
+  if(!COURSE||!COURSE.length) return [];
+  var want={}; words.forEach(function(w){ want[String(w).toLowerCase()]=1 });
+  return COURSE.filter(function(q){
+    return q.t!=="restatement" && q.v && q.v.length===1 && want[q.v[0]];
+  });
+}
+
+function buildCompletionQuiz(pool, size){
+  var picked=shuffled(completionFor(pool.map(function(c){return c.word})));
+  if(size>0) picked=picked.slice(0,size);
+  return picked.map(function(q){
+    return { word:(q.v&&q.v[0])||"", dir:"completion", a:q.a,
+             prompt:q.p, options:q.o.slice(),
+             hook:(cards[(q.v&&q.v[0])||""]||{}).mnemonic||"" };
+  });
+}
+
+/* Exactly the words the learner has made a definition for. `meaning` is written
+   on every judged word, including one saved without a hook, so this is the
+   studied set rather than the hooks list. */
+function quizPool(){
+  return Object.keys(cards).map(function(k){return cards[k]})
+    .filter(function(c){ return c && c.word && String(c.meaning||"").trim() });
+}
+
+/* Same-root words. Containment catches consistent/inconsistent and
+   careful/carefully; a shared prefix catches pairs that are not containments,
+   such as precedent against preceding. */
+function related(a,b){
+  a=String(a||"").toLowerCase(); b=String(b||"").toLowerCase();
+  if(!a||!b) return false;
+  if(a===b) return true;
+  if(a.indexOf(b)>=0||b.indexOf(a)>=0) return true;
+  var n=Math.min(a.length,b.length), i=0;
+  while(i<n&&a.charAt(i)===b.charAt(i)) i++;
+  return i>=5;
+}
+
+/* Meanings are written as a comma-separated list, so the comparison runs term
+   by term — "סותר" inside "סותר, עומד בסתירה" has to meet "סותר" inside
+   "לא עקבי, סותר", which comparing the whole strings would miss. */
+function glossTerms(meaning){
+  return String(meaning||"").split(/[,;·|]/)
+    .map(function(t){ return t.replace(/\s+/g," ").trim() })
+    .filter(function(t){ return t.length>1 });
+}
+function glossClash(m1,m2){
+  var A=glossTerms(m1), B=glossTerms(m2);
+  for(var i=0;i<A.length;i++){
+    for(var j=0;j<B.length;j++){
+      var a=A[i], b=B[j];
+      if(a===b) return true;
+      if(a.length>=4 && b.indexOf(a)>=0) return true;
+      if(b.length>=4 && a.indexOf(b)>=0) return true;
+    }
+  }
+  return false;
+}
+
+/* One question. `dir` decides which side is the prompt and therefore which side
+   is Latin text: the exam renderer forces the `en` class on every option, which
+   would lay Hebrew options out backwards, so the quiz draws its own. */
+function buildItem(card, pool, dir){
+  var cands=pool.filter(function(o){
+    return o.word!==card.word
+        && !related(o.word, card.word)
+        && !glossClash(o.meaning, card.meaning);
+  });
+  var rows=[{word:card.word, meaning:card.meaning, right:true}]
+    .concat(shuffled(cands).slice(0,3).map(function(o){
+      return {word:o.word, meaning:o.meaning, right:false};
+    }));
+  rows=shuffled(rows);
+  var a=0;
+  rows.forEach(function(r,i){ if(r.right) a=i });
+  return {
+    word:card.word, dir:dir, a:a,
+    prompt: dir==="en2he" ? card.word : card.meaning,
+    options: rows.map(function(r){ return dir==="en2he" ? r.meaning : r.word }),
+    hook: card.mnemonic||""
+  };
+}
+
+/* `size` of 0 means every studied word. Directions alternate over the shuffled
+   order so each sitting is about half and half instead of leaving it to luck. */
+function buildQuiz(pool, size){
+  var picked=shuffled(pool);
+  if(size>0) picked=picked.slice(0,size);
+  return picked.map(function(c,i){
+    return buildItem(c, pool, (i%2) ? "he2en" : "en2he");
+  });
+}
+
+function resetQuiz(){ Q.items=[]; Q.i=0; Q.answers=[]; Q.revealed={}; Q.done=false }
+
+/* The offered lengths, dropping any that the studied set cannot fill. */
+function quizSizes(poolLen){
+  var out=[10,25].filter(function(n){ return n<poolLen });
+  out.push(0);                       /* 0 = all of them */
+  return out;
+}
+function sizeLabel(n, poolLen){ return n ? String(n) : ("הכול ("+poolLen+")") }
+
+/* ---------- screens ---------- */
+/* practice = learn a new word · quiz = be tested · library = edit what I built */
+var MODE = 'practice';
+
+function modeSwitch(poolLen){
+  var row=el("div","pick"); row.style.margin="0 0 18px";
+  var built=Object.keys(cards).filter(function(k){return cards[k]&&cards[k].mnemonic}).length;
+  [["practice","תרגול"],
+   ["quiz","מבחן ("+poolLen+")"],
+   ["library","הסימנים שלי"+(built?" ("+built+")":"")]].forEach(function(pair){
+    var b=el("button",null,pair[1]);
+    b.setAttribute("aria-pressed", MODE===pair[0]?"true":"false");
+    b.onclick=function(){
+      if(MODE===pair[0]) return;
+      MODE=pair[0];
+      if(MODE!=="quiz") resetQuiz();
+      if(MODE!=="library") LIB.editing=null;
+      renderTrainer();
+    };
+    row.appendChild(b);
+  });
+  return row;
+}
+
+/* A refusal lands after the screen has already been redrawn, so the note has
+   to be corrected when it arrives rather than only at the next render. */
+function noteRefusal(){
+  if(!dbWritable) return;
+  dbWritable=false;
+  var p=$("pane-trainer");
+  if(p && !p.hidden) renderTrainer();
+}
+
+/*
+ * Where this person's work is being kept, said plainly. There are three real
+ * cases and they behave differently, so none of them is left to be guessed:
+ * a private account store, this browser only, or nothing at all.
+ */
+function storageNote(){
+  var n=el("p","muted"); n.style.cssText="margin:14px 2px 0;font-size:12.5px;line-height:1.55";
+  if(myCards()&&dbWritable)
+    n.textContent="ההתקדמות שלך נשמרת בחשבון שלך בלבד, ועוברת איתך בין מכשירים. מי שמשתמש בדף הזה חוץ ממך לא רואה אותה, ואתה לא רואה את שלו.";
+  else if(dbApi&&!dbWritable)
+    n.textContent="ההרשאות שלך בדף הזה הן לקריאה בלבד, ולכן ההתקדמות נשמרת רק בדפדפן הזה. מי ששיתף אותך צריך לתת הרשאת עריכה כדי שהיא תישמר בחשבון שלך.";
+  else
+    n.textContent="ההתקדמות נשמרת בדפדפן הזה בלבד. אם תנקה את נתוני האתר או תעבור מכשיר, היא לא תעבור איתך.";
+  return n;
+}
+
+/* =================== THE MNEMONIC LIBRARY =================== */
+/*
+ * Everything already built, open for rewriting. A hook is a personal thing and
+ * the first version is rarely the one that sticks, so each entry can be edited
+ * in place, swapped for the course's own hook where the course teaches one, or
+ * cleared to be built again from scratch.
+ *
+ * Clearing removes the HOOK, not the card: the meaning and the review schedule
+ * are earned separately and survive, so rewriting a hook never costs progress.
+ */
+var LIB={ q:'', editing:null, draft:'' };
+
+function savedCards(){
+  return Object.keys(cards).map(function(k){return cards[k]})
+    .filter(function(c){ return c&&c.word&&c.mnemonic })
+    .sort(function(a,b){ return (b.savedAt||0)-(a.savedAt||0) });
+}
+
+function saveHook(word, text, source){
+  var c=cloneCard(cards[word]||newCard(word));
+  c.word=word;
+  var t=String(text||'').trim();
+  if(t){ c.mnemonic=t; c.source=source||'mine'; c.savedAt=Date.now() }
+  else { delete c.mnemonic; delete c.source; delete c.savedAt }
+  cards[word]=c;
+  persistCard(c);
+  LIB.editing=null; LIB.draft='';
+  renderTrainer();
+}
+
+function renderLibrary(p){
+  var all=savedCards();
+  if(!all.length){
+    var none=el("div","card set");
+    none.appendChild(el("div","eyebrow","עוד לא בנית סימנים"));
+    var t=el("p",null,"כל סימן שתשמור בתרגול יופיע כאן, ותוכל לשנות אותו מתי שתרצה.");
+    t.style.cssText="margin:8px 0 0;font-size:14.5px"; none.appendChild(t);
+    p.appendChild(none); return;
+  }
+
+  var needle=LIB.q.trim().toLowerCase();
+  var shown=needle ? all.filter(function(c){
+    return (c.word+' '+(c.meaning||'')+' '+(c.mnemonic||'')).toLowerCase().indexOf(needle)>=0;
+  }) : all;
+
+  var search=document.createElement("input");
+  search.type="search"; search.className="note-field"; search.id="libSearch";
+  search.placeholder="חיפוש לפי מילה, פירוש או סימן…";
+  search.value=LIB.q; search.style.marginTop="0";
+  search.oninput=function(){ LIB.q=search.value; renderLibrary2() };
+  p.appendChild(search);
+
+  var count=el("p","muted", shown.length===all.length
+    ? (all.length+" סימנים")
+    : (shown.length+" מתוך "+all.length));
+  count.style.cssText="margin:8px 2px 12px;font-size:13.5px"; p.appendChild(count);
+
+  shown.forEach(function(c){
+    var d=el("div","card"); d.style.cssText="padding:13px 15px;margin-bottom:9px";
+
+    var top=el("div","row"); top.style.cssText="justify-content:space-between;align-items:baseline";
+    var left=el("div");
+    var w=el("span","en",c.word);
+    w.style.cssText="font-weight:700;color:var(--accent);font-size:16px";
+    left.appendChild(w);
+    if(c.meaning){ var m=el("span",null," — "+c.meaning); m.style.fontSize="14px"; left.appendChild(m) }
+    if(c.source==="course"){ var tag=el("span","pill","מהקורס"); tag.style.marginInlineStart="8px"; left.appendChild(tag) }
+    top.appendChild(left);
+    if(c.lapses) top.appendChild(el("span","muted","טעית "+c.lapses));
+    d.appendChild(top);
+
+    if(LIB.editing===c.word){
+      var ta=document.createElement("textarea");
+      ta.className="note-field"; ta.rows=3; ta.id="libEdit";
+      ta.value=LIB.draft; ta.placeholder="הסימן שלך למילה הזו…";
+      ta.oninput=function(){ LIB.draft=ta.value };
+      ta.onkeydown=function(e){ if(e.key==="Enter"&&(e.metaKey||e.ctrlKey)) saveHook(c.word,LIB.draft,"mine") };
+      d.appendChild(ta);
+
+      var seed=seedFor(c.word);
+      if(seed&&seed.hook){
+        var alt=el("div","expl"); alt.style.marginTop="10px";
+        alt.appendChild(el("div","eyebrow","הסימן שהקורס מלמד"));
+        var ah=el("p",null,seed.hook); ah.style.cssText="margin:7px 0 0;font-size:14.5px";
+        alt.appendChild(ah);
+        var take=el("button","btn ghost","קח את זה"); take.style.cssText="margin-top:10px;padding:7px 14px;font-size:13px";
+        take.onclick=function(){ LIB.draft=seed.hook; renderTrainer() };
+        alt.appendChild(take);
+        d.appendChild(alt);
+      }
+
+      var acts=el("div","row"); acts.style.marginTop="12px";
+      var ok=el("button","btn","שמור"); ok.onclick=function(){ saveHook(c.word,LIB.draft,"mine") };
+      acts.appendChild(ok);
+      var cancel=el("button","btn ghost","ביטול");
+      cancel.onclick=function(){ LIB.editing=null; LIB.draft=""; renderTrainer() };
+      acts.appendChild(cancel);
+      var wipe=el("button","btn ghost","מחק את הסימן");
+      wipe.style.color="var(--bad)";
+      wipe.onclick=function(){ saveHook(c.word,"",null) };
+      acts.appendChild(wipe);
+      d.appendChild(acts);
+
+      var keep=el("p","muted","המחיקה מוחקת את הסימן בלבד — הפירוש וההתקדמות בחזרות נשארים.");
+      keep.style.cssText="margin:9px 0 0;font-size:12.5px"; d.appendChild(keep);
+    }else{
+      var h=el("div",null,c.mnemonic);
+      h.style.cssText="font-size:14px;margin-top:5px;line-height:1.55"; d.appendChild(h);
+      var edit=el("button","btn ghost","ערוך");
+      edit.style.cssText="margin-top:10px;padding:6px 14px;font-size:13px";
+      edit.onclick=function(){ LIB.editing=c.word; LIB.draft=c.mnemonic||""; renderTrainer() };
+      d.appendChild(edit);
+    }
+    p.appendChild(d);
+  });
+}
+
+/* Re-render only the library, so typing in the search box keeps focus. */
+function renderLibrary2(){
+  var p=$("pane-trainer");
+  var old=p.querySelector("#libSearch");
+  var at=old?old.selectionStart:null;
+  renderTrainer();
+  var next=$("pane-trainer").querySelector("#libSearch");
+  if(next){ next.focus(); if(at!=null) try{ next.setSelectionRange(at,at) }catch(e){} }
+}
+
+function renderQuizInto(p, pool){
+  if(pool.length<2){
+    var few=el("div","card set");
+    few.appendChild(el("div","eyebrow","עוד לא מספיק מילים"));
+    var t=el("p",null,"כדי לבנות מבחן צריך לפחות שתי מילים עם פירוש שמור. תרגל עוד קצת וחזור לכאן.");
+    t.style.cssText="margin:8px 0 0;font-size:14.5px"; few.appendChild(t);
+    p.appendChild(few);
+    return;
+  }
+  if(!Q.items.length) return renderQuizSetup(p, pool);
+  if(Q.done) return renderQuizResults(p);
+  renderQuizQuestion(p);
+}
+
+function renderQuizSetup(p, pool){
+  var avail=completionFor(pool.map(function(x){return x.word})).length;
+  if(Q.fmt==="completion"&&!avail) Q.fmt="meaning";
+
+  var c=el("div","card set"); c.style.padding="20px";
+
+  c.appendChild(el("div","eyebrow","סוג המבחן"));
+  var fmts=el("div","pick");
+  [["meaning","פירושים"],["completion","השלמת משפטים ("+avail+")"]].forEach(function(pair){
+    var b=el("button",null,pair[1]);
+    b.setAttribute("aria-pressed", Q.fmt===pair[0]?"true":"false");
+    b.disabled = pair[0]==="completion" && !avail;
+    b.onclick=function(){ Q.fmt=pair[0]; renderTrainer() };
+    fmts.appendChild(b);
+  });
+  c.appendChild(fmts);
+
+  var cap = Q.fmt==="completion" ? avail : pool.length;
+  var sizes=quizSizes(cap);
+  if(sizes.indexOf(Q.size)<0) Q.size=sizes[0];
+
+  var sizeHead=el("div","eyebrow","כמה שאלות"); sizeHead.style.marginTop="18px";
+  c.appendChild(sizeHead);
+  var row=el("div","pick");
+  sizes.forEach(function(n){
+    var b=el("button",null,sizeLabel(n,cap));
+    b.setAttribute("aria-pressed", Q.size===n?"true":"false");
+    b.onclick=function(){ Q.size=n; renderTrainer() };
+    row.appendChild(b);
+  });
+  c.appendChild(row);
+
+  var how=el("p","muted", Q.fmt==="completion"
+    ? "שאלות השלמת משפטים אמיתיות מהקורס, רק כאלה שהתשובה שלהן היא מילה שכבר למדת. אין משוב עד הסוף."
+    : "מוצגת מילה ואתה בוחר את הפירוש מתוך ארבע אפשרויות. חלק מהשאלות בכיוון ההפוך — פירוש, ואתה בוחר את המילה. אין משוב עד הסוף.");
+  how.style.cssText="margin:16px 0 0;font-size:14px"; c.appendChild(how);
+  var sched=el("p","muted","מילה שתטעה בה תחזור לתרגול מחר. אם נעזרת בסימן כדי לענות — היא תחזור גם כן, גם אם ענית נכון.");
+  sched.style.cssText="margin:6px 0 0;font-size:13.5px"; c.appendChild(sched);
+
+  var go=el("button","btn","התחל את המבחן ←"); go.style.marginTop="16px"; go.id="quizStart";
+  go.onclick=function(){
+    Q.items = Q.fmt==="completion" ? buildCompletionQuiz(pool, Q.size) : buildQuiz(pool, Q.size);
+    Q.answers=new Array(Q.items.length).fill(null);
+    Q.i=0; Q.revealed={}; Q.done=false;
+    renderTrainer();
+  };
+  c.appendChild(go);
+  p.appendChild(c);
+}
+
+function renderQuizQuestion(p){
+  var it=Q.items[Q.i];
+  var c=el("div","card qbox");
+
+  c.appendChild(el("div","qnum","שאלה "+(Q.i+1)+" מתוך "+Q.items.length));
+  var latinPrompt = it.dir!=="he2en";          /* completion and en2he are English */
+  var qt=el("div","qtext"+(latinPrompt?" en":""), it.prompt);
+  if(it.dir==="en2he")
+    qt.style.cssText="font-family:var(--font-display);font-weight:900;font-size:31px;color:var(--accent);margin-bottom:6px";
+  c.appendChild(qt);
+  var ask=el("p","muted", it.dir==="completion" ? "איזו מילה משלימה את המשפט?"
+                        : it.dir==="en2he" ? "מה הפירוש?" : "איזו מילה זאת?");
+  ask.style.cssText="margin:0 0 15px;font-size:14px"; c.appendChild(ask);
+
+  var opts=el("div","opts");
+  it.options.forEach(function(text,i){
+    var b=el("button","opt"); b.type="button";
+    b.setAttribute("aria-pressed", Q.answers[Q.i]===i?"true":"false");
+    b.appendChild(el("span","k",LETTERS[i]));
+    /* Only the Latin side gets `en`; the Hebrew side must stay RTL. A
+       completion question is English on both sides. */
+    b.appendChild(el("span","v"+(it.dir==="en2he"?"":" en"), text));
+    b.onclick=function(){
+      Q.answers[Q.i]=(Q.answers[Q.i]===i?null:i);
+      renderTrainer();
+    };
+    opts.appendChild(b);
+  });
+  c.appendChild(opts);
+
+  /* The hook is the learner's own, so revealing it is allowed — but it is
+     recorded, because a word that needed its crutch is not learnt yet. */
+  if(it.hook){
+    if(Q.revealed[it.word]){
+      var shown=el("div","expl"); shown.style.marginTop="14px";
+      shown.appendChild(el("div","eyebrow","הסימן שלך"));
+      var hk=el("p",null,it.hook); hk.style.cssText="margin:7px 0 0;font-size:15px";
+      shown.appendChild(hk);
+      c.appendChild(shown);
+    }else{
+      var hint=el("button","btn ghost","הצג את הסימן שלי"); hint.id="quizHint";
+      hint.style.cssText="margin-top:14px;padding:8px 15px;font-size:13.5px";
+      hint.onclick=function(){ Q.revealed[it.word]=1; renderTrainer() };
+      c.appendChild(hint);
+    }
+  }
+
+  var nav=el("div","nav");
+  var prev=el("button","btn ghost","→ הקודמת"); prev.disabled=Q.i===0;
+  prev.onclick=function(){ if(Q.i>0){Q.i--;renderTrainer()} };
+  nav.appendChild(prev);
+  if(Q.i<Q.items.length-1){
+    var next=el("button","btn","הבאה ←");
+    next.onclick=function(){ Q.i++; renderTrainer() };
+    nav.appendChild(next);
+  }else{
+    var fin=el("button","btn","סיים את המבחן"); fin.id="quizFinish";
+    fin.onclick=finishQuiz;
+    nav.appendChild(fin);
+  }
+  c.appendChild(nav);
+
+  var dots=el("div","dots");
+  Q.items.forEach(function(_,i){
+    var d=el("button","dot qdot"+(Q.answers[i]!=null?" ans":"")+(i===Q.i?" cur":""),String(i+1));
+    d.onclick=function(){ Q.i=i; renderTrainer() };
+    dots.appendChild(d);
+  });
+  c.appendChild(dots);
+
+  p.appendChild(c);
+}
+
+function finishQuiz(){
+  Q.done=true;
+  Q.items.forEach(function(it,i){
+    var card=cards[it.word];
+    if(!card) return;
+    var ok = Q.answers[i]===it.a;
+    /* A right answer that needed the hook is not a remembered word: it counts
+       in the score, but the schedule treats it as a miss so it comes back. */
+    var credit = ok && !Q.revealed[it.word];
+    var next=schedule(card, credit, true);
+    next.word=it.word;
+    cards[it.word]=next;
+    persistCard(next);
+  });
+  renderTrainer();
+}
+
+function renderQuizResults(p){
+  var right=0, missed=[];
+  Q.items.forEach(function(it,i){
+    if(Q.answers[i]===it.a) right++;
+    else missed.push(it.word);
+  });
+  var helped=Q.items.filter(function(it,i){
+    return Q.answers[i]===it.a && Q.revealed[it.word];
+  }).map(function(it){ return it.word });
+  var pct=Math.round(right/Q.items.length*100);
+
+  var sc=el("div","card quiz-score");
+  sc.appendChild(el("div","eyebrow","מבחן על מה שלמדתי"));
+  sc.appendChild(el("div","qpct",right+"/"+Q.items.length));
+  var sub=el("div","muted",pct+"% נכון");
+  sub.style.cssText="margin-top:4px;font-size:15px"; sc.appendChild(sub);
+  if(helped.length){
+    var hh=el("p","muted",helped.length+" מהן ענית נכון אחרי שהצגת את הסימן — הן יחזרו מחר.");
+    hh.style.cssText="margin:10px auto 0;font-size:13.5px;max-width:44ch"; sc.appendChild(hh);
+  }
+  var acts=el("div","row"); acts.style.cssText="justify-content:center;margin-top:18px";
+  var again=el("button","btn","מבחן נוסף");
+  again.onclick=function(){ resetQuiz(); renderTrainer() };
+  acts.appendChild(again);
+  var back=el("button","btn ghost","חזרה לתרגול");
+  back.onclick=function(){ MODE="practice"; resetQuiz(); renderTrainer() };
+  acts.appendChild(back);
+  sc.appendChild(acts);
+  p.appendChild(sc);
+
+  if(missed.length){
+    var box=el("div","card set");
+    box.appendChild(el("div","eyebrow","לחזור על אלה"));
+    var list=el("p","en",missed.join(" · "));
+    list.style.cssText="margin:8px 0 0;font-size:15px;font-weight:700;color:var(--accent)";
+    box.appendChild(list);
+    p.appendChild(box);
+  }
+
+  var h=el("h3",null,"סקירה"); h.style.cssText="margin:22px 0 10px;font-size:18px";
+  p.appendChild(h);
+
+  Q.items.forEach(function(it,i){
+    var ok=Q.answers[i]===it.a;
+    var r=el("div","card rev "+(ok?"right":"wrong"));
+    var top=el("div","row"); top.style.justifyContent="space-between";
+    var w=el("span","en",it.word);
+    w.style.cssText="font-weight:700;color:var(--accent);font-size:16px";
+    top.appendChild(w);
+    top.appendChild(el("span","pill", ok?"נכון":"לא נכון"));
+    r.appendChild(top);
+
+    var correct=el("p",null,(it.dir==="completion"?"המילה הנכונה: ":"הפירוש: ")+it.options[it.a]);
+    correct.style.cssText="margin:8px 0 0;font-size:14.5px";
+    if(it.dir!=="en2he") correct.className="en";
+    r.appendChild(correct);
+
+    if(!ok){
+      var chose=el("p","muted", Q.answers[i]==null ? "לא ענית." : ("בחרת: "+it.options[Q.answers[i]]));
+      chose.style.cssText="margin:4px 0 0;font-size:14px"; r.appendChild(chose);
+    }
+    if(Q.revealed[it.word]){
+      var usedHint=el("p","muted","נעזרת בסימן.");
+      usedHint.style.cssText="margin:4px 0 0;font-size:13px"; r.appendChild(usedHint);
+    }
+    if(it.hook){
+      var hk=el("p","muted",it.hook);
+      hk.style.cssText="margin:8px 0 0;font-size:13.5px"; r.appendChild(hk);
+    }
+    /* Only the completion format is a real exam question; the meaning quiz is
+       built from the saved cards and has no sentence to read signals out of. */
+    if(it.dir==="completion"){
+      var qhb=hintBlock({p:it.prompt,o:it.options,a:it.a});
+      if(qhb) r.appendChild(qhb);
+    }
+    p.appendChild(r);
+  });
+}
+
+/* =================== EXPORT =================== */
+/*
+ * Saving the run as a real file goes through the viewer's `downloads`
+ * capability — the page cannot write a file itself, and a plain link or a
+ * blob: save is inert here. `claude.use()` resolves later and may resolve
+ * null, so the file button only appears once it has, and the clipboard and
+ * the selectable box are always present as the path that needs no capability.
+ */
+var downloadsApi=null;
+try{
+  if(window.claude&&typeof window.claude.use==="function"){
+    window.claude.use("downloads").then(function(d){ downloadsApi=d||null })
+      .catch(function(){ downloadsApi=null });
+  }
+}catch(e){ downloadsApi=null }
+
+function exportFilename(){
+  var d=lastRun?lastRun.at:new Date();
+  return "amirnet-"+d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+
+         String(d.getDate()).padStart(2,"0")+"-"+String(d.getHours()).padStart(2,"0")+
+         String(d.getMinutes()).padStart(2,"0")+".md";
+}
+function buildExport(){
+  if(!lastRun) return "";
+  var L=[];
+  var d=lastRun.at;
+  var stamp=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")+
+            " "+String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0");
+
+  L.push("# "+lastRun.title);
+  L.push("");
+  L.push(stamp);
+  L.push("");
+  L.push("**ציון מוערך:** "+lastRun.score+"  ·  **רמה:** "+lastRun.band.name+" ("+lastRun.band.note+")");
+  L.push("**נכונות:** "+lastRun.correct+" מתוך "+lastRun.total+" ("+lastRun.pct+"%)");
+  L.push("");
+  L.push("> הציון הוא אומדן תרגול. מאל״ו אינם מפרסמים את נוסחת ההמרה; הרמות בטבלה רשמיות, המספר אינו ציון אמירנט.");
+  L.push("");
+
+  if(lastRun.trail.length){
+    L.push("## מסלול הרמות");
+    L.push("");
+    L.push("| פרק | רמה | אחוז |");
+    L.push("|---|---|---|");
+    lastRun.trail.forEach(function(t){
+      L.push("| "+t.slot+" | "+(LEVEL_HE[t.level]||t.level)+" | "+t.pct+"% |");
+    });
+    L.push("");
+  }
+
+  L.push("## השאלות");
+  L.push("");
+  var lastPassage=null;
+  lastRun.review.forEach(function(r,i){
+    if(r.passage&&r.passage!==lastPassage){
+      lastPassage=r.passage;
+      L.push("### קטע הקריאה: "+r.passage.title);
+      L.push("");
+      L.push("> "+r.passage.text);
+      L.push("");
+    }
+    L.push("**"+(i+1)+".** ("+(TYPE_HE[r.type]||r.type)+(r.q.d?" · "+(DIFF_HE[r.q.d]||r.q.d):"")+")  "+(r.ok?"✓ נכון":(r.given==null?"— לא נענתה":"✗ שגוי")));
+    L.push("");
+    L.push(r.q.p);
+    L.push("");
+    r.q.o.forEach(function(opt,oi){
+      var mark = oi===r.q.a ? " ← התשובה הנכונה" : (oi===r.given ? " ← מה שסימנת" : "");
+      L.push("- **"+LETTERS[oi]+".** "+opt+mark);
+    });
+    L.push("");
+    if(r.q.e){ L.push("*למה:* "+r.q.e); L.push("") }
+    var n=notes[noteKey(r.q)];
+    if(n){ L.push("*ההערה שלי:* "+n); L.push("") }
+  });
+
+  return L.join("\n");
+}
+
+function showExport(){
+  var text=buildExport();
+  if(!text) return;
+  var root=$("results");
+
+  var old=$("exportPanel"); if(old) old.parentNode.removeChild(old);
+  var box=el("div","card set"); box.id="exportPanel";
+  box.style.cssText="margin:14px 0";
+  box.appendChild(el("div","eyebrow","שמירת המבחן"));
+
+  var msg=el("p","muted","הורד כקובץ Markdown, או העתק והדבק ל-Word, Notion או הערות.");
+  msg.style.cssText="font-size:13.5px;margin:6px 0 10px"; box.appendChild(msg);
+
+  var row=el("div","row");
+
+  if(downloadsApi){
+    var dl=el("button","btn","הורד קובץ");
+    dl.onclick=function(){
+      status.textContent="…";
+      downloadsApi.save({filename:exportFilename(),data:text}).then(function(res){
+        status.textContent = res && res.status==="delivered" ? "נשלח ✓" : "נשמר ✓";
+      }).catch(function(err){
+        var code=err&&err.code;
+        if(code==="declined"){ status.textContent=""; return; }           /* never re-ask */
+        if(code==="rate_limited"){ status.textContent="יש כבר בקשה פתוחה — נסה שוב בעוד רגע."; return; }
+        status.textContent="שמירת הקובץ לא זמינה כאן — העתק את הטקסט למטה.";
+        ta.focus(); ta.select();
+      });
+    };
+    row.appendChild(dl);
+  }
+
+  var copy=el("button","btn ghost","העתק הכל");
+  var status=el("span","muted"); status.style.fontSize="13.5px";
+  copy.onclick=function(){
+    try{
+      navigator.clipboard.writeText(text).then(function(){
+        status.textContent="הועתק ✓";
+      }).catch(function(){
+        status.textContent="הדפדפן חסם העתקה — סמן את הטקסט למטה והעתק ידנית.";
+        ta.focus(); ta.select();
+      });
+    }catch(e){
+      status.textContent="הדפדפן חסם העתקה — סמן את הטקסט למטה והעתק ידנית.";
+      ta.focus(); ta.select();
+    }
+  };
+  row.appendChild(copy); row.appendChild(status); box.appendChild(row);
+
+  var ta=document.createElement("textarea");
+  ta.className="note-field"; ta.rows=14; ta.readOnly=true; ta.value=text; ta.id="exportText";
+  ta.style.cssText="margin-top:12px;font-family:ui-monospace,monospace;font-size:12.5px;direction:ltr;text-align:left";
+  box.appendChild(ta);
+
+  root.insertBefore(box, root.children[1]||null);
+  box.scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+/* =================== VOCABULARY =================== */
+var VOCAB=null;
+var lastRun=null;                              /* kept so the export survives leaving the results screen */
+var readingCollapsed=false;                    /* the test's own "Hide Questions" */
+var notes=load("amirnet.notes",{})||{};        /* per-question notes, keyed by question text */
+function noteKey(q){ return (q.p||"").slice(0,120) }
+function renderVocab(){
+  var p=$("pane-vocab");
+  if(p.dataset.ready)return;
+  p.dataset.ready="1";
+
+  var head=el("div");
+  var h=el("h2",null,"אוצר המילים של הקורפוס"); h.style.cssText="font-size:23px;margin-bottom:8px";
+  head.appendChild(h);
+  var sub=el("p","muted","כל מילה שהקורפוס מסמן כנדרשת לפתרון — 294 מהן היו התשובה הנכונה, והשאר מילים שמכריעות שאלה גם כשאינן התשובה. מסומנות בכוכבית אלה שהיו תשובה.");
+  sub.style.cssText="margin:0 0 14px;font-size:14.5px";
+  head.appendChild(sub);
+  p.appendChild(head);
+
+  var search=el("input"); search.type="search"; search.id="vocabSearch";
+  search.placeholder="חיפוש מילה…";
+  search.style.cssText="width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);color:var(--ink);font:inherit;margin-bottom:14px";
+  p.appendChild(search);
+
+  /* The corpus list is ordered by frequency, which puts so/because/but at the
+     top — exactly the words with nothing to teach. The list stays complete,
+     but this narrows it to the words the course actually glosses. */
+  var filt=el("div","pick"); filt.style.margin="0 0 14px";
+  [["all","כל המילים"],["taught","רק מה שהקורס מלמד"]].forEach(function(pair){
+    var b=el("button",null,pair[1]);
+    b.setAttribute("aria-pressed", VOCAB_SCOPE===pair[0]?"true":"false");
+    b.onclick=function(){
+      VOCAB_SCOPE=pair[0];
+      Array.prototype.forEach.call(filt.querySelectorAll("button"),function(x,i){
+        x.setAttribute("aria-pressed", VOCAB_SCOPE===(i?"taught":"all")?"true":"false");
+      });
+      paintVocab((($("vocabSearch")||{}).value||"").trim().toLowerCase());
+    };
+    filt.appendChild(b);
+  });
+  p.appendChild(filt);
+
+  var list=el("div"); list.id="vocabList";
+  list.style.cssText="display:flex;flex-direction:column;gap:7px";
+  p.appendChild(list);
+
+  var status=el("div","muted","טוען…"); list.appendChild(status);
+
+  fetch("vocabulary.json").then(function(r){return r.json()}).then(function(j){
+    VOCAB=j; paintVocab("");
+    search.oninput=function(){paintVocab(search.value.trim().toLowerCase())};
+  }).catch(function(){ status.textContent="לא ניתן לטעון את רשימת המילים." });
+
+  /* The glosses and hooks live in the trainer pool, and the saved cards decide
+     which hooks are already adopted. Either can still be unloaded when this tab
+     is opened first, so both are fetched here and the rows repainted after. */
+  ensureTrainerData().then(function(){
+    if(VOCAB) paintVocab(($("vocabSearch").value||"").trim().toLowerCase());
+  });
+}
+
+var VOCAB_SCOPE="all";
+
+function paintVocab(filter){
+  var list=$("vocabList"); list.textContent="";
+
+  /* Two different lists. "all" is the corpus vocabulary, ordered by how often a
+     word decides a question. "taught" is everything the course glosses — far
+     larger, and mostly words the corpus list never had — so it is built from
+     the trainer pool and only borrows the corpus example where one exists. */
+  var rows;
+  if(VOCAB_SCOPE==="taught"){
+    var byWord={};
+    VOCAB.forEach(function(w){ byWord[w.word]=w });
+    rows=(TRAINER||[]).filter(function(t){ return t.he||(t.seed&&t.seed.hook) })
+      .map(function(t){
+        var c=byWord[t.word];
+        return { word:t.word, times:t.times||1, answer:c?c.answer:t.answer,
+                 example:(c&&c.example)||t.example||"" };
+      });
+  }else{
+    rows=VOCAB.slice();
+  }
+  rows=rows.filter(function(w){ return !filter || w.word.indexOf(filter)>=0 });
+  if(!rows.length){list.appendChild(el("div","muted","לא נמצאה מילה כזו."));return}
+  var count=el("div","muted",rows.length+" מילים");
+  count.style.cssText="font-size:12.5px;margin-bottom:4px"; list.appendChild(count);
+  rows.forEach(function(w){
+    var c=el("div","card"); c.style.cssText="padding:12px 14px";
+    var top=el("div","row"); top.style.cssText="justify-content:space-between;align-items:baseline;gap:10px";
+    var word=el("span","en",w.word);
+    word.style.cssText="font-weight:700;font-size:16.5px;color:var(--accent)";
+    top.appendChild(word);
+    if(w.answer) top.appendChild(el("span","pill done","★ תשובה נכונה"));
+    if(w.times>1) top.appendChild(el("span","pill",w.times+" פעמים"));
+    c.appendChild(top);
+    /* What the course says this word means, where the guides glossed it. */
+    var taught=courseEntry(w.word);
+    if(taught&&taught.he){
+      var he=el("div",null,taught.he);
+      he.style.cssText="font-size:14.5px;margin-top:4px;font-weight:600";
+      c.appendChild(he);
+    }
+
+    if(w.example){
+      var ex=el("div","en",w.example.replace(/_{2,}/," ___ "));
+      ex.style.cssText="font-size:13.5px;color:var(--muted);margin-top:5px;line-height:1.5";
+      c.appendChild(ex);
+    }
+
+    /* The hook the course teaches, offered as a ready-made option: adopting it
+       creates the card outright, so a word can be learnt straight from here
+       without going through the judging flow first. */
+    if(taught&&taught.seed&&taught.seed.hook){
+      var box=el("div","expl"); box.style.marginTop="9px";
+      box.appendChild(el("div","eyebrow","הסימן שהקורס מלמד"));
+      var hk=el("p",null,taught.seed.hook);
+      hk.style.cssText="margin:7px 0 0;font-size:14px;line-height:1.55";
+      box.appendChild(hk);
+
+      var have=cards[w.word];
+      if(have&&have.mnemonic===taught.seed.hook){
+        var done=el("div","muted","כבר שמור אצלך.");
+        done.style.cssText="margin-top:9px;font-size:12.5px"; box.appendChild(done);
+      }else{
+        var add=el("button","btn ghost", have&&have.mnemonic?"החלף בסימן הזה":"שמור כסימן שלי");
+        add.style.cssText="margin-top:10px;padding:7px 14px;font-size:13px";
+        add.onclick=function(){ adoptCourseHook(w.word, taught, add) };
+        box.appendChild(add);
+      }
+      c.appendChild(box);
+    }
+    list.appendChild(c);
+  });
+}
+
+/* =================== TABS =================== */
+function tab(which){
+  var map={sims:["tab-sims","pane-sims"],set:["tab-set","pane-set"],guide:["tab-guide","pane-guide"],
+           trainer:["tab-trainer","pane-trainer"],vocab:["tab-vocab","pane-vocab"]};
+  Object.keys(map).forEach(function(k){
+    var on=k===which;
+    $(map[k][0]).setAttribute("aria-selected",on?"true":"false");
+    $(map[k][1]).hidden=!on;
+  });
+  if(which==="set")renderSettings();
+  if(which==="guide")renderGuide();
+  if(which==="vocab")renderVocab();
+  if(which==="trainer")renderTrainer();
+}
+$("tab-sims").onclick=function(){tab("sims")};
+$("tab-set").onclick=function(){tab("set")};
+$("tab-guide").onclick=function(){tab("guide")};
+$("tab-vocab").onclick=function(){tab("vocab")};
+$("tab-trainer").onclick=function(){tab("trainer")};
+
+/* =================== BOOT =================== */
+$("adaptiveBtn").onclick=function(){ if(DATA) startAdaptive() };
+$("drillBtn").onclick=function(){ if(DATA) renderDrillSetup() };
+
+/* The course drill sheets load alongside the simulations; a failure there must
+   not stop the app, so the bank simply stays without them. */
+fetch("course-bank.json").then(function(r){return r.json()})
+  .then(function(j){ COURSE=j||[] }).catch(function(){ COURSE=[] })
+  /* buildBank memoises, and this fetch can land after it has already run, so
+     drop the cached bank and let the next call rebuild with the sheets in. */
+  .then(function(){ BANK=null });
+
+fetch("simulations.json").then(function(r){return r.json()}).then(function(j){
+  DATA=j; renderHome();
+}).catch(function(e){
+  $("simGrid").appendChild(el("div","card set","לא ניתן לטעון את השאלות. נסה לרענן את העמוד."));
+});
+})();
+</script>
